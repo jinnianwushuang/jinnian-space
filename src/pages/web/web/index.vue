@@ -4,39 +4,36 @@
       <q-tab
         v-for="(item, index) in tabs"
         :key="`tabs_${index}`"
-        :name="`${index + 1}`"
-        :label="`${index + 1}.${item.text}`"
+        :name="`${item.value}`"
+        :label="`${index + 1}.${item.label}`"
       />
     </q-tabs>
 
-    <component :is="`m${tab}`"></component>
+    <component :is="`${tab}`"></component>
   </div>
 </template>
 <script>
 export default {
   components: {
-    m1: () => import("src/pages/web/web/module/m1.vue"),
-    m2: () => import("src/pages/web/web/module/m2.vue"),
-    m3: () => import("src/pages/web/web/module/m3.vue"),
-    m4: () => import("src/pages/web/web/module/m4.vue"),
-    m5: () => import("src/pages/web/web/module/m5.vue"),
-    m6: () => import("src/pages/web/web/module/m6.vue"),
-    m7: () => import("src/pages/web/web/module/m7.vue"),
-    m8: () => import("src/pages/web/web/module/m8.vue")
+    basics: () => import("src/pages/web/web/basics/index.vue"),
+    js: () => import("src/pages/web/web/js/index.vue"),
+    http: () => import("src/pages/web/web/http/index.vue"),
+    vue: () => import("src/pages/web/web/vue/index.vue"),
+    other: () => import("src/pages/web/web/other/index.vue"),
+    tool: () => import("src/pages/web/web/tool/index.vue"),
+
   },
   data() {
     return {
-      tab: 1,
-      tabs: [1, 2, 3, 4, 5, 6, 7, 8],
+      tab: 'basics',
       tabs: [
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" }
+        { label: "basics" ,value:'basics'},
+        { label: "js" ,value:'js'},
+        { label: "http" ,value:'http'},
+        { label: "vue" ,value:'vue'},
+        { label: "other" ,value:'other'},
+        { label: "tool" ,value:'tool'},
+      
       ]
     };
   }

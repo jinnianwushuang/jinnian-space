@@ -2,7 +2,7 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <div class="row">
-        <div class="col-11">
+        <div class="col-12">
         <q-tabs
           v-model="tab"
           
@@ -20,13 +20,13 @@
         </q-tabs>
 
         </div>
-        <div class="col-1 q-pr-lg text-h5 text-right vertical-middle" style="line-height: 48px;">
+        <!-- <div class="col-1 q-pr-lg text-h5 text-right vertical-middle" style="line-height: 48px;">
         
 锦年空间
          
 
       
-        </div>
+        </div> -->
       </div>
       <!-- <q-toolbar>
 
@@ -37,7 +37,7 @@
       </q-toolbar> -->
     </q-header>
 
-    <q-page-container>
+    <q-page-container class="q-px-lg">
       <router-view />
     </q-page-container>
   </q-layout>
