@@ -14,6 +14,7 @@
 </template>
 
 <script>
+
 export default {
   components: {
     web: () => import("src/pages/web/web/index.vue"),

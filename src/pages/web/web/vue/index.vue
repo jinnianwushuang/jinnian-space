@@ -1,6 +1,6 @@
 <template>
   <div>
-    <q-tabs v-model="tab" align="left" inline-label dense  class="text-teal">
+    <q-tabs v-model="tab" align="left" inline-label dense class="text-teal">
       <q-tab
         v-for="(item, index) in tabs"
         :key="`tabs_${index}`"
@@ -13,32 +13,38 @@
   </div>
 </template>
 <script>
-
-export default { 
+import m1 from "src/pages/web/web/vue/module/m1.vue";
+import m2 from "src/pages/web/web/vue/module/m2.vue";
+import m3 from "src/pages/web/web/vue/module/m3.vue";
+import m4 from "src/pages/web/web/vue/module/m4.vue";
+import m5 from "src/pages/web/web/vue/module/m5.vue";
+import m6 from "src/pages/web/web/vue/module/m6.vue";
+import m7 from "src/pages/web/web/vue/module/m7.vue";
+import m8 from "src/pages/web/web/vue/module/m8.vue";
+export default {
   components: {
-    m1: () => import("src/pages/web/web/vue/module/m1.vue"),
-    m2: () => import("src/pages/web/web/vue/module/m2.vue"),
-    m3: () => import("src/pages/web/web/vue/module/m3.vue"),
-    m4: () => import("src/pages/web/web/vue/module/m4.vue"),
-    m5: () => import("src/pages/web/web/vue/module/m5.vue"),
-    m6: () => import("src/pages/web/web/vue/module/m6.vue"),
-    m7: () => import("src/pages/web/web/vue/module/m7.vue"),
-    m8: () => import("src/pages/web/web/vue/module/m8.vue")
+    m1,
+    m2,
+    m3,
+    m4,
+    m5,
+    m6,
+    m7,
+    m8
   },
   data() {
     return {
-      tab: 'm1',
-     
+      tab: "m1",
+
       tabs: [
-          { label: "基本" ,value:'m1'},
-          { label: "基本" ,value:'m2'},
-          { label: "基本" ,value:'m3'},
-          { label: "基本" ,value:'m4'},
-          { label: "基本" ,value:'m5'},
-          { label: "基本" ,value:'m6'},
-          { label: "基本" ,value:'m7'},
-          { label: "基本" ,value:'m8'},
-    
+        { label: "基本", value: "m1" },
+        { label: "基本", value: "m2" },
+        { label: "基本", value: "m3" },
+        { label: "基本", value: "m4" },
+        { label: "基本", value: "m5" },
+        { label: "基本", value: "m6" },
+        { label: "基本", value: "m7" },
+        { label: "基本", value: "m8" }
       ]
     };
   }
