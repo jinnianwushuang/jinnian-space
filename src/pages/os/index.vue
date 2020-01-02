@@ -14,10 +14,12 @@
 </template>
 
 <script>
+ import win from "src/pages/os/win/index.vue"
+ import mac from "src/pages/os/mac/index.vue"
 export default {
   components: {
-   win: () => import("src/pages/os/win/index.vue"),
-    mac: () => import("src/pages/os/mac/index.vue"),
+   win,
+    mac
 
   },
   data() {

@@ -14,12 +14,15 @@
 </template>
 
 <script>
+import ios from "src/pages/web/ios/index.vue";
+import web from "src/pages/web/web/index.vue";
+import android from "src/pages/web/android/index.vue";
 
 export default {
   components: {
-    web: () => import("src/pages/web/web/index.vue"),
-    ios: () => import("src/pages/web/ios/index.vue"),
-    android: () => import("src/pages/web/android/index.vue")
+    web,
+    ios,
+    android
   },
   data() {
     return {

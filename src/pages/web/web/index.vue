@@ -13,14 +13,21 @@
   </div>
 </template>
 <script>
+
+  import  basics from  "src/pages/web/web/basics/index.vue"
+  import  js from  "src/pages/web/web/js/index.vue"
+  import  http from "src/pages/web/web/http/index.vue"
+  import  vue from "src/pages/web/web/vue/index.vue"
+  import  other from "src/pages/web/web/other/index.vue"
+  import  tool from "src/pages/web/web/tool/index.vue"
 export default {
   components: {
-    basics: () => import("src/pages/web/web/basics/index.vue"),
-    js: () => import("src/pages/web/web/js/index.vue"),
-    http: () => import("src/pages/web/web/http/index.vue"),
-    vue: () => import("src/pages/web/web/vue/index.vue"),
-    other: () => import("src/pages/web/web/other/index.vue"),
-    tool: () => import("src/pages/web/web/tool/index.vue"),
+    basics,
+    js,
+    http,
+    vue,
+    other,
+    tool,
 
   },
   data() {
