@@ -4,40 +4,41 @@
       <q-tab
         v-for="(item, index) in tabs"
         :key="`tabs_${index}`"
-        :name="`${index + 1}`"
-        :label="`${index + 1}.${item.text}`"
+        :name="`${item.value}`"
+        :label="`${index + 1}.${item.label}`"
       />
     </q-tabs>
 
-    <component :is="`m${tab}`"></component>
+    <component :is="`${tab}`"></component>
   </div>
 </template>
 <script>
 
-export default {
+export default { 
   components: {
-    m1: () => import("src/pages/web/web/vue/module/m1.vue"),
-    m2: () => import("src/pages/web/web/vue/module/m2.vue"),
-    m3: () => import("src/pages/web/web/vue/module/m3.vue"),
-    m4: () => import("src/pages/web/web/vue/module/m4.vue"),
-    m5: () => import("src/pages/web/web/vue/module/m5.vue"),
-    m6: () => import("src/pages/web/web/vue/module/m6.vue"),
-    m7: () => import("src/pages/web/web/vue/module/m7.vue"),
-    m8: () => import("src/pages/web/web/vue/module/m8.vue")
+    m1: () => import("src/pages/web/web/js/module/m1.vue"),
+    m2: () => import("src/pages/web/web/js/module/m2.vue"),
+    m3: () => import("src/pages/web/web/js/module/m3.vue"),
+    m4: () => import("src/pages/web/web/js/module/m4.vue"),
+    m5: () => import("src/pages/web/web/js/module/m5.vue"),
+    m6: () => import("src/pages/web/web/js/module/m6.vue"),
+    m7: () => import("src/pages/web/web/js/module/m7.vue"),
+    m8: () => import("src/pages/web/web/js/module/m8.vue")
   },
   data() {
     return {
-      tab: 1,
-      tabs: [1, 2, 3, 4, 5, 6, 7, 8],
+      tab: 'm1', 
+     
       tabs: [
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" }
+          { label: "循环遍历" ,value:'m1'},
+          { label: "基本" ,value:'m2'},
+          { label: "基本" ,value:'m3'},
+          { label: "基本" ,value:'m4'},
+          { label: "基本" ,value:'m5'},
+          { label: "基本" ,value:'m6'},
+          { label: "基本" ,value:'m7'},
+          { label: "基本" ,value:'m8'},
+    
       ]
     };
   }

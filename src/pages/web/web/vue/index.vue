@@ -14,7 +14,7 @@
 </template>
 <script>
 
-export default {
+export default { 
   components: {
     m1: () => import("src/pages/web/web/vue/module/m1.vue"),
     m2: () => import("src/pages/web/web/vue/module/m2.vue"),

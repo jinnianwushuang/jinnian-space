@@ -1,15 +1,15 @@
 <template>
   <div>
-    <q-tabs v-model="tab" align="left" inline-label dense class="text-teal">
+    <q-tabs v-model="tab" align="left" inline-label dense  class="text-teal">
       <q-tab
         v-for="(item, index) in tabs"
         :key="`tabs_${index}`"
-        :name="`${index + 1}`"
-        :label="`${index + 1}.${item.text}`"
+        :name="`${item.value}`"
+        :label="`${index + 1}.${item.label}`"
       />
     </q-tabs>
 
-    <component :is="`m${tab}`"></component>
+    <component :is="`${tab}`"></component>
   </div>
 </template>
 
@@ -27,17 +27,18 @@ export default {
   },
   data() {
     return {
-      tab: 1,
-      tabs: [1, 2, 3, 4, 5, 6, 7, 8],
+       tab: 'm1',
+     
       tabs: [
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" }
+          { label: "g" ,value:'m1'},
+          { label: "基本" ,value:'m2'},
+          { label: "基本" ,value:'m3'},
+          { label: "基本" ,value:'m4'},
+          { label: "基本" ,value:'m5'},
+          { label: "基本" ,value:'m6'},
+          { label: "基本" ,value:'m7'},
+          { label: "基本" ,value:'m8'},
+    
       ]
     };
   }
