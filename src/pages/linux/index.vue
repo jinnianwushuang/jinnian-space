@@ -39,7 +39,7 @@ export default {
       tab: 1,
       tabs: [1, 2, 3, 4, 5, 6, 7, 8],
       tabs: [
-        { text: "未开发" },
+        { text: "基础" },
         { text: "未开发" },
         { text: "未开发" },
         { text: "未开发" },
