@@ -15,14 +15,14 @@
 
 <script>
 
-import m1 from "src/pages/other/module/m1.vue";
-import m2 from "src/pages/other/module/m2.vue";
-import m3 from "src/pages/other/module/m3.vue";
-import m4 from "src/pages/other/module/m4.vue";
-import m5 from "src/pages/other/module/m5.vue";
-import m6 from "src/pages/other/module/m6.vue";
-import m7 from "src/pages/other/module/m7.vue";
-import m8 from "src/pages/other/module/m8.vue";
+import m1 from "src/pages/bookshelf/module/m1.vue";
+import m2 from "src/pages/bookshelf/module/m2.vue";
+import m3 from "src/pages/bookshelf/module/m3.vue";
+import m4 from "src/pages/bookshelf/module/m4.vue";
+import m5 from "src/pages/bookshelf/module/m5.vue";
+import m6 from "src/pages/bookshelf/module/m6.vue";
+import m7 from "src/pages/bookshelf/module/m7.vue";
+import m8 from "src/pages/bookshelf/module/m8.vue";
 export default {
   components: {
     m1,
@@ -37,10 +37,10 @@ export default {
  
   data() {
     return {
-      tab:'m1',
+      tab: 'm1',
  
       tabs: [
-        { label: "未开发" ,value:'m1'},
+        { label: "linux" ,value:'m1'},
         { label: "未开发" ,value:'m2'},
         { label: "未开发" ,value:'m3'},
         { label: "未开发" ,value:'m4'},

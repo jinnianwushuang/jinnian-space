@@ -88,6 +88,13 @@ const routes = [
         path: "tensorflow",
         name: "tensorflow",
         component: () => import(/* webpackChunkName: "jinnianSpace" */ "src/pages/tensorflow/index.vue")
+      },
+      {
+        path: "bookshelf",
+        name: "bookshelf",
+        component: () => import(/* webpackChunkName: "jinnianSpace" */ "src/pages/bookshelf/index.vue")
+
+        
       }
     ]
   }

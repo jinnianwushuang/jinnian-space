@@ -39,4 +39,8 @@ export default [
     path: "other",
     name: "other"
   },
+  {
+    path: "bookshelf",
+    name: "bookshelf",
+  }
 ];
