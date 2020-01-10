@@ -90,7 +90,7 @@ VI编辑器有两个模式：文本编辑模式 命令行处理模式
 案例：
 打开vi  源文件.c
 进入插入模式 
-#include <stdio.h>
+#include stdio.h
 
 int main(void)
 {
