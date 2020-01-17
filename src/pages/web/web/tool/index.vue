@@ -31,7 +31,7 @@ export default {
      
       tabs: [
           { label: "git" ,value:'m1'},
-          { label: "基本" ,value:'m2'},
+          { label: "webpack" ,value:'m2'},
           { label: "基本" ,value:'m3'},
           { label: "基本" ,value:'m4'},
           { label: "基本" ,value:'m5'},

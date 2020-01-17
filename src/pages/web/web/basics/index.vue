@@ -39,13 +39,13 @@ export default {
      
       tabs: [
           { label: "基本" ,value:'m1'},
-          { label: "基本" ,value:'m2'},
-          { label: "基本" ,value:'m3'},
-          { label: "基本" ,value:'m4'},
-          { label: "基本" ,value:'m5'},
-          { label: "基本" ,value:'m6'},
-          { label: "基本" ,value:'m7'},
-          { label: "基本" ,value:'m8'},
+          { label: "显隐" ,value:'m2'},
+          { label: "从输入 URL 到获取页面的过程" ,value:'m3'},
+          { label: "display" ,value:'m4'},
+          { label: "浏览器渲染原理与过程" ,value:'m5'},
+          { label: "从输入URL到页面加载的过程" ,value:'m6'},
+          { label: "重排和重绘" ,value:'m7'},
+          { label: "跨域" ,value:'m8'},
     
       ]
     };

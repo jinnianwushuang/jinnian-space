@@ -21,6 +21,7 @@ import m5 from "src/pages/web/web/vue/module/m5.vue";
 import m6 from "src/pages/web/web/vue/module/m6.vue";
 import m7 from "src/pages/web/web/vue/module/m7.vue";
 import m8 from "src/pages/web/web/vue/module/m8.vue";
+import m9 from "src/pages/web/web/vue/module/m9.vue";
 export default {
   components: {
     m1,
@@ -30,7 +31,8 @@ export default {
     m5,
     m6,
     m7,
-    m8
+    m8,
+    m9
   },
   data() {
     return {
@@ -38,13 +40,14 @@ export default {
 
       tabs: [
         { label: "基本", value: "m1" },
-        { label: "基本", value: "m2" },
-        { label: "基本", value: "m3" },
-        { label: "基本", value: "m4" },
-        { label: "基本", value: "m5" },
-        { label: "基本", value: "m6" },
-        { label: "基本", value: "m7" },
-        { label: "基本", value: "m8" }
+        { label: "双向绑定原理", value: "m2" },
+        { label: "监听缺陷", value: "m3" },
+        { label: "Virtual Dom", value: "m4" },
+        { label: "vue-router", value: "m5" },
+        { label: "前后端路由", value: "m6" },
+        { label: "diff算法", value: "m7" },
+         { label: "nextTick", value: "m9" },
+        { label: "面试", value: "m8" }
       ]
     };
   }

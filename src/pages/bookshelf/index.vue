@@ -40,7 +40,7 @@ export default {
       tab: 'm1',
  
       tabs: [
-        { label: "linux" ,value:'m1'},
+        { label: "web" ,value:'m1'},
         { label: "未开发" ,value:'m2'},
         { label: "未开发" ,value:'m3'},
         { label: "未开发" ,value:'m4'},
