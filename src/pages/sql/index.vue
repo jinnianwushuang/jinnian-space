@@ -40,9 +40,9 @@ export default {
       tab: 'm1',
      
       tabs: [
-          { label: "g" ,value:'m1'},
-          { label: "基本" ,value:'m2'},
-          { label: "基本" ,value:'m3'},
+          { label: "基本" ,value:'m1'},
+          { label: "常见错误" ,value:'m2'},
+          { label: "常规语句" ,value:'m3'},
           { label: "基本" ,value:'m4'},
           { label: "基本" ,value:'m5'},
           { label: "基本" ,value:'m6'},
