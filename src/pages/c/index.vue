@@ -1,3 +1,4 @@
+
 <template>
   <div>
     <q-tabs v-model="tab" align="left" inline-label dense  class="text-teal">
@@ -31,8 +32,8 @@ export default {
       tab: 'C3',
       tabs: [
         { label: "C#" ,value:'C3'},
-        { label: "其他" ,value:'other'},
-        { label: "工具" ,value:'tool'},
+        { label: "他" ,value:'other'},
+        { label: "具" ,value:'tool'},
       
       ]
     };
