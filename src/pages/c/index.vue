@@ -32,8 +32,8 @@ export default {
       tab: 'C3',
       tabs: [
         { label: "C#" ,value:'C3'},
-        { label: "他" ,value:'other'},
-        { label: "具" ,value:'tool'},
+        { label: "添加" ,value:'other'},
+        { label: "删除" ,value:'tool'},
       
       ]
     };
