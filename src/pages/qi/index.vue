@@ -1,6 +1,6 @@
-"<template>
+<template>
     <div>
-        yyyyyyyyyyyyyyyyyyyyyyyy
+6666666666
     </div>
 </template>
 
@@ -10,6 +10,6 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="sass" scoped>
 
 </style>

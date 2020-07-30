@@ -1,0 +1,216 @@
+_________________________________________________________________________________________________________________________
+
+*安装vscode:
+---->打开`应用`，在搜索比列表输入：`Code`(点击卸载)
+---->打开`Google Chrome`,浏览器/打开百度/搜索`vscod`点第一个，在官网下载安装
+---->点击打开右上角`download`
+---->点击打开Windows下面那个“User”
+---->下一步/把五个都勾上，下一步
+---->固定快捷启动栏：{也就是在启动栏，那个软件图标，按右键，电脑最下面一排，快捷启动栏，vscode软件图标上右键})
+---->鼠标放到需要固定的项目标题上（不需要点击）/右面会出现一个钉子一样的图标：（然后点那个钉子），把这个项目固定到这里
+
+
+*安装依赖包：
+----->npm i  （如果没有node moduls文件夹，先安装依赖包/再启动项目）
+
+
+*提交代码：
+---->打开 source（来源） tree（树）:在快捷启动栏（启动栏输入框右面第10个标签，蓝色圆圈.中间一个灯泡一样白色的）里面有“提交代码”
+
+
+
+
+
+【2020/5/8】_________________________________________________________________________________________________________________________
+
+*----------基于vscode提供的 Vue 片段代码 插件  包含的  指令
+vbase
+vdata：数据
+vcreated：创建
+vmethod：方法
+vcomponent：组件
+vcomputed:计算
+
+
+
+
+
+*vmap常用的结构：【打开两个：一个读，一个存】
+vmap actions:(读)行动
+vmap getters:(存)接收器
+对应一个固定模板
+
+*----------常用的VUE指令
+v-if:（判定，如果）
+v-show:（显示）
+v-for: 循环
+v-bind:“：”绑定值
+v-on:@:绑定事件
+v-text {{}}:插值
+v-model:（在表单控件或组件上创建“双向绑定”）
+
+mixin："混入"（用来分发Vue组件中的可复用功能，
+        一个混入对象可以包含任意组件的选项，
+        当组件混入对象时，所有混入对象的选项，将被“混合”进入该组件本身的选项）
+
+*-------------常用的vue-router
+router-view:视图容器
+配置： router.js 文件
+路由导航：this.$router.push({name:'qqq'})
+
+*------------常用的 vuex 的东西
+
+
+*--------------Ludash
+对着 https://www.lodashjs.com/docs/latest
+
+
+
+
+_______________________________________________________________________________________________________________________________
+--->在Src/pages下新建：_____文件夹/文件/内容
+--->在src/router/routes.js中配置：_____文件路径
+--->在src/config/menu.js  中输出(router.js)中配的路径和名字=侧边栏的名称
+--->在src/layouts/MyLayout.vue 中引入“src/config/menu.js"
+*MyLayout:我的布局
+
+路径：src\layouts\MyLayout.vue
+
+*内容：
+【所有"q-"开头/"v-"开头的都是quasar框架所提供的】
+q-layout: 布局 
+q-header: 标题
+q-tabs:   标签
+q-page-container :页面-容器
+q-btn：   按钮
+v-for:    循环
+
+-------------------------------------------------------------------------
+
+————>（ttemplate）:模板
+一.
+1. <template>
+2.  <q-layout view="lHh Lpr lFf">             //视图=lHh Lpr lFf低频率波器
+3.    <q-header elevated>                     //标题：升高
+4.      <div class="row">                     //类=行
+5.        <div class="col-12">                //类=列-12
+6           <q-tabs                           //标签
+            v-model="tab"                     //在表单控件或组件上创建“双向绑定”
+            align="left"                      //对齐=“左”
+            inline-label                      //内联-标签
+            class="bg-primary text-white"     //类=文本 背景 原色 白色 
+            >
+              <q-tab                          //标签
+            v-for="(item, index) in menu"     //循环=（项目，索引）在菜单中
+              :key="index"                    //关键=指数    
+              :name="item.name"               //名称=“项目.名称”
+              :label="`${index + 1}.${item.name}`"//标签=${指数+1}.{项目.名称}
+              @click="go_to_router(item)"         //点击=“go-go_to_router（项目）
+            />
+            </q-tabs>
+          </div>
+        </div>
+      </q-header>
+  7. <q-page-container class="q-px-lg">            //页面容器
+      <router-view />                              //路由-视图
+      <q-page-scroller                             //页面-滚动条
+        position="bottom-right"                    //位置=右下方
+        :scroll-offset="150"                       //文本的滚动条-偏移
+        :offset="[18, 18]"                         //
+      >
+        <q-btn fab icon="keyboard_arrow_up" color="primary" />  //“按钮 图标 箭头 向上”颜色=原色
+        
+      </q-page-scroller>
+    </q-page-container>
+    </q-layout>
+  </template>
+
+————>(script):脚本
+二. <script></script>
+
+__查看________________________________________________________________________
+1.查看json插件是否安装：——>文件——>首选项——>设置——>在搜索框内输入“json”——>点击sttings.json中打开
+
+2.在router.js中，首先规划一个“登录页”
+  在pages下面建一个文件夹/文件
+
+
+
+设置按钮之间的间距和按钮的颜色---------------------------------------------------------------------------
+<q-btn label="登录" @click="go_to_main" color="primary"/>
+      【  <q-space />】 
+<q-btn label="取消"  color="primary" flat class="q-ml-sm" />
+<q-btn label="取消" 【 color="grey"】  class="q-ml-sm" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+______________________单词2020-5-19____________________________________
+default ：默认值
+英 /dɪˈfɔːlt; ˈdiːfɔːlt
+
+store :仓库
+英 /stɔː(r)/ 
+
+template :模板
+英 /ˈtempleɪt/ 
+
+export ：输出
+英 /ˈekspɔːt/ 
+
+state : 状态/生明
+英 /steɪt/ 
+
+module :模块，组件
+英 /ˈmɒdjuːl/ 
+
+getter ：获得
+英 /'getə/ 
+
+mutation ：变化
+英 /mjuːˈteɪʃn/ 
+
+action :行动
+英 /ˈækʃn/ 
+
+
+store ：仓库
+英 /stɔː(r)/ 
+
+
+context ：上下文转换的接收器
+英 /ˈkɒntekst
+上下文（context）是存在于当前应用域中的，
+用于将该上下文中的属性转换为接收器，
+插入到该上下文中的对象的方法调用过程中。
+
+
+commit:转交，托付给...
+英 /kəˈmɪt
+
+
+account :账户
+英 /əˈkaʊnt/ 
+
+settings :设置（set）
+英  美 /'sɛt
+
+settings.json
+json:基于java script语言的轻量级的数据交换格式
+
+
+ redict:编辑，编写
