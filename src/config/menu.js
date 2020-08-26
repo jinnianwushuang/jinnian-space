@@ -1,8 +1,9 @@
 export default [
 
 
-
+  { name: "note", text: "note" },
   { name: "web", text: "web" },
+  { name: "node", text: "node" },
   { name: "seo", text: "seo" },
 
   { path: "c", name: "c" },

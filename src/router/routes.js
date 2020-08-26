@@ -29,11 +29,26 @@ const routes = [
 
     children: [
       {
+        path: "note",
+        name: "note",
+
+        component: () => import(/* webpackChunkName: "jinnianSpace" */ "src/pages/note/index.vue")
+      },
+      
+  
+      {
         path: "seo",
         name: "seo",
 
         component: () => import(/* webpackChunkName: "jinnianSpace" */ "src/pages/seo/index.vue")
       },
+      
+      {
+        path: "node",
+        name: "node",
+
+        component: () => import(/* webpackChunkName: "jinnianSpace" */ "src/pages/node/index.vue")
+      }, 
       {
         path: "web",
         name: "web",

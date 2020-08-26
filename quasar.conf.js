@@ -13,7 +13,8 @@ module.exports = function (ctx) {
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
     css: [
-      'app.scss'
+      'app.scss',
+      "github-markdown.css"
     ],
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
@@ -66,6 +67,19 @@ module.exports = function (ctx) {
 
       // https://quasar.dev/quasar-cli/cli-documentation/handling-webpack
       extendWebpack (cfg) {
+
+      },
+      chainWebpack(config){
+        config.module .rule("md")
+        .test(/\.md$/)
+        .use("vue-loader")
+        .loader("vue-loader")
+        .end()
+        .use("vue-markdown-loader")
+        .loader("vue-markdown-loader/lib/markdown-compiler")
+        .options({
+          raw: true
+        });
       }
     },
 

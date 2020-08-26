@@ -76,14 +76,14 @@ export default {
     return {
       drawer: false,
       menu,
-      current_menu:"web",
-      tab: "web",
+      current_menu:"note",
+      tab: "note",
       tabs: [1, 2, 3, 4, 5, 6, 7, 8],
       leftDrawerOpen: false
     };
   },
   created() {
-    this.go_to_router({ name: "web" });
+    this.go_to_router({ name: "note" });
   },
   methods: {
     go_to_router(item) {

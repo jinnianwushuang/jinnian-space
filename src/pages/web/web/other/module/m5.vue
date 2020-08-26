@@ -1,15 +1,20 @@
 <template>
-    <div>
-        1
-    </div>
+  <div class="">
+    <div class=" markdown-body"></div>
+    <MainComponent></MainComponent>
+  </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+import MainComponent from "src/pages/web/web/other/md/zonghe.md";
+export default {
+  components: {
+    MainComponent
+  },
+  data() {
+    return {};
+  }
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

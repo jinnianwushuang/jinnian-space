@@ -9,7 +9,11 @@
       />
     </q-tabs>
 
-    <component :is="`${tab}`"></component>
+ <div class="q-mx-lg"> 
+  <component :is="`${tab}`"></component>
+
+</div>
+  
   </div>
 </template>
 <script>
@@ -40,14 +44,14 @@ export default {
       tab: 'm1',
      
       tabs: [
-          { label: "基本" ,value:'m1'},
-          { label: "基本" ,value:'m2'},
-          { label: "基本" ,value:'m3'},
-          { label: "基本" ,value:'m4'},
-          { label: "基本" ,value:'m5'},
-          { label: "基本" ,value:'m6'},
-          { label: "基本" ,value:'m7'},
-          { label: "基本" ,value:'m8'},
+          { label: "前端性能监测方案" ,value:'m1'},
+          { label: "算法" ,value:'m2'},
+          { label: "调试" ,value:'m3'},
+          { label: "性能" ,value:'m4'},
+          { label: "现代前端技术解析" ,value:'m5'},
+          { label: "安全" ,value:'m6'},
+          { label: "缓存" ,value:'m7'},
+          // { label: "基本" ,value:'m8'},
     
       ]
     };
