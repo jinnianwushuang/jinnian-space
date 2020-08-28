@@ -47,7 +47,7 @@ export default {
           { label: "全面梳理" ,value:'m2'},
           { label: "display" ,value:'m3'},
           { label: "var()" ,value:'m4'},
-          // { label: "基本" ,value:'m5'},
+          { label: "SASS总结" ,value:'m5'},
           // { label: "基本" ,value:'m6'},
           // { label: "基本" ,value:'m7'},
           // { label: "基本" ,value:'m8'},
