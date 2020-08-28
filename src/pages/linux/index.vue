@@ -9,7 +9,7 @@
       />
     </q-tabs>
 
-    <component :is="`m${tab}`"></component>
+<div class="q-mx-lg">     <component :is="`m${tab}`"></component></div>
   </div>
 </template>
 
@@ -40,9 +40,9 @@ export default {
       tabs: [1, 2, 3, 4, 5, 6, 7, 8],
       tabs: [
         { text: "基础" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
+        { text: "vim" },
+        { text: "实际" },
+        { text: "学习笔记" },
         { text: "未开发" },
         { text: "未开发" },
         { text: "未开发" },

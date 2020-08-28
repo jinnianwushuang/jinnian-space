@@ -145,44 +145,6 @@ gcc -o 可执行程序  源文件.c
 【:set ic】搜索时不区分大小写
 【:set noic】搜索时区分大小写
 
-远程连接服务器：
-linux设置：
-1、右击网络设置，在打开对话框中选择网络适配器
-2、在网络连接中选择网络桥接模式并选择复制物理网络地址
-3、重启linux服务器
-4、获取ip地址【ifconfig】
-windows设置：
-1、安装中文版Xshell5
-2、打开XShell选择文件，在下拉列表中选择新建
-3、在弹出对话框中设置用户名和ip地址
-4、验证身份需要输入linux服务器的用户名和密码
-
-远程文件传输：
-1、在窗口菜单中选择新建文件传输
-2、在打开sftp对话框中设置路径linux路径 同时设置windows路径 命令时lcd 在打开对话框中设置路径
-3、文件传输 put上传 将windows中的文件上传到Linux服务器中 get 下载将Linux中的文件下载到windows中
-
-
-linux服务器搭建：
-1、上传文件 http.tar.gz
-2、解压文件 tar -xzvf http.tar.gz 解压完成之后生成一个目录http
-3、进入http目录 编译程序，sudo make 
-4、启动服务器 sudo ./myhttp start stop
-5、ifconfig获取Linux服务器地址
-
-手写C语言版网页：
-1、进入http目录
-2、新建一个文件名为XXX.c
-3、gcc -o XXX.cgi XXX.c
-4、重启服务器
-
-
-
-
-
-
-
-
 
      </pre>
     </div>

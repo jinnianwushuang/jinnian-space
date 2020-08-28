@@ -27,7 +27,7 @@
       <q-header elevated class="bg-primary text-white">
         <q-toolbar>
           <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
-          <q-toolbar-title>锦年成长空间</q-toolbar-title>
+          <q-toolbar-title>{{title}}</q-toolbar-title>
         </q-toolbar>
       </q-header>
 
@@ -70,10 +70,15 @@
 </template>
 <script>
 import menu from "src/config/menu.js";
+
 export default {
   name: "MyLayout",
   data() {
     return {
+      title:"我生待明日，万事成蹉跎。",
+      // title:"锦年成长空间",
+
+
       drawer: false,
       menu,
       current_menu:"note",

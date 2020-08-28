@@ -1,15 +1,23 @@
 <template>
-    <div>
-        <pre>
-                         最新更新日期 ：2020.08.27 
-                          更新内容：整理纯前端部分内容
-        </pre>
+    <div class="q-mx-lg">
+<div class="text-h5 q-my-md">路在脚下</div>
+
+<div v-for="(item,index) in record" :key="`record_note_${index}`"> 
+    <span >{{item.date}} :</span> {{item.note}}
+</div>
+
 
     </div>
 </template>
 
 <script>
+import record from "src/pages/note/record.js"
     export default {
+        data() {
+            return {
+                record,
+            }
+        },
         
     }
 </script>
