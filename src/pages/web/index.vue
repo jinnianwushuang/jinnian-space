@@ -1,3 +1,8 @@
+<!--
+ * @Date           : 2020-08-31 22:13:58
+ * @FilePath       : /jinnian-space/src/pages/web/index.vue
+ * @Description    : 
+-->
 <template>
   <div>
     <q-tabs v-model="tab" align="left" inline-label dense class="text-teal">
@@ -8,7 +13,6 @@
         :label="`${index + 1}.${item}`"
       />
     </q-tabs>
-
     <component :is="`${tab}`"></component>
   </div>
 </template>
