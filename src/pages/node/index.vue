@@ -43,7 +43,7 @@ export default {
      
       tabs: [
           { label: "node" ,value:'m1'},
-          // { label: "webpack" ,value:'m2'},
+          { label: "全栈项目 依赖" ,value:'m2'},
           // { label: "nginx" ,value:'m3'},
           // { label: "基本" ,value:'m4'},
           // { label: "基本" ,value:'m5'},

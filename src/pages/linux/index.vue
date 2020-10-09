@@ -1,15 +1,20 @@
+<!--
+ * @Date           : 2020-08-31 16:40:04
+ * @FilePath       : /jinnian-space/src/pages/linux/index.vue
+ * @Description    : 
+-->
 <template>
   <div>
     <q-tabs v-model="tab" align="left" inline-label dense class="text-teal">
       <q-tab
         v-for="(item, index) in tabs"
         :key="`tabs_${index}`"
-        :name="`${index + 1}`"
-        :label="`${index + 1}.${item.text}`"
+         :name="`${item.value}`"
+        :label="`${index + 1}.${item.label}`"
       />
     </q-tabs>
 
-<div class="q-mx-lg">     <component :is="`m${tab}`"></component></div>
+<div class="q-mx-lg">     <component :is="`${tab}`"></component></div>
   </div>
 </template>
 
@@ -36,17 +41,19 @@ export default {
   },
   data() {
     return {
-      tab: 1,
-      tabs: [1, 2, 3, 4, 5, 6, 7, 8],
+      tab: 'm1',
+      
       tabs: [
-        { text: "基础" },
-        { text: "vim" },
-        { text: "实际" },
-        { text: "学习笔记" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" }
+   
+            { label: "基础", value: "m1" },
+        { label: "vim", value: "m2" },
+        { label: "实际", value: "m3" },
+        { label: "学习笔记", value: "m4" },
+        { label: "shell基础", value: "m5" },
+        { label: "未开发", value: "m6" },
+        { label: "未开发", value: "m7" },
+        { label: "未开发", value: "m8" },
+   
       ]
     };
   }
