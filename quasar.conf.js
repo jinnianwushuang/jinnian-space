@@ -1,3 +1,8 @@
+/*
+ * @Date           : 2020-08-31 16:40:01
+ * @FilePath       : /jinnian-space/quasar.conf.js
+ * @Description    : 
+ */
 // Configuration for your app
 // https://quasar.dev/quasar-cli/quasar-conf-js
 
@@ -56,6 +61,7 @@ module.exports = function (ctx) {
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
+      distDir:"./d",
       scopeHoisting: true,
       vueRouterMode: 'hash', // available values: 'hash', 'history'
       showProgress: true,
