@@ -1,3 +1,8 @@
+<!--
+ * @Date           : 2020-08-31 16:40:04
+ * @FilePath       : /jinnian-space/src/pages/node/index.vue
+ * @Description    : 
+-->
 <template>
   <div>
     <q-tabs v-model="tab" align="left" inline-label dense  class="text-teal">
@@ -48,7 +53,7 @@ export default {
           // { label: "基本" ,value:'m4'},
           // { label: "基本" ,value:'m5'},
           // { label: "基本" ,value:'m6'},
-          // { label: "基本" ,value:'m7'},
+          // { label: "测试" ,value:'m7'},
           // { label: "基本" ,value:'m8'},
     
       ]
