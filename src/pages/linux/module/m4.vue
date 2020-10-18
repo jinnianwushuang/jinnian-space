@@ -1,16 +1,43 @@
+<!--
+ * @Date           : 2020-08-31 16:40:04
+ * @FilePath       : /jinnian-space/src/pages/linux/module/m4.vue
+ * @Description    : 
+-->
+
+<style lang="scss" scoped></style>
 <template>
-    <div class="">
-     
-        <a href="statics/linux/pdf/Linux学习笔记.pdf" target="_blank" rel="noopener noreferrer">Linux学习笔记</a>
-    </div>
+  <div class="container q-pa-lg">
+    <q-pdfviewer
+      v-model="show"
+      :src="src"
+      type="html5"
+      content-class="fit container"
+      inner-content-class="fit container"
+    />
+  </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+
+export default {
+  name: "Container",
+
+  data() {
+    return {
+      show: true,
+       src: "statics/linux/pdf/Linux学习笔记.pdf"
+    };
+  }
+};
 </script>
 
-<style lang="scss" scoped>
-
+<style>
+.container {
+  max-width: 80vw;
+  max-height: 100vh;
+  min-width: 70vw;
+  min-height: 70vh;
+  width: 100%;
+  height: 100%;
+}
 </style>

@@ -42,7 +42,11 @@
         <q-scroll-area class="fit">
           <q-list v-for="(item, index) in menu" :key="index">
 
-            <q-item clickable :active="item.name == current_menu " v-ripple @click="go_to_router(item)">
+            <q-item clickable 
+            :class="item.name == current_menu?'bg-primary text-white':'bg=white text-black'"
+            
+    
+             v-ripple @click="go_to_router(item)">
               <!-- <q-item-section avatar>
                 <q-icon :name="menuItem.icon" />
               </q-item-section> -->

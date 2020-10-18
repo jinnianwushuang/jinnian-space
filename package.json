@@ -19,6 +19,10 @@
   },
   "devDependencies": {
     "@quasar/app": "^1.0.0",
+    "@quasar/quasar-app-extension-qmarkdown": "^1.0.34",
+    "@quasar/quasar-app-extension-qpdfviewer": "^1.0.0-beta.8",
+    "@quasar/quasar-app-extension-qribbon": "^1.0.0-beta.15",
+    "quasar-app-extension-json-api-viewer": "^1.2.0",
     "vue-markdown-loader": "^2.4.1"
   },
   "engines": {

@@ -1,20 +1,22 @@
+
+ 
 <template>
   <div class="">
-    <div class=" markdown-body"></div>
-    <MainComponent></MainComponent>
+    <q-markdown :src="MainComponent" />
   </div>
 </template>
 
 <script>
-import MainComponent from "src/pages/web/web/http/md/前后端通信.md";
+import MainComponent from "../md/前后端通信.md";
 export default {
-  components: {
-    MainComponent
-  },
   data() {
-    return {};
+    return {
+      MainComponent
+    };
   }
 };
 </script>
 
 <style lang="scss" scoped></style>
+
+

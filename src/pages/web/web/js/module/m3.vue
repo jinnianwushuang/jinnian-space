@@ -1,20 +1,21 @@
+ 
+ 
 <template>
   <div class="">
-    <div class=" markdown-body"></div>
-    <MainComponent></MainComponent>
+    <q-markdown :src="MainComponent" />
   </div>
 </template>
 
 <script>
-import MainComponent from "src/pages/web/web/js/md/js.md";
+import MainComponent from "../md/js.md";
 export default {
-  components: {
-    MainComponent
-  },
   data() {
-    return {};
+    return {
+      MainComponent
+    };
   }
 };
 </script>
 
 <style lang="scss" scoped></style>
+

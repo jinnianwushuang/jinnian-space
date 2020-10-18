@@ -3,23 +3,25 @@
  * @FilePath       : /jinnian-space/src/pages/linux/module/m5.vue
  * @Description    : 
 -->
+ 
+ 
 <template>
   <div class="">
-    <div class=" markdown-body"></div>
-    <MainComponent></MainComponent>
+    <q-markdown :src="MainComponent" />
   </div>
 </template>
 
 <script>
-import MainComponent from "src/pages/linux/md/runoob-shell.md";
+import MainComponent from "../md/runoob-shell.md";
 export default {
-  components: {
-    MainComponent
-  },
   data() {
-    return {};
+    return {
+      MainComponent
+    };
   }
 };
 </script>
 
 <style lang="scss" scoped></style>
+
+

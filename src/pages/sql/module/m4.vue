@@ -1,15 +1,22 @@
+
+ 
 <template>
-    <div>
-        1
-    </div>
+  <div class="">
+    <q-markdown :src="MainComponent" />
+  </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+import MainComponent from "../md/redis.md";
+export default {
+  data() {
+    return {
+      MainComponent
+    };
+  }
+};
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" scoped></style>
 
-</style>
+
