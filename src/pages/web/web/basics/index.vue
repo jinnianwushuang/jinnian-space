@@ -1,3 +1,8 @@
+<!--
+ * @Date           : 2020-08-31 16:40:04
+ * @FilePath       : /jinnian-space/src/pages/web/web/basics/index.vue
+ * @Description    : 
+-->
 <template>
   <div>
     <q-tabs v-model="tab" align="left" inline-label dense  class="text-teal">
@@ -53,7 +58,7 @@ export default {
            { label: "从输入 URL 到获取页面的过程" ,value:'m11'},
           { label: "浏览器渲染原理与过程" ,value:'m5'},
           { label: "从输入URL到页面加载的过程" ,value:'m6'},
-          { label: "重排和重绘" ,value:'m7'},
+          { label: "重排和重绘 " ,value:'m7'},
           { label: "跨域" ,value:'m8'},
            { label: "bom" ,value:'m9'},
             { label: "dom" ,value:'m10'},
