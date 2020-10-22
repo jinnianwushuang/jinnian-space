@@ -1,11 +1,29 @@
+<!--
+ * @Date           : 2020-08-31 16:40:04
+ * @FilePath       : /jinnian-space/src/pages/note/index.vue
+ * @Description    : 
+-->
 <template>
     <div class="q-mx-lg">
 <div class="text-h5 q-my-md">路在脚下</div>
 
-<div v-for="(item,index) in record" :key="`record_note_${index}`" class="q-mb-sm"> 
-    <span >{{item.date}} </span> <span class="q-mx-md"> :</span>  {{item.note}}
-</div>
+    <q-timeline color="secondary">
+      <!-- <q-timeline-entry heading>
+       路在脚下
+      </q-timeline-entry> -->
 
+      <q-timeline-entry
+      v-for="(item,index) in record" :key="`record_note__tmleline${index}`"
+   
+        :title="item.date"
+      >
+        <div>
+         {{item.note}}
+        </div>
+      </q-timeline-entry>
+
+ 
+    </q-timeline>
 
     </div>
 </template>

@@ -1,3 +1,8 @@
+<!--
+ * @Date           : 2020-08-31 16:40:04
+ * @FilePath       : /jinnian-space/src/pages/bookshelf/index.vue
+ * @Description    : 
+-->
 <template>
   <div>
     <q-tabs v-model="tab" align="left" inline-label dense class="text-teal">
@@ -41,7 +46,7 @@ export default {
  
       tabs: [
         { label: "web" ,value:'m1'},
-        { label: "未开发" ,value:'m2'},
+        { label: "欲购书单" ,value:'m2'},
         { label: "未开发" ,value:'m3'},
         { label: "未开发" ,value:'m4'},
         { label: "未开发" ,value:'m5'},

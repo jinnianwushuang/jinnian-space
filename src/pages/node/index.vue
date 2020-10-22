@@ -53,7 +53,7 @@ export default {
           // { label: "基本" ,value:'m4'},
           // { label: "基本" ,value:'m5'},
           // { label: "基本" ,value:'m6'},
-          // { label: "测试" ,value:'m7'},
+          // { label: "测试" ,value:'m7'}, 
           // { label: "基本" ,value:'m8'},
     
       ]
