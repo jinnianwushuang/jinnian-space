@@ -264,6 +264,8 @@
 { type:'中英对照名著',lang:'zh_en',name:"中英对照全译本---八十天环游地球",taozhuang :false, num:1,buy:1,date:'2020-10-24'},
 { type:'中英对照名著',lang:'zh_en',name:"中英对照全译本---道林格雷的画像",taozhuang :false, num:1,buy:1,date:'2020-10-24'},
 { type:'中英对照名著',lang:'zh_en',name:"中英对照全译本---绿山墙的安妮",taozhuang :false, num:1,buy:1,date:'2020-10-24'},
+
+{ type:'小说',lang:'en',name:"冰与火之歌---A song of ice and fire",taozhuang : true, num:5,buy:1,date:'2020-10-25'}, 
     
 
     
