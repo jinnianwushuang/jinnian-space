@@ -28,7 +28,7 @@
           <td class="">{{ item.type}}</td>
            <td class="">{{ compute_lang_str(item.lang)}}</td>
           <td class=""> {{item.name}}</td>
-          <td class=""> {{item.taozhuang?'是':'否'}}</td>
+          <td class=""> {{item.series?'是':'否'}}</td>
           <td class=""> {{item.num}}</td>
           <td class=""> {{item.buy==1?'是':'否'}}</td>
           <td class=""> {{item.date}}</td>
