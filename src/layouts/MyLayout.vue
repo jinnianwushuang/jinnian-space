@@ -1,3 +1,8 @@
+<!--
+ * @Date           : Mon Aug 31 2020 16:40:04
+ * @FilePath       : /jinnian-space/src/layouts/MyLayout.vue
+ * @Description    : 
+-->
 <template>
   <q-layout view="lHh Lpr lFf">
     <!-- <q-header elevated>
@@ -28,6 +33,8 @@
         <q-toolbar>
           <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
           <q-toolbar-title>{{title}}</q-toolbar-title>
+          <q-space/>
+          <div> 当前版本构建时间： {{ last_update_time}}</div>
         </q-toolbar>
       </q-header>
 
@@ -75,12 +82,19 @@
 <script>
 import menu from "src/config/menu.js";
 
+ 
+import { date } from 'quasar'
+
+let timeStamp = process.env.last_update_time
+let last_update_time = date.formatDate(timeStamp, 'YYYY-MM-DD     HH:mm:ss')
+// YYYY-MM-DD  HH:mm:ss.SSSZ
 export default {
   name: "MyLayout",
   data() {
     return {
       title:"我生待明日，万事成蹉跎。",
       // title:"锦年成长空间",
+     last_update_time,
 
 
       drawer: false,
