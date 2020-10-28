@@ -48,7 +48,7 @@ export default {
             { label: "基础", value: "m1" },
         { label: "vim", value: "m2" },
         { label: "实际", value: "m3" },
-        { label: "学习笔记", value: "m4" },
+        { label: "运维书籍", value: "m4" },
         { label: "shell基础", value: "m5" },
         { label: "未开发", value: "m6" },
         { label: "未开发", value: "m7" },
