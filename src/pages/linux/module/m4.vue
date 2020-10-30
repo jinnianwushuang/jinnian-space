@@ -30,13 +30,14 @@
 </template>
 
 <script>
+import  util from "src/util/index.js"
 export default {
   name: "Container",
 
   data() {
     return {
       show: true,
-      src: "statics/linux/pdf/Linux学习笔记.pdf",
+      src:   util.compute_public_data_src("linux/pdf/Linux学习笔记.pdf") ,
       book_arr: [
         "CDN排坑指南.pdf",
         "DTS控制台一本通.pdf",
@@ -55,7 +56,7 @@ export default {
   },
   methods: {
     change_book(item) {
-      this.src = "statics/linux/pdf/" + item;
+      this.src =   util.compute_public_data_src("linux/pdf/" + item) ;
     }
   }
 };

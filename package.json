@@ -12,25 +12,36 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
+    "@vue/composition-api": "^0.6.4",
+    "core-js": "^3.6.5",
     "axios": "^0.18.1",
     "github-markdown-css": "^4.0.0",
     "quasar": "^1.0.0",
     "vue-i18n": "^8.0.0"
   },
   "devDependencies": {
-    "@quasar/app": "^1.0.0",
+    "@quasar/app": "^2.0.0",
     "@quasar/quasar-app-extension-qmarkdown": "^1.0.34",
     "@quasar/quasar-app-extension-qpdfviewer": "^1.0.0-beta.8",
     "@quasar/quasar-app-extension-qribbon": "^1.0.0-beta.15",
     "quasar-app-extension-json-api-viewer": "^1.2.0",
     "vue-markdown-loader": "^2.4.1"
   },
-  "engines": {
-    "node": ">= 8.9.0",
-    "npm": ">= 5.6.0",
-    "yarn": ">= 1.6.0"
-  },
   "browserslist": [
-    "last 1 version, not dead, ie >= 11"
-  ]
+    "ie >= 11",
+    "last 10 Chrome versions",
+    "last 10 Firefox versions",
+    "last 4 Edge versions",
+    "last 7 Safari versions",
+    "last 8 Android versions",
+    "last 8 ChromeAndroid versions",
+    "last 8 FirefoxAndroid versions",
+    "last 10 iOS versions",
+    "last 5 Opera versions"
+  ],
+  "engines": {
+    "node": ">= 10.18.1",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
 }

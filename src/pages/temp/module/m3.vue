@@ -1,6 +1,6 @@
 <!--
  * @Date           : 2020-10-19 00:35:21
- * @FilePath       : /ping-space/src/pages/temp/module/m3.vue
+ * @FilePath       : /jinnian-space/src/pages/temp/module/m3.vue
  * @Description    : 
 -->
 
@@ -18,14 +18,15 @@
 </template>
 
 <script>
-
+ import  util from "src/util/index.js"
+// util.compute_public_data_src()
 export default {
   name: "Container",
 
   data() {
     return {
       show: true,
-       src: "statics/linux/pdf/Linux学习笔记.pdf"
+       src:util.compute_public_data_src("linux/pdf/Linux学习笔记.pdf") 
     };
   }
 };

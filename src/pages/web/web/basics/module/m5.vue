@@ -39,7 +39,7 @@
         </p>
 
         <div class="image-view" data-width="624" data-height="289">
-          <img src="statics/web/web/basic/m5/1.webp" alt="" />
+          <img src="web/web/basic/m5/1.webp" alt="" />
         </div>
 
         <h4>浏览器渲染网页的具体流程</h4>
@@ -59,7 +59,7 @@
         </p>
 
         <div class="image-view" data-width="800" data-height="443">
-          <img src="statics/web/web/basic/m5/2.webp" alt="" />
+          <img src="web/web/basic/m5/2.webp" alt="" />
         </div>
 
         <p>
@@ -89,7 +89,7 @@
         </ul>
 
         <div class="image-view" data-width="711" data-height="415">
-          <img src="statics/web/web/basic/m5/3.webp" alt="" />
+          <img src="web/web/basic/m5/3.webp" alt="" />
         </div>
 
         <p>
@@ -115,7 +115,7 @@
         <h4>浏览器主要组件结构</h4>
 
         <div class="image-view" data-width="400" data-height="271">
-          <img src="statics/web/web/basic/m5/4.webp" alt="" />
+          <img src="web/web/basic/m5/4.webp" alt="" />
         </div>
         <p>
           渲染引擎主要有两个：webkit和Gecko<br />
