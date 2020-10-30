@@ -268,6 +268,14 @@
 { type:'小说',lang:'en',name:"冰与火之歌---A song of ice and fire",series : true, num:5,buy:1,date:'2020-10-25'}, 
 { type:'工具书',lang:'en',name:"说文解字",series : true, num:5,buy:1,date:'2020-10-26'}, 
 { type:'工具书',lang:'en',name:"汉字树",series : true, num:8,buy:1,date:'2020-10-26'}, 
+{ type:'励志书',lang:'en',name:"不放弃你的梦想值得你拼尽全力",series : false, num:1,buy:1,date:'2020-10-27'}, 
+{ type:'励志书',lang:'en',name:"生活总会厚待努力的人",series : false, num:1,buy:1,date:'2020-10-27'}, 
+{ type:'励志书',lang:'en',name:"尼克胡哲---永不止步",series : false, num:1,buy:1,date:'2020-10-27'}, 
+{ type:'励志书',lang:'en',name:"尼克胡哲---人生不设限",series : false, num:1,buy:1,date:'2020-10-27'}, 
+{ type:'励志书',lang:'en',name:"尼克胡哲---我和世界不一样",series : false, num:1,buy:1,date:'2020-10-27'}, 
+{ type:'励志书',lang:'en',name:"尼克胡哲---谁都不敢欺负你",series : false, num:1,buy:1,date:'2020-10-27'}, 
+{ type:'励志书',lang:'en',name:"尼克胡哲---当世界暗下来，愿你仍信有光",series : false, num:1,buy:1,date:'2020-10-27'}, 
+{ type:'励志书',lang:'en',name:"尼克胡哲---永不止步",series : false, num:1,buy:1,date:'2020-10-27'}, 
     
 
     
