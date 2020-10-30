@@ -18,6 +18,7 @@
     </div>
 
     <div class="container q-pa-lg">
+      <!-- type="pdfjs"     type="html5" -->
       <q-pdfviewer
         v-model="show"
         :src="src"
@@ -57,7 +58,25 @@ export default {
   methods: {
     change_book(item) {
       this.src =   util.compute_public_data_src("linux/pdf/" + item) ;
-    }
+    },
+    fetchPDF (payload) {
+  this.$axios.post('/my/url/to/pdf', payload, { responseType: 'blob' }).then(res => {
+    // create the blob
+    const blob = new Blob([res.data], { type: res.data.type })
+    // set reactive variable
+    this.src = window.URL.createObjectURL(blob)
+  }).catch(err => {
+    this.$q.notify({
+      message: 'Error downloading PDF',
+      type: 'negative',
+      textColor: 'white',
+      color: 'negative',
+      icon: 'error',
+      closeBtn: 'close',
+      position: 'top'
+    })
+  })
+}
   }
 };
 </script>

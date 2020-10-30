@@ -15,14 +15,14 @@
 // util.compute_public_data_src()
 const  compute_public_data_src=(str)=>{
   console.log('isdev',isdev);
-        let prefix='https://github.com/jinnianwushuang/jinnian-space/blob/master/public/'
+        // let prefix='https://github.com/jinnianwushuang/jinnian-space/blob/master/public/'
         if(isdev){
           // return     str.trim()
           // console.log( base_url+  str.trim());
           return  'books/'+ str.trim()
 
         }else{
-             return  prefix+ 'books/'+ str.trim()
+             return  'books/'+ str.trim()
         }
           
 }
