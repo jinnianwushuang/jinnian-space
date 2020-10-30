@@ -6,7 +6,10 @@
 // Configuration for your app
 // https://quasar.dev/quasar-cli/quasar-conf-js
 
-
+console.log('process.env.MODE-------------------------');
+console.log(process.env.MODE);
+console.log( process.argv );
+console.log('process.env.MODE-------------------------');
 
 module.exports = function (ctx) {
   return {
@@ -81,7 +84,7 @@ module.exports = function (ctx) {
 
 
     build: {
-      distDir:"./docs",
+      distDir: process.argv[3]=='electron'? "./dist-electron":"./docs",
       scopeHoisting: true,
       vueRouterMode: 'hash', // available values: 'hash', 'history'
       showProgress: true,
@@ -204,7 +207,12 @@ module.exports = function (ctx) {
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        appId: 'jinnian-space'
+        appId: 'jinnian-space',
+        // output:'./dist-electron',
+        // distDir:"./dist-electron",
+        directories:{
+          // output:'./dist-electron'
+        }
       },
 
       // keep in sync with /src-electron/main-process/electron-main

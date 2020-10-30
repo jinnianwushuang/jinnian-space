@@ -33,8 +33,8 @@
         <q-toolbar>
           <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
           <q-toolbar-title>{{title}}</q-toolbar-title>
-          <q-space/>
-          <div> 当前版本构建时间： {{ last_update_time}}</div>
+          <q-space class="disktop-only" />
+          <div  class="disktop-only">  {{ last_update_time}}</div>
         </q-toolbar>
       </q-header>
 
