@@ -1,3 +1,8 @@
+<!--
+ * @Date           : 2020-08-31 16:40:04
+ * @FilePath       : /jinnian-space/src/pages/web/web/basics/module/m5.vue
+ * @Description    : 
+-->
 <template>
   <div>
     <section class="ouvJEz">
@@ -39,7 +44,7 @@
         </p>
 
         <div class="image-view" data-width="624" data-height="289">
-          <img src="web/web/basic/m5/1.webp" alt="" />
+          <img src="books/web/web/basic/m5/1.webp" alt="" />
         </div>
 
         <h4>浏览器渲染网页的具体流程</h4>

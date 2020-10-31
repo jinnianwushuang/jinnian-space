@@ -5,28 +5,30 @@
 -->
 <template>
   <div>
-    <div v-for="(item,index) in books" :key="index">
-      <a :href="compute_book_path(item)" target="_blank" rel="noopener noreferrer">{{compute_book_name(item)}}</a>
+    <div v-for="(item, index) in books" :key="index">
+      <a
+        :href="util.compute_book_src(item)"
+        target="_blank"
+        rel="noopener noreferrer"
+        >{{ util.compute_book_name(item) }}</a
+      >
     </div>
- 
- 
-
- 
   </div>
 </template>
 
 <script>
-import bookshelf_mixin from "src/pages/bookshelf/mixin/index.js"
+import util from "src/util/index.js";
+
 export default {
-  mixins:[bookshelf_mixin],
   data() {
     return {
+      util,
       books: [
-         "books/web/jinnian-web-2020-01-13.xmind",
-         "books/web/阮一峰JavaScript基础总结.xmind"
+        "web/jinnian-web-2020-01-13.xmind",
+        "web/阮一峰JavaScript基础总结.xmind"
       ]
-    }
-  },
+    };
+  }
 };
 </script>
 

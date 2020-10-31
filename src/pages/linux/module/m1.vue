@@ -1,3 +1,8 @@
+<!--
+ * @Date           : 2020-08-31 16:40:04
+ * @FilePath       : /jinnian-space/src/pages/linux/module/m1.vue
+ * @Description    : 
+-->
 <template>
     <div>
         <div>
@@ -151,7 +156,7 @@ unzip 文件名.zip -C 路径<br>
 </p>
         </div>
       <div> 
-          <img src="linux/01_Linux介绍和基本操作.pngv" alt="" srcset="">
+          <img src="books/linux/01_Linux介绍和基本操作.png" alt="" srcset="">
            </div>
     </div>
 </template>

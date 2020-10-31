@@ -12,8 +12,8 @@
 //  console.log('  base_url ', base_url);
 
 //  import  util from "src/util/index.js"
-// util.compute_public_data_src()
-const  compute_public_data_src=(str)=>{
+// util.compute_book_src()
+const  compute_book_src=(str)=>{
   console.log('isdev',isdev);
         // let prefix='https://github.com/jinnianwushuang/jinnian-space/blob/master/public/'
         if(isdev){
@@ -27,7 +27,14 @@ const  compute_public_data_src=(str)=>{
           
 }
 
+const          compute_book_name=(item)=>{
+  let arr=item.split('/')
+  return arr[arr.length-1]
+
+}
+
 
 export default {
-    compute_public_data_src
+    compute_book_src,
+    compute_book_name
 }

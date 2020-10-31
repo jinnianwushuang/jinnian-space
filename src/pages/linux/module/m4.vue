@@ -38,7 +38,7 @@ export default {
   data() {
     return {
       show: true,
-      src:   util.compute_public_data_src("linux/pdf/Linux学习笔记.pdf") ,
+      src:   util.compute_book_src("linux/pdf/Linux学习笔记.pdf") ,
       book_arr: [
         "CDN排坑指南.pdf",
         "DTS控制台一本通.pdf",
@@ -57,7 +57,7 @@ export default {
   },
   methods: {
     change_book(item) {
-      this.src =   util.compute_public_data_src("linux/pdf/" + item) ;
+      this.src =   util.compute_book_src("linux/pdf/" + item) ;
     },
     fetchPDF (payload) {
   this.$axios.post('/my/url/to/pdf', payload, { responseType: 'blob' }).then(res => {

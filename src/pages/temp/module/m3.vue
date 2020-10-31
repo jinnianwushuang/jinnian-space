@@ -19,14 +19,14 @@
 
 <script>
  import  util from "src/util/index.js"
-// util.compute_public_data_src()
+// util.compute_book_src()
 export default {
   name: "Container",
 
   data() {
     return {
       show: true,
-       src:util.compute_public_data_src("linux/pdf/Linux学习笔记.pdf") 
+       src:util.compute_book_src("linux/pdf/Linux学习笔记.pdf") 
     };
   }
 };
