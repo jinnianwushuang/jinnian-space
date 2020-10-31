@@ -1,3 +1,8 @@
+/*
+ * @Date           : 2020-10-31 01:54:40
+ * @FilePath       : /jinnian-space/src-electron/main-process/electron-main.js
+ * @Description    : 
+ */
 import { app, BrowserWindow, nativeTheme } from 'electron'
 
 try {
@@ -23,7 +28,10 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     width: 1000,
     height: 600,
+    minWidth: 800,
+    minHeight: 480,  
     useContentSize: true,
+    frame: false, // <-- add this
     webPreferences: {
       // Change from /quasar.conf.js > electron > nodeIntegration;
       // More info: https://quasar.dev/quasar-cli/developing-electron-apps/node-integration
