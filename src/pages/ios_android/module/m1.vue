@@ -17,6 +17,12 @@
        dart
        flutter
      </pre>
+     <div>
+       <ul>
+         <li v-for="(item,index) in link_arr" :key="`link_arr_${index}`">
+             <a :href="item" target="_blank" rel="noopener noreferrer">{{item}} </a> </li>
+       </ul>
+     </div>
     </div>
 </template>
 <script>
@@ -27,6 +33,12 @@ export default {
  
   data() {
     return {
+      link_arr:[
+        'https://pub.dev/',
+        "https://flutter.dev/",
+        "https://dart.dev/"
+
+      ]
  
     };
   }
