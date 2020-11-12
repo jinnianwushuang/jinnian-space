@@ -1,8 +1,16 @@
+/*
+ * @Date           : 2020-11-05 21:36:01
+ * @FilePath       : /jinnian-space/src/config/menu.js
+ * @Description    : 
+ */
 export default [
 
 
   { name: "note", text: "note" },
   { name: "web", text: "web" },
+  { name: "ios_android", text: "ios_android" },
+
+  
   { name: "node", text: "node" },
   { name: "seo", text: "seo" },
 

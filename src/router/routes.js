@@ -1,3 +1,8 @@
+/*
+ * @Date           : 2020-11-05 21:36:01
+ * @FilePath       : /jinnian-space/src/router/routes.js
+ * @Description    : 
+ */
 const routes = [
   // {
   //   path:"/",
@@ -53,6 +58,11 @@ const routes = [
         path: "web",
         name: "web",
         component: () => import(/* webpackChunkName: "jinnianSpace" */ "src/pages/web/index.vue")
+      },
+      {
+        path: "ios_android",
+        name: "ios_android",
+        component: () => import(/* webpackChunkName: "jinnianSpace" */ "src/pages/ios_android/index.vue")
       },
       {
         path: "c",

@@ -1,6 +1,6 @@
 <!--
- * @Date           : 2020-08-31 22:13:58
- * @FilePath       : /jinnian-space/src/pages/web/index.vue
+ * @Date           : 2020-11-05 21:36:01
+ * @FilePath       : /jinnian-space/src/pages/web/web/index.vue
  * @Description    : 
 -->
 <template>
@@ -9,29 +9,49 @@
       <q-tab
         v-for="(item, index) in tabs"
         :key="`tabs_${index}`"
-        :name="`${item}`"
-        :label="`${index + 1}.${item}`"
+        :name="`${item.value}`"
+        :label="`${index + 1}.${item.label}`"
       />
     </q-tabs>
+
     <component :is="`${tab}`"></component>
   </div>
 </template>
-
 <script>
-import ios from "src/pages/web/ios/index.vue";
-import web from "src/pages/web/web/index.vue";
-import android from "src/pages/web/android/index.vue";
+import basics from "src/pages/web/basics/index.vue";
+import css from "src/pages/web/css/index.vue";
+import js from "src/pages/web/js/index.vue";
+import http from "src/pages/web/http/index.vue";
+import vue from "src/pages/web/vue/index.vue";
+import react from "src/pages/web/react/index.vue";
 
+import other from "src/pages/web/other/index.vue";
+import tool from "src/pages/web/tool/index.vue";
 export default {
   components: {
-    web,
-    ios,
-    android
+    basics,
+    css,
+    js,
+    http,
+    vue,
+    other,
+    tool,
+    react
   },
   data() {
     return {
-      tab: "web",
-      tabs: ["web", "ios", "android"]
+      tab: "basics",
+      tabs: [
+        { label: "basics", value: "basics" },
+        { label: "css", value: "css" },
+        { label: "js", value: "js" },
+        { label: "http", value: "http" },
+        { label: "vue", value: "vue" },
+        { label: "react", value: "react" },
+
+        { label: "other", value: "other" },
+        { label: "tool", value: "tool" }
+      ]
     };
   }
 };
