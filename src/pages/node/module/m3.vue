@@ -5,16 +5,24 @@
 -->
 <template>
   <div class="">
-    <div class=" markdown-body"></div>
-    <MainComponent></MainComponent>
+    <div> node 项目 遇到的坑</div>
+    <div>
+      <ul>
+        <li>linux 部署 node 项目  后台运行 需要两次回车 ，第一次 退出 node 项目界面 ，第二次 才是背后运行</li>
+        <li>nohup  ,  后缀 $  ， forever start xxxxx,  node  ./server.js</li>
+ 
+      </ul>
+    </div>
+  
+   
   </div>
 </template>
 
 <script>
-import MainComponent from "src/pages/web/tool/md/nginx.md";
+ 
 export default {
   components: {
-    MainComponent
+    
   },
   data() {
     return {};

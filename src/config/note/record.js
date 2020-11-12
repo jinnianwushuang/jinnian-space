@@ -4,6 +4,7 @@
  * @Description    :
  */
 export default [
+  { date: "2020-11-12 23:06:51", note: "更改C端目录  flutter 学习 开始  " },
   { date: "2020-10-31 23:43:29", note: "改善 各端头部输出配置  " },
   { date: "2020-10-31 08:26:35", note: "加入  electron构建，升级脚手架，追加书籍" },
   { date: "2020-10-28 08:25:52", note: "linux  加入书籍" },

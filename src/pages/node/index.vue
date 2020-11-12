@@ -44,12 +44,13 @@ export default {
   },
   data() {
     return {
-      tab: 'm1',
+      tab: 'm3',
      
       tabs: [
+          { label: "概述" ,value:'m3'},
           { label: "node" ,value:'m1'},
           { label: "全栈项目 依赖" ,value:'m2'},
-          // { label: "nginx" ,value:'m3'},
+         
           // { label: "基本" ,value:'m4'},
           // { label: "基本" ,value:'m5'},
           // { label: "基本" ,value:'m6'},

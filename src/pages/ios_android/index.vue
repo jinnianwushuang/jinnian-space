@@ -1,6 +1,6 @@
 <!--
  * @Date           : 2020-10-18 23:50:41
- * @FilePath       : /ioc_android/index.vue
+ * @FilePath       : /jinnian-space/src/pages/ios_android/index.vue
  * @Description    : 
 -->
 <template>
@@ -42,10 +42,10 @@ export default {
     return {
       tab: "m1",
       all_modules: [
-        { component: "m1", text: "引入markdown文档" },
-        { component: "m2", text: "网页直接拷贝元素节点" },
-        { component: "m3", text: "引入pdf文档" },
-        { component: "m4", text: "复制-pre格式化" },
+        { component: "m1", text: "综述相关" },
+        { component: "m2", text: "某天笔记1" },
+        { component: "m3", text: "某天笔记1" },
+        { component: "m4", text: "某天笔记1" },
         { component: "m5", text: "某天笔记1" },
         { component: "m6", text: "某天笔记2" }
       ]

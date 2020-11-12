@@ -5,7 +5,13 @@
 -->
 <template>
     <div class="q-mx-lg">
-<div class="text-h5 q-my-md">路在脚下</div>
+             <q-page-sticky position="top" expand class="bg-primary text-white z-max">
+            <q-toolbar>
+              <q-btn flat round dense icon="map" />
+              <q-toolbar-title>红旗HS7+,林肯领航员，星舟一号，环游中国。旅居</q-toolbar-title>
+            </q-toolbar>
+          </q-page-sticky>       
+<div class="text-h5 q-my-md " style="">路在脚下</div>
 
     <q-timeline color="secondary">
       <!-- <q-timeline-entry heading>
