@@ -8,7 +8,7 @@
              <q-page-sticky position="top" expand class="bg-primary text-white z-max">
             <q-toolbar>
               <q-btn flat round dense icon="map" />
-              <q-toolbar-title>林肯领航员，星舟一号，环游中国。旅居。180W 预算 加油！人生不打折！</q-toolbar-title>
+              <q-toolbar-title>林肯飞行员（75W），星舟一号(32W)，大疆，索尼，环游中国。旅居。120W 预算 加油！人生不打折！</q-toolbar-title>
             </q-toolbar>
           </q-page-sticky>       
 <div class="text-h5 q-my-md " style="">路在脚下</div>
