@@ -4,48 +4,41 @@
  * @Description    : 
 -->
 <template>
-    <div class="q-mx-lg">
-             <q-page-sticky position="top" expand class="bg-primary text-white z-max">
-            <q-toolbar>
-              <q-btn flat round dense icon="map" />
-              <q-toolbar-title>林肯飞行员（75W），星舟一号(32W)，大疆，索尼，环游中国。旅居。120W 预算 加油！人生不打折！</q-toolbar-title>
-            </q-toolbar>
-          </q-page-sticky>       
-<div class="text-h5 q-my-md " style="">路在脚下</div>
-
+  <div class="q-mx-lg">
+    <q-page-sticky position="top" expand class="bg-primary text-white z-max">
+      <q-toolbar>
+        <q-btn flat round dense icon="map" />
+        <q-toolbar-title
+          >林肯飞行员（75W），星舟一号(32W)，大疆，索尼，环游中国。旅居。130W
+          预算 加油！人生不打折！</q-toolbar-title
+        >
+      </q-toolbar>
+    </q-page-sticky>
+    <div class="text-h5 q-my-md " style="">路在脚下</div>
     <q-timeline color="secondary">
       <!-- <q-timeline-entry heading>
        路在脚下
       </q-timeline-entry> -->
-
       <q-timeline-entry
-      v-for="(item,index) in record" :key="`record_note__tmleline${index}`"
-   
+        v-for="(item, index) in record"
+        :key="`record_note__tmleline${index}`"
         :title="item.date"
       >
         <div>
-         {{item.note}}
+          {{ item.note }}
         </div>
       </q-timeline-entry>
-
- 
     </q-timeline>
-
-    </div>
+  </div>
 </template>
-
 <script>
-import record from "src/config/note/record.js"
-    export default {
-        data() {
-            return {
-                record,
-            }
-        },
-        
-    }
+import record from "src/config/note/record.js";
+export default {
+  data() {
+    return {
+      record
+    };
+  }
+};
 </script>
-
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
