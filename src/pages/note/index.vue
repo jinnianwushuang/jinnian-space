@@ -15,14 +15,14 @@
       </q-toolbar> 
     </q-page-sticky> -->
 
-    <div class="text-h5  " style="">路在脚下</div>
+    <div class="text-h6  text-bold" style="">人生最大的悲哀莫过于“子欲养而亲不待”</div>
     <div>林肯飞行员顶配（75W），星舟一号(32W)，大疆，索尼。130W </div>
          
               <div>林肯领航员顶配（130W），十万多的拖挂，大疆，索尼。170W </div>
          
-     <q-scroll-area style="height: calc(100vh - 200px); max-width: 400px;">
+     <q-scroll-area style="height: calc(100vh - 250px); max-width: 400px;">
 
-    <q-timeline color="secondary">
+    <q-timeline  color="secondary">
       <!-- <q-timeline-entry heading>
        路在脚下
       </q-timeline-entry> -->
@@ -36,6 +36,7 @@
         </div>
       </q-timeline-entry>
     </q-timeline>
+
          </q-scroll-area>
   </div>
 </template>

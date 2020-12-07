@@ -82,6 +82,7 @@ export default {
   data() {
     return {
       title: "我生待明日，万事成蹉跎。",
+      title: "子欲养而亲不待",
       // title:"锦年成长空间",
       last_update_time,
       drawer: false,
