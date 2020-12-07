@@ -41,16 +41,16 @@ export default {
   },
   data() {
     return {
-      tab: 'm1',
+      tab: 'm6',
       
       tabs: [
-   
+   { label: "笔记", value: "m6" },
             { label: "基础", value: "m1" },
         { label: "vim", value: "m2" },
         { label: "实际", value: "m3" },
         { label: "运维书籍", value: "m4" },
         { label: "shell基础", value: "m5" },
-        { label: "未开发", value: "m6" },
+        
         { label: "未开发", value: "m7" },
         { label: "未开发", value: "m8" },
    
