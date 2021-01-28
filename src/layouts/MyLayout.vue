@@ -82,7 +82,7 @@ export default {
   data() {
     return {
       title: "我生待明日，万事成蹉跎。",
-      title: "子欲养而亲不待",
+      title: "锦绣年华",
       // title:"锦年成长空间",
       last_update_time,
       drawer: false,
@@ -95,7 +95,18 @@ export default {
     };
   },
   created() {
-    this.go_to_router({ name: "note" });
+ 
+    // console.log('this.$route',this.$route);
+    if( !this.$route.name){
+      this.$router.push(menu[0])
+    }
+    this.current_menu =this.$route.name
+  },
+  watch: {
+    $route(newValue, oldValue) {
+      // console.log('this.$route',this.$route);
+        this.current_menu =this.$route.name
+    }
   },
   methods: {
     go_to_router(item) {

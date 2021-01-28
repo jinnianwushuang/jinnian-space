@@ -51,7 +51,7 @@ export default {
         { label: "运维书籍", value: "m4" },
         { label: "shell基础", value: "m5" },
         
-        { label: "未开发", value: "m7" },
+        { label: "shell", value: "m7" },
         { label: "未开发", value: "m8" },
    
       ]

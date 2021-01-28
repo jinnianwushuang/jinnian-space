@@ -6,7 +6,7 @@
 export default [
 
 
-  { name: "note", text: "note" },
+  // { name: "note", text: "note" },
   { name: "web", text: "web" },
   { name: "ios_android", text: "ios_android" },
 
@@ -15,7 +15,7 @@ export default [
   { name: "seo", text: "seo" },
 
   { path: "c", name: "c" },
-  { path: "english", name: "english" },
+  // { path: "english", name: "english" },
   { path: "docker", name: "docker" },
   { path: "go", name: "go" },
   { path: "java", name: "java" },
