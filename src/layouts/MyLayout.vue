@@ -28,15 +28,16 @@
 
 
     <q-drawer
+    class="hide-scrollbar"
       v-model="drawer"
       show-if-above
       :width="200"
       :breakpoint="500"
       bordered
-      content-class="bg-grey-3"
+      content-class="bg-grey-3 hide-scrollbar "
     >
-      <q-scroll-area class="fit">
-        <q-list v-for="(item, index) in menu" :key="index">
+      <q-scroll-area class="fit hide-scrollbar">
+        <q-list v-for="(item, index) in menu" :key="index" class="hide-scrollbar">
           <q-item
             clickable
             :class="

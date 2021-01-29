@@ -1,23 +1,27 @@
-<template>
-    <div>
-        <div>  使用 Linux 服务器集群管理面板   appnode 类似的 工具 可以快速 部署 </div>
-       <div>yum -y install epel-release </div>
+<!--
+ * @Date           : 2020-08-31 16:40:04
+ * @FilePath       : /jinnian-space/src/pages/linux/module/m5.vue
+ * @Description    : 
+-->
  
-        <div>yum -y install nginx </div>
-        <pre>
-             service  nginx  restart
-              systemctl restart nginx.service
-
-        </pre>
-    </div>
+ 
+<template>
+  <div class="">
+    <q-markdown :src="MainComponent" />
+  </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+import MainComponent from "../md/shell-基础.md";
+export default {
+  data() {
+    return {
+      MainComponent
+    };
+  }
+};
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" scoped></style>
 
-</style>
+

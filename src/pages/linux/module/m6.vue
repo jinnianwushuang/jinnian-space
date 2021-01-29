@@ -33,6 +33,13 @@ source /etc/profile
 [root@localhost ~]# node -v
 v12.18.1
 OK！安装成功！
+   
+使用 Linux 服务器集群管理面板 appnode 类似的 工具 可以快速 部署
+yum -y install epel-release
+yum -y install nginx
+         service  nginx  restart
+          systemctl restart nginx.service
+   
     </pre>
 
 

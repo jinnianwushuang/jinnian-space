@@ -31,32 +31,32 @@
 
 
   /*修改滚动条样式*/
-html::-webkit-scrollbar{
-    display: none;
-    visibility: hidden;
-    width:10px;
-    height:10px;
-    /**/
-  }
-  html::-webkit-scrollbar-track{
-    display: none;
-    visibility: hidden;
-    background: rgb(239, 239, 239);
-    border-radius:2px;
-  }
-  html::-webkit-scrollbar-thumb{
-    background: #bfbfbf;
-    border-radius:5px;
-  }
-  html::-webkit-scrollbar-thumb:hover{
+// html::-webkit-scrollbar{
+//     // display: none;
+//     visibility: hidden;
+//     width:10px;
+//     height:10px;
+//     /**/
+//   }
+//   html::-webkit-scrollbar-track{
+//     display: none;
+//     visibility: hidden;
+//     background: rgb(239, 239, 239);
+//     border-radius:2px;
+//   }
+//   html::-webkit-scrollbar-thumb{
+//     background: #bfbfbf;
+//     border-radius:5px;
+//   }
+//   html::-webkit-scrollbar-thumb:hover{
 
-    background: #333;
-  }
-  html::-webkit-scrollbar-corner{
-    display: none;
-    visibility: hidden;
-    background: #179a16;
-  }
+//     background: #333;
+//   }
+//   html::-webkit-scrollbar-corner{
+//     display: none;
+//     visibility: hidden;
+//     background: #179a16;
+//   }
 
 
 

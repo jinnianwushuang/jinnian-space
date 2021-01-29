@@ -28,6 +28,11 @@ import m5 from "src/pages/linux/module/m5.vue";
 import m6 from "src/pages/linux/module/m6.vue";
 import m7 from "src/pages/linux/module/m7.vue";
 import m8 from "src/pages/linux/module/m8.vue";
+import m9 from "src/pages/linux/module/m9.vue";
+import m10 from "src/pages/linux/module/m10.vue";
+
+
+
 export default {
   components: {
     m1,
@@ -37,22 +42,27 @@ export default {
     m5,
     m6,
     m7,
-    m8
+    m8,
+    m9,
+    m10
   },
+
   data() {
     return {
-      tab: 'm6',
+      tab: 'm8',
       
       tabs: [
    { label: "笔记", value: "m6" },
-            { label: "基础", value: "m1" },
+            { label: "linux命令", value: "m1" },
         { label: "vim", value: "m2" },
-        { label: "实际", value: "m3" },
+        { label: "shell-基础", value: "m3" },
         { label: "运维书籍", value: "m4" },
-        { label: "shell基础", value: "m5" },
+        { label: "Linux—前端够用", value: "m5" },
         
-        { label: "shell", value: "m7" },
-        { label: "未开发", value: "m8" },
+        { label: "linux-目录", value: "m7" },
+        { label: "前端运维", value: "m8" },
+        { label: "日常运维", value: "m9" },
+        { label: "linux目录", value: "m10" },
    
       ]
     };

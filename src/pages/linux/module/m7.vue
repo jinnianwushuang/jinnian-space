@@ -3,23 +3,25 @@
  * @FilePath       : /jinnian-space/src/pages/linux/module/m7.vue
  * @Description    : 
 -->
+ 
+ 
 <template>
-    <div>
-        <pre>
-           变量数学运算 : hh=$(($aa+$bb))
-
-
-        </pre>
-         
-    </div>
+  <div class="">
+    <q-markdown :src="MainComponent" />
+  </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+import MainComponent from "../md/linux-目录.md";
+export default {
+  data() {
+    return {
+      MainComponent
+    };
+  }
+};
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" scoped></style>
 
-</style>
+
