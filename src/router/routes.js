@@ -33,12 +33,12 @@ const routes = [
     component: () => import("src/layouts/MyLayout.vue"),
 
     children: [
-      {
-        path: "note",
-        name: "note",
+      // {
+      //   path: "note",
+      //   name: "note",
 
-        component: () => import(/* webpackChunkName: "jinnianSpace" */ "src/pages/note/index.vue")
-      },
+      //   component: () => import(/* webpackChunkName: "jinnianSpace" */ "src/pages/note/index.vue")
+      // },
       
   
       {
@@ -162,7 +162,7 @@ const routes = [
 if (process.env.MODE !== "ssr") {
   routes.push({
     path: "*",
-    component: () => import( "src/pages/error/Error404.vue")
+    component: () => import(/* webpackChunkName: "jinnianSpace" */ "src/pages/web/index.vue")
   });
 }
 
