@@ -1,3 +1,8 @@
+<!--
+ * @Date           : 2020-08-31 16:40:04
+ * @FilePath       : /jinnian-space/src/pages/java/index.vue
+ * @Description    : 
+-->
 <template>
   <div>
     <q-tabs v-model="tab" align="left" inline-label dense class="text-teal">

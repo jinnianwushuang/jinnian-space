@@ -60,8 +60,8 @@
     </q-drawer>
 
 
-    <q-page-container class="q-px-lg">
-      <router-view />
+    <q-page-container :class="$q.platform.is.desktop?'q-pl-md':''">
+      <router-view class="q-pl-md" />
       <q-page-scroller
         position="bottom-right"
         :scroll-offset="150"
@@ -85,6 +85,7 @@ export default {
       title: "我生待明日，万事成蹉跎。",
       title: "锦绣年华",
       // title:"锦年成长空间",
+      // title:"I dreamed a dream",
       last_update_time,
       drawer: false,
       menu,
