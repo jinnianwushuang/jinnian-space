@@ -24,21 +24,16 @@
               2. 编译代码 需要使用 JDK 中 的 编译工具
               3. 运行代码 需要使用 JDK 中 的  运行工具
               4. 代码运行在  JVM 虚拟机当中  
-
          JDK=( JRE=(JVM 虚拟机 + 核心类库)  + 开发工具=（编译工具 + 运行工具） )    
-
          系统环境变量 添加变量 Java_Home  D:\Program Files\Java\jdk1.8.0_91
                        path 编辑 新建    %Java_Home%\bin    %Java_Home%\jre\bin           
-        
         javac  AAA.java  执行生成 AAA.class 文件 
         java  AAA    执行 AAA.class 文件 
         main 方法 程序的 入口点
         public static void main(String[] args ){
-
         }
         public 确保 文件名称和 类名 必须 同名         
         java 关键字  基本  都是小写的
-
        </pre>
        <div class="text-h6"> 数据类型 </div>
        <pre>
@@ -77,7 +72,7 @@
         java 内存分配： 
         栈内存 ： 方法运行时，进入的内存，局部变量都存放于这块内存中，
         堆内存 ： new 出来的内容都会进入堆内存，并且会有对应的地址值
-        方法区 ： 字节码文件 .class 加载时进入的内存
+        方法区 ： 字节码文件 .class 加载时进入的内存 
         本地方法栈 ：调用操作系统相关的资源
         寄存器： 交给CPU 去使用
         类的加载过程：
@@ -95,18 +90,15 @@
          public static void aaa(int num){  //方法体 }
          public static int aaa(int num){   return 100; //方法体 }  int bb = aaa(30);
          public static int[] aaa(int[] arr){   int[] b={1,2,3}    return b //方法体 }  int[] cc = aaa(arr) 
-        
         方法和方法之间 是平级 关系 ，不能嵌套定义
         栈内存： 手枪弹夹  先进后出
         方法参数类型 和个数 必须匹配 
         方法的形参，相当于一个局部变量
         方法重载： java 允许 多个个相同方法名，但是形参不同的方法存在。（个数，类型，顺序）
                    Java jvm 会通过 参数去匹配调用哪个方法  
-
         方法参数传递：
                 基本数据类型 ，传递的是值本身，改变传入值，是改变的这个值 ，对其他无影响。不影响原始值
                 引用数据类型 ，传递的是 内存地址 。 改变的是堆内存内的数据。会改变传入的数据本身
-                          
          原码 反码 补码
          计算机中的数据都是以二进制补码的形式在运算，而补码则是通过反码和原码推算出来的。 
          原码： 看数据 ，反码：转数据 ，补码：运算数据
@@ -119,24 +111,28 @@
          补码：
          正数的补码与其原码相同 ； 负数的补码是在其 反码  的末位 加 1 得到的 
          二维数组
-
          int[][] arr 或者   int arr[][]   或者    int[] arr[]  
-
-          int[][] arr = mew int[30][10];  30个一维数组 ，每个一维数组有10个元素k
-
-
-
-
-       </pre>
+          int[][] arr = mew int[30][10];  30个一维数组 ，每个一维数组有10个元素
+        </pre>
+        <div class="text-red">
+            方法执行完成 弹栈消失
+        </div>
+        <pre>
+           类文件在方法区 ，对象实例在堆内存 ， 
+           对象实例的方法地址指向方法区的类文件内的方法
+          变量在栈内存，地址指向堆内存中的类的实例对象
+           方法的调用， 类的实例对象的方法的调用 会进栈 
+          类的主方法 main 方法 会被 jvm 主动调用 ，然后 main 方法 进栈
+           代码由上往下执行， 方法顺序进栈  ， 栈内 方法 先进后出。
+           最后调用的方法完成执行后 最先消失 
+           当方法 执行完成 弹栈 消失
+           </pre>
+     
     </div>
 </template>
-
 <script>
     export default {
-        
     }
 </script>
-
 <style lang="scss" scoped>
-
 </style>
