@@ -64,7 +64,7 @@
         如果想要跳出跳过置顶一层，可以加入标号。
         IDEA 目录层级关系： project - module - package - class 
         快捷键：
-        ctrl+shirt+a
+        ctrl+shirt+a    ctrl+alt+v
         psvm ，sout , alt+1，alt+4 ,ctrl+alt+l ,alt+enter
         数组 int[] arr= new int[30]  初始化定义一个长度是30的数组
              int arr[] =new int[30]
