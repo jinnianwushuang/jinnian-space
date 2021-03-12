@@ -24,7 +24,7 @@
        </pre>
        <div>String</div>
        <pre>
-         "" 创建的字符串  存在 字符串常量池   （在  堆内存 存储 ） 存在则不再创建
+         "" 创建的字符串  存在 字符串常量池   （在  堆内存 存储 ） 存在则不再创建  ,不可改变
          s1 = "123"  s2 = "123"  s1==s2 结果是true 
          new 创建的 每次都是不同的 内存地址 放在 堆内存中 new 创建的  不可能相等
          字符串的加号拼接 ：系统底层会自动创建一个 stringBuilder 对象 ，
@@ -33,7 +33,26 @@
          "abc" == "a" + "b" + "c"  返回 true 原因 ：
           a,b,c 都是常量 java 的 常量优化机制 在编译的时候 就把右侧直接计算了
           equals 方法 比较 值是否相等
+          String 类型 + 常量字符串 的 字符串拼接每次都会创建 两个对象 ，一个 stringBuilder 一个 string 
        </pre>
+       <div>StringBuilder   一个可变的字符串类   append toString  reverce</div>
+       <div>打印string  stringBuilder 集合 类  都不会出现内存地址。  打印数组  会出现 </div>
+       <div> 集合 ArrayList</div>
+       <pre>
+           Student[] arr = new Student[3]  
+
+        集合和数组 对比
+        集合类 ：  提供一种存储空间可变的存储模型，容量可变
+        数组类 ：   容量是固定的 不可变的 
+        ArrayList  list = new ArrayList();
+        集合内 可以放任意类型数据      
+        泛型
+        ArrayList&lt;String&gt;  list = new ArrayList &lt;&gt;();
+        集合内 只能放 字符串 String 数据   
+        集合常用API :   add remove  set  get size        
+       </pre>
+       
+        
     </div>
 </template>
 
