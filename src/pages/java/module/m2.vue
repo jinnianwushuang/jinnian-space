@@ -65,7 +65,7 @@
         IDEA 目录层级关系： project - module - package - class 
         快捷键：
         ctrl+shirt+a    ctrl+alt+v   ctrl+alt+m 包裹方法
-        psvm ，sout , alt+1，alt+4 ,ctrl+alt+l ,alt+enter
+        psvm ，sout , alt+1，alt+4 ,ctrl+alt+l ,alt+enter   ,ctrl+b 跟进源码
         数组 int[] arr= new int[30]  初始化定义一个长度是30的数组
              int arr[] =new int[30]
         sout 输出 数组 变量 输出的是 数组的 内存地址 

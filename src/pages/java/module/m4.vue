@@ -113,6 +113,21 @@
        <div> 内部类</div>
        <pre>
            Outer.Inner i = new Outer().new Inner();
+           匿名内部类
+           函数式编程思想
+           lambda   箭头 函数   是将 匿名 内部类 的  一个  优化 
+           doaaaa( AA a){ a.nn(); }
+            doaaaa(new AA(){
+                public void nn(){
+                    sout("Niubi ")
+                }
+            })
+           doaaaa(()->{  sout("Niubi ") })
+           匿名内部类 ，必须 实现一个接口 ，生产 一个实现类的对象 ，重写方法 ，读取重写的方法 ，执行方法  
+           这个方法 根本的阐述    传递的是一个函数 ， 箭头函数方式 我们直接传入 的 是 方法的 实体 ，
+           把原本的关注点 转到方法的具体实现
+           lambda 使用前提：  必须有一个接口  接口中 有且仅有一个 抽象方法 
+           这种 根本上 传入的  还是一个 匿名对象，实例的 匿名实现类的 一个具体的 对象
        </pre>
     </div>
 </template>
