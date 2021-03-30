@@ -30,6 +30,7 @@ import m7 from "src/pages/linux/module/m7.vue";
 import m8 from "src/pages/linux/module/m8.vue";
 import m9 from "src/pages/linux/module/m9.vue";
 import m10 from "src/pages/linux/module/m10.vue";
+import m13 from "src/pages/linux/module/m13.vue";
 
 
 
@@ -44,7 +45,8 @@ export default {
     m7,
     m8,
     m9,
-    m10
+    m10,
+    m13
   },
 
   data() {
@@ -53,6 +55,7 @@ export default {
       
       tabs: [
    { label: "笔记", value: "m6" },
+   { label: "linux目录结构", value: "m13" },
             { label: "linux命令", value: "m1" },
         { label: "vim", value: "m2" },
         { label: "shell-基础", value: "m3" },
