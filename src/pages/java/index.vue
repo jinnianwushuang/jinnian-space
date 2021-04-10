@@ -9,12 +9,12 @@
       <q-tab
         v-for="(item, index) in tabs"
         :key="`tabs_${index}`"
-        :name="`${index + 1}`"
-        :label="`${index + 1}.${item.text}`"
+        :name="`${item.value}`"
+        :label="`${index + 1}.${item.label}`"
       />
     </q-tabs>
 
-    <component :is="`m${tab}`"></component>
+    <component :is="`${tab}`"></component>
   </div>
 </template>
 
@@ -41,18 +41,18 @@ export default {
   },
   data() {
     return {
-      tab: 1,
-      tabs: [1, 2, 3, 4, 5, 6, 7, 8],
+      tab: "m1",
       tabs: [
-        { text: "未开发" },
-        { text: "JAVA 基础" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" }
-      ]
+        { label: "笔记", value: "m1" },
+        { label: "JAVA基础", value: "m2" },
+        { label: "JSP", value: "m3" },
+        { label: "MYSQL", value: "m4" },
+        { label: "笔记", value: "m5" },
+        { label: "笔记", value: "m6" },
+        { label: "笔记", value: "m7" },
+        { label: "笔记", value: "m8" },
+      ],
+ 
     };
   }
 };

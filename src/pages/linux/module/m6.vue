@@ -42,6 +42,10 @@ yum -y install nginx
    
     </pre>
 
+<pre>
+杀死某个用户的 所有进程  kill -9 $(ps -ef | grep username)    或者   killall -u username  
+
+</pre>
 
  </div>
 </template>

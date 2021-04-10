@@ -482,7 +482,7 @@
     <td class="xl69" height="54" style='height:40.50pt;' x:str>链接文件</td>
     <td class="xl70" x:str>ln</td>
     <td class="xl70" x:str>连接</td>
-    <td class="xl71" x:str><span style='mso-spacerun:yes;'>&nbsp;</span>-s 建立符号链接<br/><span style='mso-spacerun:yes;'>&nbsp;</span>-d 建立硬链接（默认，可以不写）</td>
+    <td class="xl71" x:str><span style='mso-spacerun:yes;'>&nbsp;</span>-s 建立软链接<br/><span style='mso-spacerun:yes;'>&nbsp;</span>-d 建立硬链接（默认，可以不写）</td>
     <td class="xl75" x:str>ln -s /root/myfile /s_myfile<br/><font class="font1">ln -d hello.txt dhello</font></td>
    </tr>
    <tr height="54" class="xl65" style='height:40.50pt;'>
@@ -637,12 +637,13 @@
     <td class="xl74" x:str>通常和ps配合使用</td>
    </tr>
    <tr height="54" class="xl65" style='height:40.50pt;'>
-    <td class="xl82" height="162" rowspan="4" style='height:121.50pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>硬盘管理</td>
+    <td class="xl82" height="162" rowspan="5" style='height:121.50pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>硬盘管理</td>
     <td class="xl70" x:str>df</td>
     <td class="xl71" x:str>查看磁盘使用情况<br/>查看目录在哪个分区下</td>
     <td class="xl81" x:str><span style='mso-spacerun:yes;'>&nbsp;</span>-h 以易读方式显示<br/><span style='mso-spacerun:yes;'>&nbsp;</span>-l</td>
     <td class="xl75" x:str>df<br/>df /boot/<br/>df -h</td>
    </tr>
+
    <tr height="54" class="xl65" style='height:40.50pt;'>
     <td class="xl70" x:str>du</td>
     <td class="xl76" x:str>查看文件已有容量</td>
@@ -653,6 +654,12 @@
     <td class="xl70" x:str>fdisk</td>
     <td class="xl71" x:str>分区<br/>查看分区的具体情况</td>
     <td class="xl70" x:str><span style='mso-spacerun:yes;'>&nbsp;</span>-l</td>
+    <td class="xl74"></td>
+   </tr>
+      <tr height="18" class="xl65" style='height:13.50pt;'>
+    <td class="xl70" x:str>lsblk</td>
+    <td class="xl70">列出磁盘的使用情况</td>
+    <td class="xl70">&nbsp;-f 显示系统信息</td>
     <td class="xl74"></td>
    </tr>
    <tr height="18" class="xl65" style='height:13.50pt;'>
@@ -752,7 +759,7 @@
     <td class="xl70" x:str>yum</td>
     <td class="xl76"></td>
     <td class="xl71"></td>
-    <td class="xl72" x:str>yum search raid<br/>yum info mdadm<br/>yum list<br/>yum install pam-devel</td>
+    <td class="xl72" x:str>yum search raid<br/>yum info mdadm<br/>yum list aa*<br/>yum -y install pam-devel<br/>  </td>
    </tr>
    <tr height="108" class="xl65" style='height:81.00pt;'>
     <td class="xl69" height="180" rowspan="2" style='height:135.00pt;border-right:.5pt solid windowtext;border-bottom:.5pt solid windowtext;' x:str>系统服务</td>
@@ -993,7 +1000,7 @@
     <td class="xl87" x:str>awk</td>
     <td class="xl70"></td>
     <td class="xl71"></td>
-    <td class="xl72" x:str><span style='mso-spacerun:yes;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>zx<span style='mso-spacerun:yes;'>&nbsp;&nbsp;</span></td>
+    <td class="xl72" x:str><span style='mso-spacerun:yes;'></span>通过正则匹配，切割，提取需要的值<span style='mso-spacerun:yes;'>&nbsp;&nbsp;</span></td>
    </tr>
    <tr height="18" class="xl65" style='height:13.50pt;'>
     <td class="xl87" x:str>diff</td>

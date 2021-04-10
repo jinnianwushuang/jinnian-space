@@ -9,17 +9,16 @@
       <q-tab
         v-for="(item, index) in tabs"
         :key="`tabs_${index}`"
-         :name="`${item.value}`"
+        :name="`${item.value}`"
         :label="`${index + 1}.${item.label}`"
       />
     </q-tabs>
 
-<div class="q-mx-lg">     <component :is="`${tab}`"></component></div>
+    <div class="q-mx-lg"><component :is="`${tab}`"></component></div>
   </div>
 </template>
 
 <script>
-
 import m1 from "src/pages/linux/module/m1.vue";
 import m2 from "src/pages/linux/module/m2.vue";
 import m3 from "src/pages/linux/module/m3.vue";
@@ -31,7 +30,6 @@ import m8 from "src/pages/linux/module/m8.vue";
 import m9 from "src/pages/linux/module/m9.vue";
 import m10 from "src/pages/linux/module/m10.vue";
 import m13 from "src/pages/linux/module/m13.vue";
-
 
 
 export default {
@@ -51,22 +49,21 @@ export default {
 
   data() {
     return {
-      tab: 'm8',
-      
+      tab: "m8",
+
       tabs: [
-   { label: "笔记", value: "m6" },
-   { label: "linux目录结构", value: "m13" },
-            { label: "linux命令", value: "m1" },
+        { label: "笔记", value: "m6" },
+        { label: "linux目录结构", value: "m13" },
+        { label: "linux命令", value: "m1" },
         { label: "vim", value: "m2" },
         { label: "shell-基础", value: "m3" },
         { label: "运维书籍", value: "m4" },
         { label: "Linux—前端够用", value: "m5" },
-        
+
         { label: "linux-目录", value: "m7" },
         { label: "前端运维", value: "m8" },
         { label: "日常运维", value: "m9" },
-        { label: "linux目录", value: "m10" },
-   
+        { label: "linux目录", value: "m10" }
       ]
     };
   }

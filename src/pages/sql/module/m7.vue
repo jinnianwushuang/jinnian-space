@@ -1,15 +1,21 @@
+
+ 
 <template>
-    <div>
-        1
-    </div>
+  <div class="">
+    <q-markdown :src="MainComponent" />
+  </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+import MainComponent from "../md/MySQL数据类型.md";
+export default {
+  data() {
+    return {
+      MainComponent
+    };
+  }
+};
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" scoped></style>
 
-</style>

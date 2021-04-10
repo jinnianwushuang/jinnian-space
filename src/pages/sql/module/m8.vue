@@ -1,15 +1,27 @@
+<!--
+ * @Date           : 2020-08-31 16:40:04
+ * @FilePath       : /jinnian-space/src/pages/sql/module/m8.vue
+ * @Description    : 
+-->
+
+ 
 <template>
-    <div>
-        1
-    </div>
+  <div class="">
+    <q-markdown :src="MainComponent" />
+  </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+import MainComponent from "../md/MySQL进阶-02-授课笔记.md";
+export default {
+  data() {
+    return {
+      MainComponent
+    };
+  }
+};
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" scoped></style>
 
-</style>
+
