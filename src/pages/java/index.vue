@@ -28,6 +28,8 @@ import m5 from "src/pages/java/module/m5.vue";
 import m6 from "src/pages/java/module/m6.vue";
 import m7 from "src/pages/java/module/m7.vue";
 import m8 from "src/pages/java/module/m8.vue";
+import m9 from "src/pages/java/module/jdbc/index.vue";
+import m10 from "src/pages/java/module/javaweb/index.vue";
 export default {
   components: {
     m1,
@@ -37,7 +39,9 @@ export default {
     m5,
     m6,
     m7,
-    m8
+    m8,
+    m9,
+    m10,
   },
   data() {
     return {
@@ -51,6 +55,8 @@ export default {
         { label: "笔记", value: "m6" },
         { label: "笔记", value: "m7" },
         { label: "笔记", value: "m8" },
+        { label: "JDBC", value: "m9" },
+        { label: "javaweb", value: "m10" },
       ],
  
     };

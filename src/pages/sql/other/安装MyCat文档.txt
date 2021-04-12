@@ -1,0 +1,30 @@
+1. MyCat官网
+	http://www.mycat.io
+
+2. 通过CRT工具上传到linux
+	put D:\Mycat-server-1.6.7.1-release-20190627191042-linux.tar.gz 
+
+3. 解压并查看
+	tar -zxvf mycat.tar.gz
+	cd mycat
+	ls
+
+4. 为mycat目录授权
+	chmod -R 777 mycat
+
+5. 配置环境变量
+	编辑文件：vi /etc/profile
+	添加内容：export MYCAT_HOME=/root/mycat
+	加载文件：source /etc/profile
+
+6. 启动mycat
+	进入目录：cd /root/mycat/bin
+	执行启动：./mycat start
+
+7. 查看端口监听
+	netstat -ant|grep 8066
+
+8. SQLyog连接mycat
+	默认用户名：root
+	默认密码：123456
+	默认端口号：8066

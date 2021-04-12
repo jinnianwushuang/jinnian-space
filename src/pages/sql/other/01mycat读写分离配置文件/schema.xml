@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE mycat:schema SYSTEM "schema.dtd">
+<mycat:schema xmlns:mycat="http://io.mycat/">
+
+	<schema name="HEIMADB" checkSQLschema="false" sqlMaxLimit="100" dataNode="dn1"></schema>
+	
+	<dataNode name="dn1" dataHost="localhost1" database="db1" />
+	
+	<dataHost name="localhost1" maxCon="1000" minCon="10" balance="1"
+			  writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
+		<heartbeat>select user()</heartbeat>
+		<!-- 主服务器负责写的操作 -->
+		<writeHost host="hostM1" url="localhost:3306" user="root" password="itheima">
+			<!-- 从服务器负责读的操作 -->
+			<readHost host="hostS1" url="192.168.59.182:3306" user="root" password="itheima" />
+		</writeHost>
+	</dataHost>
+</mycat:schema>

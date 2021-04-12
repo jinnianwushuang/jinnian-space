@@ -1,0 +1,89 @@
+一、安装Haproxy
+
+1. 上传Haproxy安装包到主服务器上
+
+2. 解压
+	// 解压
+	tar -xvf haproxy-1.7.9tar.gz
+
+	// 进入目录
+	cd haproxy-1.7.9/
+
+
+3. 查看linux内核版本
+	// 查看内核版本命令
+	uname -r
+
+	// 结果
+	3.10.0-862.el7.x86_64
+
+
+4. 指定内核、系统位数、安装路径
+	make TARGET=linux310 ARCH=x86_64 PREFIX=/root/haproxy-1.7.9
+
+
+5. 安装Haproxy
+	make install PREFIX=/root/haproxy-1.7.9
+
+
+二、配置Haproxy
+
+1. 在/root/haproxy-1.7.9安装路径下创建conf目录
+	// 进入haproxy路径
+	cd /root/haproxy-1.7.9
+
+	// 创建conf目录
+	mkdir conf
+
+2. 进入conf目录，创建haproxy.cfg配置文件
+	// 进入conf目录
+	cd conf
+
+	// 编辑haproxy.cfg文件
+	vi haproxy.cfg
+
+	// 添加如下内容
+global
+        log 127.0.0.1   local0
+        maxconn 1000
+        daemon
+
+defaults
+        log     global 
+        option  dontlognull
+        retries 3
+        timeout connect 5000
+        timeout client  50000
+        timeout server 50000
+
+listen admin_stats
+        bind 0.0.0.0:1080
+        mode http
+        option httplog
+        maxconn 10
+        stats refresh 30s
+        stats uri /stats
+        stats realm XingCloud\ Haproxy
+        stats auth admin:admin
+        stats hide-version
+        stats  admin if TRUE
+		
+listen mycat_tcp
+        bind 0.0.0.0:4002
+        mode tcp
+		option tcplog
+        balance roundrobin
+		server 192.168.59.143 192.168.59.143:8066 check inter 2000 rise 3 fall 3 weight 1
+		server 192.168.59.144 192.168.59.144:8066 check inter 2000 rise 3 fall 3 weight 1
+
+
+3. 启动
+	/root/haproxy-1.7.9/sbin/haproxy -f /root/haproxy-1.7.9/conf/haproxy.cfg
+
+
+4. 重启
+	/root/haproxy-1.7.9/sbin/haproxy -f /root/haproxy-1.7.9/conf/haproxy.cfg -st `cat /root/haproxy-1.7.9/haproxy.pid`
+
+
+5. 停止
+	killall haproxy
