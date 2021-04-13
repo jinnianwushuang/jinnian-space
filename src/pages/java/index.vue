@@ -22,14 +22,11 @@
 
 import m1 from "src/pages/java/module/m1.vue";
 import m2 from "src/pages/java/module/m2.vue";
-import m3 from "src/pages/java/module/m3.vue";
-import m4 from "src/pages/java/module/m4.vue";
-import m5 from "src/pages/java/module/m5.vue";
-import m6 from "src/pages/java/module/m6.vue";
-import m7 from "src/pages/java/module/m7.vue";
-import m8 from "src/pages/java/module/m8.vue";
-import m9 from "src/pages/java/module/jdbc/index.vue";
-import m10 from "src/pages/java/module/javaweb/index.vue";
+import m4 from "src/pages/java/module/jdbc/index.vue";
+import m3 from "src/pages/java/module/javaweb/index.vue";
+import m5 from "src/pages/java/module/mybatis/index.vue";
+ 
+
 export default {
   components: {
     m1,
@@ -37,11 +34,11 @@ export default {
     m3,
     m4,
     m5,
-    m6,
-    m7,
-    m8,
-    m9,
-    m10,
+    // m6,
+    // m7,
+    // m8,
+    // m9,
+    // m10,
   },
   data() {
     return {
@@ -49,14 +46,16 @@ export default {
       tabs: [
         { label: "笔记", value: "m1" },
         { label: "JAVA基础", value: "m2" },
-        { label: "JSP", value: "m3" },
-        { label: "MYSQL", value: "m4" },
-        { label: "笔记", value: "m5" },
-        { label: "笔记", value: "m6" },
-        { label: "笔记", value: "m7" },
-        { label: "笔记", value: "m8" },
-        { label: "JDBC", value: "m9" },
-        { label: "javaweb", value: "m10" },
+        // { label: "JSP", value: "m3" },
+        // { label: "MYSQL", value: "m4" },
+        // { label: "笔记", value: "m5" },
+        // { label: "笔记", value: "m6" },
+        // { label: "笔记", value: "m7" },
+        // { label: "笔记", value: "m8" },
+              { label: "javaweb", value: "m3" },
+        { label: "JDBC", value: "m4" },
+  
+        { label: "mybatis", value: "m5" },
       ],
  
     };

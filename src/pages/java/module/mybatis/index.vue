@@ -1,6 +1,6 @@
 <!--
  * @Date           : 2021-04-12 16:09:51
- * @FilePath       : /jinnian-space/src/pages/java/module/javaweb/index.vue
+ * @FilePath       : /jinnian-space/src/pages/java/module/mybatis/index.vue
  * @Description    : 
 -->
 <!--
@@ -28,16 +28,16 @@
 import m1 from "./module/m1.vue";
 import m2 from "./module/m2.vue";
 import m3 from "./module/m3.vue";
-import m4 from "./module/m4.vue";
-import m5 from "./module/m5.vue";
+// import m4 from "./module/m4.vue";
+
 
 export default {
   components: {
     m1,
     m2,
     m3,
-    m4,
-    m5,
+    // m4,
+
 
 
 
@@ -46,11 +46,11 @@ export default {
     return {
       tab: "m1",
       tabs: [
-        { label: "Servlet", value: "m1" },
-        { label: "Request&Response", value: "m2" },
-        { label: "Cookie&SessionJsp", value: "m3" },
-        { label: "EL&Filter&Listener", value: "m4" },
-        { label: "JSP", value: "m5" },
+        { label: "Mybatis 基础", value: "m1" },
+        { label: "Mybatis 进阶", value: "m2" },
+        { label: "Mybatis 高级", value: "m3" },
+        // { label: "mybatis-高级", value: "m4" },
+
 
       ],
  

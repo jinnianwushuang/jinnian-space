@@ -8,7 +8,7 @@
 ### 一、JDBC快速入门
 
 #### 1.jdbc的概念
-![06](./img/java/jdbc/JDBC-01-授课笔记.assets/06.png)
+ 
 
 - JDBC（Java DataBase Connectivity,java数据库连接）是一种用于执行SQL语句的Java API，可以为多种关系型数据库提供统一访问，它是由一组用Java语言编写的类和接口组成的。
 
