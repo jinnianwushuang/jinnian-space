@@ -1,3 +1,8 @@
+<!--
+ * @Date           : 2021-04-14 00:53:12
+ * @FilePath       : /jinnian-space/src/pages/java/module/mybatis/md/mybatis-第1天讲义.md
+ * @Description    : 
+-->
 ## Mybatis 基础
 
 
@@ -125,6 +130,22 @@ public class Student {
     <select id="selectAll" resultType="student">
         SELECT * FROM student
     </select>
+
+    <select id="selectById" resultType="student" parameterType="int">
+        SELECT * FROM student WHERE id = #{id}
+    </select>
+
+    <insert id="insert" parameterType="student">
+        INSERT INTO student VALUES (#{id},#{name},#{age})
+    </insert>
+
+    <update id="update" parameterType="student">
+        UPDATE student SET name = #{name},age = #{age} WHERE id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        DELETE FROM student WHERE id = #{id}
+    </delete>
 </mapper>
 ```
 
@@ -177,8 +198,69 @@ public class Student {
 </configuration>
 
 ```
+##### 1.7.2编写dao代码
+```java
 
-##### 1.7.2编写测试代码
+    /*
+        查询全部
+     */
+    @Test
+    public void selectAll() throws Exception{
+        //1.加载核心配置文件
+        //InputStream is = Resources.getResourceAsStream("MyBatisConfig.xml");
+        InputStream is = StudentTest01.class.getClassLoader().getResourceAsStream("MyBatisConfig.xml");
+
+        //2.获取SqlSession工厂对象
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(is);
+
+        //3.通过SqlSession工厂对象获取SqlSession对象
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+
+        //4.执行映射配置文件中的sql语句，并接收结果
+        List<Student> list = sqlSession.selectList("StudentMapper.selectAll");
+
+        //5.处理结果
+        for (Student stu : list) {
+            System.out.println(stu);
+        }
+
+        //6.释放资源
+        sqlSession.close();
+        is.close();
+    }
+/*
+        新增功能
+     */
+    @Test
+    public void insert() throws Exception{
+        //1.加载核心配置文件
+        InputStream is = Resources.getResourceAsStream("MyBatisConfig.xml");
+
+        //2.获取SqlSession工厂对象
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(is);
+
+        //3.通过工厂对象获取SqlSession对象
+        //SqlSession sqlSession = sqlSessionFactory.openSession();
+        SqlSession sqlSession = sqlSessionFactory.openSession(true);
+
+        //4.执行映射配置文件中的sql语句，并接收结果
+        Student stu = new Student(5,"周七",27);
+        int result = sqlSession.insert("StudentMapper.insert", stu);
+
+        //5.提交事务
+        //sqlSession.commit();
+
+        //6.处理结果
+        System.out.println(result);
+
+        //7.释放资源
+        sqlSession.close();
+        is.close();
+    }    
+
+```
+
+##### 1.7.3编写测试代码
 
 ```java
 /*
@@ -276,7 +358,7 @@ SqlSession 实例在 MyBatis 中是非常强大的一个类。在这里你会看
 
 #### 3.2 查询功能
 
-* <select>：查询功能标签。
+*  select：查询功能标签。
 
 * 属性        
 
@@ -294,7 +376,7 @@ SqlSession 实例在 MyBatis 中是非常强大的一个类。在这里你会看
 
 ####3.3 新增功能 
 
-- <insert>：新增功能标签。
+- insert：新增功能标签。
 
 - 属性        
 
@@ -314,7 +396,7 @@ SqlSession 实例在 MyBatis 中是非常强大的一个类。在这里你会看
 
 #### 3.4 修改功能
 
-- <update>：修改功能标签。
+- update：修改功能标签。
 
 - 属性        
 
@@ -332,7 +414,7 @@ SqlSession 实例在 MyBatis 中是非常强大的一个类。在这里你会看
 
 #### 3.5 删除功能
 
-- <delete>：查询功能标签。
+- delete：查询功能标签。
 
 - 属性        
 
@@ -351,6 +433,8 @@ SqlSession 实例在 MyBatis 中是非常强大的一个类。在这里你会看
 * 总结： 大家可以发现crud操作，除了标签名称以及sql语句不一样之外，其他属性参数基本一致。
 
 #### 3.6 映射配置文件小结
+
+
 
 ![1590918743943](./img/java/mybatis/mybatis-第1天讲义.img/1590918743943.png)
 
@@ -445,8 +529,22 @@ SqlSession 实例在 MyBatis 中是非常强大的一个类。在这里你会看
   ~~~
 
 #### 4.4 总结
+```xml
+核心配置文件包含了MyBatis.最核心的设置和属性信息。如数据库的连接、事务、连接池信息等。
 
-![1590919367790](./img/java/mybatis/mybatis-第1天讲义.img/1590919367790.png)
+<configuration> :核心根标签。
+<properties> :引入数据库连接信息配置文件标签。
+<typeAliases> :起别名标签。
+<environments>:配置数据库环境标签。
+<environment>:配置数据库信息标签。
+<transactionManager>︰事务管理标签。
+<dataSource>︰数据源标签。
+<property>:数据库连接信息标签。
+<mappers> :引入映射配置文件标签。
+
+```
+
+ 
 
 ### 五.Mybatis传统方式开发
 

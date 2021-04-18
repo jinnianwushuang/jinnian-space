@@ -161,4 +161,3 @@
 
 ### 就是本地存储
 
-*XMind: ZEN - Trial Version*

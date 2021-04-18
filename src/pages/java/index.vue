@@ -25,6 +25,7 @@ import m2 from "src/pages/java/module/m2.vue";
 import m4 from "src/pages/java/module/jdbc/index.vue";
 import m3 from "src/pages/java/module/javaweb/index.vue";
 import m5 from "src/pages/java/module/mybatis/index.vue";
+
  
 
 export default {
@@ -34,7 +35,7 @@ export default {
     m3,
     m4,
     m5,
-    // m6,
+  
     // m7,
     // m8,
     // m9,
@@ -56,6 +57,7 @@ export default {
         { label: "JDBC", value: "m4" },
   
         { label: "mybatis", value: "m5" },
+       
       ],
  
     };

@@ -194,4 +194,3 @@ for(i=0;i<n;i++)
 
 - JavaScript代码
 
-*XMind: ZEN - Trial Version*

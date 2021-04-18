@@ -2280,4 +2280,3 @@ element.removeEventListener('click', listener);
 
 - Promise的应用
 
-*XMind: ZEN - Trial Version*

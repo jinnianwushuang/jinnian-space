@@ -1,3 +1,8 @@
+<!--
+ * @Date           : 2021-04-14 00:54:32
+ * @FilePath       : /jinnian-space/src/pages/java/module/mybatis/md/mybatis-第2天讲义.md
+ * @Description    : 
+-->
 ## Mybatis 进阶
 
 
@@ -340,7 +345,7 @@ System.out.println("是否最后一页："+pageInfo.isIsLastPage());
 
 * 分页插件 jar 包： pagehelper-5.1.10.jar jsqlparser-3.1.jar 
 
-*  <plugins>：集成插件标签。 
+*  plugins：集成插件标签。 
 
 * 分页助手相关 API 
 

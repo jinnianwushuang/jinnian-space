@@ -109,4 +109,3 @@
             proxy_pass http://www.serverA.com;  #将真正的请求代理到serverA,即真实的服务器地址，ajax的url为/api/user/1的请求将会访问http://www.serverA.com/user/1
         }
 }
-*XMind: ZEN - Trial Version*

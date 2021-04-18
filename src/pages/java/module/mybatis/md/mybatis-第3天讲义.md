@@ -551,7 +551,10 @@ public class Test01 {
 #### 3.1 SQL 构建对象介绍    
 
 * 我们之前通过注解开发时，相关 SQL 语句都是自己直接拼写的。一些关键字写起来比较麻烦、而且容易出错。 
-*  MyBatis 给我们提供了 org.apache.ibatis.jdbc.SQL 功能类，专门用于构建 SQL 语句    
+*  MyBatis 给我们提供了 org.apache.ibatis.jdbc.SQL 功能类，专门用于构建 SQL 语句  
+*  org.apache.ibatis.jdbc.SQL      -     org.apache.ibatis.AbstractSQL  
+
+
 * ![1590943921472](./img/java/mybatis/mybatis-第3天讲义.img/1590943921472.png)
 
 #### 3.2  查询功能的实现
@@ -580,7 +583,7 @@ public class Test01 {
 
 *  @UpdateProvider：生成修改用的 SQL 语句注解。 
 
-  type 属性：生成 SQL 语句功能类对象
+   type 属性：生成 SQL 语句功能类对象
 
    method 属性：指定调用方法    
 
@@ -592,7 +595,127 @@ public class Test01 {
 
    type 属性：生成 SQL 语句功能类对象 
 
-   method 属性：指定调用方法    
+   method 属性：指定调用方法   
+
+ ####  3.6  定义sql 语句 ReturnSql.java
+ ```java
+package com.itheima.sql;
+
+import com.itheima.bean.Student;
+import org.apache.ibatis.jdbc.SQL;
+
+public class ReturnSql {
+    //定义方法，返回查询的sql语句
+    public String getSelectAll() {
+        return new SQL() {
+            {
+                SELECT("*");
+                FROM("student");
+            }
+        }.toString();
+    }
+
+    //定义方法，返回新增的sql语句
+    public String getInsert(Student stu) {
+        return new SQL() {
+            {
+                INSERT_INTO("student");
+                INTO_VALUES("#{id},#{name},#{age}");
+            }
+        }.toString();
+    }
+
+    //定义方法，返回修改的sql语句
+    public String getUpdate(Student stu) {
+        return new SQL() {
+            {
+                UPDATE("student");
+                SET("name=#{name}","age=#{age}");
+                WHERE("id=#{id}");
+            }
+        }.toString();
+    }
+
+    //定义方法，返回删除的sql语句
+    public String getDelete(Integer id) {
+        return new SQL() {
+            {
+                DELETE_FROM("student");
+                WHERE("id=#{id}");
+            }
+        }.toString();
+    }
+}
+ ```
+
+ ####  3.7 使用 sql 语句 StudentMapper.java
+ ```java
+package com.itheima.mapper;
+
+import com.itheima.bean.Student;
+import com.itheima.sql.ReturnSql;
+import org.apache.ibatis.annotations.DeleteProvider;
+import org.apache.ibatis.annotations.InsertProvider;
+import org.apache.ibatis.annotations.SelectProvider;
+import org.apache.ibatis.annotations.UpdateProvider;
+
+import java.util.List;
+
+public interface StudentMapper {
+    //查询全部
+    //@Select("SELECT * FROM student")
+    @SelectProvider(type = ReturnSql.class , method = "getSelectAll")
+    public abstract List<Student> selectAll();
+
+    //新增功能
+    //@Insert("INSERT INTO student VALUES (#{id},#{name},#{age})")
+    @InsertProvider(type = ReturnSql.class , method = "getInsert")
+    public abstract Integer insert(Student stu);
+
+    //修改功能
+    //@Update("UPDATE student SET name=#{name},age=#{age} WHERE id=#{id}")
+    @UpdateProvider(type = ReturnSql.class , method = "getUpdate")
+    public abstract Integer update(Student stu);
+
+    //删除功能
+    //@Delete("DELETE FROM student WHERE id=#{id}")
+    @DeleteProvider(type = ReturnSql.class , method = "getDelete")
+    public abstract Integer delete(Integer id);
+}
+
+
+ ```
+
+ ####  3.8 测试
+ ```java
+   @Test
+    public void selectAll() throws Exception{
+        //1.加载核心配置文件
+        InputStream is = Resources.getResourceAsStream("MyBatisConfig.xml");
+
+        //2.获取SqlSession工厂对象
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(is);
+
+        //3.通过工厂对象获取SqlSession对象
+        SqlSession sqlSession = sqlSessionFactory.openSession(true);
+
+        //4.获取StudentMapper接口的实现类对象
+        StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
+
+        //5.调用实现类对象中的方法，接收结果
+        List<Student> list = mapper.selectAll();
+
+        //6.处理结果
+        for (Student student : list) {
+            System.out.println(student);
+        }
+
+        //7.释放资源
+        sqlSession.close();
+        is.close();
+    }
+
+ ```
 
 ### 四.综合案例
 
@@ -652,7 +775,7 @@ public class Test01 {
   ```java
   package com.itheima.dao;
   
-import com.itheima.domain.Student;
+  import com.itheima.domain.Student;
   import org.apache.ibatis.annotations.Delete;
   import org.apache.ibatis.annotations.Insert;
   import org.apache.ibatis.annotations.Select;
@@ -691,7 +814,7 @@ import com.itheima.domain.Student;
   
 * 步骤三：修改`StudentServiceImpl`
 
-  ~~~java
+  ```java
   package com.itheima.service.impl;
   
   import com.itheima.dao.StudentDao;
@@ -908,78 +1031,7 @@ import com.itheima.domain.Student;
       }
   }
   
-  ~~~
-
-  
-
-##### 
-
-
-
-
-
-##### 
-
-
-
-##### 
-
-
-
-##### 
-
-
-
-##### 
-
-
-
-##### 
-
-
-
-
-
-##### 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
 
 
 

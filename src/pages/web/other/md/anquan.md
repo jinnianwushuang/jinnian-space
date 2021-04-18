@@ -582,4 +582,3 @@ http://www.domain.com – 只允许特定站点才能访问当前资源
 
 	- CSRF与AJAX无关
 
-*XMind: ZEN - Trial Version*

@@ -505,4 +505,3 @@ function getName(n: NameOrResolver): Name {
     }
 }
 
-*XMind: ZEN - Trial Version*

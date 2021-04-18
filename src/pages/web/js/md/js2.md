@@ -2197,4 +2197,3 @@ p.constructor = Child
 
 		- 自省就是检查实例的类型
 
-*XMind: ZEN - Trial Version*
