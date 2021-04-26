@@ -30,6 +30,7 @@ import m8 from "src/pages/linux/module/m8.vue";
 import m9 from "src/pages/linux/module/m9.vue";
 import m10 from "src/pages/linux/module/m10.vue";
 import m13 from "src/pages/linux/module/m13.vue";
+import m18 from "src/pages/linux/module/java-linux/index.vue";
 
 
 export default {
@@ -44,7 +45,8 @@ export default {
     m8,
     m9,
     m10,
-    m13
+    m13,
+    m18,
   },
 
   data() {
@@ -58,7 +60,8 @@ export default {
         { label: "vim", value: "m2" },
         { label: "shell-基础", value: "m3" },
         { label: "运维书籍", value: "m4" },
-        { label: "Linux—前端够用", value: "m5" },
+        { label: "Linux—前端", value: "m5" },
+        { label: "Linux—java", value: "m18" },
 
         { label: "linux-目录", value: "m7" },
         { label: "前端运维", value: "m8" },

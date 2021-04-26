@@ -469,8 +469,11 @@
    <tr height="36" class="xl65" style='height:27.00pt;'>
     <td class="xl80" x:str>mv</td>
     <td class="xl71" x:str>移动<br/>重命名</td>
-    <td class="xl71" x:str><span style='mso-spacerun:yes;'>&nbsp;</span>-f 连同子目录一起<br/><span style='mso-spacerun:yes;'>&nbsp;</span>-i</td>
-    <td class="xl73" x:str>mv hello.txt /opt/test/<font class="font1">ok.txt</font></td>
+    <td class="xl71" x:str><span style='mso-spacerun:yes;'>&nbsp;</span>-f 连同子目录一起<br/><span style='mso-spacerun:yes;'>&nbsp;</span>-i<br/><span style='mso-spacerun:yes;'>&nbsp;</span>-t   目标目录</td>
+    <td class="xl73" x:str>mv hello.txt /opt/test/<font class="font1">ok.txt</font>
+        <br/>
+        mv -t d  a  b c 
+    </td>
    </tr>
    <tr height="54" class="xl65" style='height:40.50pt;'>
     <td class="xl70" x:str>rm</td>
@@ -553,7 +556,8 @@
     <td class="xl70" x:str>grep</td>
     <td class="xl70" x:str>reGulaR ExPression</td>
     <td class="xl71" x:str><span style='mso-spacerun:yes;'>&nbsp;</span>-i 忽略大小写<br/><span style='mso-spacerun:yes;'>&nbsp;</span>-n 显示行号<br/><span style='mso-spacerun:yes;'>&nbsp;</span>-v 取反<br/><span style='mso-spacerun:yes;'>&nbsp;</span></td>
-    <td class="xl72" x:str>grep &quot;^ma&quot; /etc/passwd<br/>grep &quot;bash$&quot; /etc/passwd<br/>grep &quot;^[r|d]&quot; /etc/passwd</td>
+    <td class="xl72" x:str>grep &quot;^ma&quot; /etc/passwd<br/>grep &quot;bash$&quot; /etc/passwd<br/>grep &quot;^[r|d]&quot; /etc/passwd<br/> cat redis.conf | grep -v "#" | grep -v "^$"  </td>
+  
    </tr>
    <tr height="18" class="xl65" style='height:13.50pt;'>
     <td class="xl70" x:str>egrep</td>
