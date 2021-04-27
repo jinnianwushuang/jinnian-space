@@ -23,6 +23,7 @@ import m4 from "src/pages/java/module/jdbc/index.vue";
 import m3 from "src/pages/java/module/javaweb/index.vue";
 import m5 from "src/pages/java/module/mybatis/index.vue";
 import m6 from "src/pages/java/module/maven/index.vue";
+import m7 from "src/pages/java/module/springmvc/index.vue";
 export default {
   components: {
     m1,
@@ -30,8 +31,8 @@ export default {
     m3,
     m4,
     m5,
-    m6
-    // m7,
+    m6,
+    m7,
     // m8,
     // m9,
     // m10,
@@ -44,7 +45,8 @@ export default {
         { label: "javaweb", value: "m3" },
         { label: "JDBC", value: "m4" },
         { label: "mybatis", value: "m5" },
-        { label: "maven", value: "m6" }
+        { label: "maven", value: "m6" },
+        { label: "springmvc", value: "m7" },
       ]
     };
   }
