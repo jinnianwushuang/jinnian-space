@@ -1,6 +1,6 @@
 <!--
  * @Date           : 2020-11-05 21:36:01
- * @FilePath       : /jinnian-space/src/pages/web/web/index.vue
+ * @FilePath       : /jinnian-space/src/pages/web/index.vue
  * @Description    : 
 -->
 <template>
@@ -27,6 +27,7 @@ import react from "src/pages/web/react/index.vue";
 
 import other from "src/pages/web/other/index.vue";
 import tool from "src/pages/web/tool/index.vue";
+import ts from "src/pages/web/ts/index.vue";
 export default {
   components: {
     basics,
@@ -36,7 +37,8 @@ export default {
     vue,
     other,
     tool,
-    react
+    react,
+    ts
   },
   data() {
     return {
@@ -48,6 +50,7 @@ export default {
         { label: "http", value: "http" },
         { label: "vue", value: "vue" },
         { label: "react", value: "react" },
+        { label: "ts", value: "ts" },
 
         { label: "other", value: "other" },
         { label: "tool", value: "tool" }

@@ -25,7 +25,8 @@ export default {
       util,
       books: [
         "web/jinnian-web-2020-01-13.xmind",
-        "web/阮一峰JavaScript基础总结.xmind"
+        "web/阮一峰JavaScript基础总结.xmind",
+        "web/React 全家桶.xmind",
       ]
     };
   }

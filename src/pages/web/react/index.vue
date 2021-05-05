@@ -1,6 +1,16 @@
+<!--
+ * @Date           : 2021-04-12 16:09:51
+ * @FilePath       : /jinnian-space/src/pages/web/react/index.vue
+ * @Description    : 
+-->
+<!--
+ * @Date           : 2020-08-31 16:40:04
+ * @FilePath       : /jinnian-space/src/pages/java/index.vue
+ * @Description    : 
+-->
 <template>
   <div>
-    <q-tabs v-model="tab" align="left" inline-label dense  class="text-teal">
+    <q-tabs v-model="tab" align="left" inline-label dense class="text-teal">
       <q-tab
         v-for="(item, index) in tabs"
         :key="`tabs_${index}`"
@@ -9,52 +19,41 @@
       />
     </q-tabs>
 
-<div class="q-mx-lg"> 
-  <component :is="`${tab}`"></component>
-
-</div>
-  
+    <component :is="`${tab}`"></component>
   </div>
 </template>
-<script>
-import m1 from "src/pages/web/react/module/m1.vue";
-// import m2 from "src/pages/web/react/module/m2.vue";
-// import m3 from "src/pages/web/react/module/m3.vue";
-// import m4 from "src/pages/web/react/module/m4.vue";
-// import m5 from "src/pages/web/react/module/m5.vue";
-// import m6 from "src/pages/web/react/module/m6.vue";
-// import m7 from "src/pages/web/react/module/m7.vue";
-// import m8 from "src/pages/web/react/module/m8.vue";
 
-export default { 
+<script>
+
+import m1 from "./module/m1.vue";
+import m2 from "./module/m2.vue";
+import m3 from "./module/m3.vue";
+
+
+export default {
   components: {
     m1,
-    // m2,
-    // m3,
-    // m4,
-    // m5,
-    // m6,
-    // m7,
-    // m8,
+    m2,
+    m3,
+
+
+
   },
   data() {
     return {
-      tab: 'm1',
-     
+      tab: "m2",
       tabs: [
-          { label: "react" ,value:'m1'},
-          // { label: "webpack" ,value:'m2'},
-          // { label: "nginx" ,value:'m3'},
-          // { label: "基本" ,value:'m4'},
-          // { label: "基本" ,value:'m5'},
-          // { label: "基本" ,value:'m6'},
-          // { label: "基本" ,value:'m7'},
-          // { label: "基本" ,value:'m8'},
-    
-      ]
+        { label: "react", value: "m1" },
+        { label: "基础", value: "m2" },
+        { label: "基础", value: "m3" },
+
+
+      ],
+ 
     };
   }
 };
 </script>
 
 <style lang="scss" scoped></style>
+

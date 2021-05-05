@@ -1,0 +1,7 @@
+"global-modifying-module.d.ts.md",
+"global-plugin.d.ts.md",
+"global.d.ts.md",
+"module-class.d.ts.md",
+"module-function.d.ts.md",
+"module-plugin.d.ts.md",
+"module.d.ts.md",

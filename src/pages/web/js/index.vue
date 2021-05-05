@@ -1,3 +1,8 @@
+<!--
+ * @Date           : 2020-11-05 21:36:01
+ * @FilePath       : /jinnian-space/src/pages/web/js/index.vue
+ * @Description    : 
+-->
 <template>
   <div>
     <q-tabs v-model="tab" align="left" inline-label dense class="text-teal">
@@ -24,7 +29,7 @@ import m6 from "src/pages/web/js/module/m6.vue";
 import m7 from "src/pages/web/js/module/m7.vue";
 import m8 from "src/pages/web/js/module/m8.vue";
 import m9 from "src/pages/web/js/module/m9.vue";
-import m10 from "src/pages/web/js/module/m10.vue";
+
 
 
 export default {
@@ -38,7 +43,7 @@ export default {
     m7,
     m8,
     m9,
-    m10
+ 
   },
 
   data() {
@@ -55,7 +60,7 @@ export default {
 
         { label: "阮一峰JavaScript基础总结", value: "m9" },
         { label: "jquery", value: "m8" },
-        { label: "ts", value: "m10" },
+
         { label: "正则", value: "m7" }
       ]
     };

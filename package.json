@@ -17,6 +17,7 @@
     "axios": "^0.18.1",
     "core-js": "^3.6.5",
     "github-markdown-css": "^4.0.0",
+    "marked": "^2.0.3",
     "quasar": "^1.0.0",
     "vue-i18n": "^8.0.0"
   },
