@@ -1,3 +1,8 @@
+<!--
+ * @Date           : 2021-05-05 07:12:53
+ * @FilePath       : /jinnian-space/src/pages/web/react/md/react基础Day03-生命周期&render props模式&高阶组件&原理揭秘.md
+ * @Description    : 
+-->
 # 组件生命周期（★★★）
 
 ## 目标
@@ -13,20 +18,20 @@
 
 生命周期的每个阶段总是伴随着一些方法调用，这些方法就是生命周期的钩子函数
 
-构造函数的作用：为开发人员在不同阶段操作组件提供了实际
+构造函数的作用：为开发人员在不同阶段操作组件提供了时机
 
 ## 生命周期阶段
 
-![](./img/web/react/react基础Day03-生命周期&render props模式&高阶组件&原理揭秘/生命周期.png)
+![](./img/web/react/react基础Day03-生命周期-高阶组件原理揭秘/生命周期.png)
 
 ### 创建时（挂载阶段）
 
 - 执行时机：组件创建时（页面加载时）
 - 执行顺序
+ 
+![](./img/web/react/react基础Day03-生命周期-高阶组件原理揭秘/创建时-函数执行顺序.png)
 
-![](./img/web/react/react基础Day03-生命周期&render props模式&高阶组件&原理揭秘/创建时-函数执行顺序.png)
-
-![](./img/web/react/react基础Day03-生命周期&render props模式&高阶组件&原理揭秘/创建时-函数的作用.png)
+![](./img/web/react/react基础Day03-生命周期-高阶组件原理揭秘/创建时-函数的作用.png)
 
 ### 更新时
 
@@ -36,27 +41,27 @@
 
 执行顺序：
 
-![](./img/web/react/react基础Day03-生命周期&render props模式&高阶组件&原理揭秘/更新时.png)
+![](./img/web/react/react基础Day03-生命周期-高阶组件原理揭秘/更新时.png)
 
-![](./img/web/react/react基础Day03-生命周期&render props模式&高阶组件&原理揭秘/更新时-函数作用.png)
+![](./img/web/react/react基础Day03-生命周期-高阶组件原理揭秘/更新时-函数作用.png)
 
 ### 卸载时
 
 执行时机：组件从页面中消失
 
-作用：用来做清理操作
+作用：用来做清理操作  清理 定时器 以及一些 特殊的绑定 回调  window.addEventListene
 
-![](./img/web/react/react基础Day03-生命周期&render props模式&高阶组件&原理揭秘/卸载时.png)
+![](./img/web/react/react基础Day03-生命周期-高阶组件原理揭秘/卸载时.png)
 
 ### 不常用的钩子函数
 
 #### 旧版的生命周期钩子函数
 
-![](./img/web/react/react基础Day03-生命周期&render props模式&高阶组件&原理揭秘/旧版生命周期函数.png)
+![](./img/web/react/react基础Day03-生命周期-高阶组件原理揭秘/旧版生命周期函数.png)
 
 #### 新版完整生命会走棋钩子函数
 
-![](./img/web/react/react基础Day03-生命周期&render props模式&高阶组件&原理揭秘/新版生命周期函数.png)
+![](./img/web/react/react基础Day03-生命周期-高阶组件原理揭秘/新版生命周期函数.png)
 
 ##### `getDerivedStateFromProps()`
 
@@ -100,13 +105,13 @@
 
   - 在使用组件时，添加一个值为函数的prop，通过函数参数来获取
 
-    ![](./img/web/react/react基础Day03-生命周期&render props模式&高阶组件&原理揭秘/render-props-01.png)
+    ![](./img/web/react/react基础Day03-生命周期-高阶组件原理揭秘/render-props-01.png)
 
 - 如何渲染到任意的UI
 
   - 使用该函数的返回值作为要渲染的UI内容
 
-    ![](./img/web/react/react基础Day03-生命周期&render props模式&高阶组件&原理揭秘/render-props-02.png)
+    ![](./img/web/react/react基础Day03-生命周期-高阶组件原理揭秘/render-props-02.png)
 
 ## 使用步骤
 
@@ -114,7 +119,7 @@
 - 将要复用的状态作为 props.render(state)方法的参数，暴露到组件外部
 - 使用props.render() 的返回值作为要渲染的内容
 
-![](./img/web/react/react基础Day03-生命周期&render props模式&高阶组件&原理揭秘/render-props模式-01.png)
+![](./img/web/react/react基础Day03-生命周期-高阶组件原理揭秘/render-props模式-01.png)
 
 #### 示例demo
 
@@ -162,17 +167,17 @@ ReactDOM.render(<App />,document.getElementById('root'))
 - 把prop是一个函数并且告诉组件要渲染什么内容的技术叫做： render props模式
 - 推荐：使用childre代替render属性
 
-![](./img/web/react/react基础Day03-生命周期&render props模式&高阶组件&原理揭秘/render-props-children模式.png)
+![](./img/web/react/react基础Day03-生命周期-高阶组件原理揭秘/render-props-children模式.png)
 
 ## 优化代码
 
 - 推荐给render props模式添加props校验
 
-![](./img/web/react/react基础Day03-生命周期&render props模式&高阶组件&原理揭秘/优化-添加校验.png)
+![](./img/web/react/react基础Day03-生命周期-高阶组件原理揭秘/优化-添加校验.png)
 
 -  
 
-![](./img/web/react/react基础Day03-生命周期&render props模式&高阶组件&原理揭秘/优化-移除事件绑定.png)
+![](./img/web/react/react基础Day03-生命周期-高阶组件原理揭秘/优化-移除事件绑定.png)
 
 
 
@@ -191,17 +196,17 @@ ReactDOM.render(<App />,document.getElementById('root'))
 - 手机壳：提供保护功能
 - 高阶组件就相当于手机壳，通过包装组件，增强组件功能
 
-![](./img/web/react/react基础Day03-生命周期&render props模式&高阶组件&原理揭秘/手机壳.png)
+![](./img/web/react/react基础Day03-生命周期-高阶组件原理揭秘/手机壳.png)
 
 ## 思路分析
 
 - 高阶组件(HOC、Higher-Order Component) 是一个函数，接收要包装的组件，返回增强后的组件
 
-![](./img/web/react/react基础Day03-生命周期&render props模式&高阶组件&原理揭秘/高阶组件-函数.png)
+![](./img/web/react/react基础Day03-生命周期-高阶组件原理揭秘/高阶组件-函数.png)
 
 - 高阶组件内部创建了一个类组件，在这个类组件中提供复用的状态逻辑代码，通过prop将复用的状态传递给被包装组件`WrappedComponent`
 
-![](./img/web/react/react基础Day03-生命周期&render props模式&高阶组件&原理揭秘/高阶组件-类组件内部实现.png)
+![](./img/web/react/react基础Day03-生命周期-高阶组件原理揭秘/高阶组件-类组件内部实现.png)
 
 ## 使用步骤
 
@@ -283,14 +288,14 @@ class App extends React.Component {
 - `displayName的作用：用于设置调试信息(React Developer Tools信息)`
 - 设置方式：
 
-![](./img/web/react/react基础Day03-生命周期&render props模式&高阶组件&原理揭秘/高阶组件-displayName.png)
+![](./img/web/react/react基础Day03-生命周期-高阶组件原理揭秘/高阶组件-displayName.png)
 
 ## 传递props
 
 - 问题：如果没有传递props，会导致props丢失问题
 - 解决方式： 渲染`WrappedComponent`时，将state和props一起传递给组件
 
-![](./img/web/react/react基础Day03-生命周期&render props模式&高阶组件&原理揭秘/传递props.png)
+![](./img/web/react/react基础Day03-生命周期-高阶组件原理揭秘/传递props.png)
 
 ## 小结
 
@@ -323,7 +328,7 @@ class App extends React.Component {
 - 参数state： 表示最新的state
 - 参数props： 表示最新的props
 
-![](./img/web/react/react基础Day03-生命周期&render props模式&高阶组件&原理揭秘/推荐语法.png)
+![](./img/web/react/react基础Day03-生命周期-高阶组件原理揭秘/推荐语法.png)
 
 
 
@@ -332,7 +337,7 @@ class App extends React.Component {
 - 场景：在状态更新(页面完成重新渲染)后立即执行某个操作
 - 语法：`setState(update[,callback])`
 
-![](./img/web/react/react基础Day03-生命周期&render props模式&高阶组件&原理揭秘/第二个参数.png)
+![](./img/web/react/react基础Day03-生命周期-高阶组件原理揭秘/第二个参数.png)
 
 ## JSX语法的转化过程 （★★★）
 
@@ -340,4 +345,4 @@ class App extends React.Component {
 - JSX语法被 @babel/preset-react 插件编译为`createElement()` 方法
 - React 元素： 是一个对象，用来描述你希望在屏幕上看到的内容
 
-![](./img/web/react/react基础Day03-生命周期&render props模式&高阶组件&原理揭秘/语法糖.png)
+![](./img/web/react/react基础Day03-生命周期-高阶组件原理揭秘/语法糖.png)

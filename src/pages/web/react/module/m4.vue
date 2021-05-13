@@ -1,15 +1,31 @@
+<!--
+ * @Date           : 2020-08-31 16:40:04
+ * @FilePath       : /jinnian-space/src/pages/web/react/module/m4.vue
+ * @Description    : 
+-->
+ 
+ 
 <template>
-    <div>
-        1
-    </div>
+  <div class="">
+    <q-markdown :src="MainComponent" />
+ 
+  </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+import MainComponent from "../md/react-base-demo.md";
+ 
+export default {
+  data() {
+    return {
+      MainComponent,
+     
+    };
+  }
+};
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" scoped></style>
 
-</style>
+
+

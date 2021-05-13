@@ -389,7 +389,7 @@ handleClick = (e) => {
 
 ### 特点
 
-- 可以给组件传递任意类型的数据
+- 可以给组件传递任意类型的数据 ： 字符串  数字 数组  对象  函数  jsx 组件
 - props是只读属性，不能对值进行修改
 - 注意：使用类组件时，如果写了构造函数，应该将props传递给super(),否则，无法在构造函数中获取到props，其他的地方是可以拿到的
 
@@ -580,7 +580,7 @@ class Child2 extends React.Component {
 
 #### 使用步骤
 
-- 安装包  `prop-types (yarn add prop-types | npm i props-types)`
+- 安装包  `prop-types (yarn add prop-types | npm i prop-types)`
 - 导入prop-types 包
 - 使用`组件名.propTypes={}` 来给组件的props添加校验规则
 - 校验规则通过PropTypes对象来指定

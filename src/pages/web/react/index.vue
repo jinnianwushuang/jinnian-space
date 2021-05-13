@@ -28,6 +28,7 @@
 import m1 from "./module/m1.vue";
 import m2 from "./module/m2.vue";
 import m3 from "./module/m3.vue";
+import m4 from "./module/m4.vue";
 
 
 export default {
@@ -35,17 +36,19 @@ export default {
     m1,
     m2,
     m3,
+    m4,
 
 
 
   },
   data() {
     return {
-      tab: "m2",
+      tab: "m3",
       tabs: [
         { label: "react", value: "m1" },
         { label: "基础", value: "m2" },
         { label: "基础", value: "m3" },
+        { label: "基础demo", value: "m4" },
 
 
       ],
