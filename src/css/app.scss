@@ -20,3 +20,13 @@ pre{
     white-space:-o-pre-wrap; /* Opera 7 */ 
     word-wrap:break-word; /* Internet Explorer 5.5+ */ 
     } 
+
+
+    .q-pdfviewer-container {
+        max-width: 80vw;
+        max-height: 100vh;
+        min-width: 70vw;
+        min-height: 600px;
+        width: 100%;
+        height: 100%;
+      }

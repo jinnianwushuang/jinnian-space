@@ -1,9 +1,10 @@
 /*
- * @Date           : 2020-10-30 23:46:29
- * @FilePath       : /jinnian-space/src/util/index.js
- * @Description    :
+ * @Date           : 2021-07-04 23:58:05
+ * @FilePath       : /jinnian-space/src/boot/utils.js
+ * @Description    : 
  */
 
+import Vue from 'vue'
 let isdev = process.env.DEV;
 //  var path = require("path");
 
@@ -30,7 +31,12 @@ const compute_book_name = item => {
   return arr[arr.length - 1];
 };
 
-export default {
+const utils = {
   compute_book_src,
   compute_book_name
 };
+
+
+
+
+Vue.prototype.$utils = utils

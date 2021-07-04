@@ -14,7 +14,7 @@
 
 <script>
  
-// util.compute_book_src()
+ 
 export default {
  
 
@@ -28,12 +28,5 @@ export default {
 </script>
 
 <style>
-.container {
-  max-width: 80vw;
-  max-height: 100vh;
-  min-width: 70vw;
-  min-height: 70vh;
-  width: 100%;
-  height: 100%;
-}
+
 </style>

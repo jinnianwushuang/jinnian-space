@@ -4,42 +4,32 @@
  * @Description    : 
 -->
 
-<style lang="scss" scoped></style>
 <template>
   <div>
-    <div class="row q-gutter-md q-my-md">
-      <q-btn
-        color="primary"
-        v-for="(item, index) in book_arr"
-        :key="`book_arr_${index}`"
-        :label="item"
-        @click="change_book(item)"
-      />
+    <div class="row   q-my-md">
+      <q-select
+        v-model="book"
+        @input="change_book()"
+        :options="book_arr"
+     ><template slot="before">
+       <div>
+         选择书籍
+       </div>
+     </template> </q-select>
     </div>
-
-    <div class="container q-pa-lg">
-      <!-- type="pdfjs"     type="html5" -->
+    <div class="q-pdfviewer-container   q-pa-md">
       <q-pdfviewer
         v-model="show"
         :src="src"
         type="html5"
-        content-class="fit container"
-        inner-content-class="fit container"
+        content-class=" fit   q-pdfviewer-container"
+        inner-content-class=" fit   q-pdfviewer-container"
       />
     </div>
   </div>
 </template>
-
 <script>
-import  util from "src/util/index.js"
-export default {
-  name: "Container",
-
-  data() {
-    return {
-      show: true,
-      src:   util.compute_book_src("linux/pdf/Linux学习笔记.pdf") ,
-      book_arr: [
+const book_arr = [
         "CDN排坑指南.pdf",
         "DTS控制台一本通.pdf",
         "ECS运维指南-linux诊断.pdf",
@@ -52,42 +42,20 @@ export default {
         "VOD问题排查与实战手册.pdf",
         "深入浅出K8S.pdf",
         "深入浅出玩转物联网平台.pdf"
-      ]
+];
+const prefix = "linux/pdf/";
+import {select_pdf_mixin} from "src/mixins/index.js"
+export default {
+  mixins:[select_pdf_mixin],
+  data() {
+    return {
+      prefix,
+      book_arr,
+      show: true,
+      book: book_arr[0],
+      src: ""
     };
   },
-  methods: {
-    change_book(item) {
-      this.src =   util.compute_book_src("linux/pdf/" + item) ;
-    },
-    fetchPDF (payload) {
-  this.$axios.post('/my/url/to/pdf', payload, { responseType: 'blob' }).then(res => {
-    // create the blob
-    const blob = new Blob([res.data], { type: res.data.type })
-    // set reactive variable
-    this.src = window.URL.createObjectURL(blob)
-  }).catch(err => {
-    this.$q.notify({
-      message: 'Error downloading PDF',
-      type: 'negative',
-      textColor: 'white',
-      color: 'negative',
-      icon: 'error',
-      closeBtn: 'close',
-      position: 'top'
-    })
-  })
-}
-  }
 };
 </script>
-
-<style>
-.container {
-  max-width: 80vw;
-  max-height: 100vh;
-  min-width: 70vw;
-  min-height: 70vh;
-  width: 100%;
-  height: 100%;
-}
-</style>
+<style></style>

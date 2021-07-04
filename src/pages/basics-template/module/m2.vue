@@ -1,43 +1,50 @@
 <!--
  * @Date           : 2021-04-12 16:02:15
- * @FilePath       : /jinnian-space/src/pages/java/module/basics/module/m2.vue
+ * @FilePath       : /jinnian-space/src/pages/basics-template/module/m2.vue
  * @Description    : 
 -->
-
- 
 <template>
-  <div class="">
-    <q-markdown :src="MainComponent" :extend="extendMarkdown"  />
+  <div>
+    <div class="row   q-my-md">
+      <q-select
+        v-model="book"
+        @input="change_book()"
+        :options="book_arr"
+     ><template slot="before">
+       <div>
+         选择书籍
+       </div>
+     </template> </q-select>
+    </div>
+    <div class="q-pdfviewer-container   q-pa-md">
+      <q-pdfviewer
+        v-model="show"
+        :src="src"
+        type="html5"
+        content-class=" fit   q-pdfviewer-container"
+        inner-content-class=" fit   q-pdfviewer-container"
+      />
+    </div>
   </div>
 </template>
-
 <script>
-import MainComponent from "../md/demo2.md";
+const book_arr = [
+  "/第1阶段-运维基本功（升级7.6版本）/01运维概述与Linux系统安装.pdf",
+  "/第1阶段-运维基本功（升级7.6版本）/02Linux基础命令.pdf", 
+];
+const prefix = "linux/heima-Linux云计算";
+import {select_pdf_mixin} from "src/mixins/index.js"
 export default {
+  mixins:[select_pdf_mixin],
   data() {
     return {
-      MainComponent
+      prefix,
+      book_arr,
+      show: true,
+      book: book_arr[0],
+      src: ""
     };
-  },
-    methods: {
-    extendMarkdown (md) {
-  md.renderer.rules.image = (tokens, idx, options, env, self) => {
-    // console.log('tokens--- ',tokens);
-   const token = tokens[idx]
-
-    token.attrSet('class', 'q-markdown--image')
-    // 改变 图片路径 增加前缀 拼接 
-    // let raw_src=  token. attrGet('src')
-    // console.log(raw_src);
-    // token.attrSet("src", 'q-markdown--image-6666666666666')
-
-    return self.renderToken(tokens, idx, options)
-  }
-  }
   },
 };
 </script>
-
-<style lang="scss" scoped></style>
-
-
+<style></style>

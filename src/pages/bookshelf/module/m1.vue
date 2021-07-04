@@ -7,17 +7,17 @@
   <div>
     <div v-for="(item, index) in books" :key="index">
       <a
-        :href="util.compute_book_src(item)"
+        :href="$utils.compute_book_src(item)"
         target="_blank"
         rel="noopener noreferrer"
-        >{{ util.compute_book_name(item) }}</a
+        >{{ $utils.compute_book_name(item) }}</a
       >
     </div>
   </div>
 </template>
 
 <script>
-import util from "src/util/index.js";
+ 
 
 export default {
   data() {
