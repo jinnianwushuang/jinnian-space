@@ -10,7 +10,7 @@ console.log('process.env.MODE-------------------------');
 console.log(process.env.MODE);
 console.log( process.argv );
 console.log('process.env.MODE-------------------------');
-
+const path = require('path')
 module.exports = function (ctx) {
   return {
 
@@ -79,13 +79,14 @@ module.exports = function (ctx) {
     htmlVariables: {
       title: '錦年',
       description:'錦年成长空间',
+      icon_path: ctx.dev?'img/logo/favicon.ico':'/public/img/logo/favicon.ico'
   
     },
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
 
 
     build: {
-      distDir: process.argv[3]=='electron'? "./dist-electron":"./docs",
+      distDir: process.argv[3]=='electron'? "./dist-electron":"./docs-2",
       scopeHoisting: true,
       vueRouterMode: 'hash', // available values: 'hash', 'history'
       showProgress: true,
@@ -93,6 +94,7 @@ module.exports = function (ctx) {
       gzip: false,
       analyze: false,
       // publicPath:"https://github.com/jinnianwushuang/jinnian-space/blob/master/public/",
+      publicPath:"public/",
       env: {
         last_update_time:  new Date().getTime()
       },
@@ -102,9 +104,14 @@ module.exports = function (ctx) {
 
       // https://quasar.dev/quasar-cli/cli-documentation/handling-webpack
       extendWebpack (cfg) {
+        // cfg.resolve.alias = {
+        //   ...cfg.resolve.alias, // This adds the existing alias
 
+        //   // Add your own alias like this
+        //   myalias: path.resolve(__dirname, './src/somefolder'),
+        // }
       },
-      chainWebpack(config){
+      chainWebpack(config, { isServer, isClient }){
         // config.module .rule("md")
         // .test(/\.md$/)
         // .use("vue-loader")
@@ -115,6 +122,10 @@ module.exports = function (ctx) {
         // .options({
         //   raw: true
         // });
+     
+          config.resolve.alias
+            .set('public', path.resolve(__dirname, './public'))
+        
       }
     },
 

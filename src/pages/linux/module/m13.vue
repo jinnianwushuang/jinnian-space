@@ -12,7 +12,7 @@
                 <div id="content_views" class="markdown_views">
                   
                     <p><strong>CentOS7系统目录</strong></p> 
-<p><img src="~src/pages/linux/img/m13/20180802170418839.png" alt=""> </p>
+<p><img src="img/linux/xmind-img/m13/20180802170418839.png" alt=""> </p>
 <h2 id="linux有四种基本文件系统类型"><a name="t0"></a><a name="t0"></a>LINUX有四种基本文件系统类型</h2> 
 <hr> 
 <p><strong>普通文件：</strong></p> 

@@ -7,7 +7,7 @@
  
 <template>
   <div class="">
-    <q-markdown :src="MainComponent1" />
+    <q-markdown :extend="extendMarkdown" :src="MainComponent1" />
     <q-markdown :src="MainComponent2" />
   </div>
 </template>
@@ -21,7 +21,28 @@ export default {
       MainComponent1,
       MainComponent2
     };
+  },
+  methods: {
+    extendMarkdown (md) {
+  md.renderer.rules.image = (tokens, idx, options, env, self) => {
+    // console.log('tokens--- ',tokens);
+    // console.log('idx--- ',idx);
+    // console.log(' options--- ',options);
+    // console.log(' env ---',env);
+    // console.log(' self ----',self);
+ 
+   const token = tokens[idx]
+
+    token.attrSet('class', 'q-markdown--image')
+    // 改变 图片路径 增加前缀 拼接 
+    // let raw_src=  token. attrGet('src')
+    // console.log(raw_src);
+    // token.attrSet("src", 'q-markdown--image-6666666666666')
+
+    return self.renderToken(tokens, idx, options)
   }
+  }
+  },
 };
 </script>
 

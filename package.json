@@ -8,10 +8,16 @@
   "author": "",
   "private": true,
   "scripts": {
-    "test": "echo \"No test specified\" && exit 0"
+    "test": "echo \"No test specified\" && exit 0",
+    "build": "run-s q-build cp",
+    "q-build": "quasar build ",
+    "cp-fonts": "rm -r ./public/fonts/* ; cp -r ./docs-2/fonts/*  ./public/fonts/",
+    "cp-css": "rm -r ./public/css/* ; cp -r ./docs-2/css/*  ./public/css/",
+    "cp-js": "rm -r ./public/js/* ; cp -r ./docs-2/js/*  ./public/js/",
+    "cp": "node ./z-sh/cp.js"
   },
   "dependencies": {
-    "@quasar/cli": "^1.1.3",
+    "@quasar/cli": "^1.2.0",
     "@quasar/extras": "^1.0.0",
     "@vue/composition-api": "^0.6.4",
     "axios": "^0.18.1",
@@ -31,7 +37,9 @@
     "electron-debug": "^3.1.0",
     "electron-devtools-installer": "^3.1.1",
     "electron-packager": "^14.2.1",
+    "npm-run-all": "^4.1.5",
     "quasar-app-extension-json-api-viewer": "^1.2.0",
+    "shelljs": "^0.8.4",
     "vue-markdown-loader": "^2.4.1"
   },
   "browserslist": [
