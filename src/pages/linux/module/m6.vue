@@ -4,10 +4,18 @@
  * @Description    : 
 -->
 
-
 <template>
- <div class="q-py-md">
-   <div>yum 阿里云镜像 源            <a href="https://developer.aliyun.com/mirror/" target="_blank" rel="noopener noreferrer">https://developer.aliyun.com/mirror/</a>  </div>
+  <div class="q-py-md">
+    <div>### MobaXterm 官网： <a href="https://mobaxterm.mobatek.net/" target="_blank" rel="noopener noreferrer">https://mobaxterm.mobatek.net/</a> </div>
+    <div>
+      yum 阿里云镜像 源
+      <a
+        href="https://developer.aliyun.com/mirror/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >https://developer.aliyun.com/mirror/</a
+      >
+    </div>
     <pre>
       nodejs  环境安装 
       cd /usr/local/src/
@@ -42,24 +50,18 @@ yum -y install nginx
    
     </pre>
 
-<pre>
+    <pre>
 杀死某个用户的 所有进程  kill -9 $(ps -ef | grep username)    或者   killall -u username  
 
-</pre>
-
- </div>
+</pre
+    >
+  </div>
 </template>
 
 <script>
-
 export default {
- 
-
   data() {
-    return {
-    
-       
-    };
+    return {};
   }
 };
 </script>

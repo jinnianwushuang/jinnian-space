@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import MainComponent from "public/img/linux/heima-Linux云计算/讲义/01运维概述与Linux系统安装.md";
+import MainComponent from "../md/demo.md";
 export default {
   data() {
     return {

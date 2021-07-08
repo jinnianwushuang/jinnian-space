@@ -1,6 +1,6 @@
 <!--
  * @Date           : 2021-04-12 16:09:51
- * @FilePath       : /jinnian-space/src/pages/java/module/javaweb/index.vue
+ * @FilePath       : /jinnian-space/src/pages/linux/heima/index.vue
  * @Description    : 
 -->
 <!--
@@ -10,7 +10,7 @@
 -->
 <template>
   <div>
-    <q-tabs v-model="tab" align="left" inline-label dense class="text-teal">
+    <!-- <q-tabs v-model="tab" align="left" inline-label dense class="text-teal">
       <q-tab
         v-for="(item, index) in tabs"
         :key="`tabs_${index}`"
@@ -19,19 +19,20 @@
       />
     </q-tabs>
 
-    <component :is="`${tab}`"></component>
+    <component :is="`${tab}`"></component> -->
+    <m2></m2>
   </div>
 </template>
 
 <script>
 
-import m1 from "./module/m1.vue";
+// import m1 from "./module/m1.vue";
 import m2 from "./module/m2.vue";
 
 
 export default {
   components: {
-    m1,
+    // m1,
     m2,
 
 
@@ -39,9 +40,9 @@ export default {
   },
   data() {
     return {
-      tab: "m1",
+      tab: "m2",
       tabs: [
-        { label: "m1", value: "m1" },
+        // { label: "m1", value: "m1" },
         { label: "m2", value: "m2" },
 
 

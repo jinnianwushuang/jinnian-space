@@ -10,7 +10,7 @@
       <q-select v-model="book" @input="change_book()" :options="book_arr"
         ><template slot="before">
           <div>
-            选择书籍
+             
           </div>
         </template>
       </q-select>

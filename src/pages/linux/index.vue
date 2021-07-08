@@ -71,23 +71,23 @@ export default {
 
   data() {
     return {
-      tab: "m8",
+      tab: "m13",
 
       tabs: [
         { label: "笔记", value: "m6" },
-        { label: "linux目录结构", value: "m13" },
+        { label: "linux-目录", value: "m13" },
         { label: "linux命令", value: "m1" },
-        { label: "vim", value: "m2" },
+        // { label: "vim", value: "m2" },
         { label: "shell-基础", value: "m3" },
         { label: "运维书籍", value: "m4" },
         { label: "黑马云计算", value: "m16" },
         { label: "Linux—前端", value: "m5" },
         { label: "Linux—java", value: "m18" },
 
-        { label: "linux-目录", value: "m7" },
+      
         { label: "前端运维", value: "m8" },
         { label: "日常运维", value: "m9" },
-        { label: "linux目录", value: "m10" },
+     
         { label: "Nginx", value: "m14" },
         { label: "Nginx 配置", value: "m15" },
       ]

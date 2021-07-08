@@ -7,16 +7,16 @@
  
 <template>
   <div class="">
-    <q-markdown :src="MainComponent" />
+ 
   </div>
 </template>
 
 <script>
-import MainComponent from "../md/linux-目录.md";
+ 
 export default {
   data() {
     return {
-      MainComponent
+     
     };
   }
 };
