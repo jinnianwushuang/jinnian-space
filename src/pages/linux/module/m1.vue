@@ -233,13 +233,11 @@
         <td></td>
         <td></td>
         <td>
-systemctl  status  network  <br>
-systemctl start network <br>
-systemctl stop network <br>
-systemctl restart network <br>
-
-systemctl restart sshd <br>
-
+          systemctl status network <br />
+          systemctl start network <br />
+          systemctl stop network <br />
+          systemctl restart network <br />
+          systemctl restart sshd <br />
         </td>
       </tr>
       <tr>
@@ -518,8 +516,24 @@ systemctl restart sshd <br>
       <tr>
         <td>ll</td>
         <td>列出当前目录下的文件和目录</td>
-        <td></td>
-        <td>等价于ls -l --color=tty （有颜色）</td>
+        <td>
+          linux一共有7种文件类型,分别如下:<br />
+          -：普通文件<br />
+          d：目录文件<br />
+          l： 软链接（类似Windows的快捷方式）<br />
+          (下面四种是特殊文件)<br />
+          b：块设备文件（例如硬盘、光驱等）<br />
+          p：管道文件<br />
+          c：字符设备文件（例如猫等串口设备）<br />
+          s：套接口文件/数据接口文件（例如启动一个MySql服务器时会产生一个mysql.sock文件）<br />
+        </td>
+        <td>
+          等价于ls -l --color=tty （有颜色） <br />
+          -rw-r--r--. 1 root root 331270 Jul 7 08:25 a <br />
+          文件类型， 权限， 链接数， 属主，属组
+          ，文件大下，最后修改时间，文件名<br />
+          权限： 自己，组，其他人 <br />
+        </td>
       </tr>
       <tr>
         <td>vdir</td>
@@ -704,7 +718,7 @@ systemctl restart sshd <br>
           【:s/a/b/g】将光标所在行的a替换为b<br />
           【:g/a/s//b/g】将文件中所有a替换为b<br />
           【:%s/a/b/g】将文件中所有a替换为b<br />
-           【:%s#/bin/bash#we666#g】将文件中所有/bin/bash替换为we666<br />
+          【:%s#/bin/bash#we666#g】将文件中所有/bin/bash替换为we666<br />
           【:n1,n2 s/a/b/g】将行区间n1到n2的行中所有的a替换为b<br /><br />
           编辑器设置：<br />
           【:set ic】搜索时不区分大小写<br />
@@ -815,8 +829,8 @@ systemctl restart sshd <br>
         <td>修改权限</td>
         <td>-R 递归批量修改</td>
         <td>
-          拥有者-所属组-其他人
-          chmod -u|g|o|a +|- rwc 文件1 文件2<br />
+          拥有者-所属组-其他人<br />
+          chmod -u|g|o|a +|-|= rwc 文件1 文件2<br />
           chmod u + x <br />
           r=4 w=2 x=1 <br />
           chmod u=rwx,og=rx .bashrc<br />
