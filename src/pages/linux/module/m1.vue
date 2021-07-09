@@ -13,11 +13,11 @@
       style="width:1144px;border-collapse:collapse;table-layout:fixed;"
     >
       <tr height="19">
-        <td height="19" width="93" style="width:80px;">主题</td>
-        <td width="98" style="width:80px;">相关命令</td>
-        <td width="221" style="width:180px;">作用</td>
-        <td width="144" style="width:200px;">常用参数</td>
-        <td width="388" style="width:400px;">备注</td>
+        <td style="width:80px;">主题</td>
+        <td style="width:80px;">相关命令</td>
+        <td style="width:180px;">作用</td>
+        <td style="width:280px;">常用参数</td>
+        <td style="width:400px;">备注</td>
       </tr>
       <tr height="72" style="height:54.00pt;">
         <td height="234" rowspan="6">开关机</td>
@@ -40,8 +40,19 @@
       <tr height="72" style="height:54.00pt;">
         <td>init</td>
         <td>运行级别</td>
-        <td>0 关机<br />3 命令行模式<br />5 图形界面<br />6 重启</td>
-        <td>init 0</td>
+        <td colspan="2">
+          systemctl get-default <br />
+          CentOS7的运行级别 <br />
+          0 shutdown.target 系统关机状态 halt init 0 <br />
+          1 emergency.target
+          单用户工作状态(类似Windows的安全模式，Linux忘记密码)<br />
+          2 rescure.target <br />
+          3 multi-user.target 命令行模式 多用户状态
+          (字符模式,服务基本都是此模式)<br />
+          4 无 系统未使用，留给用户<br />
+          5 graphical.target 图形模式 (个人计算机都是此模式)<br />
+          6 无 <br />
+        </td>
       </tr>
       <tr>
         <td>halt</td>
@@ -226,19 +237,6 @@
         <td>配置网络</td>
         <td></td>
         <td>修改的内容实际在 /etc/sysconfig/network-scripts 中</td>
-      </tr>
-      <tr>
-        <td>系统控制</td>
-        <td>systemctl</td>
-        <td></td>
-        <td></td>
-        <td>
-          systemctl status network <br />
-          systemctl start network <br />
-          systemctl stop network <br />
-          systemctl restart network <br />
-          systemctl restart sshd <br />
-        </td>
       </tr>
       <tr>
         <td height="216" rowspan="13">系统信息查询</td>
@@ -826,9 +824,9 @@
       </tr>
       <tr height="72" style="height:54.00pt;">
         <td>chmod</td>
-        <td>修改权限</td>
-        <td>-R 递归批量修改</td>
-        <td>
+        <td colspan="2">
+          修改权限 <br />
+          -R 递归批量修改 <br />
           拥有者-所属组-其他人<br />
           chmod -u|g|o|a +|-|= rwc 文件1 文件2<br />
           chmod u + x <br />
@@ -837,7 +835,31 @@
           chmod a+w .bashrc<br />
           chmod a-x .bashrc<br />
           chmod -R 777 /home/test<br />
-          chmod 372 文件名1 文件名2
+          chmod 372 文件名1 文件名2<br />
+        </td>
+        <td>
+          特殊设置位，S位权限 <br />
+          作用：为了让一般使用者临时具有该文件所属主/组的执行权限。 <br />
+          主要针对二进制文件（命令） <br />
+          chmod 0755 文件名1 文件名2 <br />
+          去除S位权限 <br />
+          # chmod u-s /usr/bin/passwd <br />
+          或者 <br />
+          # chmod 0755 /usr/bin/passwd <br />
+          添加S位权限 # chmod u+s /usr/bin/passwd 或者 <br />
+          # chmod 4755 /usr/bin/passwd <br />
+          <br />
+          沾滞位T（针对文件夹） <br />
+          主要功能：只允许文件的创建者和root用户删除文件（防止误删除权限位）==
+          <br />
+          移除粘滞位 <br />
+          # chmod -R o-t /tmp <br />
+          或 <br />
+          # chmod -R 0777 /tmp <br />
+          添加粘滞位 <br />
+          # chmod -R o+t /tmp <br />
+          或 <br />
+          # chmod -R 1777 /tmp <br />
         </td>
       </tr>
       <tr height="36">
@@ -845,6 +867,53 @@
         <td>改变文件的特殊属性</td>
         <td>+i 属性不可更改<br />-i 属性可以更改</td>
         <td>chattr +i myfile 文件删不掉</td>
+      </tr>
+      <tr>
+        <td rowspan="2">ACL访问控制</td>
+        <td>getfacl</td>
+        <td>获取某个文件的ACL权限</td>
+        <td></td>
+        <td>getfacl 文件或目录名称</td>
+      </tr>
+      <tr>
+        <td>setfacl</td>
+        <td>给某个文件设置ACL权限</td>
+        <td>
+          # setfacl [选项] 文件或目录名称 <br />
+          选项说明： <br />
+          <br />
+          -m ： 修改acl策略 <br />
+          -x ： 去掉某个用户或者某个组的权限 <br />
+          -b ： 删除所有的acl策略 <br />
+          -R ：递归,通常用在文件夹 <br />
+        </td>
+        <td>
+          案例：针对readme.txt文件给linuxuser设置一个权限=>可读 <br />
+          # setfacl -m u:linuxuser:r readme.txt => 针对某个用户开通ACL权限
+          <br />
+          案例：针对shop文件夹给itheima组设置一个权限=>可读可写权限rw <br />
+          # setfacl -R -m g:itheima:rw shop => 针对某个用户组开通ACL权限 <br />
+          案例：把linuxuser用户权限从readme.txt中移除掉 <br />
+          # setfacl -x u:linuxuser readme.txt <br />
+          案例：把itheima用户组权限从shop中移除掉 <br />
+          # setfacl -x -R g:itheima shop <br />
+          案例：把readme.txt文件中的所有ACL权限全部移除 <br />
+          # setfacl -b readme.txt
+        </td>
+      </tr>
+      <tr>
+        <td>默认权限</td>
+        <td>umask</td>
+        <td>umask</td>
+        <td colspan="2">
+          umask表示创建文件时的默认权限（即创建文件时不需要设置而天生的权限）
+          <br />
+          root用户下，touch a ，文件a的默认权限是644 <br />
+          普通用户下，touch b ，文件b的默认权限是664 <br />
+          注：0022中第一位0代表特殊权限位，可以不设置。<br />
+          umask的默认值，在root和普通用户下是不一样的，分别是022和002<br />
+          root : 666 - 022 = 644<br />
+        </td>
       </tr>
       <tr>
         <td height="414" rowspan="4">搜索文件或目录</td>
@@ -1166,13 +1235,24 @@
         <td>rpm</td>
         <td>软件包管理器</td>
         <td>
-          -ivh 安装<br />-Uvh 升级<br />-e 卸载<br />-e --nodeps强卸<br />-q
-          查询<br />-V 验证
+          -ivh 安装<br />
+          -Uvh 升级<br />
+          -e 卸载<br />
+          -a 所有 <br />
+          -e --nodeps强卸<br />
+          -q 查询<br />
+          -i：install，安装<br />
+          -v：显示进度条<br />
+          -h：表示以"#"形式显示进度条<br />
+          -V 验证
         </td>
         <td>
-          rpm -qa 列出所有安装过的套件和版本<br />rpm -qi
-          列出这个套件的详细信息<br />rpm -ql 列出这个套件安装后的文件和路径<br />rpm
-          -qf 查询某文件属于那一个套件
+    
+          <a href="http://rpm.pbone.net" target="_blank" rel="noopener noreferrer">http://rpm.pbone.net</a> <br />
+          rpm -qa 列出所有安装过的套件和版本<br />
+          rpm -qi 列出这个套件的详细信息<br />
+          rpm -ql 列出这个套件安装后的文件和路径<br />
+          rpm -qf 查询某文件属于那一个套件
         </td>
       </tr>
       <tr height="72" style="height:54.00pt;">
@@ -1184,7 +1264,27 @@
           install pam-devel<br />
         </td>
       </tr>
-      <tr style="height:81.00pt;">
+      <tr>
+        <td>
+          系统控制 <br />
+          服务管理
+        </td>
+        <td>systemctl</td>
+        <td colspan="2">
+          systemctl list-units --type service --all<br />
+          systemctl list-units --type service | grep sshd<br />
+        </td>
+        <td>
+          systemctl status network <br />
+          systemctl start network <br />
+          systemctl stop network <br />
+          systemctl restart network <br />
+          systemctl reload crond <br />
+          systemctl enable crond <br />
+          systemctl disable crond <br />
+        </td>
+      </tr>
+      <tr>
         <td height="180" rowspan="2" style="height:135.00pt;">系统服务</td>
         <td>chkconfig</td>
         <td>开机自动启停服务</td>
@@ -1203,6 +1303,34 @@
           service network restart<br />service iptables stop<br />service vsftpd
           start<br />service iptables status
         </td>
+      </tr>
+      <tr>
+        <td rowspan="3">常用自有服务</td>
+        <td>ntp</td>
+        <td>用于同步计算机的系统时间的服务</td>
+        <td>
+          ntpd服务配置文件位置 /etc/ntp.conf <br />
+          NTP授时网站： <br />
+          http://www.ntp.org.cn/pool.php <br />
+        </td>
+        <td>
+          ntpdate NTP服务器的IP地址或域名 <br />
+          自动同步 启动ntpd服务 <br />
+          #systemctl start ntpd <br />
+          #systemctl enable ntpd <br />
+        </td>
+      </tr>
+      <tr>
+        <td>firewalld</td>
+        <td>防火墙服务</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>crond</td>
+        <td>计划任务服务</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr height="36">
         <td height="270" rowspan="9" style="height:202.50pt;">任务计划</td>

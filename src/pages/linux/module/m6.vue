@@ -6,6 +6,7 @@
 
 <template>
   <div class="q-py-md">
+    <div> <a href="http://rpm.pbone.net" target="_blank" rel="noopener noreferrer">a. 去官网去下载（http://rpm.pbone.net）；</a> </div>
     <div>### MobaXterm 官网： <a href="https://mobaxterm.mobatek.net/" target="_blank" rel="noopener noreferrer">https://mobaxterm.mobatek.net/</a> </div>
     <div>
       yum 阿里云镜像 源

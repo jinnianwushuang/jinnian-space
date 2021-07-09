@@ -34,5 +34,10 @@ yarn-error.log*
 *.njsproj
 *.sln
 
-
+#本地构建结果目录
 /docs-2
+
+#项目配置文件
+package-lock.json
+package.json
+quasar.conf.js
