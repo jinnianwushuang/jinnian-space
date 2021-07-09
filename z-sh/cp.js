@@ -22,7 +22,7 @@ shell.rm('-rf', './public/css/*');
 shell.cp('-R', './docs-2/css/*', './public/css/');
 
 shell.rm('-rf', './public/js/*');
-shell.cp('-R', './docs-2/js/*', './public/fonts/');
+shell.cp('-R', './docs-2/js/*', './public/js/');
 
 shell.rm('-rf', './index.html');
 shell.cp('-R', './docs-2/index.html', './index.html');
