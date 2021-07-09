@@ -44,3 +44,4 @@ yarn-error.log*
 package.json
 package-lock.json
 quasar.conf.js
+jsconfig.json
