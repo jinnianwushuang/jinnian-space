@@ -71,7 +71,7 @@ export default {
 
   data() {
     return {
-      tab: "m13",
+      tab: "m1",
 
       tabs: [
         { label: "笔记", value: "m6" },
