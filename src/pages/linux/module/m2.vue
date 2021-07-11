@@ -5,18 +5,20 @@
 -->
 <template>
     <div>
-     <pre>
-   
-     </pre>
+          <div class="">
+    <q-markdown :src="MainComponent" />
+  </div>
     </div>
 </template>
-
 <script>
-    export default {
-        
-    }
+import MainComponent from "../md/linux-其他.md";
+export default {
+  data() {
+    return {
+      MainComponent
+    };
+  }
+};
 </script>
-
 <style lang="scss" scoped>
-
 </style>

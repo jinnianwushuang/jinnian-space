@@ -1056,11 +1056,22 @@
         <td>top</td>
         <td>查看进程（动态）</td>
         <td>
-          -d 指定刷新频率（秒）<br />-n 输出n次后退出<br />u 显示指定用户进程<br />k
-          杀掉进程
+          -d 指定刷新频率（秒）<br />
+          -n 输出n次后退出<br />
+          u 显示指定用户进程<br />
+          k 杀掉进程<br />
+          M（大写）：表示将结果按照内存（MEM）从高到低进行降序排列；<br />
+
+P（大写）：，表示将结果按照CPU 使用率从高到低进行降序排列；<br />
+
+1 ：当服务器拥有多个cpu 的时候可以使用“1”快捷键来切换是否展示显示各个cpu 的详细信息；<br />
+  
+q：退出<br />
+          
         </td>
         <td>
-          第一行的项目依次为当前时间、系统启动时间、当前系统登录用户数目、平均负载（小于0.6较妥）。<br />
+           具体参看 07进程检测与控制.pdf  <br>
+          第一行的项目依次为当前时间、系统启动时间、当前系统登录用户数目、平均负载（小于0.6较妥,和系统CPU核数相关）。<br />
           第二行为进程情况，依次为进程总数、休眠进程数、运行进程数、僵尸进程数、终止进程数。<br />
           第三行为CPU状态，依次为用户占用、系统占用、优先进程占用、闲置进程占用。<br />
           第四行为内存状态，依次为平均可用内存、已用内存、空闲内存、共享内存、缓存使用内存。<br />
@@ -1091,6 +1102,16 @@
         <td></td>
         <td></td>
         <td>通常和ps配合使用</td>
+      </tr>
+      <tr>
+        <td>网络</td>
+        <td>ss</td>
+        <td>用于调查套接字的实用程序</td>
+        <td></td>
+        <td>
+          查看ssh 服务运行 的 网络 端口 <br />
+          ss -alt | grep ssh
+        </td>
       </tr>
       <tr height="54" style="height:40.50pt;">
         <td height="162" rowspan="5">硬盘管理</td>
@@ -1247,8 +1268,13 @@
           -V 验证
         </td>
         <td>
-    
-          <a href="http://rpm.pbone.net" target="_blank" rel="noopener noreferrer">http://rpm.pbone.net</a> <br />
+          <a
+            href="http://rpm.pbone.net"
+            target="_blank"
+            rel="noopener noreferrer"
+            >http://rpm.pbone.net</a
+          >
+          <br />
           rpm -qa 列出所有安装过的套件和版本<br />
           rpm -qi 列出这个套件的详细信息<br />
           rpm -ql 列出这个套件安装后的文件和路径<br />
@@ -1323,8 +1349,33 @@
       <tr>
         <td>firewalld</td>
         <td>防火墙服务</td>
-        <td></td>
-        <td></td>
+        <td>
+          区域概念 <br />
+          block dmz drop external home internal public trusted work
+        </td>
+        <td>
+          firewall-cmd 选项<br />
+          #firewall-cmd --get-zones<br />
+          含义：查看所有可用区域<br />
+          #firewall-cmd --get-default-zone<br />
+          含义：查看默认使用区域，当前默认使用区域为public<br />
+          #firewall-cmd --list-all<br />
+          含义：查看所有可用区域<br />
+          #firewall-cmd --list-all-zones<br />
+          含义：查看所有可用区域<br />
+          #firewall-cmd --zone=public --add-port=1024/tcp<br />
+          含义:在public区域，添加允许tcp协议的1024端口通过的规则<br />
+          #firewall-cmd --zone=public --add-service=ftp<br />
+          含义:在public区域，添加允许ftp服务通过的规则<br />
+          #firewall-cmd --zone=public --remove-port=1024/tcp<br />
+          含义:在public区域，去掉允许tcp协议的1024端口通过的规则<br />
+          #firewall-cmd --zone=public --remove-service=ftp<br />
+          含义:在public区域，去掉允许ftp服务通过的规则<br />
+          #firewall-cmd --permanent --zone=public --add-port=1024/tcp<br />
+          含义:在public区域，使用permanent参数，永久添加允许1024端口通过的规则<br />
+          #firewall-cmd --reload<br />
+          含义:重新加载配置<br />
+        </td>
       </tr>
       <tr>
         <td>crond</td>
@@ -1378,19 +1429,48 @@
       <tr height="54" style="height:40.50pt;">
         <td>at</td>
         <td>一次性运行的任务计划</td>
-        <td>-f 要提交的脚本<br />-r 清除<br />-l 罗列</td>
         <td>
-          at 3:00pm tomorrow -f /home/wuxh/hello.sh<br />at now + 5 minutes
+          systemctl start atd  <br />
+          -f 要提交的脚本<br />
+        -r 清除<br />
+        -l 罗列<br />
+         atq 查看没有执行的计划任务<br />
+         atrm 任务号 删除指定的计划任务<br />
+         </td>
+        <td>
+          at 3:00pm tomorrow -f /home/wuxh/hello.sh<br />
+          at now + 5 minutes
         </td>
       </tr>
       <tr height="72" style="height:54.00pt;">
         <td>crontab</td>
         <td>循环运行的任务计划</td>
-        <td>-u 用户<br />-e 编辑crontab<br />-l 罗列<br />-r 删除crontab</td>
         <td>
-          格式：
-          分&lt;&gt;时&lt;&gt;日&lt;&gt;月&lt;&gt;星期&lt;&gt;要运行的命令<br />45
-          4 1,10,22 * * /apps/bin/backup.sh
+          -l：list，列出指定用户的计划任务列表 <br />
+          -e：edit，编辑指定用户的计划任务列表 <br />
+          -u：user，指定的用户名，如果不指定，则表示当前用户 <br />
+          -r：remove，删除指定用户的计划任务列表 <br />
+          黑名单==配置文件位于：`/etc/cron.deny <br />
+          白名单==配置文件位于：/etc/cron.allow  <br />
+          日志文件位于`/var/log/cron` <br />
+        </td>
+        <td>
+          格式： <br />
+          四个符号：<br />
+          *：表示取值范围中的每一个数字<br />
+          -：做连续区间表达式的，要想表示1~7，则可以写成：1-7<br />
+          /：表示每多少个，例如：想每 10 分钟一次，则可以在分的位置写：*/10<br />
+          ,：表示多个取值，比如想在 1 点，2 点 6
+          点执行，则可以在时的位置写：1,2,6<br />
+          分 时 日 月 周 需要执行的命令<br />
+          问题1：每月1、10、22 日的4:45 重启network 服务<br />
+          问题1：45 4 1,10,22 * * service network restart<br />
+          问题2：每周六、周日的1:10 重启network 服务<br />
+          问题2：10 1 * * 6,7 service network restart<br />
+          问题3：每天18:00 至23:00 之间每隔30 分钟重启network 服务<br />
+          问题3：*/30 18-23 * * * service network restart<br />
+          问题4：每隔两天的上午8 点到11 点的第3 和第15 分钟执行一次重启<br />
+          问题4：3,15 8-11 */2 * * reboot<br />
         </td>
       </tr>
       <tr height="36">

@@ -80,7 +80,7 @@ module.exports = function (ctx) {
     htmlVariables: {
       title: '錦年',
       description:'錦年成长空间',
-      icon_path: ctx.dev?'img/logo/favicon.ico':'/public/img/logo/favicon.ico'
+      icon_path: ctx.dev?'img/logo/favicon.ico':'/jinnian-space/public/img/logo/favicon.ico'
   
     },
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
