@@ -5,7 +5,7 @@
 -->
 <template>
   <div>
-    <div class="row   q-my-md">
+    <div class="row  ">
       <q-select
         v-model="book"
         @input="change_book()"
@@ -16,7 +16,7 @@
        </div>
      </template> </q-select>
     </div>
-    <div class="q-pdfviewer-container   q-pa-md">
+    <div class="q-pdfviewer-container   ">
       <q-pdfviewer
         v-model="show"
         :src="src"

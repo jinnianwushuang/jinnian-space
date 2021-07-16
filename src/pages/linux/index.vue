@@ -46,6 +46,7 @@ import m10 from "src/pages/linux/module/m10.vue";
 import m13 from "src/pages/linux/module/m13.vue";
 import m14 from "src/pages/linux/module/m14.vue";
 import m15 from "src/pages/linux/module/m15.vue";
+import m19 from "src/pages/linux/module/m16.vue";
 import m16 from "src/pages/linux/heima/index.vue";
 import m18 from "src/pages/linux/module/java-linux/index.vue";
 
@@ -67,6 +68,7 @@ export default {
     m15,
     m16,
     m18,
+    m19,
   },
 
   data() {
@@ -78,6 +80,7 @@ export default {
         { label: "linux-目录", value: "m13" },
         { label: "linux命令", value: "m1" },
         { label: "调度+进程", value: "m7" },
+        { label: "YUM+LAMP", value: "m19" },
         { label: "黑马云计算", value: "m16" },
         { label: "linux-备忘", value: "m2" },
         { label: "shell-基础", value: "m3" },

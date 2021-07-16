@@ -6,7 +6,7 @@
 
 <style lang="scss" scoped></style>
 <template>
-  <div class="q-pdfviewer-container   q-pa-lg">
+  <div class="q-pdfviewer-container   ">
     <q-pdfviewer
       v-model="show"
       :src="src"

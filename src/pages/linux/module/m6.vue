@@ -17,6 +17,10 @@
         >https://developer.aliyun.com/mirror/</a
       >
     </div>
+ 
+    <div> <a href="https://gitee.com/Discuz/DiscuzX" target="_blank" rel="noopener noreferrer"> LAMP --- DiscuzX 开源论坛系统</a> </div>
+
+    <div>奇Q工具网 <a href="https://qqe2.com/" target="_blank" rel="noopener noreferrer">https://qqe2.com/</a> </div>
     <pre>
       nodejs  环境安装 
       cd /usr/local/src/

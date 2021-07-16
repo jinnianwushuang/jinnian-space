@@ -1099,7 +1099,7 @@ q：退出<br />
       </tr>
       <tr>
         <td>renice</td>
-        <td></td>
+        <td>调整程序的执行优先级</td>
         <td></td>
         <td>通常和ps配合使用</td>
       </tr>

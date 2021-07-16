@@ -3,7 +3,7 @@
  * @FilePath       : /jinnian-space/src/pages/linux/md/linux-进程检测与控制.md
  * @Description    : 
 -->
-# Linux计划任务以及进程检测与控制
+# Linux计划任务以及进程检测与控制，优先级
 
 # 一、Linux计划任务
 
@@ -652,4 +652,122 @@ COMMAND：该程序的实际指令
 ```powershell
 # killall httpd
 ```
+
+
+# 三、进程的优先级（扩展）
+
+## 1、什么是进程的优先级
+
+Linux是一个多用户、多任务的操作系统，系统中通常运行着非常多的进程。哪些进程先运行，哪些进程后运行，就由进程优先级来控制
+
+思考：什么时候需要用到进程的优先级呢？
+
+答：当CPU负载过高时，如CPU的使用率>=90%以上。这个时候进程的优先级就会起作用。
+
+## 2、查看进程的优先级
+
+PR  优先级，数值越小优先级越高。
+NI  优先级，数值越小优先级越高，可以人为更改。（NI = NICE = Nice）
+
+讲个小故事：Nice值 = 0，Nice值越高，代表这个人越绅士（Nice值越高，优先级越低）
+
+> NI值有一个范围 -20 ~ 19
+
+问题：这两个数值是在哪里看到的？
+
+答：top命令
+
+## 3、调整进程的优先级
+
+### ☆ 使用top调整进程的优先级
+
+第一步：使用top命令获取你要调整的进程信息（PID编号）
+
+```powershell
+# top -bn 1
+PID   	COMMAND
+7107	atd（at命令的底层服务）
+```
+
+第二步：运行top命令，然后按=="r"==，输入要调整进程的PID编号
+
+```powershell
+# top
+按r，输入要调整进程的PID编号,按回车
+```
+
+第三步：根据提示，重置NICE值
+
+```powershell
+Renice PID 7107 to value : -5
+```
+
+第四步：按q退出top模式，然后使用top -p PID编号，只查询某个进程的信息
+
+```powershell
+# top -p 7107
+```
+
+### ☆ 使用renice命令调整进程的优先级
+
+基本语法：
+
+```powershell
+# renice [NI优先级设置的数字] 想调整的进程ID
+```
+
+案例：使用renice调整atd的优先级
+
+```powershell
+第一步：通过ps或top命令获取atd的PID编号
+# ps -ef |grep atd
+7107
+第二步：使用renice命令调整7107的NICE值
+# renice -10 7107
+7107 (process ID) old priority 0, new priority -10
+```
+
+> 注意：NICE值取值范围-20 ~ 19，不能使用小数
+
+### ☆ 使用nice命令调整进程的优先级
+
+基本语法：
+
+```powershell
+# nice [NI优先级设置的数字] 想调整的进程名称
+```
+
+> 注意：nice命令只能调整没有运行的程序
+
+nice实际操作三步走：
+
+第一步：将程序停止
+
+```powershell
+# ps -ef |grep crond
+# kill PID
+或
+# systemctl stop crond
+```
+
+第二步：启动并制定优先级（使用nice）
+
+```powershell
+# nice -n -10 crond
+```
+
+> nice命令包含两个功能：① 启动进程 ② 调整进程的优先级
+
+第三步：确认优先级（查看优先级）
+
+```powershell
+# ps -ef |grep crond
+PID
+# top -p PID
+```
+
+
+
+
+
 
