@@ -38,4 +38,4 @@ yarn-error.log*
 /docs-2
 
 #项目配置文件
- 
+/dist/* 
