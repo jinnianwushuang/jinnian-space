@@ -1,3 +1,8 @@
+<!--
+ * @Date           : 2021-07-09 01:11:11
+ * @FilePath       : /jinnian-space/src/pages/web/other/md/huancun.md
+ * @Description    : 
+-->
 # 缓存
 
 ## 缓存详解
@@ -104,16 +109,14 @@
 - 强制缓存就是向浏览器缓存查找该请求结果，并根据该结果的缓存规则来决定是否使用该缓存结果的过程，强制缓存的情况主要有三种，如下：
 
   > **①不存在该缓存结果和缓存标识，强制缓存失效，则直接向服务器发起请求（跟第一次发起请求一致），如下图：**
-  
-  ![img](https:////upload-images.jianshu.io/upload_images/13277068-5d97a99c4925bc4f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/649/format/webp)
+ 
   
   > **②存在该缓存结果和缓存标识，但该结果已失效，强制缓存失效，则使用协商缓存，如下图**
-  
-  ![img](https:////upload-images.jianshu.io/upload_images/13277068-f791d19193c7f86a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/687/format/webp)
+ 
   
   > **③存在该缓存结果和缓存标识，且该结果尚未失效，强制缓存生效，直接返回该结果，如下图**
   
-  ![img](https:////upload-images.jianshu.io/upload_images/13277068-93e7c967e142e04a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/662/format/webp)
+ 
   
   > **那么强制缓存的缓存规则是什么？**
 
@@ -149,7 +152,7 @@
 
 ### 对于一个数据请求来说，可以分为发起网络请求、后端处理、浏览器响应三个步骤。浏览器缓存可以帮助我们在第一和第三步骤中优化性能。比如说直接使用缓存而不发起请求，或者发起了请求但后端存储的数据和前端一致，那么就没有必要再将数据回传回来，这样就减少了响应数据。
 
-![img](https:////upload-images.jianshu.io/upload_images/13277068-efe830b68127838c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/800/format/webp)
+ 
 
 缓存类型图解
 

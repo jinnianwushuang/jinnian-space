@@ -109,31 +109,16 @@
           地址，在你电脑的网络设置里可以看到：
         </p>
 
-        <p>
-          <img
-            src="https://upload-images.jianshu.io/upload_images/3426615-e50598f8b81b8412.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
-            alt=""
-          />
-        </p>
+ 
 
         <p>
           DNS 服务器里有两个 IP 地址，一个是中国电信的
           (ISP)，一个是位于美国的服务器（根域名服务器）
         </p>
 
-        <p>
-          <img
-            src="https://upload-images.jianshu.io/upload_images/3426615-1a759f618a4f90ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
-            alt=""
-          />
-        </p>
+ 
 
-        <p>
-          <img
-            src="https://upload-images.jianshu.io/upload_images/3426615-bfa0361e4e4e43f7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
-            alt=""
-          />
-        </p>
+  
 
         <p>
           另外，关于 DNS
@@ -143,13 +128,7 @@
           <strong>ipconfig /displaydns</strong> 就会得到 OS 中的缓存：
         </p>
 
-        <p>
-          <img
-            src="https://upload-images.jianshu.io/upload_images/3426615-9f839dd421780b02.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
-            alt=""
-          />
-        </p>
-
+    
         <h4 id="3-dns-查询">3. DNS 查询</h4>
 
         <p>
@@ -176,12 +155,7 @@
 
         <p>手绘一张草图，意思一下：</p>
 
-        <p>
-          <img
-            src="https://upload-images.jianshu.io/upload_images/3426615-ba4ea5930ea9512e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
-            alt=""
-          />
-        </p>
+ 
 
         <p>
           至于 DNS 解析，上面介绍的只是最基本的知识，关于
@@ -339,9 +313,7 @@ Connection:close/keep-alive （连接状态：关闭/保持连接）
           需要注意的是，以上五个步骤并不一定一次性顺序完成，比如DOM或CSSOM被修改时，亦或是哪个过程会重复执行，这样才能计算出哪些像素需要在屏幕上进行重新渲染。而在实际情况中，JavaScript和CSS的某些操作往往会多次修改DOM或者CSSOM。
         </p>
 
-        <div class="image-view" data-width="624" data-height="289">
-          <img src="books/web/web/basic/m5/1.webp" alt="" />
-        </div>
+    
 
         <h4>浏览器渲染网页的具体流程</h4>
         <h4>构建DOM树</h4>
@@ -359,10 +331,7 @@ Connection:close/keep-alive （连接状态：关闭/保持连接）
           无论是DOM还是CSSOM，都是要经过<code>Bytes→characters→tokens→nodes→objectmodel</code>这个过程。
         </p>
 
-        <div class="image-view" data-width="800" data-height="443">
-          <img src="web/web/basic/m5/2.webp" alt="" />
-        </div>
-
+  
         <p>
           当前节点的所有子节点都构建好后才会去构建当前节点的下一个兄弟节点。
         </p>
@@ -389,9 +358,7 @@ Connection:close/keep-alive （连接状态：关闭/保持连接）
           <li><code>visibility: hidden</code>的元素在Render Tree中</li>
         </ul>
 
-        <div class="image-view" data-width="711" data-height="415">
-          <img src="web/web/basic/m5/3.webp" alt="" />
-        </div>
+      
 
         <p>
           渲染树生成后，还是没有办法渲染到屏幕上，渲染到屏幕需要得到各个节点的位置信息，这就需要布局（Layout）的处理了。
@@ -415,9 +382,7 @@ Connection:close/keep-alive （连接状态：关闭/保持连接）
         <h4>浏览器渲染网页的那些事儿</h4>
         <h4>浏览器主要组件结构</h4>
 
-        <div class="image-view" data-width="400" data-height="271">
-          <img src="web/web/basic/m5/4.webp" alt="" />
-        </div>
+    
         <p>
           渲染引擎主要有两个：webkit和Gecko<br />
           Firefox使用Geoko，Mozilla自主研发的渲染引擎。Safari和Chrome都使用webkit。Webkit是一款开源渲染引擎，它本来是为linux平台研发的，后来由Apple移植到Mac及Windows上。<br />

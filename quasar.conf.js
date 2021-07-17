@@ -97,7 +97,7 @@ module.exports = function (ctx) {
       gzip: false,
       analyze: false,
       // publicPath:"https://github.com/jinnianwushuang/jinnian-space/blob/master/public/",
-      publicPath:"jinnian-space/public/",
+      publicPath: for_github?"jinnian-space/public/":"",
       env: {
         last_update_time:  new Date().getTime()
       },
