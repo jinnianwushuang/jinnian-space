@@ -5,14 +5,7 @@
 -->
 <template>
   <div>
-    <q-tabs v-model="tab" align="left" inline-label dense  class="text-teal">
-      <q-tab
-        v-for="(item, index) in tabs"
-        :key="`tabs_${index}`"
-        :name="`${item.value}`"
-        :label="`${index + 1}.${item.label}`"
-      />
-    </q-tabs>
+ 
 
     <component :is="`${tab}`"></component>
   </div>
@@ -31,15 +24,12 @@ import m8 from "./module/m8.vue";
 import m9 from "./module/m9.vue";
 import m10 from "./module/m10.vue";
 
-// let coms={}
-// for(let i in 8){
-//   let key="m"+i
-//   coms[key] = require("./module/"+key+".vue")
-// }
-// console.log(' coms', coms);
+ 
 
-
+ 
+import {menu_tab_mixin} from "src/mixins/index.js"
 export default {
+  mixins:[menu_tab_mixin],
   components: {
     m1,
     m2,
@@ -55,7 +45,7 @@ export default {
   data() {
     return {
       tab: 'm1',
-     
+          tab_level: 2,
       tabs: [
           { label: "基本" ,value:'m1'},
           { label: "常见错误" ,value:'m2'},

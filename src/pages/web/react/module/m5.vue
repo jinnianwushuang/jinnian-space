@@ -7,11 +7,15 @@
 <template>
   <div>
     <div class="row   ">
-      <q-select v-model="book" @input="change_book()" :options="book_arr"
+      <q-select
+        v-model="book"
+        use-input
+        input-debounce="0"
+        clearable
+        @filter="filterFn"
+        :options="book_options"
         ><template slot="before">
-          <div>
-             
-          </div>
+          <div></div>
         </template>
       </q-select>
     </div>
@@ -27,7 +31,7 @@
   </div>
 </template>
 <script>
-const book_arr = [
+const book_options = [
   "01_.pdf",
   "02_03_04_JSX核心语法.pdf",
   "05_React脚手架.pdf",
@@ -44,18 +48,18 @@ const book_arr = [
   "项目自动化部署.pdf"
 ];
 const prefix = "react/react核心精讲/";
-import {select_pdf_mixin} from "src/mixins/index.js"
+import { select_pdf_mixin } from "src/mixins/index.js";
 export default {
-  mixins:[select_pdf_mixin],
+  mixins: [select_pdf_mixin],
   data() {
     return {
       prefix,
-      book_arr,
+      book_options,
       show: true,
-      book: book_arr[0],
+      book: book_options[0],
       src: ""
     };
-  },
+  }
 };
 </script>
 <style></style>

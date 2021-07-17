@@ -10,6 +10,8 @@ console.log('process.env.MODE-------------------------');
 console.log(process.env.MODE);
 console.log( process.argv );
 console.log('process.env.MODE-------------------------');
+//构建输出到 GitHub
+const for_github = (process.argv[2] || '') .trim() =='g'
 const path = require('path')
 module.exports = function (ctx) {
   return {
@@ -80,14 +82,14 @@ module.exports = function (ctx) {
     htmlVariables: {
       title: '錦年',
       description:'錦年成长空间',
-      icon_path: ctx.dev?'img/logo/favicon.ico':'/jinnian-space/public/img/logo/favicon.ico'
+      icon_path: ctx.dev?'img/logo/favicon.ico':  (for_github ?'/jinnian-space/public/img/logo/favicon.ico':'img/logo/favicon.ico')
   
     },
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
 
 
     build: {
-      distDir: process.argv[3]=='electron'? "./dist-electron":"./docs-2",
+      distDir: process.argv[3]=='electron'? "./dist/dist-electron":(for_github?"./docs-2":'./dist/dist-spa-server') ,
       scopeHoisting: true,
       vueRouterMode: 'hash', // available values: 'hash', 'history'
       showProgress: true,

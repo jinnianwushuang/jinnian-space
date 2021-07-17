@@ -10,8 +10,11 @@
       <q-select
       style="width:500px;"
         v-model="book"
-        @input="change_book()"
-        :options="book_arr"
+              use-input
+        input-debounce="0"
+        clearable
+        @filter="filterFn"
+        :options="book_options"
      ><template slot="before">
        <div>
          
@@ -30,7 +33,7 @@
   </div>
 </template>
 <script>
-const book_arr = [
+const book_options = [
         "CDN排坑指南.pdf",
         "DTS控制台一本通.pdf",
         "ECS运维指南-linux诊断.pdf",
@@ -51,9 +54,9 @@ export default {
   data() {
     return {
       prefix,
-      book_arr,
+      book_options,
       show: true,
-      book: book_arr[0],
+      book: book_options[0],
       src: ""
     };
   },

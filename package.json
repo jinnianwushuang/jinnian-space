@@ -9,8 +9,9 @@
   "private": true,
   "scripts": {
     "test": "echo \"No test specified\" && exit 0",
-    "build": "run-s q-build cp",
-    "q-build": "quasar build ",
+    "bg": "run-s build-github cp",
+    "build-github": "quasar build g",
+    "bs": "quasar build s",
     "cp-fonts": "rm -r ./public/fonts/* ; cp -r ./docs-2/fonts/*  ./public/fonts/",
     "cp-css": "rm -r ./public/css/* ; cp -r ./docs-2/css/*  ./public/css/",
     "cp-js": "rm -r ./public/js/* ; cp -r ./docs-2/js/*  ./public/js/",

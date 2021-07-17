@@ -1,27 +1,15 @@
+<!--
+ * @Date           : 2021-07-09 01:11:11
+ * @FilePath       : /jinnian-space/src/pages/web/css/module/m3.vue
+ * @Description    : 
+-->
 <template>
     <div>
-        <h4 class="post">
+        <div class="post">
 	<header class="post-header">
 		<h4 class="post-title">
 			「 CSS 」display属性居然有这么多		</h4>
-		<div class="post-meta">
-			<span class="post-time">
-				<span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span>
-				<span class="post-meta-item-text">发表于</span>
-				<time datetime="2020-01-03">2020-01-03</time>
-			</span>
-			<span class="post-category">
-				&nbsp;|&nbsp;
-				<span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span>
-				<span class="post-meta-item-text">分类于</span>
-				<span>
-					<a href="https://www.dazhuanlan.com/frontend/" rel="category tag">前端</a>				</span>
-			</span>
-			<span class="post-comments-count">
-				&nbsp;|&nbsp;
-				<span class="post-comments-count">没有评论</span>
-			</span>
-		</div>
+ 
 	</header>
 	<div class="post-body">
 		<p>思考一个简单的问题，如何用原生js实现元素的显示隐藏，也就是jQuery中show和hide方法。</p>
@@ -40,7 +28,7 @@
 		</div>
 </footer>
 		<div class="crp_related "><h4>相关文章</h4><ul><li><a href="https://www.dazhuanlan.com/2019/11/15/5dce6d7da3283/" target="_blank"><span class="crp_title">css 命名：BEM, scoped css, css modules 与 css-in-js</span></a></li><li><a href="https://www.dazhuanlan.com/2019/09/13/385e4f756cb7/" target="_blank"><span class="crp_title">[CSS] CSS 之父使用 CSS 制作书籍</span></a></li><li><a href="https://www.dazhuanlan.com/2019/12/16/5df6dfdae6438/" target="_blank"><span class="crp_title">CSS reset 和 CSS normalize.css</span></a></li><li><a href="https://www.dazhuanlan.com/2019/09/04/4fe740d5172b/" target="_blank"><span class="crp_title">CSS Button Designer (CSS 按钮懒人设计器)</span></a></li><li><a href="https://www.dazhuanlan.com/2019/09/04/6ba49d13248b/" target="_blank"><span class="crp_title">［CSS］CSS Friendly Control Adapters&amp;ndash;Menu…</span></a></li><li><a href="https://www.dazhuanlan.com/2019/09/09/fbf938e67dce/" target="_blank"><span class="crp_title">[CSS] CSS Web Note</span></a></li><li><a href="https://www.dazhuanlan.com/2019/09/10/2c8b2b94de53/" target="_blank"><span class="crp_title">[CSS] CSS 笔记</span></a></li><li><a href="https://www.dazhuanlan.com/2019/09/13/ace05a626434/" target="_blank"><span class="crp_title">[CSS] CSS 之父写的书</span></a></li><li><a href="https://www.dazhuanlan.com/2019/09/19/79c4f77a60f8/" target="_blank"><span class="crp_title">[ASP.NET][CSS](note)Web 服务器控件和 CSS 模式</span></a></li><li><a href="https://www.dazhuanlan.com/2019/07/03/cssdivnote%e5%9c%a8-ie8-firefox-chrome-css-%e7%bd%ae%e4%b8%ad%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95/" target="_blank"><span class="crp_title">[CSS][div](note)在 IE8 FireFox Chrome CSS 置中解决方法</span></a></li></ul><div class="crp_clear"></div></div>	
-</h4>
+</div>
     </div>
 </template>
 

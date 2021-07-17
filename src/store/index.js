@@ -1,8 +1,14 @@
+/*
+ * @Date           : 2021-07-09 01:11:11
+ * @FilePath       : /jinnian-space/src/store/index.js
+ * @Description    : 
+ */
 import Vue from 'vue'
 import Vuex from 'vuex'
 
 // import example from './module-example'
 import account from "src/store/module/account.js"
+import right_menu from "src/store/module/right_menu.js"
 
 Vue.use(Vuex)
 
@@ -19,7 +25,8 @@ export default function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
       // example
-      account
+      account,
+      right_menu
     },
 
     // enable strict mode (adds overhead!)

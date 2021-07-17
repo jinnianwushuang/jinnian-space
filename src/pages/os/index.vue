@@ -1,13 +1,11 @@
+<!--
+ * @Date           : 2021-07-09 01:11:11
+ * @FilePath       : /jinnian-space/src/pages/os/index.vue
+ * @Description    : 
+-->
 <template>
   <div>
-    <q-tabs v-model="tab" align="left" inline-label dense class="text-teal">
-      <q-tab
-        v-for="(item, index) in tabs"
-        :key="`tabs_${index}`"
-        :name="`${item}`"
-        :label="`${index + 1}.${item}`"
-      />
-    </q-tabs>
+ 
 
     <component :is="`${tab}`"></component>
   </div>
@@ -16,7 +14,9 @@
 <script>
  import win from "src/pages/os/win/index.vue"
  import mac from "src/pages/os/mac/index.vue"
+import {menu_tab_mixin} from "src/mixins/index.js"
 export default {
+  mixins:[menu_tab_mixin],
   components: {
    win,
     mac
@@ -24,8 +24,12 @@ export default {
   },
   data() {
     return {
+       tab_level: 1,
       tab: "win",
-      tabs: ["win", "mac"]
+      tabs: [
+           { label: "win", value: "win" },
+        { label: "mac", value: "mac" },
+      ]
     };
   }
 };

@@ -22,7 +22,7 @@
 export default {
   data() {
     return {
-      util,
+     
       books: [
         "web/jinnian-web-2020-01-13.xmind",
         "web/阮一峰JavaScript基础总结.xmind",

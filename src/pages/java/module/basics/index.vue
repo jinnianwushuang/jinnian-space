@@ -10,14 +10,7 @@
 -->
 <template>
   <div>
-    <q-tabs v-model="tab" align="left" inline-label dense class="text-teal">
-      <q-tab
-        v-for="(item, index) in tabs"
-        :key="`tabs_${index}`"
-        :name="`${item.value}`"
-        :label="`${index + 1}.${item.label}`"
-      />
-    </q-tabs>
+ 
 
     <component :is="`${tab}`"></component>
   </div>
@@ -38,7 +31,10 @@ import m10 from "./module/m10.vue";
 import m11 from "./module/m11.vue";
 import m12 from "./module/m12.vue";
 
+import {menu_tab_mixin} from "src/mixins/index.js"
 export default {
+  mixins:[menu_tab_mixin],
+
   components: {
     m99,
     m1,
@@ -57,6 +53,7 @@ export default {
   data() {
     return {
       tab: "m1",
+      tab_level: 2,
       tabs: [
         { label: "基础笔记", value: "m99" },
         { label: "Java基础语法", value: "m1" },

@@ -4,7 +4,7 @@
  * @Description    : 
  */
 
-const book_arr = [
+const book_options = [
     "/第1阶段-运维基本功（升级7.6版本）/01运维概述与Linux系统安装.pdf",
     "/第1阶段-运维基本功（升级7.6版本）/02Linux基础命令.pdf", 
   ];
@@ -14,19 +14,45 @@ const book_arr = [
     data() {
       return {
         prefix,
-        book_arr,
+        book_options,
+        book_options_all:[],
         show: true,
-        book: book_arr[0],
+        book: book_options[0],
         src: ""
       };
     },
     created() {
+      this.book_options_all = [... this.book_options]
       this.src = this.$utils.compute_book_src(this.prefix + this.book);
+    },
+    watch: {
+      book(newValue, oldValue) {
+         if(newValue){
+            this.change_book()
+         }
+      }
     },
     methods: {
       change_book() {
         console.log("this.book", this.book);
         this.src = this.$utils.compute_book_src(this.prefix + this.book);
+      },
+      filterFn (val, update) {
+        if (val === '') {
+          update(() => {
+            this.book_options = this.book_options_all
+  
+            // with Quasar v1.7.4+
+            // here you have access to "ref" which
+            // is the Vue reference of the QSelect
+          })
+          return
+        }
+  
+        update(() => {
+          const needle = val.toLowerCase()
+          this.book_options  = this.book_options_all.filter(v => v.toLowerCase().indexOf(needle) > -1)
+        })
       }
     }
   };

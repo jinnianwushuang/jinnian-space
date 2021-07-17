@@ -1,6 +1,6 @@
 <!--
  * @Date           : 2021-04-12 16:09:51
- * @FilePath       : /jinnian-space/src/pages/java/module/javaweb/index.vue
+ * @FilePath       : /jinnian-space/src/pages/basics-template/index.vue
  * @Description    : 
 -->
 <!--
@@ -28,8 +28,9 @@
 import m1 from "./module/m1.vue";
 import m2 from "./module/m2.vue";
 
-
+import {menu_tab_mixin} from "src/mixins/index.js"
 export default {
+  mixins:[menu_tab_mixin],
   components: {
     m1,
     m2,

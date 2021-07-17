@@ -5,7 +5,7 @@
 -->
 <template>
   <div>
-    <q-tabs v-model="tab" align="left" inline-label dense class="text-teal">
+    <!-- <q-tabs v-model="tab" align="left" inline-label dense class="text-teal">
       <q-tab
         v-for="(item, index) in tabs"
         :key="`tabs_${index}`"
@@ -14,25 +14,14 @@
       />
     </q-tabs>
 
-   <!-- <div class="q-gutter-sm">
-     
-         
-      <q-btn
-      dense
-        v-for="(item, index) in tabs"
-        :key="`tabs_${index}`"
-        :name="`${item.value}`"
-        :label="`${index + 1}.${item.label}`"
-      />
- 
-
-     </div>  -->
+  -->
 
     <div class="q-mx-lg"><component :is="`${tab}`"></component></div>
   </div>
 </template>
 
 <script>
+
 import m1 from "src/pages/linux/module/m1.vue";
 import m2 from "src/pages/linux/module/m2.vue";
 import m3 from "src/pages/linux/module/m3.vue";
@@ -50,8 +39,9 @@ import m19 from "src/pages/linux/module/m16.vue";
 import m16 from "src/pages/linux/heima/index.vue";
 import m18 from "src/pages/linux/module/java-linux/index.vue";
 
-
+import {menu_tab_mixin} from "src/mixins/index.js"
 export default {
+  mixins:[menu_tab_mixin],
   components: {
     m1,
     m2,

@@ -8,8 +8,11 @@
     <div class="row  ">
       <q-select
         v-model="book"
-        @input="change_book()"
-        :options="book_arr"
+              use-input
+        input-debounce="0"
+        clearable
+        @filter="filterFn"
+        :options="book_options"
      ><template slot="before">
        <div>
           
@@ -28,7 +31,7 @@
   </div>
 </template>
 <script>
-const book_arr = [
+const book_options = [
   "/第1阶段-运维基本功（升级7.6版本）/01运维概述与Linux系统安装.pdf",
   "/第1阶段-运维基本功（升级7.6版本）/02Linux基础命令.pdf", 
 ];
@@ -39,9 +42,9 @@ export default {
   data() {
     return {
       prefix,
-      book_arr,
+      book_options,
       show: true,
-      book: book_arr[0],
+      book: book_options[0],
       src: ""
     };
   },

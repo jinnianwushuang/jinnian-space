@@ -5,14 +5,7 @@
 -->
 <template>
   <div>
-    <q-tabs v-model="tab" align="left" inline-label dense class="text-teal">
-      <q-tab
-        v-for="(item, index) in tabs"
-        :key="`tabs_${index}`"
-        :name="`${item.value}`"
-        :label="`${index + 1}.${item.label}`"
-      />
-    </q-tabs>
+   
 
     <div class="q-mx-lg">
       <component :is="`${tab}`"></component>
@@ -31,8 +24,9 @@ import m8 from "src/pages/web/js/module/m8.vue";
 import m9 from "src/pages/web/js/module/m9.vue";
 
 
-
+import {menu_tab_mixin} from "src/mixins/index.js"
 export default {
+  mixins:[menu_tab_mixin],
   components: {
     m1,
     m2,
@@ -49,7 +43,7 @@ export default {
   data() {
     return {
       tab: "m1",
-
+ tab_level: 2, 
       tabs: [
         { label: "循环遍历", value: "m1" },
         { label: "Event Loop", value: "m2" },
@@ -58,7 +52,7 @@ export default {
         { label: "es6归纳1", value: "m5" },
         { label: "es6归纳2", value: "m6" },
 
-        { label: "阮一峰JavaScript基础总结", value: "m9" },
+        { label: "阮一峰JS总结", value: "m9" },
         { label: "jquery", value: "m8" },
 
         { label: "正则", value: "m7" }

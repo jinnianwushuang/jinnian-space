@@ -10,15 +10,7 @@
 -->
 <template>
   <div>
-    <q-tabs v-model="tab" align="left" inline-label dense class="text-teal">
-      <q-tab
-        v-for="(item, index) in tabs"
-        :key="`tabs_${index}`"
-        :name="`${item.value}`"
-        :label="`${index + 1}.${item.label}`"
-      />
-    </q-tabs>
-
+ 
     <component :is="`${tab}`"></component>
   </div>
 </template>
@@ -32,7 +24,9 @@ import m4 from "./module/m4.vue";
 import m5 from "./module/m5.vue";
 import m6 from "./module/m6.vue";
 
+import {menu_tab_mixin} from "src/mixins/index.js"
 export default {
+  mixins:[menu_tab_mixin],
   components: {
     m1,
     m2,
@@ -47,6 +41,7 @@ export default {
   data() {
     return {
       tab: "m6",
+      tab_level: 2,
       tabs: [
         { label: "Tomcat&Http协议", value: "m6" },
         { label: "Servlet", value: "m1" },

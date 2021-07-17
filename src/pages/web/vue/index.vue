@@ -1,13 +1,11 @@
+<!--
+ * @Date           : 2021-07-09 01:11:11
+ * @FilePath       : /jinnian-space/src/pages/web/vue/index.vue
+ * @Description    : 
+-->
 <template>
   <div>
-    <q-tabs v-model="tab" align="left" inline-label dense class="text-teal">
-      <q-tab
-        v-for="(item, index) in tabs"
-        :key="`tabs_${index}`"
-        :name="`${item.value}`"
-        :label="`${index + 1}.${item.label}`"
-      />
-    </q-tabs>
+ 
 
 <div class="q-mx-lg"> 
   <component :is="`${tab}`"></component>
@@ -27,7 +25,9 @@ import m7 from "src/pages/web/vue/module/m7.vue";
 import m8 from "src/pages/web/vue/module/m8.vue";
 import m9 from "src/pages/web/vue/module/m9.vue";
 import m10 from "src/pages/web/vue/module/m10.vue";
+import {menu_tab_mixin} from "src/mixins/index.js"
 export default {
+  mixins:[menu_tab_mixin],
   components: {
     m1,
     m2,
@@ -43,7 +43,7 @@ export default {
   data() {
     return {
       tab: "m1",
-
+  tab_level: 2, 
       tabs: [
          { label: "mv*", value: "m10" },
         { label: "基本", value: "m1" },

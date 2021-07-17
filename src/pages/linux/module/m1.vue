@@ -947,6 +947,8 @@
           find /home -cmin -10 十分中内修改过的文件<br />
           find /home -ctime +10 十天内被改过、新增的文件<br />
           find /home -size +1000c 大于1000bytes的文件<br />
+          find /var/log -name "*.log" -mtime +10 |rm -rf <br />
+          find /var/log -name "*.log" -mtime +10 |xargs rm -rf<br />
           find . -perm 777 权限是777的所有文件<br />
           find . -path "./test" -prune -o -name "*hello*"<br />
           find . -user mary<br />
