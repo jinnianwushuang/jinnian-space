@@ -16,7 +16,7 @@ import m2 from "src/pages/web/basics/module/m2.vue";
 import m3 from "src/pages/web/basics/module/m3.vue";
 import m4 from "src/pages/web/basics/module/m4.vue";
 import m5 from "src/pages/web/basics/module/m5.vue";
-import m6 from "src/pages/web/basics/module/m6.vue";
+// import m6 from "src/pages/web/basics/module/m6.vue";
 import m7 from "src/pages/web/basics/module/m7.vue";
 import m8 from "src/pages/web/basics/module/m8.vue";
 import m9 from "src/pages/web/basics/module/m9.vue";
@@ -31,7 +31,7 @@ export default {
     m3,
     m4,
     m5,
-    m6,
+    // m6,
     m7,
     m8,
     m9,

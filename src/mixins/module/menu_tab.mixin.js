@@ -24,6 +24,11 @@ export default {
     this.fix_right_menu_config();
   },
   watch: {
+    tab(){
+      if(!this.tab){
+        this. fix_right_menu_config()
+      }
+    },
     get_current_selected_right_menu(newValue, oldValue) {
       this.tab = this.get_current_selected_right_menu["t" + this.tab_level];
     }

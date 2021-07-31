@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import MainComponent from "../md/浏览器.md";
+import MainComponent from "../md/渲染原理2.md";
 export default {
   data() {
     return {

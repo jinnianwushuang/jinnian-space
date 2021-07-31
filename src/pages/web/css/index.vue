@@ -25,7 +25,7 @@ export default {
   components: {
     m1,
     m2,
-    m3,
+    // m3,
     m4,
     m5,
     m6,
@@ -40,7 +40,7 @@ export default {
       tabs: [
           { label: "显隐" ,value:'m1'},
           { label: "全面梳理" ,value:'m2'},
-          { label: "display" ,value:'m3'},
+          // { label: "display" ,value:'m3'},
           { label: "var()" ,value:'m4'},
           { label: "SASS总结" ,value:'m5'},
           // { label: "基本" ,value:'m6'},
