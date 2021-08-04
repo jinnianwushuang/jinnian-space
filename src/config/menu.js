@@ -15,7 +15,7 @@ export default [
   // { name: "seo", text: "seo" },
 
   // { path: "c", name: "c" },
-  // { path: "english", name: "english" },
+  { path: "english", name: "english" },
   // { path: "docker", name: "docker" },
   // { path: "go", name: "go" },
   { path: "java", name: "java" },

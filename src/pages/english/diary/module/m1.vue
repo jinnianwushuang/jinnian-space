@@ -1,10 +1,15 @@
+<!--
+ * @Date           : 2021-04-12 16:02:15
+ * @FilePath       : /jinnian-space/src/pages/basics-template/module/m1.vue
+ * @Description    : 
+-->
 <template>
-  <div class="q-my-md q-mx-sm">
+  <div class="">
     <q-markdown :extend="extendMarkdown" :src="MainComponent" />
   </div>
 </template>
 <script>
-import MainComponent from "../md/word-review.md";
+import MainComponent from "../md/note-202108.md";
 export default {
   data() {
     return {

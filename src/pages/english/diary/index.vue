@@ -41,10 +41,10 @@ export default {
   data() {
     return {
       tab: "m1",
-       tab_level: 1, // 右侧 菜单 一级 为 1  二级为 2
+        tab_level: 2,
       tabs: [
-        { label: "m1", value: "m1" },
-        { label: "m2", value: "m2" },
+        { label: "note-202108", value: "m1" },
+        // { label: "m2", value: "m2" },
 
 
       ],

@@ -39,7 +39,7 @@
         />
       </q-bar>
       <q-toolbar v-if="current_mode !== 'electron'">
-        <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
+        <q-btn flat @click="drawerLeft = !drawerLeft" round dense icon="menu" />
         <q-toolbar-title>{{ title }}</q-toolbar-title>
         <q-space class="desktop-only" />
         <div class="desktop-only">{{ last_update_time }}</div>
@@ -56,7 +56,7 @@
       class="hide-scrollbar"
       v-model="drawerLeft"
       show-if-above
-      :width="200"
+      :width="160"
       :breakpoint="500"
       bordered
       content-class="bg-grey-3 hide-scrollbar "
@@ -94,7 +94,7 @@
       bordered
       dense
       show-if-above
-      :width="200"
+      :width="160"
       :breakpoint="500"
        content-class="bg-grey-3 hide-scrollbar "
     >
@@ -131,7 +131,7 @@
         :scroll-offset="150"
         :offset="[18, 18]"
       >
-        <q-btn fab icon="keyboard_arrow_up" color="primary" />
+        <q-btn dense    icon="keyboard_arrow_up" color="primary" />
       </q-page-scroller>
     </q-page-container>
   </q-layout>

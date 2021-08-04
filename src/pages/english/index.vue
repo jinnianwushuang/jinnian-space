@@ -1,15 +1,6 @@
 <template>
   <div>
-    <q-tabs v-model="tab" align="left" inline-label dense class="text-teal">
-      <q-tab
-        v-for="(item, index) in tabs"
-        :key="`tabs_${index}`"
-        :name="`${index + 1}`"
-        :label="`${index + 1}.${item.text}`"
-      />
-    </q-tabs>
-
-    <component :is="`m${tab}`"></component>
+  <component :is="`${tab}`"></component>
   </div>
 </template>
 
@@ -23,7 +14,10 @@ import m5 from "src/pages/english/module/m5.vue";
 import m6 from "src/pages/english/module/m6.vue";
 import m7 from "src/pages/english/module/m7.vue";
 import m8 from "src/pages/english/module/m8.vue";
+import m9 from "src/pages/english/diary/index.vue";
+import {menu_tab_mixin} from "src/mixins/index.js"
 export default {
+  mixins:[menu_tab_mixin],
   components: {
     m1,
     m2,
@@ -32,21 +26,19 @@ export default {
     m5,
     m6,
     m7,
-    m8
+    m8,
+    m9
   },
   data() {
     return {
-      tab: 1,
-      tabs: [1, 2, 3, 4, 5, 6, 7, 8],
+      tab: "m1",
+        tab_level: 1, 
       tabs: [
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" }
+       { label: "音标速记", value: "m1" },
+       { label: "单词复习", value: "m2" },
+       { label: "diary", value: "m9" },
+      
+ 
       ]
     };
   }
