@@ -34,8 +34,10 @@ export default {
       tab: "m1",
         tab_level: 1, 
       tabs: [
-       { label: "音标速记", value: "m1" },
-       { label: "单词复习", value: "m2" },
+       { label: "phonetic", value: "m1" },
+       { label: "word", value: "m2" },
+       { label: "phrase", value: "m3" },
+       { label: "sentence", value: "m4" },
        { label: "diary", value: "m9" },
       
  
