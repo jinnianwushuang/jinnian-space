@@ -9,7 +9,7 @@
   </div>
 </template>
 <script>
-import MainComponent from "../md/note-202108.md";
+import MainComponent from "../../md/note-202108.md";
 export default {
   data() {
     return {

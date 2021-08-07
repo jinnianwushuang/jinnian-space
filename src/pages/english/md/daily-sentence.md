@@ -3,9 +3,9 @@
 |                                                              |                                                        |
 |                                                              |                                                        |
 |                                                              |                                                        |
-|                                                              |                                                        |
-|                                                              |                                                        |
-|                                                              |                                                        |
+| Don't judge a  book by its cover.                            | 人不可貌相。                                           |
+| Haste makes waste.                                           | 欲速则不达。                                           |
+| Don't act in haste or be hot-headed.                         | 别匆忙行事，也别鲁莽。                                 |
 | Part of life is learning to let things go.                   | 学会放手是人生的一部分。                               |
 | Don't let emotion cloud your judgment.                       | 不要让情绪影响你的判断。                               |
 | True friendship is a rare thing.                             | 人生难遇知己。                                         |

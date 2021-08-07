@@ -31,7 +31,7 @@ export default {
   },
   data() {
     return {
-      tab: "m1",
+      tab: "m9",
         tab_level: 1, 
       tabs: [
        { label: "phonetic", value: "m1" },

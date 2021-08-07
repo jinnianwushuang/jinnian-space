@@ -1,6 +1,6 @@
 <template>
     <div>
-        <img src="/img/english/音标/发音组合.png" alt="">
+        <img src="img/english/音标/发音组合.png" alt="">
     </div>
 </template>
 
