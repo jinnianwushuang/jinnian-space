@@ -2,7 +2,7 @@
 | ------------------------------------------------------------ | ------------------------------------------------------ |
 |                                                              |                                                        |
 |                                                              |                                                        |
-|                                                              |                                                        |
+| We should never be ashamed of what we've gone through.       | 往事莫悔。                                             |
 | Don't judge a  book by its cover.                            | 人不可貌相。                                           |
 | Haste makes waste.                                           | 欲速则不达。                                           |
 | Don't act in haste or be hot-headed.                         | 别匆忙行事，也别鲁莽。                                 |

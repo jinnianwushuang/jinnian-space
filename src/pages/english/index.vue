@@ -38,6 +38,7 @@ export default {
        { label: "word", value: "m2" },
        { label: "phrase", value: "m3" },
        { label: "sentence", value: "m4" },
+       { label: "irregular-verb", value: "m5" },
        { label: "diary", value: "m9" },
       
  
