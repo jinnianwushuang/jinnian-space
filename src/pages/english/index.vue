@@ -39,6 +39,10 @@ export default {
        { label: "phrase", value: "m3" },
        { label: "sentence", value: "m4" },
        { label: "irregular-verb", value: "m5" },
+       { label: "verb-tense", value: "m6" },
+       { label: "parts-of-speech", value: "m7" },
+       { label: "roots-prefixes-suffixes", value: "m8" },
+   
        { label: "diary", value: "m9" },
       
  

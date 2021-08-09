@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import MainComponent from "../md/irregular-verb-list.md";
+import MainComponent from "../md/regular-irregular-verb.md";
 export default {
   data() {
     return {

@@ -1,15 +1,20 @@
 <template>
-    <div>
-        1
-    </div>
+  <div class="q-my-md q-mx-sm">
+    <q-markdown   :src="MainComponent" />
+  </div>
 </template>
-
 <script>
-    export default {
-        
-    }
+import MainComponent from "../md/roots-prefixes-suffixes.md";
+export default {
+  data() {
+    return {
+      MainComponent,
+   
+    };
+  },
+  methods: {
+   
+  }
+};
 </script>
-
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
