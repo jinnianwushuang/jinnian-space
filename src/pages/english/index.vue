@@ -14,9 +14,9 @@ import m5 from "src/pages/english/module/m5.vue";
 import m6 from "src/pages/english/module/m6.vue";
 import m7 from "src/pages/english/module/m7.vue";
 import m8 from "src/pages/english/module/m8.vue";
-import m9 from "src/pages/english/module/m9.vue";
+// import m9 from "src/pages/english/module/m9.vue";
 import m10 from "src/pages/english/module/m10.vue";
-import m99 from "src/pages/english/diary/index.vue";
+// import m99 from "src/pages/english/diary/index.vue";
 import {menu_tab_mixin} from "src/mixins/index.js"
 export default {
   mixins:[menu_tab_mixin],
@@ -29,9 +29,9 @@ export default {
     m6,
     m7,
     m8,
-    m9,
+    m9:()=>import("src/pages/english/module/m9.vue"),
     m10,
-    m99
+    m99:()=>import("src/pages/english/diary/index.vue")
   },
   data() {
     return {
