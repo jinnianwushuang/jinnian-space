@@ -16,6 +16,7 @@ import m7 from "src/pages/english/module/m7.vue";
 import m8 from "src/pages/english/module/m8.vue";
 // import m9 from "src/pages/english/module/m9.vue";
 import m10 from "src/pages/english/module/m10.vue";
+import m11 from "src/pages/english/module/m11.vue";
 // import m99 from "src/pages/english/diary/index.vue";
 import {menu_tab_mixin} from "src/mixins/index.js"
 export default {
@@ -31,6 +32,7 @@ export default {
     m8,
     m9:()=>import("src/pages/english/module/m9.vue"),
     m10,
+    m11,
     m99:()=>import("src/pages/english/diary/index.vue")
   },
   data() {
@@ -38,7 +40,8 @@ export default {
       tab: "m9",
         tab_level: 1, 
       tabs: [
-       { label: "phonetic", value: "m1" },
+       { label: "level-phonetic", value: "m1" },
+       { label: "key-word", value: "m11" },
        { label: "word", value: "m2" },
        { label: "phrase", value: "m3" },
        { label: "sentence", value: "m4" },

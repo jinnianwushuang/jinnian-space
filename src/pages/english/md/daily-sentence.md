@@ -2,6 +2,8 @@
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 |                                                              |                                                              |
 |                                                              |                                                              |
+|                                                              |                                                              |
+| Being yourself, that is a magic stronger than any wish.      | 坚守本心，远胜祈祷。                                         |
 | If you don't build your dream, someone will hire you to build theirs! | 如果你没有梦想，那么你就会被别人招去完成他们的梦想。         |
 | You make millions of decisions that mean nothing and then one day your  order takes out and it changes your life. | 你每天都在做很多看起来毫无意义的决定， 但某天你的某个决定就能改变你的一 生。 |
 | Meet success like a gentleman and disaster like a man.       | 优雅地迎接成功，勇敢地面对挫折。                             |

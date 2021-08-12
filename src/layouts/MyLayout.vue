@@ -93,7 +93,7 @@
       v-model="drawerRight"
       bordered
       dense
-      show-if-above
+ 
       :width="160"
       :breakpoint="500"
        content-class="bg-grey-3 hide-scrollbar "
@@ -124,7 +124,7 @@
         </q-list>
       </q-scroll-area>
     </q-drawer>
-    <q-page-container :class="$q.platform.is.desktop ? 'q-pl-md' : ''">
+    <q-page-container :class="$q.platform.is.desktop ? 'q-pl-md' : ''" style="width: calc( 100vw - 320px)">
       <router-view class="q-pl-md" />
       <q-page-scroller
         position="bottom-right"

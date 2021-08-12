@@ -94,55 +94,56 @@ Many English words are derived from Latin verb roots and Greek  verb roots.
 
 Like prefixes, suffixes are roots added to base words.
 
-| Suffix            | Meaning                                                      | Example                                                      |
-| ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| able, ible        | capable of being                                             | terrible,adaptable, predictable, preventable, credible       |
-| age               | action, state, process                                       | postage, package, baggage, marriage, breakage, passage       |
-| al                | relating to,Condition, quality, pertaining to                | personal,dismissal, proposal, arrival, approval, denial, refusal,natural, criminal, theatrical, accidental, regional, brutal, personal, regional, universal, seasonal |
-| an                | relating or belonging to                                     | electrician, African                                         |
-| ance, ence        | act of or state of, action, state, condition or quality      | pestilence,acceptance, attendance, reference preference, insurance, existence |
-| ant, ent          | one who, pertaining to,inclined to or tending to             | ambivalent,reliant, defiant, vigilant, brilliant             |
-| ary               | relating to                                                  | imaginary,dietary, planetary, military, honorary, budgetary, complimentary, momentary, honorary, cautionary, customary |
-| ate               | To make                                                      | fortunate, accommodate, activate, animate, captivate, considerate, consolidate, cooperate, decorate, allocate, concentrate |
-| cer               | one who, pertaining to                                       | dancer                                                       |
-| dom               | quality of, state of                                         | kingdom                                                      |
-| ed                | past tense                                                   | baked,climbed, missed, laughed, called                       |
-| ee                | one who is                                                   | employee                                                     |
-| eer               | engaged in something, associated with something              | volunteer, engineer, musketeer, auctioneer, racketeer, mountaineer, profiteer |
-| en                | to make，made of, or become                                  | fasten，wooden, awaken, fasten, strengthen, soften, awaken, blacken, broaden, deafen, flatten, gladden, tighten, shorten, sweeten, lengthen, brighten, darken |
-| er                | person or thing that does an action, or a comparative        | runner, faster, teacher, dancer, helper, farmer, lawyer, jeweler, preacher, prisoner, villager,longer, bigger, fuller, faster |
-| ery               | a business or trade, a behavior, a condition                 | bakery, creamery, machinery, slavery, brewery                |
-| es                | plural                                                       | stitches                                                     |
-| ess               | female                                                       | princess                                                     |
-| est               | superlative                                                  | biggest                                                      |
-| ful               | full of or notable of                                        | hopeful,wonderful, fanciful, beautiful, skillful, successful, delightful, awful, grateful |
-| hood              | family terms                                                 | motherhood, parenthood, motherhood, childhood                |
-| ian               | one who, pertaining to                                       | martian                                                      |
-| ic                | having characteristics of, or relating to                    | comic, organic,organic, heroic, poetic, iconic, athletic, basic, scientific, historic, rhythmic, photographic |
-| ical              | having the nature of                                         | practical, logical, magical, statistical, alphabetical, historical |
-| -ify, -fy         | To make or produce                                           | classify, codify, clarify, crucify, defy, falsify, intensify, modify, satisfy, simplify, unify, exemplify, identify, justify, notify, terrify |
-| ing               | action or process                                            | moving,landing, writing, ending, seating, blessing, feeding  |
-| ion, tion,ation   | act of, state of, or result of,the action or resulting state | attention，union, construction, celebration, expedition persuasion,division, exploration, hesitation,declaration, celebration, information, immigration, education, elimination, combination |
-| ish               | like, similar to                                             | childish，foolish,sheepish, foolish, childish, selfish, girlish, pinkish |
-| ist               | person who practices                                         | cartoonist, columnist, bicyclist, physicist, violinist, terrorist |
-| ity               | quality of, state of                                         | purity,equality, abnormality, probability, civility, stupidity, curiosity, mobility, reality, tranquility, activity |
-| ive, ative, itive | having the nature of, quality or nature of                   | active, creative, primitive,expensive, pensive, creative     |
-| ize,ise           | to make or become                                            | fossilize,specialize, authorize, commercialize, memorialize, apologize, characterize, digitalize, socialize, symbolize, stabilize, familiarize, advertise, colonize, civilize |
-| less              | without something                                            | worthless,faultless, fearless, restless, useless, friendless, homeless, worthless, penniless, hopeless, powerless |
-| like              | like                                                         | childlike, birdlike, warlike, lifelike, ladylike             |
-| ly                | in what manner something is being done                       | happily,bravely, simply, honestly, gladly, lately, rightly, completely, really, definitely, maturely |
-| ment              | action, state of, result of                                  | containment, retirement, establishment, movement, abandonment |
-| ness              | quality of, state of                                         | greatness,awareness, kindness, darkness, fondness, happiness, kindness, truthfulness, quietness, sleepiness, usefulness |
-| or                | one who, pertaining to,a person who is something             | vendor，instructor,translator, investigator, conductor, distributor |
-| ous               | full of,having qualities of                                  | dangerous，courageous, cautious, humorous, gracious, fabulous, dangerous, mysterious, nervous, victorious, poisonous, courteous |
-| ship              | skill, state, quality,position held                          | courtship, ownership, internship, worship. partnership, membership, friendship |
-| sion              | state or being                                               | revision, division, revision, profession, depression, confusion, tension, compulsion, confusion, decision, impression |
-| th                | state or quality                                             | labyrinth, warmth, death, strength, width, length, filth, birth, growth, depth |
-| tude              | quality of, state of                                         | multitude                                                    |
-| ty                | condition                                                    | honesty, difficulty, safety, cruelty, subtlety, loyalty, modesty, certainty |
-| ure               | action or the resulting state                                | erasure, failure, pressure, legislature, departure, enclosure |
-| wise              | in relation to                                               | clockwise, edgewise, lengthwise, otherwise, crosswise, likewise |
-| y                 | made up of or characterized by                               | fuzzy,fruity, tasty, brainy, grouchy, rainy, funny, messy, dirty, spotty |
+| Suffix            | making         | Meaning                                                      | Example                                                      |
+| ----------------- | -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| -able, -ible      | adjective      | capable of being                                             | terrible,adaptable, predictable, preventable, credible,acceptable |
+| -acy              | noun           |                                                              | literacy , conspiracy ,diplomacy                             |
+| -age              | noun           | action, state, process                                       | postage, package, baggage, marriage, breakage, passage       |
+| -al,-ial          | adjective,noun | relating to,Condition, quality, pertaining to,having characteristics of | personal,dismissal, proposal, arrival, approval, denial, refusal,natural, criminal, theatrical, accidental, regional, brutal, personal, regional, universal, accusal,betrayal,denial,seasonal,circumstantial--依据情况的 |
+| -an               | noun           | relating or belonging to                                     | electrician, African                                         |
+| -ance, -ence      | noun           | act of or state of, action, state, condition or quality      | pestilence,acceptance, attendance, reference preference, insurance, existence，dominance--统治,defiance,competence |
+| -ant, -ent        | adjective      | one who, pertaining to,inclined to or tending to             | ambivalent,reliant, defiant, vigilant, brilliant,student,defendant,accountant |
+| -ary              | adjective      | relating to                                                  | imaginary,dietary, planetary, military, honorary, budgetary, complimentary, momentary, honorary, cautionary, customary |
+| -ate              | verb           | To make                                                      | fortunate, accommodate, activate, animate, captivate, considerate, consolidate, cooperate, decorate, allocate, concentrate, debate,inflate |
+| dom               | noun           | quality of, state of                                         | kingdom,freedom,wisdom                                       |
+| ed                | verb,adjective | past tense                                                   | baked,climbed, missed, laughed, called                       |
+| -ee               | noun           | one who is                                                   | employee                                                     |
+| -eer              |                | engaged in something, associated with something              | volunteer, engineer, musketeer, auctioneer, racketeer, mountaineer, profiteer |
+| -en               | adjective,verb | to make，made of, or become                                  | fasten，wooden, awaken, fasten, strengthen, soften, awaken, blacken, broaden, deafen, flatten, gladden, tighten, shorten, sweeten, lengthen, brighten, darken,widen |
+| er                | noun           | person or thing that does an action, or a comparative        | runner, faster, teacher, dancer, helper, farmer, lawyer, jeweler, preacher, prisoner, villager,longer, bigger, fuller, faster,dancer,singer,writer |
+| ery               |                | a business or trade, a behavior, a condition                 | bakery, creamery, machinery, slavery, brewery                |
+| es                |                | plural                                                       | stitches                                                     |
+| ess               |                | female                                                       | princess                                                     |
+| est               |                | superlative                                                  | biggest                                                      |
+| ful               | adjective      | full of or notable of                                        | hopeful,wonderful, fanciful, beautiful, skillful, successful, delightful, awful, grateful |
+| hood              |                | family terms                                                 | motherhood, parenthood, motherhood, childhood                |
+| ian               |                | one who, pertaining to                                       | martian                                                      |
+| ic                | adjective      | having characteristics of, or relating to                    | comic, organic,organic, heroic, poetic, iconic, athletic, basic, scientific, historic, rhythmic, photographic |
+| ical              | adjective      | having the nature of                                         | practical, logical, magical, statistical, alphabetical, historical |
+| -ify, -fy         | verb           | To make or produce                                           | classify, codify, clarify, crucify, defy, falsify, intensify, modify, satisfy, simplify, unify, exemplify, identify, justify, notify, terrify,mystify |
+| ing               |                | action or process                                            | moving,landing, writing, ending, seating, blessing, feeding  |
+| ion, tion,ation   |                | act of, state of, or result of,the action or resulting state | attention，union, construction, celebration, expedition persuasion,division, exploration, hesitation,declaration, celebration, information, immigration, education, elimination, combination |
+| ish               |                | like, similar to                                             | childish，foolish,sheepish, foolish, childish, selfish, girlish, pinkish |
+| -ism              | noun           |                                                              | capitalism ,modernlism,realism                               |
+| ist               | noun           | person who practices                                         | cartoonist, columnist, bicyclist, physicist, violinist, terrorist,optimist,pessimist,pianist |
+| ity               |                | quality of, state of                                         | purity,equality, abnormality, probability, civility, stupidity, curiosity, mobility, reality, tranquility, activity |
+| ive, ative, itive |                | having the nature of, quality or nature of                   | active, creative, primitive,expensive, pensive, creative     |
+| ize,ise           | verb           | to make or become                                            | fossilize,specialize, authorize, commercialize, memorialize, apologize, characterize, digitalize, socialize, symbolize, stabilize, familiarize, advertise, colonize, civilize,energize,immunize,minimize |
+| less              | adjective      | without something                                            | worthless,faultless, fearless, restless, useless, friendless, homeless, worthless, penniless, hopeless, powerless |
+| like              |                | like                                                         | childlike, birdlike, warlike, lifelike, ladylike             |
+| ly                |                | in what manner something is being done                       | happily,bravely, simply, honestly, gladly, lately, rightly, completely, really, definitely, maturely |
+| ment              | noun           | action, state of, result of                                  | containment, retirement, establishment, movement, abandonment,employment,<br />entertainment,government |
+| ness              | noun           | quality of, state of                                         | greatness,awareness, kindness, darkness, fondness, happiness, kindness, truthfulness, quietness, sleepiness, usefulness,happiness,sadness,sickness |
+| or                | noun           | one who, pertaining to,a person who is something             | vendor，instructor,translator, investigator, conductor, distributor,generator |
+| ous               | adjective      | full of,having qualities of                                  | dangerous，courageous, cautious, humorous, gracious, fabulous, dangerous, mysterious, nervous, victorious, poisonous, courteous |
+| ship              |                | skill, state, quality,position held                          | courtship, ownership, internship, worship. partnership, membership, friendship |
+| sion,tion         | noun           | state or being                                               | revision, division, revision, profession, depression, confusion, tension, compulsion, confusion, decision, impression,,collision,infection,appreciation |
+| th                |                | state or quality                                             | labyrinth, warmth, death, strength, width, length, filth, birth, growth, depth |
+| tude              |                | quality of, state of                                         | multitude                                                    |
+| ty                | noun           | condition                                                    | honesty, difficulty, safety, cruelty, subtlety, loyalty, modesty, certainty,royalty,society |
+| ure               |                | action or the resulting state                                | erasure, failure, pressure, legislature, departure, enclosure |
+| wise              |                | in relation to                                               | clockwise, edgewise, lengthwise, otherwise, crosswise, likewise |
+| y                 | adjective      | made up of or characterized by                               | fuzzy,fruity, tasty, brainy, grouchy, rainy, funny, messy, dirty, spotty |
 
 
 
@@ -151,55 +152,55 @@ Like prefixes, suffixes are roots added to base words.
 
 The word *prefix* means *added before* or *affixed to the front*. Most prefixes are one or two syllables. In the following chart, prefixes following a semicolon are uncommon.
 
-| Prefix                  | Meaning                            | Example                                                      |
-| ----------------------- | ---------------------------------- | ------------------------------------------------------------ |
-| a, ab                   | from, not                          | absent                                                       |
-| a, an                   | without, lack of, not              | amoral, acellular, abyss, achromatic, anhydrous              |
-| ad; ac, ag, al, at      | to, toward                         | adhere                                                       |
-| ante                    | before, earlier, in front of       | antecedent, antedate, antemeridian, anterior                 |
-| anti                    | against, opposite of               | anticlimax. antiaircraft, antiseptic, antibody               |
-| auto                    | self, same                         | autopilot, autobiography, automobile, autofocus              |
-| bi                      | two, halves                        | bisect                                                       |
-| cent; centi             | hundred or hundredth               | centimeter                                                   |
-| circum                  | around, about                      | circumvent, circumnavigate, circumscribe                     |
-| co                      | with, together                     | copilot, coworker, coexist, coauthor                         |
-| com; col, con, cor      | together, with                     | combine collate,companion, commingle, contact, concentrate   |
-| con                     | opposite, away from                | contrary                                                     |
-| contra, contro,counter  | against, opposite, opposed to      | contradict, contrast, contrary, controversy                  |
-| de                      | down, off, away from               | devalue, deactivate, debug, degrade, deduce,descend          |
-| dis; di, dif            | not, apart, away                   | disappear, disagreeable, disbar, dissect,disengage           |
-| em, en                  | put into, cover with               | embrace, embed, enclose, entangle, enslave, encase           |
-| e, ex; ec, ef           | out of, from, former               | extract, exhale, excavate, expresident,expand                |
-| extra                   | beyond, outside, more than         | extracurricular, extramarital, extravagant,extraterrestrial  |
-| hetero                  | different, other                   | heterosexual, heterodox, heterogeneous                       |
-| homo, homeo             | same, alike                        | homonym, homophone, homeostasis, homosexual                  |
-| hyper                   | over, more, beyond                 | hyperactive, hypersensitive, hypercritical                   |
-| il, im, in, ir          | not, without,in, into, or not      | illegal, immoral, inconsiderate, irresponsible,irreplaceable |
-| inter                   | between, among                     | intersect, interstellar, intervene, interpenetrate,interpersonal |
-| intra, intro            | within, inside                     | intravenous, intragalactic, introvert,intramural             |
-| macro                   | large, prominent                   | macroeconomics, macrostructure, macrocosm                    |
-| micro                   | very small                         | microscope, microcosm, microbe                               |
-| mill                    | thousand                           | millennium                                                   |
-| mono                    | one, single, alone                 | monocle, monologue, monogamy, monotony                       |
-| multi                   | many                               | multifaceted                                                 |
-| non                     | not, without                       | nonentity, nonaggressive, nonessential, nonfiction,nonsense  |
-| ob, op; oc, of          | in front of, against               | opposition                                                   |
-| omni                    | all, every                         | omniscient, omnivorous, omniscient, omnidirectional          |
-| per                     | through, by                        | perennial                                                    |
-| post                    | after, behind                      | postmortem, posterior, postscript, postoperative,postpone    |
-| pre, pro                | before, forward                    | precede, predict, project, prologue,prehistoric,propel       |
-| re                      | back, again                        | revise                                                       |
-| se                      | apart                              | seclude                                                      |
-| semi                    | half                               | semiannual                                                   |
-| sub; suc, suf, sug, sum | under, lower, before               | submarine, subsidiary, substandard                           |
-| super, sur              | above, over                        | supervisor                                                   |
-| sym, syn                | same time, together                | symmetry, symposium, synchronize, synapse                    |
-| tele                    | from or over a distance            | telecommunications, telemedicine, television, telephone      |
-| trans                   | across, beyond, through            | transmit, transaction, translation, transfer,transport       |
-| tri                     | three, every third                 | tricycle, trimester, triangle, triathlon,triumvirate         |
-| ultra                   | beyond                             | ultraviolet                                                  |
-| un                      | not, lacking, opposite of          | unfinished, unskilled, ungraceful, unfriendly                |
-| un, unus, una, unum, o  | one                                | unanimous                                                    |
-| uni                     | one, single                        | unicorn, unicellular, unicycle, unilateral                   |
-| up                      | to the top or north, higher,better | upbeat, updo, upgrade, upload, uphill, upstage, upscale, uptempo |
-| vice                    | in place of                        | viceroy                                                      |
+| Prefix                  | making | Meaning                            | Example                                                      |
+| ----------------------- | ------ | ---------------------------------- | ------------------------------------------------------------ |
+| a, ab                   |        | from, not                          | absent                                                       |
+| a, an                   |        | without, lack of, not              | amoral, acellular, abyss, achromatic, anhydrous              |
+| ad; ac, ag, al, at      |        | to, toward                         | adhere                                                       |
+| ante                    |        | before, earlier, in front of       | antecedent, antedate, antemeridian, anterior                 |
+| anti                    | noun   | against, opposite of               | anticlimax. antiaircraft, antiseptic, antibody               |
+| auto                    | noun   | self, same                         | autopilot, autobiography, automobile, autofocus              |
+| bi                      |        | two, halves                        | bisect                                                       |
+| cent; centi             |        | hundred or hundredth               | centimeter                                                   |
+| circum                  |        | around, about                      | circumvent, circumnavigate, circumscribe                     |
+| co                      |        | with, together                     | copilot, coworker, coexist, coauthor                         |
+| com; col, con, cor      |        | together, with                     | combine collate,companion, commingle, contact, concentrate   |
+| con                     |        | opposite, away from                | contrary                                                     |
+| contra, contro,counter  |        | against, opposite, opposed to      | contradict, contrast, contrary, controversy                  |
+| de                      |        | down, off, away from               | devalue, deactivate, debug, degrade, deduce,descend          |
+| dis; di, dif            |        | not, apart, away                   | disappear, disagreeable, disbar, dissect,disengage           |
+| em, en                  |        | put into, cover with               | embrace, embed, enclose, entangle, enslave, encase           |
+| e, ex; ec, ef           |        | out of, from, former               | extract, exhale, excavate, expresident,expand                |
+| extra                   |        | beyond, outside, more than         | extracurricular, extramarital, extravagant,extraterrestrial  |
+| hetero                  |        | different, other                   | heterosexual, heterodox, heterogeneous                       |
+| homo, homeo             |        | same, alike                        | homonym, homophone, homeostasis, homosexual                  |
+| hyper                   |        | over, more, beyond                 | hyperactive, hypersensitive, hypercritical                   |
+| il, im, in, ir          |        | not, without,in, into, or not      | illegal, immoral, inconsiderate, irresponsible,irreplaceable |
+| inter                   |        | between, among                     | intersect, interstellar, intervene, interpenetrate,interpersonal |
+| intra, intro            |        | within, inside                     | intravenous, intragalactic, introvert,intramural             |
+| macro                   |        | large, prominent                   | macroeconomics, macrostructure, macrocosm                    |
+| micro                   |        | very small                         | microscope, microcosm, microbe                               |
+| mill                    |        | thousand                           | millennium                                                   |
+| mono                    |        | one, single, alone                 | monocle, monologue, monogamy, monotony                       |
+| multi                   |        | many                               | multifaceted                                                 |
+| non                     |        | not, without                       | nonentity, nonaggressive, nonessential, nonfiction,nonsense  |
+| ob, op; oc, of          |        | in front of, against               | opposition                                                   |
+| omni                    |        | all, every                         | omniscient, omnivorous, omniscient, omnidirectional          |
+| per                     |        | through, by                        | perennial                                                    |
+| post                    |        | after, behind                      | postmortem, posterior, postscript, postoperative,postpone    |
+| pre, pro                |        | before, forward                    | precede, predict, project, prologue,prehistoric,propel       |
+| re                      |        | back, again                        | revise                                                       |
+| se                      |        | apart                              | seclude                                                      |
+| semi                    |        | half                               | semiannual                                                   |
+| sub; suc, suf, sug, sum |        | under, lower, before               | submarine, subsidiary, substandard                           |
+| super, sur              |        | above, over                        | supervisor                                                   |
+| sym, syn                |        | same time, together                | symmetry, symposium, synchronize, synapse                    |
+| tele                    |        | from or over a distance            | telecommunications, telemedicine, television, telephone      |
+| trans                   |        | across, beyond, through            | transmit, transaction, translation, transfer,transport       |
+| tri                     |        | three, every third                 | tricycle, trimester, triangle, triathlon,triumvirate         |
+| ultra                   |        | beyond                             | ultraviolet                                                  |
+| un                      |        | not, lacking, opposite of          | unfinished, unskilled, ungraceful, unfriendly                |
+| un, unus, una, unum, o  |        | one                                | unanimous                                                    |
+| uni                     |        | one, single                        | unicorn, unicellular, unicycle, unilateral                   |
+| up                      |        | to the top or north, higher,better | upbeat, updo, upgrade, upload, uphill, upstage, upscale, uptempo |
+| vice                    |        | in place of                        | viceroy                                                      |
