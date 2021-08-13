@@ -158,7 +158,7 @@ export default {
       current_menu: "note",
       tab: "note",
       tabs: [1, 2, 3, 4, 5, 6, 7, 8],
-      drawerRight: false,
+      drawerRight: true,
       current_mode: process.env.MODE,
       flat_right_menu: []
     };
