@@ -33,6 +33,7 @@ export default {
     m9:()=>import("src/pages/english/module/m9.vue"),
     m10,
     m11,
+    m12:()=>import("src/pages/english/module/m12.vue"),
     m99:()=>import("src/pages/english/diary/index.vue")
   },
   data() {
@@ -51,6 +52,7 @@ export default {
        { label: "roots-prefixes-suffixes", value: "m8" },
        { label: "idioms", value: "m9" },
        { label: "proverbs", value: "m10" },
+       { label: "gerunds-and-infinitives", value: "m12" },
    
        { label: "diary", value: "m99" },
       
