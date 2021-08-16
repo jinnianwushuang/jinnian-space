@@ -91,15 +91,17 @@ module.exports = function (ctx) {
     build: {
       distDir: process.argv[3]=='electron'? "./dist/dist-electron":(for_github?"./docs-2":'./dist/dist-spa-server') ,
       scopeHoisting: true,
+      // vueRouterMode: 'hash', // available values: 'hash', 'history'
       vueRouterMode: 'history', // available values: 'hash', 'history'
       showProgress: true,
       // ignorePublicFolder:true,
       gzip: false,
       analyze: false,
-      // publicPath:"https://github.com/jinnianwushuang/jinnian-space/blob/master/public/",
-      publicPath: for_github?"jinnian-space/public/":"",
+      // publicPath:"https://github.com/jinnianwushuang/jinnian-space/blob/master/public/",  mode
+      publicPath: for_github?"/jinnian-space/public/":"/",
       env: {
-        last_update_time:  new Date().getTime()
+        last_update_time:  new Date().getTime(),
+        for_github
       },
       // Options below are automatically set depending on the env, set them if you want to override
       // preloadChunks: false,
