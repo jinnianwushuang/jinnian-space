@@ -91,8 +91,8 @@ module.exports = function (ctx) {
     build: {
       distDir: process.argv[3]=='electron'? "./dist/dist-electron":(for_github?"./docs-2":'./dist/dist-spa-server') ,
       scopeHoisting: true,
-      // vueRouterMode: 'hash', // available values: 'hash', 'history'
-      vueRouterMode: 'history', // available values: 'hash', 'history'
+      vueRouterMode: 'hash', // available values: 'hash', 'history'
+      // vueRouterMode: 'history', // available values: 'hash', 'history'
       showProgress: true,
       // ignorePublicFolder:true,
       gzip: false,
