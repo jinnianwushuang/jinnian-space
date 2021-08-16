@@ -40,8 +40,11 @@
       </q-bar>
       <q-toolbar v-if="current_mode !== 'electron'">
         <q-btn flat @click="drawerLeft = !drawerLeft" round dense icon="menu" />
-        <q-toolbar-title>{{ title }}</q-toolbar-title>
-        <q-space class="desktop-only" />
+        <!-- <q-toolbar-title>{{ title }}</q-toolbar-title> -->
+        <div class="text-h6">{{ title }}</div>
+        <q-space  />
+        <div class="desktop-only text-uppercase">{{mid_text}}</div>
+          <q-space   />
         <div class="desktop-only">{{ last_update_time }}</div>
         <q-btn
           flat
@@ -93,7 +96,6 @@
       v-model="drawerRight"
       bordered
       dense
- 
       :width="160"
       :breakpoint="500"
        content-class="bg-grey-3 hide-scrollbar "
@@ -107,7 +109,6 @@
           <q-item
             clickable
             :class="compute_right_menu_item_class(item)"
-            dense
             v-ripple
             @click="right_menu_item_click(item)"
           >
@@ -124,8 +125,9 @@
         </q-list>
       </q-scroll-area>
     </q-drawer>
-    <q-page-container :class="$q.platform.is.desktop ? 'q-pl-md' : ''" style="width: calc( 100vw - 320px)">
-      <router-view class="q-pl-md" />
+     <!-- :class="$q.platform.is.desktop ? 'q-px-md' : 'q-px-md'" -->
+    <q-page-container   :style="q_page_container_style" class="q-pb-sm" >
+      <router-view   :class="$q.platform.is.desktop ? 'q-pa-md' : 'q-pa-sm'"     />
       <q-page-scroller
         position="bottom-right"
         :scroll-offset="150"
@@ -150,8 +152,10 @@ export default {
     return {
       title: "我生待明日，万事成蹉跎。",
       title: "锦绣年华",
+      // title: "we are who we choose to be",
       // title:"锦年成长空间",
       // title:"I dreamed a dream",
+      mid_text:"we are who we choose to be",
       last_update_time,
       drawerLeft: false,
       menu,
@@ -167,7 +171,19 @@ export default {
     ...mapGetters({
       right_menu: "get_right_menu",
       current_selected_right_menu: "get_current_selected_right_menu"
-    })
+    }),
+    q_page_container_style(){
+let width=''
+  if(this.$q.platform.is.desktop){
+ width= "calc( 100vw - 16px)"
+  }else{
+   width= " 100vw "  
+  }
+      let obj ={
+        width  
+      }
+      return obj
+    }
   },
   created() {
     // console.log('this.$route',this.$route);

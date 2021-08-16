@@ -194,21 +194,22 @@ Example: `She **threatened** *to quit* if she didn't get a raise.`
 
 
 
-|      |      |
-| ---- | ---- |
-|  forget    | I forgot to meet him.<br/>(I didn’t meet him because I forgot to do it.)<br/>I forgot meeting him.<br/>(I don’t have the memory of meeting him before.) |
-|  go on     | He went on to learn English and French.<br/>(He ended one period of time before this.)<br/>He went on learning English and French.<br/>(He continued learning the languages.) |
-|   quit   | She quit to work here.<br/>(She quit another job in order to work here.)<br/>She quit working here.<br/>(She quit her job here. She doesn’t work here anymore.) |
-|   regret   | I regret promising to help you.<br/>(I’m sorry that I made the promise.)<br/>I regret to tell you that we can't hire you.<br/>(I’m telling you now, and I’m sorry.) |
-|   remember   | She remembered to visit her grandmother.<br/>(She didn’t forget to visit.)<br/>She remembered visiting her grandmother.<br/>(She had memories of this time.)<br/> |
-|   stop   | I stopped to call you.<br/>(I interrupted another action in order to call you.)<br/>I stopped calling you.<br/>(I stopped this activity. Maybe we had a fight.) |
-| try | I tried to open the window.<br/>(I attempted this action but didn’t succeed.)<br/>I tried opening the window.<br/>(This was one option I sampled. Maybe the room was hot.) |
-
-
-​	
-
-
-
+|      |      |      |
+| ---- | ---- | ---- |
+|  forget    | **Forget + gerund** | This is the opposite of remember + gerund. It's when you forget about a memory, something that you've done in the past.<br />TI forgot meeting him.(I don’t have the memory of meeting him before.)<br/> |
+| forget | **Forget + to + infinitive** | This is the opposite of remember + to + infinitive. It's when you want to do something, but you forget about it.<br />I forgot to meet him.<br/>(I didn’t meet him because I forgot to do it.)<br/> |
+|  go on     | go on+ gerund | He went on learning English and French.<br/>(He continued learning the languages.) |
+| go on | go on+ to + infinitive | He went on to learn English and French.<br/>(He ended one period of time before this.)<br/> |
+|   quit   | quit+ gerund | She quit working here.<br/>(She quit her job here. She doesn’t work here anymore.) |
+| quit | quit+ to + infinitive | She quit to work here.<br/>(She quit another job in order to work here.)<br/> |
+|   regret   | **Regret + gerund** | This is when you are sorry about something you did in the past and you wish you hadn't done it.<br />I regret promising to help you.<br/>(I’m sorry that I made the promise.)<br/>I regret going to bed so late. I'm really tired today. |
+| regret | **Regret + to + infinitive** | We use this construction when we are giving someone bad news, in quite a formal way. The verb is almost always something like 'say' or 'tell' or 'inform'.<br />I regret to tell you that we can't hire you.<br/>(I’m telling you now, and I’m sorry.)<br />I regret to tell you that the train has been delayed. |
+|   remember   | **Remember + gerund** | This is when you remember something that has happened in the past. You have a memory of it, like being able to see a movie of it in your head.<br />She remembered visiting her grandmother.<br/>(She had memories of this time.)<br/> |
+| remember | **Remember + to + infinitive** | This is when you think of something that you need to do. (And usually, you then do the thing).<br />She remembered to visit her grandmother.<br/>(She didn’t forget to visit.)<br/> |
+|   stop   | **Stop + gerund** | When we stop doing something it means the verb in the gerund is the thing that we stop. It can mean 'stop forever' or 'stop at that moment'.<br />I stopped working when I was expecting a baby. (Working is the thing I stopped). |
+| stop | **Stop + to + infinitive** | In this case, we stop something else in order to do the verb in the infinitive.<br />I stopped to call you.<br/>(I interrupted another action in order to call you.)<br/>I stopped to eat lunch. (I stopped something else, maybe working or studying, because I wanted to eat lunch. |
+| try | **Try + gerund** | This is when you do something as an experiment. The thing you do is not difficult, but you want to see if doing it will have the result that you want.<br />She tried giving up chocolate, but it didn't help her lose weight. (It was easy for her to give up chocolate. She gave it up to see if it would help her lose weight, but it didn't)<br />I tried giving up chocolate (it was no problem to stop eating chocolate) but it didn't make me feel more healthy. |
+| try | **Try + to + infinitive** | This is when the thing you do itself is difficult. In the present tense or future tense, this means you might not succeed in doing it. In the past tense, it means that you made an effort to do the thing, but you did not succeed.<br />	I tried to open the window.<br/>(I attempted this action but didn’t succeed.)<br/>I'll try to carry the suitcase, but it looks too heavy for me.<br />I tried to give up chocolate, but it was too hard. I always ate some when my friends offered it to me. |
 
 
 

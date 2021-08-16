@@ -3,58 +3,25 @@
  * @FilePath       : /jinnian-space/src/config/menu.js
  * @Description    : 
  */
-export default [
+
+import routes from "src/router/routes.js"
+let pages= routes[0]['children']
+let arr=[]
 
 
-  // { name: "note", text: "note" },
-  { name: "web", text: "web" },
-  // { name: "ios_android", text: "ios_android" },
+pages.map(x=>{
+  if(x['meta']&& x['meta']['show']){
+    arr.push({
+      path:x.path,
+      name:x.name,
+      order: x['meta']['order']
+    })
 
-  
-  { name: "node", text: "node" },
-  // { name: "seo", text: "seo" },
-
-  // { path: "c", name: "c" },
-  { path: "english", name: "english" },
-  // { path: "docker", name: "docker" },
-  // { path: "go", name: "go" },
-  { path: "java", name: "java" },
-  // { path: "k8s", name: "k8s" },
-  { path: "linux", name: "linux" },
-  // {
-  //   path: "mba",
-  //   name: "mba"
-  // },
-  // {
-  //   path: "operation",
-  //   name: "operation"
-  // },
-  { path: "os", name: "os" },
-
-  {
-    path: "php",
-    name: "php"
-  },
-  // {
-  //   path: "python",
-  //   name: "python"
-  // },
-  {
-    path: "sql",
-    name: "sql"
-  },
-  // {
-  //   path: "tensorflow",
-  //   name: "tensorflow"
-  // },
-  {
-    path: "other",
-    name: "other"
-  },
-  {
-    path: "bookshelf",
-    name: "bookshelf",
   }
-];
 
+})
+arr= arr.sort((a,b)=>a.order-b.order)
+console.log('arr----',arr);
+
+export default arr
 

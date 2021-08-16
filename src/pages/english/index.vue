@@ -34,11 +34,13 @@ export default {
     m10,
     m11,
     m12:()=>import("src/pages/english/module/m12.vue"),
+    m13:()=>import("src/pages/english/module/m13.vue"),
+    m14:()=>import("src/pages/english/module/m14.vue"),
     m99:()=>import("src/pages/english/diary/index.vue")
   },
   data() {
     return {
-      tab: "m9",
+      tab: "m11",
         tab_level: 1, 
       tabs: [
        { label: "level-phonetic", value: "m1" },
@@ -53,6 +55,8 @@ export default {
        { label: "idioms", value: "m9" },
        { label: "proverbs", value: "m10" },
        { label: "gerunds-and-infinitives", value: "m12" },
+       { label: "commom-phrasal-verbs-list", value: "m13" },
+       { label: "phrasal-verbs-list", value: "m14" },
    
        { label: "diary", value: "m99" },
       

@@ -145,7 +145,7 @@ Like prefixes, suffixes are roots added to base words.
 | wise              |                | in relation to                                               | clockwise, edgewise, lengthwise, otherwise, crosswise, likewise |
 | y                 | adjective      | made up of or characterized by                               | fuzzy,fruity, tasty, brainy, grouchy, rainy, funny, messy, dirty, spotty |
 
-
+​	
 
 
 ## Common Prefixes

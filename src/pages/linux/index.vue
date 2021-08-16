@@ -5,18 +5,9 @@
 -->
 <template>
   <div>
-    <!-- <q-tabs v-model="tab" align="left" inline-label dense class="text-teal">
-      <q-tab
-        v-for="(item, index) in tabs"
-        :key="`tabs_${index}`"
-        :name="`${item.value}`"
-        :label="`${index + 1}.${item.label}`"
-      />
-    </q-tabs>
 
-  -->
 
-    <div class="q-mx-lg"><component :is="`${tab}`"></component></div>
+    <div ><component :is="`${tab}`"></component></div>
   </div>
 </template>
 

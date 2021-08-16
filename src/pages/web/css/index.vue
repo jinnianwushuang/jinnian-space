@@ -1,7 +1,7 @@
 <template>
   <div>
  
-<div class="q-mx-lg"> 
+<div > 
   <component :is="`${tab}`"></component>
 
 </div>
