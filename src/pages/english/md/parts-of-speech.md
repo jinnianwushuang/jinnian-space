@@ -1,6 +1,44 @@
+### 学习英语的一些基本的 词性词汇
 
+|                                           |                               | shot | form      |                                                              |                                    |
+| ----------------------------------------- | ----------------------------- | ---- | --------- | ------------------------------------------------------------ | ---------------------------------- |
+| adjective                                 | 形容词                        | adj  |           |                                                              |                                    |
+| adverb                                    | 副词                          | adv  |           |                                                              |                                    |
+| conjunction                               | 连接词                        | conj |           |                                                              |                                    |
+| determiner                                | 限定词                        | det  |           |                                                              |                                    |
+| discourse marker                          | 话语标记语                    | dis  |           |                                                              |                                    |
+| exclamation                               | 惊叫；感叹（词）              | excl |           |                                                              |                                    |
+| interrogative                             | 疑问词                        | int  |           |                                                              |                                    |
+| noun                                      | 名词                          | n    |           |                                                              |                                    |
+| possessive                                | <语>所有格                    | poss |           |                                                              |                                    |
+| prepositions                              | 介词                          | prep |           |                                                              |                                    |
+| pronouns                                  | 代词，代名词                  | pron |           |                                                              |                                    |
+| verb                                      | 动词                          | v    |           |                                                              |                                    |
+| phonetic symbol                           | 音标                          |      |           |                                                              |                                    |
+| part of speech                            | 词性                          |      |           |                                                              |                                    |
+| object                                    | 宾语                          |      |           |                                                              |                                    |
+| subject                                   | 主语                          |      |           |                                                              |                                    |
+| gerund                                    | 动名词                        |      | doing ，  | 把动词变成名词来使用，双动词语句内                           | She kept talking during this film. |
+| infinitives                               | 原形动词,不定时               |      | to do     | 把动词变成名词来使用，双动词语句内                           | I am learning to speak English.    |
+| to+infinitives                            | 动词不定式,带to的不定式       |      | to do     | 于若干形容词及名词后使用不定词,To-infinitives after Adjectives and Nouns |                                    |
+| bare infinitive                           | 不定式原形动词,不带to的不定式 |      |           |                                                              |                                    |
+| modal                                     | 情态动词                      |      |           |                                                              |                                    |
+| onditional auxiliaries                    | 助动词                        |      |           |                                                              |                                    |
+| interjection                              | 感叹词                        |      |           |                                                              |                                    |
+| phrase                                    | 短语                          |      |           |                                                              |                                    |
+| idiom                                     | 成语 ，习语                   |      |           |                                                              |                                    |
+| proverb，saying,saw,adage,byword,aphorism | 谚语，格言,箴言；警句；       |      |           |                                                              |                                    |
+| personal pronoun,second person pronouns   | 人称代词,第二人称代词         |      |           |                                                              |                                    |
+| clauses                                   | 子句，从句                    |      |           |                                                              |                                    |
+| verb intransitive                         | 不及物动词                    |      |           |                                                              |                                    |
+| verb transitive                           | 及物动词                      |      |           |                                                              |                                    |
+| singular verb，the third person singular  | 单数                          |      | with s    |                                                              |                                    |
+| plural verb                               | 复数                          |      | without s |                                                              |                                    |
+| present participle                        | 现在分词                      |      | v+ing     |                                                              |                                    |
+| past tense                                | 过去式                        |      | v+ed      |                                                              |                                    |
+| past participle                           | 过去分词                      |      | v+ed      |                                                              |                                    |
 
-# parts of speech --词类，词性
+## parts of speech --词类，词性
 
 ## Personal Pronouns--人称代词
 

@@ -43,14 +43,16 @@ export default {
       tab: "m11",
         tab_level: 1, 
       tabs: [
+               { label: "word-review", value: "m11" },
        { label: "level-phonetic", value: "m1" },
-       { label: "key-word", value: "m11" },
-       { label: "word", value: "m2" },
+              { label: "parts-of-speech", value: "m7" },
+      //  { label: "excel测试", value: "m11" },
+
        { label: "phrase", value: "m3" },
        { label: "sentence", value: "m4" },
        { label: "irregular-verb", value: "m5" },
        { label: "verb-tense", value: "m6" },
-       { label: "parts-of-speech", value: "m7" },
+
        { label: "roots-prefixes-suffixes", value: "m8" },
        { label: "idioms", value: "m9" },
        { label: "proverbs", value: "m10" },

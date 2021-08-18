@@ -1,14 +1,17 @@
 <template>
   <div class="q-my-md q-mx-sm">
-    <q-markdown   :src="MainComponent" />
+   
+    <q-markdown   :src="MainComponent2" />
   </div>
 </template>
 <script>
-import MainComponent from "../md/parts-of-speech.md";
+
+import MainComponent2 from "../md/parts-of-speech.md";
 export default {
   data() {
     return {
-      MainComponent,
+     
+      MainComponent2
    
     };
   },

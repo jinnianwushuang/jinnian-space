@@ -23,8 +23,10 @@
     "@vue/composition-api": "^0.6.4",
     "axios": "^0.18.1",
     "core-js": "^3.6.5",
+    "excel-loader": "^1.0.1",
     "github-markdown-css": "^4.0.0",
     "marked": "^2.0.3",
+    "node-xlsx": "^0.17.1",
     "quasar": "^1.0.0",
     "vue-i18n": "^8.0.0"
   },

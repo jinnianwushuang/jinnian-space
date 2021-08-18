@@ -117,6 +117,11 @@ module.exports = function (ctx) {
         // }
       },
       chainWebpack(config, { isServer, isClient }){
+                config.module .rule("xlsx")
+        .test(/\.xls.?$/)
+        .use("excel-loader")
+        // node_modules\excel-loader\index.js
+        .loader("./node_modules/excel-loader/index.js")
         // config.module .rule("md")
         // .test(/\.md$/)
         // .use("vue-loader")
