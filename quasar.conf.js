@@ -133,6 +133,15 @@ module.exports = function (ctx) {
         //   raw: true
         // });
      
+        config.module .rule("docx")
+        .test(/\.docx$/)
+        .use("docx-loader")
+        // node_modules\excel-loader\index.js
+        .loader("./node_modules/docx-loader/index.js")
+        .options({
+          removeLinks: true
+        })
+
           config.resolve.alias
             .set('public', path.resolve(__dirname, './public'))
         

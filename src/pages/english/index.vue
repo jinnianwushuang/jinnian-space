@@ -36,6 +36,8 @@ export default {
     m12:()=>import("src/pages/english/module/m12.vue"),
     m13:()=>import("src/pages/english/module/m13.vue"),
     m14:()=>import("src/pages/english/module/m14.vue"),
+    m15:()=>import("src/pages/english/module/m15.vue"),
+    m16:()=>import("src/pages/english/module/m16.vue"),
     m99:()=>import("src/pages/english/diary/index.vue")
   },
   data() {
@@ -46,6 +48,8 @@ export default {
                { label: "word-review", value: "m11" },
        { label: "level-phonetic", value: "m1" },
               { label: "parts-of-speech", value: "m7" },
+              { label: "ket-vocabulary-list", value: "m15" },
+              { label: "pet-vocabulary-list", value: "m16" },
       //  { label: "excel测试", value: "m11" },
 
        { label: "phrase", value: "m3" },
