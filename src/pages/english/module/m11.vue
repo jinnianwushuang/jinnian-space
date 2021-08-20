@@ -10,7 +10,7 @@
       </thead>
       <tbody>
         <tr v-for="(item1, key1) in table_data" :key="key1">
-          <td class="text-left" v-for="i in column" :key="i">{{ item1[i] }}</td>
+          <td class="text-left" v-for="i in column" :key="i">{{ item1[i-1] }}</td>
         </tr>
       </tbody>
     </q-markup-table>
