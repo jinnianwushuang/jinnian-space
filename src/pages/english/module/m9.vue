@@ -4,16 +4,20 @@
  * @Description    : 
 -->
 <template>
-  <div class="">
+  <div  class="q-my-md q-mx-sm">
     <q-markdown :extend="extendMarkdown" :src="MainComponent" />
+    <hr>
+      <div v-html="maindocx"></div>
   </div>
 </template>
 <script>
 import MainComponent from "../md/idioms.md";
+import maindocx from "../md/large_list_of_english_idioms_from_a_to_z.docx";
 export default {
   data() {
     return {
       MainComponent,
+        maindocx,
       img_prefix:'./img/english/'
     };
   },

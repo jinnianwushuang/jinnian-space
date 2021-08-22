@@ -6,7 +6,7 @@
 <script>
 
 import maindocx from "../md/84669-pet-vocabulary-list.docx";
-// console.log(  'maindocx-------------', maindocx); 
+console.log(  'maindocx-------------', maindocx); 
 export default {
   data() {
     return {
