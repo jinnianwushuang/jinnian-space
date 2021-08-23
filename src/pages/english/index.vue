@@ -7,7 +7,7 @@
 <script>
 
 import m1 from "src/pages/english/module/m1.vue";
-import m2 from "src/pages/english/module/m2.vue";
+// import m2 from "src/pages/english/module/m2.vue";
 import m3 from "src/pages/english/module/m3.vue";
 import m4 from "src/pages/english/module/m4.vue";
 import m5 from "src/pages/english/module/m5.vue";
@@ -23,7 +23,7 @@ export default {
   mixins:[menu_tab_mixin],
   components: {
     m1,
-    m2,
+    // m2,
     m3,
     m4,
     m5,
@@ -44,7 +44,7 @@ export default {
   },
   data() {
     return {
-      tab: "m11",
+      tab: "m18",
         tab_level: 1, 
       tabs: [
                { label: "word-review", value: "m11" },

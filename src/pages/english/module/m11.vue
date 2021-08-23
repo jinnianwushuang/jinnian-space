@@ -1,44 +1,16 @@
 <template>
   <div class="q-my-md q-mx-sm">
-    <div class="q-mb-md">
-      <q-select
-        dense
-        filled
-        v-model="column"
-        @input="handle_column_change"
-        :options="column_options"
-        style="max-width:200px"
-      >
-        <template v-slot:before>
-          列数
-        </template>
-      </q-select>
-    </div>
-    <q-markup-table dense>
-      <thead>
-        <tr>
-          <th class="text-left text-weight-bolder  " :colspan="column">
-            {{ table_title ? table_title + "------" : "" }} {{ word_total }}
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- <tr v-for="(item1, key1) in table_data" :key="key1">
-          <td class="text-left" v-for="i in column" :key="i">{{ item1[i-1] }}</td>
-        </tr> -->
-        <template v-for="(item1, key1) in table_data">
-          <tr
-          
-            :key="key1"
-            :class="compute_thead_data_style(item1)"
-          >
-            <td class="text-left" v-for="i in column" :key="i">
-              {{ item1[i - 1] }}
-            </td>
-          </tr>
-        </template>
-      </tbody>
-    </q-markup-table>
+   <excel-table  
+        :table_title='table_title' 
+        :topic_options="topic_options"
+        :column_options="column_options"
+        :table_data ='table_data' 
+        :thead_data='thead_data'
+        :word_total='word_total'
+        :show_empty_line ="show_empty_line"
+         @handle_column_change="handle_column_change"
+         @handle_topic_change="handle_topic_change"
+></excel-table>
   </div>
 </template>
 <script>
@@ -56,9 +28,10 @@ export default {
     init_workSheetsFromFile() {
       this.workSheetsFromFile = workSheetsFromFile;
     },
-        compute_thead_data_style(item) {
+    compute_thead_data_style(item) {
       let str = "";
-      let check = item.length == 1 &&   item[0].includes('第') &&   item[0].includes('天');
+      let check =
+        item.length == 1 && item[0].includes("第") && item[0].includes("天");
       str = check ? "bg-teal-4" : "";
       return str;
     },
@@ -97,7 +70,6 @@ export default {
       //每一列的切块的 长度的数组
       let col_chunk_len_arr = [];
       // 转换 横向数据为 纵向数据
-  
       for (let i = 0; i < excel_column; i++) {
         final_obj["col_" + i] = {};
         let col_data = [];
@@ -130,25 +102,34 @@ export default {
       }
       // 循环中间对象
       // 赋值
-      this.table_data =    this. add_title( this.rebuild_arr_reduce_empty_line(final_arr) )  ;
-      this.word_total = word_total;
-      console.log("   this.table_data  ",  this.table_data);
+      //列表数据 所有
+      this.table_data_all = this.add_title(
+        this.rebuild_arr_reduce_empty_line(final_arr)
+      );
+      // 计算 视图显示 所用 数据 和 总数 计数
+      this.compute_table_data_show_and_word_total();
+      console.log("   this.table_data  ", this.table_data);
     },
-
-    add_title(res_arr){
-      let day=1
-      res_arr.map((x,i)=>{
-        if(x.length==1 &&x[0]==''){
-          x[0]=`第${day}天`
-          day++
+    add_title(res_arr) {
+      let day = 1;
+      let topic_options = [];
+      res_arr.map((x, i) => {
+        if (x.length == 1 && x[0] == "") {
+          let str = `第${day}天`;
+          x[0] = str;
+          topic_options.push(str);
+          day++;
         }
-
-      })
-res_arr.splice(res_arr.length-1,1)
-      return res_arr
+      });
+      topic_options.pop();
+      // 赋值
+      //相当于表头
+      this.thead_data = [...topic_options];
+      //主题列表
+      this.topic_options = [...topic_options];
+      res_arr.splice(res_arr.length - 1, 1);
+      return res_arr;
     }
-
-
   }
 };
 </script>
