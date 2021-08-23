@@ -37,6 +37,11 @@ export default {
   },
   created() {
     console.log("workSheetsFromFile --------", workSheetsFromFile);
+    if(this.$q.platform.is.mobile){
+      this.column=2
+    }else{
+        this.column=8
+    }
     this.init_data2();
   },
   methods: {
@@ -70,7 +75,7 @@ let arr= item.filter(x=>x)
           }
         });
       });
-      this.column = 8;
+      // this.column = 8;
       this.word_total = word_total;
       let az_arr = Object.values(alla_to_z_obj);
       let final_arr = [];

@@ -28,6 +28,11 @@ export default {
   },
   created() {
     console.log("workSheetsFromFile --------", workSheetsFromFile);
+        if(this.$q.platform.is.mobile){
+      this.column=2
+    }else{
+        this.column=8
+    }
     this.init_data();
   },
   methods: {
@@ -40,7 +45,7 @@ export default {
         column = len > column ? len : column;
         word_total += len;
       });
-      this.column = column;
+      // this.column = column;
       this.word_total = word_total;
       this.table_data = sheet0_data;
     }
