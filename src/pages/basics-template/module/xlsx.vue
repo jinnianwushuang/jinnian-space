@@ -5,7 +5,6 @@
         :topic_options="topic_options"
         :column_options="column_options"
         :table_data ='table_data' 
-        :thead_data='thead_data'
         :word_total='word_total'
         :show_empty_line ="show_empty_line"
          @handle_column_change="handle_column_change"

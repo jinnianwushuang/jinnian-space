@@ -1,16 +1,15 @@
 <template>
   <div class="q-my-md q-mx-sm">
-   <excel-table  
-        :table_title='table_title' 
-        :topic_options="topic_options"
-        :column_options="column_options"
-        :table_data ='table_data' 
-        :thead_data='thead_data'
-        :word_total='word_total'
-        :show_empty_line ="show_empty_line"
-         @handle_column_change="handle_column_change"
-         @handle_topic_change="handle_topic_change"
-></excel-table>
+    <excel-table
+      :table_title="table_title"
+      :topic_options="topic_options"
+      :column_options="column_options"
+      :table_data="table_data"
+      :word_total="word_total"
+      :show_empty_line="show_empty_line"
+      @handle_column_change="handle_column_change"
+      @handle_topic_change="handle_topic_change"
+    ></excel-table>
   </div>
 </template>
 <script>
@@ -28,7 +27,7 @@ export default {
     init_workSheetsFromFile() {
       this.workSheetsFromFile = workSheetsFromFile;
     },
-    compute_thead_data_style(item) {
+    compute_topic_options_style(item) {
       let str = "";
       let check =
         item.length == 1 && item[0].includes("第") && item[0].includes("天");
@@ -123,10 +122,8 @@ export default {
       });
       topic_options.pop();
       // 赋值
-      //相当于表头
-      this.thead_data = [...topic_options];
       //主题列表
-      this.topic_options = [...topic_options];
+      this.topic_options = ["全部", ...topic_options];
       res_arr.splice(res_arr.length - 1, 1);
       return res_arr;
     }

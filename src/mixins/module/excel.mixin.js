@@ -1,7 +1,7 @@
-import   excelTable  from "src/components/excel-table/excel-table.vue"
+import excelTable from "src/components/excel-table/excel-table.vue";
 export default {
   components: {
-    excelTable,
+    excelTable
   },
   data() {
     return {
@@ -11,9 +11,8 @@ export default {
       word_total: 0, // 总词数
       table_data: [], //列表数据  显示
       table_data_all: [], // 列表数据 所有
-      thead_data: [], //表格表头数据
       column_options: [2, 3, 4, 5, 6, 7, 8], // 列数选项
-      exclude_thead_data: true, //默认 列表数据 排除表头
+      exclude_topic_options: true, //默认 列表数据 排除 topic
       show_empty_line: false, //显示空行
       topic: "", //主题
       topic_options: [] //主题选项列表
@@ -21,16 +20,12 @@ export default {
   },
   created() {
     this.init_workSheetsFromFile();
-   
- 
   },
   methods: {
     //初始化 excel 表 数据
     init_workSheetsFromFile() {
       // this.workSheetsFromFile= workSheetsFromFile
     },
-
- 
     //列数手动选择改变
     handle_column_change(column) {
       this.column = column;
@@ -38,17 +33,11 @@ export default {
     },
     //主题选项改变
     handle_topic_change(topic) {
-     
-      this.topic=topic
+      this.topic = topic;
       console.log("this.topic----", this.topic);
-      if (!this.topic) {
-        return;
-      } else {
-        // 计算 视图显示 所用 数据 和 总数 计数
-        this.compute_table_data_show_and_word_total();
-      }
+      // 计算 视图显示 所用 数据 和 总数 计数
+      this.compute_table_data_show_and_word_total();
     },
- 
     //重构数据 减少空行 ，方便视图渲染
     rebuild_arr_reduce_empty_line(arr) {
       let res_arr = [[""]];
@@ -76,17 +65,17 @@ export default {
         table_data = table_data.concat(x["data"]);
       });
       //  提取 主键 表头
-      let thead_data = this.$lodash.cloneDeep(table_data[0].filter(x => x));
+      let topic_options = this.$lodash.cloneDeep(table_data[0].filter(x => x));
       // console.log(' table_data table_data table_data---', table_data);
       //初始化  final_obj 结构
-      thead_data.map((x, i) => {
+      topic_options.map((x, i) => {
         final_obj[`key_` + i] = {
           title: x,
           words_raw: []
         };
       });
       //填充  final_obj 数据
-      if (this.exclude_thead_data) {
+      if (this.exclude_topic_options) {
         table_data.splice(0, 1);
       }
       table_data.map((x, i) => {
@@ -104,16 +93,13 @@ export default {
         );
         final_arr = final_arr.concat([[""]]);
       });
-      // 赋值
-      //相当于表头
-      this.thead_data = [...thead_data];
       //主题列表
-      this.topic_options = [...thead_data];
+      this.topic_options = ["全部", ...topic_options];
       //列表数据 所有
       this.table_data_all = this.rebuild_arr_reduce_empty_line(final_arr);
       // 计算 视图显示 所用 数据 和 总数 计数
       this.compute_table_data_show_and_word_total();
-      console.log("  this.table_data  ", this.table_data);
+      console.log("  this.table_data_all   ", this.table_data_all);
     },
     // 计算 视图显示 所用 数据 和 总数 计数
     compute_table_data_show_and_word_total() {
@@ -123,7 +109,7 @@ export default {
       table_data = this.$lodash.cloneDeep(this.table_data_all);
       console.log(" table_data--------", table_data);
       //计算  table_data_show
-      if (!this.topic) {
+      if (this.topic == "全部") {
         table_data_show = table_data;
       } else {
         // 找到 当前选择的 topic 和下个topic 之间的 数据
@@ -132,13 +118,12 @@ export default {
         let next_topic = is_last ? "" : this.topic_options[cti + 1];
         // 找当前 topic 和 下个 topic 在  table_data   里的索引
         let cur_topic_index = this.find_topic_index(this.topic);
-        let next_topic_index =  next_topic? this.find_topic_index(next_topic): table_data.length;
+        let next_topic_index = next_topic
+          ? this.find_topic_index(next_topic)
+          : table_data.length;
         // console.log(' cur_topic_index ', cur_topic_index );
         // console.log(' next_topic_index ', next_topic_index );
-        table_data_show = table_data.slice(
-          cur_topic_index,
-          next_topic_index  
-        );
+        table_data_show = table_data.slice(cur_topic_index, next_topic_index);
       }
       // 计算总词条数
       table_data_show.map(x => {

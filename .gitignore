@@ -40,3 +40,6 @@ yarn-error.log*
 #项目配置文件
 /dist/* 
 /dist
+
+#测试文件目录
+/test
