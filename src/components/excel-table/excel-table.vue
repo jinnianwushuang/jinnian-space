@@ -5,8 +5,14 @@
         dense
         filled
         v-model="topic"
+        use-input
+        hide-selected
+        fill-input
+        input-debounce="0"
+               @filter="filterFn"
+        @filter-abort="abortFilterFn" 
         @input="handle_topic_change"
-        :options="topic_options"
+        :options="topic_options_filtered"
         style="width:300px"
       >
         <template v-slot:before>
@@ -57,7 +63,9 @@ export default {
   data() {
     return {
       topic: "全部",
-      column: 2
+      column: 2,
+      topic_options_filtered:[],
+      topic_options_all:[], //主题备份
     };
   },
   props: {
@@ -83,12 +91,60 @@ export default {
     },
     show_empty_line: false
   },
+  watch: {
+   topic_options(newValue, oldValue) {
+       this. init_topic_options_related()
+    },
+    column_options(newValue, oldValue) {
+     this.init_column(); 
+    }
+  },
   created() {
+    this.init_topic_options_related()
     this.init_column();
     this.handle_column_change();
     this.handle_topic_change();
   },
   methods: {
+    init_topic_options_related(){
+          this.topic_options_all=[
+      ...this.topic_options
+    ]
+    this.topic_options_filtered=[
+      ...this.topic_options
+    ]
+    },
+      filterFn (val, update, abort) {
+      // call abort() at any time if you can't retrieve data somehow
+      // console.log('val----检索-----',val);
+      console.log('this.topic_options_all',this.topic_options_all);
+      setTimeout(() => {
+        update(
+          () => {
+            if (val === '') {
+              this.topic_options_filtered = [...this.topic_options_all]
+            }
+            else {
+              const needle = val.toLowerCase()
+              this.topic_options_filtered = this.topic_options_all.filter(v => v.toLowerCase().indexOf(needle) > -1)
+            }
+            // console.log(' this.topic_options_filtered ---', this.topic_options_filtered );
+            this.$forceUpdate()
+          },
+          // next function is available in Quasar v1.7.4+;
+          // "ref" is the Vue reference to the QSelect
+          ref => {
+            if (val !== '' && ref.options.length > 0) {
+              ref.setOptionIndex(-1) // reset optionIndex in case there is something selected
+              ref.moveOptionSelection(1, true) // focus the first selectable option and do not update the input-value
+            }
+          }
+        )
+      }, 300)
+    },
+        abortFilterFn () {
+      // console.log('delayed filter aborted')
+    },
     //列数手动选择改变
     handle_column_change() {
       // 向外 传递  this.column
