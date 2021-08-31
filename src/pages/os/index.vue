@@ -14,19 +14,22 @@
 <script>
  import win from "src/pages/os/win/index.vue"
  import mac from "src/pages/os/mac/index.vue"
+ import excel from "src/pages/os/excel/index.vue"
 import {menu_tab_mixin} from "src/mixins/index.js"
 export default {
   mixins:[menu_tab_mixin],
   components: {
    win,
-    mac
+    mac,
+    excel
 
   },
   data() {
     return {
        tab_level: 1,
-      tab: "win",
+      tab: "excel",
       tabs: [
+           { label: "excel", value: "excel" },
            { label: "win", value: "win" },
         { label: "mac", value: "mac" },
       ]

@@ -34,10 +34,10 @@ export default {
   data() {
     return {
       tab: "m1",
-       tab_level: 1, // 右侧 菜单 一级 为 1  二级为 2
+       tab_level:2, // 右侧 菜单 一级 为 1  二级为 2
       tabs: [
-        {  value: "m1" , label: "m1",},
-        {  value: "m2" , label: "m2"},
+        { label: "感悟", value: "m1" },
+          { label: "NPM包", value: "m2" },
 
 
       ],

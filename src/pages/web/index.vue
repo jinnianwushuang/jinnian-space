@@ -11,6 +11,7 @@
   </div>
 </template>
 <script>
+import inspiration from "src/pages/web/inspiration/index.vue";
 import basics from "src/pages/web/basics/index.vue";
 import css from "src/pages/web/css/index.vue";
 import js from "src/pages/web/js/index.vue";
@@ -25,6 +26,7 @@ import {menu_tab_mixin} from "src/mixins/index.js"
 export default {
   mixins:[menu_tab_mixin],
   components: {
+    inspiration,
     basics,
     css,
     js,
@@ -37,8 +39,9 @@ export default {
   },
   data() {
     return {
-      tab: "basics",
+      tab: "inspiration",
       tabs: [
+        { label: "inspiration", value: "inspiration" },
         { label: "basics", value: "basics" },
         { label: "css", value: "css" },
         { label: "js", value: "js" },
