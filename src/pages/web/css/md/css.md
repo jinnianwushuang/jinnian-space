@@ -1,300 +1,247 @@
 # css                                   
 ## CSS属性
 ### 定位
-- position
-	- static                                                                                                                                               
-	  static：
-	  对象遵循常规流。此时4个定位偏移属性不会被                                                                                                                                                             应用。
-	- relative
-	  对象遵循常规流，并且参照自身在常规流中的位置通过top，right，bottom，left这4个定位偏移属性进行偏移时不会影响常规流中的任何元素。
-	- absolute
-	  对象脱离常规流，此时偏移属性参照的是离自身最近的定位祖先元素，如果没有定位的祖先元素，则一直回溯到body元素。盒子的偏移位置不影响常规流中的任何元素，其margin不与其他任何margin折叠。
-	- fixed
-	  fixed：
-	  与absolute一致，但偏移定位是以窗口为参考。当出现滚动条时，对象不会随着滚动。
-	- sticky
-	  对象在常态时遵循常规流。它就像是relative和fixed的合体，当在屏幕中时按常规流排版，当卷动到屏幕外时则表现如fixed。该属性的表现是现实中你见到的吸附效果。（CSS3）
-- z-index
-	- auto
-	  元素在当前层叠上下文中的层叠级别是0。元素不会创建新的局部层叠上下文，除非它是根元素。
-	- <integer>
-	  用整数值来定义堆叠级别。可以为负值。
+> - position
+> 	- static                                                                                                                                               
+> 	  static：
+> 	  对象遵循常规流。此时4个定位偏移属性不会被                                                                                                                                                             应用。
+> 	- relative
+> 	  对象遵循常规流，并且参照自身在常规流中的位置通过top，right，bottom，left这4个定位偏移属性进行偏移时不会影响常规流中的任何元素。
+> 	- absolute
+> 	  对象脱离常规流，此时偏移属性参照的是离自身最近的定位祖先元素，如果没有定位的祖先元素，则一直回溯到body元素。盒子的偏移位置不影响常规流中的任何元素，其margin不与其他任何margin折叠。
+> 	- fixed
+> 	  fixed：
+> 	  与absolute一致，但偏移定位是以窗口为参考。当出现滚动条时，对象不会随着滚动。
+> 	- sticky
+> 	  对象在常态时遵循常规流。它就像是relative和fixed的合体，当在屏幕中时按常规流排版，当卷动到屏幕外时则表现如fixed。该属性的表现是现实中你见到的吸附效果。（CSS3）
+> - z-index
+> 	- auto
+> 	  元素在当前层叠上下文中的层叠级别是0。元素不会创建新的局部层叠上下文，除非它是根元素。
+> 	- integer
+> 	  用整数值来定义堆叠级别。可以为负值。
+
 ### 布局
-- display
-	- none
-	  与visibility属性的hidden值不同，其不为被隐藏的对象保留其物理空间
-	- inline
-	  内联元素
-	- block
-	  块元素
-	- inline-block
-	  内联块元素
-	- .......
-- float
-  none | left | right
-  当一个元素是绝对定位元素或者定义了display为none时，float定义不生效。
-- clear
-  none(默认) | left | right | both
-- visibility
-  visible(默认) | hidden | collapse
-  collapse：
-  主要用来隐藏表格的行或列。隐藏的行或列能够被其他内容使用。对于表格外的其他对象，其作用等同于hidden。
-  定义了元素是否可见。
-  注意：与display属性不同，visibility会为隐藏的元素保留其占据的物理空间
-  如果希望某个元素为可见，其父元素也必须是可见的。
-- overflow
-  visible | hidden | scroll | auto | clip
-  适用范围：块容器，伸缩盒容器，grid容器
-  visible：
-  对溢出内容不做处理，内容可能会超出容器。
-  hidden：
-  隐藏溢出容器的内容且不出现滚动条。
-  scroll：
-  隐藏溢出容器的内容，溢出的内容可以通过滚动呈现。
-  auto：
-  当内容没有溢出容器时不出现滚动条，当内容溢出容器时出现滚动条，按需出现滚动条。textarea元素的overflow默认值就是auto。
-  clip：
-  与hidden一样，clip也被用来隐藏溢出容器的内容且不出现滚动条。不同的地方在于，clip是一个完全禁止滚动的容器，而hidden仍然可以通过编程机制让内容可以滚动。
-  注意：scroll 与 auto 的区别：scroll 无论溢出如否都存在滚动条
+> - display
+> 	- none
+> 	  与visibility属性的hidden值不同，其不为被隐藏的对象保留其物理空间
+> 	- inline
+> 	  内联元素
+> 	- block
+> 	  块元素
+> 	- inline-block
+> 	  内联块元素
+> 	- .......
+> - float
+>   none | left | right
+>   当一个元素是绝对定位元素或者定义了display为none时，float定义不生效。
+> - clear
+>   none(默认) | left | right | both
+> - visibility
+>   visible(默认) | hidden | collapse
+>   collapse：
+>   主要用来隐藏表格的行或列。隐藏的行或列能够被其他内容使用。对于表格外的其他对象，其作用等同于hidden。
+>   定义了元素是否可见。
+>   注意：与display属性不同，visibility会为隐藏的元素保留其占据的物理空间
+>   如果希望某个元素为可见，其父元素也必须是可见的。
+> - overflow
+>   visible | hidden | scroll | auto | clip
+>   适用范围：块容器，伸缩盒容器，grid容器
+>   visible：
+>   对溢出内容不做处理，内容可能会超出容器。
+>   hidden：
+>   隐藏溢出容器的内容且不出现滚动条。
+>   scroll：
+>   隐藏溢出容器的内容，溢出的内容可以通过滚动呈现。
+>   auto：
+>   当内容没有溢出容器时不出现滚动条，当内容溢出容器时出现滚动条，按需出现滚动条。textarea元素的overflow默认值就是auto。
+>   clip：
+>   与hidden一样，clip也被用来隐藏溢出容器的内容且不出现滚动条。不同的地方在于，clip是一个完全禁止滚动的容器，而hidden仍然可以通过编程机制让内容可以滚动。
+>   注意：scroll 与 auto 的区别：scroll 无论溢出如否都存在滚动条
+
 ### 尺寸与补白
-- width
-  <length> | <percentage> | auto(默认)
-  对于img元素来说，若仅指定此属性，其height值将会根据图片源尺寸进行等比例缩放。
-- height
-  定义了元素内容区（Content Area）的高度
-  对于img元素来说，若仅指定此属性，其width值将会根据图片源尺寸进行等比例缩放。
-- padding
-  padding：[ <length> | <percentage> ]{1,4}
-- margin
-  margin折叠常规认知：
-  margin折叠只发生在块级元素上；
-  浮动元素的margin不与任何margin发生折叠；
-  设置了属性overflow且值为非visible的块级元素，将不与它的子元素发生margin折叠；
-  绝对定位元素的margin不与任何margin发生折叠；
-  根元素的margin不与其它任何margin发生折叠；
+> - width
+>   <length> | <percentage> | auto(默认)
+>   对于img元素来说，若仅指定此属性，其height值将会根据图片源尺寸进行等比例缩放。
+> - height
+>   定义了元素内容区（Content Area）的高度
+>   对于img元素来说，若仅指定此属性，其width值将会根据图片源尺寸进行等比例缩放。
+> - padding
+>   padding：[ <length> | <percentage> ]{1,4}
+> - margin
+>   margin折叠常规认知：
+>   margin折叠只发生在块级元素上；
+>   浮动元素的margin不与任何margin发生折叠；
+>   设置了属性overflow且值为非visible的块级元素，将不与它的子元素发生margin折叠；
+>   绝对定位元素的margin不与任何margin发生折叠；
+>   根元素的margin不与其它任何margin发生折叠；
+
 ### 背景与边框
-- border
-	- border
-	  border：<line-width> || <line-style> || <color>
-	- box-shadow
-	  语法：
-	  box-shadow：none | <shadow> [ , <shadow> ]*
-	  <shadow> = inset? && <length>{2,4} && <color>?
-	  none：
-	  无阴影
-	  <length>①：
-	  第 1 个长度值定义元素的阴影水平偏移值。正值，阴影出现在元素右侧；负值，则阴影出现在元素左侧
-	  <length>②：
-	  第 2 个长度值定义元素的阴影垂直偏移值。正值，阴影出现在元素底部；负值，则阴影出现在元素顶部
-	  <length>③：
-	  第 3 个长度值定义元素的阴影模糊值半径（如果提供了）。该值越大阴影边缘越模糊，若该值为0，阴影边缘不出现模糊。不允许负值
-	  <length>④：
-	  第 4 个长度值定义元素的阴影外延值（如果提供了）。正值，阴影将向四面扩展；负值，则阴影向里收缩
-	  <color>：
-	  定义元素阴影的颜色。如果该值未定义，阴影颜色将默认取当前最近的文本颜色
-	  inset：
-	  定义元素的阴影类型为内阴影。该值为空时，则元素的阴影类型为外阴影
-	- border-radius
-	  语法：
-	  border-radius：[ <length> | <percentage> ]{1,4} [ / [ <length> | <percentage> ]{1,4} ]?
-	  border-radius属性提供 2 个参数，参数间以/分隔，每个参数允许设置 1~4 个参数值，第 1 个参数表示水平半径或半轴，第 2 个参数表示垂直半径或半轴，如第 2 个参数值省略未定义，则直接复制第 1 个参数值。
-	  注意（对角原则）：水平半径或半轴：如果提供全部四个参数值，将按上左 top-left、上右 top-right、下右 bottom-right、下左 bottom-left的顺序作用于四个角；提供三个，第一个用于top-left，第二个用于top-right和bottom-left，第三个用于bottom-right；提供两个，第一个用于top-left和bottom-right，第二个用于top-right和bottom-left；只提供一个，将用于全部的四个角。
-- background
-	- background
-	- ......
+> - border
+> 	- border
+> 	  border：<line-width> || <line-style> || <color>
+> 	- box-shadow
+> 	  语法：
+> 	  box-shadow：none | <shadow> [ , <shadow> ]*
+> 	  <shadow> = inset? && <length>{2,4} && <color>?
+> 	  none：
+> 	  无阴影
+> 	  <length>①：
+> 	  第 1 个长度值定义元素的阴影水平偏移值。正值，阴影出现在元素右侧；负值，则阴影出现在元素左侧
+> 	  <length>②：
+> 	  第 2 个长度值定义元素的阴影垂直偏移值。正值，阴影出现在元素底部；负值，则阴影出现在元素顶部
+> 	  <length>③：
+> 	  第 3 个长度值定义元素的阴影模糊值半径（如果提供了）。该值越大阴影边缘越模糊，若该值为0，阴影边缘不出现模糊。不允许负值
+> 	  <length>④：
+> 	  第 4 个长度值定义元素的阴影外延值（如果提供了）。正值，阴影将向四面扩展；负值，则阴影向里收缩
+> 	  <color>：
+> 	  定义元素阴影的颜色。如果该值未定义，阴影颜色将默认取当前最近的文本颜色
+> 	  inset：
+> 	  定义元素的阴影类型为内阴影。该值为空时，则元素的阴影类型为外阴影
+> 	- border-radius
+> 	  语法：
+> 	  border-radius：[ <length> | <percentage> ]{1,4} [ / [ <length> | <percentage> ]{1,4} ]?
+> 	  border-radius属性提供 2 个参数，参数间以/分隔，每个参数允许设置 1~4 个参数值，第 1 个参数表示水平半径或半轴，第 2 个参数表示垂直半径或半轴，如第 2 个参数值省略未定义，则直接复制第 1 个参数值。
+> 	  注意（对角原则）：水平半径或半轴：如果提供全部四个参数值，将按上左 top-left、上右 top-right、下右 bottom-right、下左 bottom-left的顺序作用于四个角；提供三个，第一个用于top-left，第二个用于top-right和bottom-left，第三个用于bottom-right；提供两个，第一个用于top-left和bottom-right，第二个用于top-right和bottom-left；只提供一个，将用于全部的四个角。
+> - background
+> 	- background
+> 	- ......
+
 ### 颜色与透明度
-- color
-- opacity
+> - color
+> - opacity
+
 ### 字体
-- font
-- font-style
-  font-style：normal | italic | oblique
-  normal：
-  指定文本字体样式为正常的字体
-  italic：
-  指定文本字体样式为斜体。对于没有设计斜体的特殊字体，如果要使用斜体外观将应用oblique
-  oblique：
-  指定文本字体样式为倾斜的字体。人为的使文字倾斜，而不是去选取字体中的斜体字
-- font-weight
-  font-weight：normal | bold | bolder | lighter | <integer>
-  <integer>：
-  用数字表示文本字体粗细。取值范围：100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
-- font-size
-- font-family
-  font-family：[ <family-name> | <generic-family> ] #
-  <family-name> = arial | georgia | verdana | helvetica | simsun and etc.
-  <generic-family> = cursive | fantasy | monospace | serif | sans-serif
+> - font
+> - font-style
+>   font-style：normal | italic | oblique
+>   normal：
+>   指定文本字体样式为正常的字体
+>   italic：
+>   指定文本字体样式为斜体。对于没有设计斜体的特殊字体，如果要使用斜体外观将应用oblique
+>   oblique：
+>   指定文本字体样式为倾斜的字体。人为的使文字倾斜，而不是去选取字体中的斜体字
+> - font-weight
+>   font-weight：normal | bold | bolder | lighter | <integer>
+>   <integer>：
+>   用数字表示文本字体粗细。取值范围：100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
+> - font-size
+> - font-family
+>   font-family：[ <family-name> | <generic-family> ] #
+>   <family-name> = arial | georgia | verdana | helvetica | simsun and etc.
+>   <generic-family> = cursive | fantasy | monospace | serif | sans-serif
+
 ### 文本
-- line-height
-  语法：
-  line-height：normal | <length> | <percentage> | <number>
-  normal：
-  允许内容顶开或溢出指定的容器边界。
-  <length>：
-  用长度值指定行高。不允许负值。
-  <percentage>：
-  用百分比指定行高，其百分比基于文本的font-size进行换算。不允许负值。
-  <number>：
-  用乘积因子指定行高。不允许负值
-- text-indent
-  语法：
-  text-indent：[ <length> | <percentage> ] && hanging? && each-line?
-- text-align
-  语法：
-  text-align：start | end | left | right | center | justify | match-parent | justify-all
-- text-transform
-  语法：
-  text-transform：none | capitalize | uppercase | lowercase | full-width
-- text-decoration
-  text-decoration：text-decoration-line || text-decoration-style || text-decoration-color
+> - line-height
+>   语法：
+>   line-height：normal | <length> | <percentage> | <number>
+>   normal：
+>   允许内容顶开或溢出指定的容器边界。
+>   <length>：
+>   用长度值指定行高。不允许负值。
+>   <percentage>：
+>   用百分比指定行高，其百分比基于文本的font-size进行换算。不允许负值。
+>   <number>：
+>   用乘积因子指定行高。不允许负值
+> - text-indent
+>   语法：
+>   text-indent：[ <length> | <percentage> ] && hanging? && each-line?
+> - text-align
+>   语法：
+>   text-align：start | end | left | right | center | justify | match-parent | justify-all
+> - text-transform
+>   语法：
+>   text-transform：none | capitalize | uppercase | lowercase | full-width
+> - text-decoration
+>   text-decoration：text-decoration-line || text-decoration-style || text-decoration-color
+
 ### 变换
-- transform
-  语法：
-  transform：none | <transform-function>+
-  transform-function list:
-  更多信息请参考：
-  http://css.doyoe.com/
+- > transform
+  > 语法：
+  > transform：none | <transform-function>+
+  > transform-function list:
+  > 更多信息请参考：
+  > http://css.doyoe.com/
 ## CSS布局
 ### 页面布局技术细节
-- 浮动、定位、CSS表格、弹性盒子、网格
+- > 浮动、定位、CSS表格、弹性盒子、网格
 ### 布局分类
-- 正常流布局
-- 浮动float
-	- 整列浮动的实现
-- 定位技术
-	- 静态定位
-	- 相对定位(Relative positioning)：允许我们相对元素在正常的文档流中的位置移动它——包括将两个元素叠放在页面上。
-		- 这对于微调和精准设计(design pinpointing)非常有用
-	- 绝对定位(Absolute positioning)：将元素完全从页面的正常布局流中移出，类似将它单独放在一个图层中. 我们可以将元素相对于页面的 <html> 元素边缘固定，或者相对于离元素最近的被定位的祖先元素(ancestor element)。
-		- 绝对定位在创建复杂布局效果时非常有用，例如通过标签显示和隐藏的内容面板或者通过按钮控制滑动到屏幕中的信息面板.
-	- 固定定位(Fixed positioning)与绝对定位非常类似，除了它是将一个元素相对浏览器视口固定，而不是相对另外一个元素。 在创建类似页面滚动总是处于页面上方的导航菜单时非常有用。
-- CSS表格
-- 弹性盒子
-- 网格布局Grid
-	- 属性
-		- display属性
-			- grid
-			- inline-grid
-		- grid-template-columns、grid-template-row属性
-			- 定义列宽、行高
-			- 关键字
-				- repeat
-				- auto-fill
-				- fr
-				- minmax
-				- auto
-				- 设置网格线名称
-			- 实例
-				- 两栏布局
-					- .wrapper{display: grid; grid-template-columns: 70% 30%}
-				- 12栏布局
-					- .wrapper{display: grid; grid-template-columns: repeat(12, 1fr)}
-		- grid-gap
-			- grid-row-gap
-			- grid-column-grap
-		- grid-template-areas属性
-			- 网格允许指定区域，一个区域由一个或者多个单元格组成，属性用于定义
-		- grid-auto-flow
-			- 定义之元素放置顺序
-		- justify-items、align-items属性、place-items属性
-		- justify-content、aligin-content、place-content
-		- grid-auto-column、grid-auto-rows
-		- grid-template属性
-	- item属性
-		- grid-column-start、grid-column-end、grid-row-start、grid-row-end
-		- grid-column属性、grid-row属性
-			- grid-column
-				- grid-column: 1/4;表示从第一根列线到第四根列线
-			- grid-row
-		- grid-area属性
-			- 根据grid-area-template的定义确定item的位置
-			- <row-start>/<column-start>/<row-end>/<column-end>
-		- justyfy-self、align-self、place-self
-			- 用于设置单个单元格内容的位置
-## SASS
-### 1.变量的声明和引用
-- $符号，变量建议使用中划线链接
-### 2.嵌套规则
-- 普通嵌套规则
-  // before
-  #content article h1 { color: #333 }
-  #content article p { margin-bottom: 1.4em }
-  #content aside { background-color: #EEE }
-  // after
-  #content {
-    article {
-      h1 { color: #333 }
-      p { margin-bottom: 1.4em }
-    }
-    aside { background-color: #EEE }
-  }
-- 父选择器标识符&
-- 群组选择器的嵌套
-- 子组合选择器和同层组合选择器： >、 +和~
-- 嵌套属性
-  nav {
-    border: {
-    style: solid;
-    width: 1px;
-    color: #ccc;
-    }
-  }
-### 3.导入sass文件
-- 导入方法： @import
-- 怎样使用sass部分文件
-	- 使用下划线开头的“局部文件”
-- 默认变量值
-	- ！default
-	  你希望导入sass库文件的人，可以定制修改sass库文件中的某些字。使用sass的!default标签可以实现。
-	  !default: 若这个变量被声明赋值了，就是声明值，否则则使用默认值
-- 嵌套导入
-	- @import命令写在css规则内
-		- .blue-theme {@import "blue-theme"}
-- 原生css导入
-	- sass兼容css语法，改.css文件名为.scss
-### 4.静默注释
-- 静默格式/* ....*/，其内容不会出现在生成的css文件中
-### 5.混入器
-- 如何声明：@mixin; 引用： @include
-- mixin可以包含css规则
-- mixin传参
-	- @mixin link-colors($normal, $hover, $visited) {
-  color: $normal;
-  &:hover { color: $hover; }
-  &:visited { color: $visited; }
-}
-	- 设置默认参数：@mixin link-colors(
-    $normal,
-    $hover: $normal,
-    $visited: $normal
-  )
-{
-  color: $normal;
-  &:hover { color: $hover; }
-  &:visited { color: $visited; }
-}
-### 6.继承
-- @extend继承
+> - 正常流布局
+> - 浮动float
+> 	- 整列浮动的实现
+> - 定位技术
+> 	- 静态定位
+> 	- 相对定位(Relative positioning)：允许我们相对元素在正常的文档流中的位置移动它——包括将两个元素叠放在页面上。
+> 		- 这对于微调和精准设计(design pinpointing)非常有用
+> 	- 绝对定位(Absolute positioning)：将元素完全从页面的正常布局流中移出，类似将它单独放在一个图层中. 我们可以将元素相对于页面的 <html> 元素边缘固定，或者相对于离元素最近的被定位的祖先元素(ancestor element)。
+> 		- 绝对定位在创建复杂布局效果时非常有用，例如通过标签显示和隐藏的内容面板或者通过按钮控制滑动到屏幕中的信息面板.
+> 	- 固定定位(Fixed positioning)与绝对定位非常类似，除了它是将一个元素相对浏览器视口固定，而不是相对另外一个元素。 在创建类似页面滚动总是处于页面上方的导航菜单时非常有用。
+> - CSS表格
+> - 弹性盒子
+> - 网格布局Grid
+> 	- 属性
+> 		- display属性
+> 			- grid
+> 			- inline-grid
+> 		- grid-template-columns、grid-template-row属性
+> 			- 定义列宽、行高
+> 			- 关键字
+> 				- repeat
+> 				- auto-fill
+> 				- fr
+> 				- minmax
+> 				- auto
+> 				- 设置网格线名称
+> 			- 实例
+> 				- 两栏布局
+> 					- .wrapper{display: grid; grid-template-columns: 70% 30%}
+> 				- 12栏布局
+> 					- .wrapper{display: grid; grid-template-columns: repeat(12, 1fr)}
+> 		- grid-gap
+> 			- grid-row-gap
+> 			- grid-column-grap
+> 		- grid-template-areas属性
+> 			- 网格允许指定区域，一个区域由一个或者多个单元格组成，属性用于定义
+> 		- grid-auto-flow
+> 			- 定义之元素放置顺序
+> 		- justify-items、align-items属性、place-items属性
+> 		- justify-content、aligin-content、place-content
+> 		- grid-auto-column、grid-auto-rows
+> 		- grid-template属性
+> 	- item属性
+> 		- grid-column-start、grid-column-end、grid-row-start、grid-row-end
+> 		- grid-column属性、grid-row属性
+> 			- grid-column
+> 				- grid-column: 1/4;表示从第一根列线到第四根列线
+> 			- grid-row
+> 		- grid-area属性
+> 			- 根据grid-area-template的定义确定item的位置
+> 			- <row-start>/<column-start>/<row-end>/<column-end>
+> 		- justyfy-self、align-self、place-self
+> 			- 用于设置单个单元格内容的位置
+
+
+
 ## CSS3
 ###  opicity 和 rgba的区别
-- opacity只能设定整个元素的透明值，而alpha通道可以特定对元素的某个属性设定透明值，比如上面的背景、边框、文字等
+- > opacity只能设定整个元素的透明值，而alpha通道可以特定对元素的某个属性设定透明值，比如上面的背景、边框、文字等
 ### transform变形
-- transform: rotate(angle); 旋转
-	- 如：transform: rotate(9deg)
-- transform: translate(length); 平移
-	- transform: translate(100px,50px); 水平垂直同时移动
-	- transform: translateX(100px); 水平移动
-	- transform: translateY(50px); 垂直移动
-- transform: scale(number); 缩放
-	- transform: scale(2,1.5); 水平垂直同时缩放
-	- transform: scaleX(2); 水平缩放
-	- transform: scaleY(2); 垂直缩放
-- transform: skew(angle); 扭曲
-	- transform: skew(30deg,10deg); 水平垂直同时扭曲
-	- transform: skewX(30deg); 水平扭曲
-	- transform: skewY(30deg); 垂直扭曲
-- transform: matrix(<number>,<number>,<number>,<number>,<number>,<number>); 矩阵
-- transform-origin(X,Y): length; 改变元素变换基点
+> - transform: rotate(angle); 旋转
+> 	- 如：transform: rotate(9deg)
+> - transform: translate(length); 平移
+> 	- transform: translate(100px,50px); 水平垂直同时移动
+> 	- transform: translateX(100px); 水平移动
+> 	- transform: translateY(50px); 垂直移动
+> - transform: scale(number); 缩放
+> 	- transform: scale(2,1.5); 水平垂直同时缩放
+> 	- transform: scaleX(2); 水平缩放
+> 	- transform: scaleY(2); 垂直缩放
+> - transform: skew(angle); 扭曲
+> 	- transform: skew(30deg,10deg); 水平垂直同时扭曲
+> 	- transform: skewX(30deg); 水平扭曲
+> 	- transform: skewY(30deg); 垂直扭曲
+> - transform: matrix(<number>,<number>,<number>,<number>,<number>,<number>); 矩阵
+> - transform-origin(X,Y): length; 改变元素变换基点
+
 ### rem单位
 - font size of the root element
 	- px、em、rem的区别
@@ -597,13 +544,13 @@
 - 说明：过渡是从一种状态到另外一种状态, 过渡需要触发条件, 通常过渡都是写在开始状态
 - transition-property
 	- 规定哪些属性需要过渡
-all 默认值 全部属性过渡，多个属性过渡,用逗号隔开
+	all 默认值 全部属性过渡，多个属性过渡,用逗号隔开
 - transition-duration
 	- 过渡的时间 默认值 0s
 - transition-timing-function
 	- 过渡的运动曲线
-ease 默认值 逐渐慢下来
-linear  均速
+	ease 默认值 逐渐慢下来
+	linear  均速
 - transition-delay
 	- 过渡的延迟
 - 连写：transition: all 1s linear 0s
@@ -625,7 +572,7 @@ linear  均速
     }，
 	100%{
     }
-}
+	}
 - 2.指定动画名称 animation-name
 - 3.完成一个周期所需要的时间 animation-duration
 - 4.动画的运动曲线 linear匀速 ease缓冲 steps步长  animation-timing-function: linear
@@ -1183,4 +1130,5 @@ linear  均速
 	- （2）三个盒子全部左浮动
 	- （3）中间main盒子宽度100%，其父盒子左右margin为定宽
 	- （4）左盒子margin-left：-100%，右盒子margin-left：-定宽px
+
 ### 选用情况
