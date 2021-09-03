@@ -18,14 +18,15 @@ import js from "src/pages/web/js/index.vue";
 import http from "src/pages/web/http/index.vue";
 import vue from "src/pages/web/vue/index.vue";
 import react from "src/pages/web/react/index.vue";
-
 import other from "src/pages/web/other/index.vue";
 import tool from "src/pages/web/tool/index.vue";
 import ts from "src/pages/web/ts/index.vue";
+import interview from "src/pages/web/interview/index.vue";
 import {menu_tab_mixin} from "src/mixins/index.js"
 export default {
   mixins:[menu_tab_mixin],
   components: {
+    interview,
     inspiration,
     basics,
     css,
@@ -42,6 +43,7 @@ export default {
       tab: "inspiration",
       tabs: [
         { label: "inspiration", value: "inspiration" },
+        { label: "interview", value: "interview" },
         { label: "basics", value: "basics" },
         { label: "css", value: "css" },
         { label: "js", value: "js" },

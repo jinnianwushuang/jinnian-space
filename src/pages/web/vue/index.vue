@@ -29,7 +29,7 @@ import {menu_tab_mixin} from "src/mixins/index.js"
 export default {
   mixins:[menu_tab_mixin],
   components: {
-    m1,
+    // m1,
     m2,
     m3,
     m4,
@@ -38,15 +38,15 @@ export default {
     m7,
     m8,
     m9,
-    m10
+    // m10
   },
   data() {
     return {
-      tab: "m1",
+      tab: "m2",
   tab_level: 2, 
       tabs: [
-         { label: "mv*", value: "m10" },
-        { label: "基本", value: "m1" },
+        //  { label: "mv*", value: "m10" },
+        // { label: "基本", value: "m1" },
         { label: "双向绑定原理", value: "m2" },
         { label: "监听缺陷", value: "m3" },
         { label: "Virtual Dom", value: "m4" },
