@@ -25,8 +25,8 @@
 
 <script>
 
-import m1 from "./module/m1.vue";
-import m2 from "./module/m2.vue";
+import m1 from "../diary/module/m1.vue";
+import m2 from "../diary/module/m2.vue";
 
 import {menu_tab_mixin} from "src/mixins/index.js"
 export default {

@@ -1,10 +1,10 @@
 <template>
   <div class="q-my-md q-mx-sm">
-    <q-markdown   :src="MainComponent" />
+    <q-markdown   :src="'## h'" />
   </div>
 </template>
 <script>
-import MainComponent from "../md/word-review.md";
+// import MainComponent from "../md/word-review.md";
 export default {
   data() {
     return {

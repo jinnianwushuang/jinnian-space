@@ -4,9 +4,10 @@
   </div>
 </template>
 <script>
+// 主要是用于 全部是 vue 的 模块  异步载入
 let field_components = require.context("./module/", false, /\.vue$/, "lazy");
 let all_keys = field_components.keys();
-console.log("all_keys-----", all_keys);
+// console.log("all_keys-----", all_keys);
 import { menu_tab_mixin } from "src/mixins/index.js";
 export default {
   mixins: [menu_tab_mixin],
@@ -51,7 +52,7 @@ export default {
   methods: {
     compute_main_data() {
       let path = all_keys.find(x => `./${this.tab}.vue` == x);
-      console.log("-----------", this.tab, path);
+      // console.log("-----------", this.tab, path);
       field_components(path).then(module_data => {
         // console.log("module_data========", module_data);
         this.main_data = module_data.default;

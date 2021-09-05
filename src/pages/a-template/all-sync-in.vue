@@ -1,19 +1,12 @@
-<!--
- * @Date           : 2021-04-12 16:09:51
- * @FilePath       : /jinnian-space/src/pages/basics-template/index.vue
- * @Description    : 
--->
-<!--
- * @Date           : 2020-08-31 16:40:04
- * @FilePath       : /jinnian-space/src/pages/java/index.vue
- * @Description    : 
--->
 <template>
   <div>
  <q-markdown   :src="MainComponent" />
   </div>
 </template>
 <script>
+/** 
+ * 特点是 东西全部打进来 了 针对 markdown   , 同步
+*/
  import {compute_config_base_on_require_context} from "src/boot/require-utils.js"
 let { all_components, all_modules } =compute_config_base_on_require_context(require.context('./md/', false, /\.md$/),'md',false)
 import {menu_tab_mixin} from "src/mixins/index.js"
