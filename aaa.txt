@@ -1,12 +1,3 @@
-Math 数学
-Art 艺术
-English 英语
-Music 音乐
-History 历史
-Science 科学
-Geography 地理位置
-Information technology 信息技术
-Biology 生物学
-Drama 戏剧
-Swimming 游泳
-Physical education 体育课
+"Everyday-Conversations_-Learning-American-English-learnenglishteam.com-min.pdf",
+"MacKechnie_Murtha_Sheila,_O'Connor_Jane_Airey_English_the_American.pdf",
+"THE INTERNATIONAL PHONETIC SYMBOLS.pptx.pdf",

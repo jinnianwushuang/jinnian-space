@@ -18,6 +18,7 @@ export default {
         render: () => {}
       },
       tabs: [
+        { label: "pdf books", value: "m20" },
         { label: "word-review", value: "m11" },
         { label: "category words", value: "m18" },
         { label: "New-Concept-English ", value: "m17" },
