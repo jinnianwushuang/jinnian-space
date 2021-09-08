@@ -11,7 +11,7 @@ export default {
       word_total: 0, // 总词数
       table_data: [], //列表数据  显示
       table_data_all: [], // 列表数据 所有
-      column_options: [2, 3, 4, 5, 6, 7, 8], // 列数选项
+      column_options: [1,2, 3, 4, 5, 6, 7, 8], // 列数选项
       exclude_topic_options: true, //默认 列表数据 排除 topic
       show_empty_line: false, //显示空行
       topic: "", //主题

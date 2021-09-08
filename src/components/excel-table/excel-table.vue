@@ -1,6 +1,6 @@
 <template>
   <div class="q-my-md q-mx-sm">
-    <div class="q-mb-md row q-gutter-x-md">
+    <div class="q-mb-md row q-gutter-x-md q-gutter-y-sm">
       <q-select
         dense
         filled
@@ -25,7 +25,7 @@
         v-model="column"
         @input="handle_column_change"
         :options="column_options"
-        style="width:200px"
+         style="width:300px"
       >
         <template v-slot:before>
           列数
@@ -163,7 +163,8 @@ export default {
       ww = ww < 370 ? 370 : ww;
       console.log("ww", ww);
       let column = Math.ceil(ww / 350);
-      column = column == 1 ? 2 : column;
+      column = column <1 ? 1 : column;
+      ww<400?column=1:''
       column = column > 8 ? 8 : column;
       this.column = column;
     },

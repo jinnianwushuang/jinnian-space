@@ -19,12 +19,14 @@ export default {
       },
       tabs: [
         { label: "word-review", value: "m11" },
+        { label: "category words", value: "m18" },
+        { label: "New-Concept-English ", value: "m17" },
         { label: "level-phonetic", value: "m1" },
         { label: "parts-of-speech", value: "m7" },
         { label: "ket-vocabulary-list", value: "m15" },
         { label: "pet-vocabulary-list", value: "m16" },
-        { label: "New-Concept-English ", value: "m17" },
-        { label: "category words", value: "m18" },
+      
+       
         //  { label: "excel测试", value: "m11" },
         { label: "phrase", value: "m3" },
         { label: "sentence", value: "m4" },

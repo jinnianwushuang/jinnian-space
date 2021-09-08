@@ -156,6 +156,7 @@ export default {
       // title:"锦年成长空间",
       // title:"I dreamed a dream",
       mid_text:"we are who we choose to be",
+      mid_text:"Learn、analyze and follow the process",
       last_update_time,
       drawerLeft: false,
       menu,
