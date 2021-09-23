@@ -159,7 +159,7 @@ export default {
     init_column() {
       let isd = this.$q.platform.is.desktop;
       let ww = window.innerWidth;
-      ww = isd ? ww - 200 : ww;
+      ww = isd ? ww - 200 : ww-100;
       ww = ww < 370 ? 370 : ww;
       console.log("ww", ww);
       let column = Math.ceil(ww / 350);
