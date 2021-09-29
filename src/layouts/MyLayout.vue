@@ -43,7 +43,7 @@
         <!-- <q-toolbar-title>{{ title }}</q-toolbar-title> -->
         <div class="text-h6">{{ title }}</div>
         <q-space  />
-        <div class="desktop-only text-uppercase">{{mid_text}}</div>
+        <div class="text-uppercase text-h6">{{mid_text}}</div>
           <q-space   />
         <div class="desktop-only">{{ last_update_time }}</div>
         <q-btn
@@ -157,6 +157,7 @@ export default {
       // title:"I dreamed a dream",
       mid_text:"we are who we choose to be",
       mid_text:"Learn、analyze and follow the process",
+      mid_text:"流程错了",
       last_update_time,
       drawerLeft: false,
       menu,
