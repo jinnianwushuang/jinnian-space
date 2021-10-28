@@ -7,7 +7,9 @@
   <div>
  
 
-    <component :is="`${tab}`"></component>
+  
+     <q-markdown  v-if="MainComponent"  :extend="extendMarkdown" :src="MainComponent" />
+       <component v-else :is="`${tab}`"></component>
   </div>
 </template>
 
@@ -23,13 +25,15 @@ import m7 from "./module/m7.vue";
 import m8 from "./module/m8.vue";
 import m9 from "./module/m9.vue";
 import m10 from "./module/m10.vue";
+// 
+  import {compute_config_base_on_require_context} from "src/boot/require-utils.js"
+let { all_components, all_modules } =compute_config_base_on_require_context(require.context('public/books/sql/mysql/', false, /\.md$/),'md',true)
 
+// console.log('sql----------------', all_modules);
  
-
- 
-import {menu_tab_mixin} from "src/mixins/index.js"
+import {menu_tab_mixin,markdown_mixin } from "src/mixins/index.js"
 export default {
-  mixins:[menu_tab_mixin],
+  mixins:[menu_tab_mixin,markdown_mixin ],
   components: {
     m1,
     m2,
@@ -44,6 +48,11 @@ export default {
  
   data() {
     return {
+            // tab: all_modules[0].value,
+       tab_level: 1, // 右侧 菜单 一级 为 1  二级为 2
+       MainComponent:'',
+      // tabs:all_modules,
+          img_prefix:'./books/sql/mysql/',
       tab: 'm1',
           tab_level: 2,
       tabs: [
@@ -58,10 +67,17 @@ export default {
           { label: "MySQL进阶" ,value:'m8'},
           { label: "MySQL高级1" ,value:'m9'},
           { label: "MySQL高级2" ,value:'m10'},
+          ...all_modules
     
       ]
     };
-  }
+  },
+    watch: {
+    tab(newValue, oldValue) {
+      this.  MainComponent=all_components[this.tab]
+    }
+  },
+
 };
 </script>
 

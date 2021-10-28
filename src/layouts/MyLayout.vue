@@ -96,7 +96,7 @@
       v-model="drawerRight"
       bordered
       dense
-      :width="160"
+      :width="200"
       :breakpoint="500"
        content-class="bg-grey-3 hide-scrollbar "
     >

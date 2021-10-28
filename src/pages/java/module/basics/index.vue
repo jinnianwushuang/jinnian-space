@@ -12,7 +12,8 @@
   <div>
  
 
-    <component :is="`${tab}`"></component>
+     <q-markdown  v-if="MainComponent"  :extend="extendMarkdown" :src="MainComponent" />
+       <component v-else :is="`${tab}`"></component>
   </div>
 </template>
 
@@ -31,9 +32,14 @@ import m10 from "./module/m10.vue";
 import m11 from "./module/m11.vue";
 import m12 from "./module/m12.vue";
 
-import {menu_tab_mixin} from "src/mixins/index.js"
+  import {compute_config_base_on_require_context} from "src/boot/require-utils.js"
+let { all_components, all_modules } =compute_config_base_on_require_context(require.context('public/books/java/basic', false, /\.md$/),'md',true)
+
+ 
+ 
+import {menu_tab_mixin,markdown_mixin } from "src/mixins/index.js"
 export default {
-  mixins:[menu_tab_mixin],
+  mixins:[menu_tab_mixin,markdown_mixin ],
 
   components: {
     m99,
@@ -52,6 +58,7 @@ export default {
   },
   data() {
     return {
+      img_prefix:'./books/java/basic/',
       tab: "m1",
       tab_level: 2,
       tabs: [
@@ -67,10 +74,16 @@ export default {
         { label: "IO流", value: "m9" },
         { label: "多线程", value: "m10" },
         { label: "网络编程", value: "m11" },
-        { label: "基础加强", value: "m12" }
+        { label: "基础加强", value: "m12" },
+          ...all_modules
       ]
     };
-  }
+  },
+   watch: {
+    tab(newValue, oldValue) {
+      this.  MainComponent=all_components[this.tab]
+    }
+  },
 };
 </script>
 

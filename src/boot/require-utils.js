@@ -41,7 +41,7 @@ const convert_to_pinyin=(str)=>{
     arr.map(x=>{str2+=x[0]})
     return str2
 }
-export const compute_config_base_on_require_context=(field_components,type='md',convert_name=false)=>{
+export const compute_config_base_on_require_context=(field_components,type='md',convert_name=true)=>{
     console.log('当前 require.context---',field_components);
     console.log('当前 field_components.keys()---',field_components.keys());
    
@@ -59,20 +59,21 @@ export const compute_config_base_on_require_context=(field_components,type='md',
         let partten= /[^\u4E00-\u9FA5A-Za-z]+/g
         // ：^[\u4e00-\u9fa5_a-zA-Z0-9]+$
         // 中文、英文、数字包括下划线：^[\u4E00-\u9FA5A-Za-z0-9_]+$
+        let label= x.slice(2,x.length-type.length-1)
         let value = ''
         if(convert_name){
             //
             value =  convert_to_pinyin(x).replace(partten,'')
             value= value.slice(0,value.length-type.length)
         }else{
-            value= x.slice(2,x.length-type.length-1)
+            value= label
 
         }
         
     
         // field_components[x].default.name
     
-        let label =  type=='md'? value: ('' ||  value)
+     
         all_modules.push({
             label,
             value
