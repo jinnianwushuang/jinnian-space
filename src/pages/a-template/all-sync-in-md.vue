@@ -8,7 +8,7 @@
  * 特点是 东西全部打进来 了 针对 markdown   , 同步
 */
  import {compute_config_base_on_require_context} from "src/boot/require-utils.js"
-let { all_components, all_modules } =compute_config_base_on_require_context(require.context('./md/', false, /\.md$/),'md',true)
+let { all_components, all_modules } =compute_config_base_on_require_context(require.context('public/books/sql/mysql/', false, /\.md$/),'md',true)
 import {menu_tab_mixin,markdown_mixin } from "src/mixins/index.js"
 export default {
   mixins:[menu_tab_mixin,markdown_mixin ],

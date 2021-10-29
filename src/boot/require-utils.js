@@ -51,6 +51,9 @@ export const compute_config_base_on_require_context=(field_components,type='md',
     // let all_keys =filenames.map(x=>{ return x.slice(2,x.length-tail)})
     let  all_components={ }  //所有组件 
     let all_modules=[] //组件 英文 名字 和 值 // { label: "双向绑定原理", value: "m2" },
+    let all_modules_obj={} // 组件 英文 名字 和 值 对象 键值对 
+      
+       let label_arr= [] // label 排序
     // 匹配中文 /[\u4e00-\u9fa5]/gm
     //匹配 英文  /^[a-z]+$/i          /[a-zA-Z]/
     // 匹配数字   /^\d+$/
@@ -73,15 +76,32 @@ export const compute_config_base_on_require_context=(field_components,type='md',
     
         // field_components[x].default.name
     
+  
+        label_arr.push(label)
+        all_modules_obj[label] = value
+        // all_modules.push({
+        //     label,
+        //     value
+        // })
      
-        all_modules.push({
-            label,
-            value
-        })
+
         console.log('x---',x);
 
         all_components[value]= field_components(x).default
     })
+
+    label_arr.sort((a,b)=>parseFloat(a)-parseFloat(b))
+
+    let all_modules_sorted={}
+    label_arr.map(x=>{
+        all_modules_sorted 
+              all_modules.push({
+            label:x,
+            value:all_modules_obj[x]
+        })
+    })
+
+
     console.log('all_components------------',all_components);
     console.log('all_modules---------------',all_modules);
     return {

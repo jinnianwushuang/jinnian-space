@@ -261,8 +261,19 @@ let routes = [
         component: () =>import("src/pages/qi/index.vue")
       },
 
+ 
+      {
+        path:"cs-notes",
+        name:"cs-notes",
+        meta:{
+          show:true,
+          order: 100
+        },
+        component: () =>import("src/pages/other-blog/cs-notes.vue")
+      },
 
 
+   
     ]
   }
 ];
