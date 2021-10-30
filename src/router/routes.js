@@ -174,8 +174,8 @@ let routes = [
         path: "other",
         name: "other",
         meta:{
-          show:false,
-          order: 50
+          show:true,
+          order: 250
         },
         component: () => import( "src/pages/other/index.vue")
       },
@@ -272,7 +272,39 @@ let routes = [
         component: () =>import("src/pages/other-blog/cs-notes.vue")
       },
 
-
+      {
+        path:"tools",
+        name:"tools",
+        meta:{
+          show:true,
+          order: 201
+        },
+        component: () =>import("src/pages/tools/index.vue")
+      },
+ 
+      {
+        path:"network",
+        name:"network",
+        meta:{
+          show:true,
+          order: 51
+        },
+        component: () =>import("src/pages/network/index.vue")
+      },
+ 
+      
+      {
+        path:"algorithms",
+        name:"algorithms",
+        meta:{
+          show:true,
+          order: 52
+        },
+        component: () =>import("src/pages/algorithms/index.vue")
+      },
+ 
+      
+      
    
     ]
   }

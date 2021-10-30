@@ -1,57 +1,32 @@
-<!--
- * @Date           : 2021-07-09 01:11:11
- * @FilePath       : /jinnian-space/src/pages/other/index.vue
- * @Description    : 
--->
 <template>
   <div>
- 
-
-    <component :is="`${tab}`"></component>
+ <q-markdown  :extend="extendMarkdown"  :src="MainComponent" />
   </div>
 </template>
-
 <script>
-
-import m1 from "src/pages/other/module/m1.vue";
-import m2 from "src/pages/other/module/m2.vue";
-import m3 from "src/pages/other/module/m3.vue";
-import m4 from "src/pages/other/module/m4.vue";
-import m5 from "src/pages/other/module/m5.vue";
-import m6 from "src/pages/other/module/m6.vue";
-import m7 from "src/pages/other/module/m7.vue";
-import m8 from "src/pages/other/module/m8.vue";
-import {menu_tab_mixin} from "src/mixins/index.js"
+/** 
+ * 特点是 东西全部打进来 了 针对 markdown   , 同步
+*/
+ import {compute_config_base_on_require_context} from "src/boot/require-utils.js"
+let { all_components, all_modules } =compute_config_base_on_require_context(require.context('public/books/other/', false, /\.md$/),'md',true)
+import {menu_tab_mixin,markdown_mixin } from "src/mixins/index.js"
 export default {
-  mixins:[menu_tab_mixin],
-  components: {
-    m1,
-    m2,
-    m3,
-    m4,
-    m5,
-    m6,
-    m7,
-    m8
-  },
- 
+  mixins:[menu_tab_mixin,markdown_mixin ],
   data() {
     return {
-      tab:'m1',
- tab_level: 1,
-      tabs: [
-        { label: "未开发" ,value:'m1'},
-        { label: "未开发" ,value:'m2'},
-        { label: "未开发" ,value:'m3'},
-        { label: "未开发" ,value:'m4'},
-        { label: "未开发" ,value:'m5'},
-        { label: "未开发" ,value:'m6'},
-        { label: "未开发" ,value:'m7'},
-        { label: "未开发" ,value:'m8'}
-      ]
+       img_prefix:'./books/other/',
+       tab: all_modules[0].value,
+       tab_level: 1, // 右侧 菜单 一级 为 1  二级为 2
+       MainComponent:all_components[all_modules[0].value],
+      tabs:all_modules
     };
-  }
+  },
+    watch: {
+    tab(newValue, oldValue) {
+      this.  MainComponent=all_components[this.tab]
+    }
+  },
+
 };
 </script>
-
 <style lang="scss" scoped></style>
