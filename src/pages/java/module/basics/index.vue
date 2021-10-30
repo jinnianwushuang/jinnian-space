@@ -33,7 +33,7 @@ import m11 from "./module/m11.vue";
 import m12 from "./module/m12.vue";
 
   import {compute_config_base_on_require_context} from "src/boot/require-utils.js"
-let { all_components, all_modules } =compute_config_base_on_require_context(require.context('public/books/java/basic', false, /\.md$/),'md',true)
+let { all_components, all_modules } =compute_config_base_on_require_context(require.context('public/books/java/basic/', false, /\.md$/),'md',true)
 
  
  

@@ -17,6 +17,11 @@ import m3 from "src/pages/java/module/javaweb/index.vue";
 import m5 from "src/pages/java/module/mybatis/index.vue";
 import m6 from "src/pages/java/module/maven/index.vue";
 import m7 from "src/pages/java/module/springmvc/index.vue";
+
+ import m14 from "src/pages/java/module/m4.vue";
+ import m15 from "src/pages/java/module/m4.vue";
+ import m16 from "src/pages/java/module/m4.vue";
+
 import {menu_tab_mixin} from "src/mixins/index.js"
 export default {
   mixins:[menu_tab_mixin],
@@ -31,6 +36,9 @@ export default {
     // m8,
     // m9,
     // m10,
+        m14,
+    m15,
+    m16,
   },
   data() {
     return {
@@ -39,10 +47,14 @@ export default {
       tabs: [
         { label: "JAVA基础", value: "m1" },
         { label: "javaweb", value: "m3" },
+                { label: "springmvc", value: "m7" },
+        { label: "collection", value: "m14" },
+        { label: "jvm", value: "m15" },
+        { label: "multi-thread", value: "m16" },
         { label: "JDBC", value: "m4" },
         { label: "mybatis", value: "m5" },
         { label: "maven", value: "m6" },
-        { label: "springmvc", value: "m7" },
+
       ]
     };
   }
