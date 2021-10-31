@@ -1,58 +1,32 @@
-<!--
- * @Date           : 2021-04-12 16:09:51
- * @FilePath       : /jinnian-space/src/pages/java/module/mybatis/index.vue
- * @Description    : 
--->
-<!--
- * @Date           : 2020-08-31 16:40:04
- * @FilePath       : /jinnian-space/src/pages/java/index.vue
- * @Description    : 
--->
 <template>
   <div>
-  
-
-    <component :is="`${tab}`"></component>
+ <q-markdown  :extend="extendMarkdown"  :src="MainComponent" />
   </div>
 </template>
-
 <script>
-
-import m1 from "./module/m1.vue";
-import m2 from "./module/m2.vue";
-import m3 from "./module/m3.vue";
-// import m4 from "./module/m4.vue";
-
-import {menu_tab_mixin} from "src/mixins/index.js"
+/** 
+ * 特点是 东西全部打进来 了 针对 markdown   , 同步
+*/
+ import {compute_config_base_on_require_context} from "src/boot/require-utils.js"
+let { all_components, all_modules } =compute_config_base_on_require_context(require.context('public/books/java/mybatis/', false, /\.md$/),'md',true)
+import {menu_tab_mixin,markdown_mixin } from "src/mixins/index.js"
 export default {
-  mixins:[menu_tab_mixin],
-  components: {
-    m1,
-    m2,
-    m3,
-    // m4,
-
-
-
-
-  },
+  mixins:[menu_tab_mixin,markdown_mixin ],
   data() {
     return {
-      tab: "m1",
-        tab_level: 2,
-      tabs: [
-        { label: "Mybatis 基础", value: "m1" },
-        { label: "Mybatis 进阶", value: "m2" },
-        { label: "Mybatis 高级", value: "m3" },
-        // { label: "mybatis-高级", value: "m4" },
-
-
-      ],
- 
+       img_prefix:'./books/java/mybatis/',
+       tab: all_modules[0].value,
+       tab_level: 2, // 右侧 菜单 一级 为 1  二级为 2
+       MainComponent:all_components[all_modules[0].value],
+      tabs:all_modules
     };
-  }
+  },
+    watch: {
+    tab(newValue, oldValue) {
+      this.  MainComponent=all_components[this.tab]
+    }
+  },
+
 };
 </script>
-
 <style lang="scss" scoped></style>
-

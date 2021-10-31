@@ -17,10 +17,12 @@ import m3 from "src/pages/java/module/javaweb/index.vue";
 import m5 from "src/pages/java/module/mybatis/index.vue";
 import m6 from "src/pages/java/module/maven/index.vue";
 import m7 from "src/pages/java/module/springmvc/index.vue";
+import m70 from "src/pages/java/module/system-design/index.vue";
 
  import m14 from "src/pages/java/module/m4.vue";
  import m15 from "src/pages/java/module/m4.vue";
  import m16 from "src/pages/java/module/m4.vue";
+ import m88 from "src/pages/java/module/m88.vue";
 
 import {menu_tab_mixin} from "src/mixins/index.js"
 export default {
@@ -39,6 +41,8 @@ export default {
         m14,
     m15,
     m16,
+    m70,
+    m88,
   },
   data() {
     return {
@@ -54,6 +58,8 @@ export default {
         { label: "JDBC", value: "m4" },
         { label: "mybatis", value: "m5" },
         { label: "maven", value: "m6" },
+        { label: "系统设计", value: "m70" },
+        { label: "其他", value: "m88" },
 
       ]
     };
