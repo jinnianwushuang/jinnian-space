@@ -22,8 +22,17 @@ export default {
           let str = '';
           str = token.content;
           let arr = str.split('src="');
-          let str2 =
+          let str2 = ''
+          let raw_src = arr[1]
+         
             arr[0] + ' src="'+this.img_prefix + arr[1];
+
+            if(raw_src.includes('http')){
+              str2 =  arr[0] + ' src="'+raw_src
+            }else{
+              str2 =   arr[0] + ' src="'+this.img_prefix + raw_src ;
+            }
+
           token.content = str2;
         }
         token.attrSet("class", "q-markdown--token  ");
@@ -39,7 +48,12 @@ export default {
         // 改变 图片路径 增加前缀 拼接
         let raw_src = token.attrGet("src");
         console.log(raw_src);
-        token.attrSet("src", this.img_prefix + raw_src);
+        if( raw_src .includes('http')){
+          token.attrSet("src",  raw_src);
+        }else{
+          token.attrSet("src", this.img_prefix + raw_src);
+        }
+       
         return self.renderToken(tokens, idx, options);
       };
     }

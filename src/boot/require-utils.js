@@ -41,6 +41,23 @@ const convert_to_pinyin=(str)=>{
     arr.map(x=>{str2+=x[0]})
     return str2
 }
+
+// 计算相对文件夹路径 
+// 输入 "./distributed-system/rpc/服务之间的调用为啥不直接用HTTP而用RPC.md"  输出  distributed-system/rpc/
+const  compute_relative_folder=(x)=>{
+    if(!x){
+        return ''
+    }
+    let str =''
+    let arr= x.split("/")
+    arr.shift()
+    arr.pop()
+    str= arr.join("/")
+
+
+    return  str?  '/'+ str+'/' :''
+}
+
 export const compute_config_base_on_require_context=(field_components,type='md',convert_name=true)=>{
     console.log('当前 require.context---',field_components);
     console.log('当前 field_components.keys()---',field_components.keys());
@@ -78,13 +95,11 @@ export const compute_config_base_on_require_context=(field_components,type='md',
     
   
         label_arr.push(label)
-        all_modules_obj[label] = value
-        // all_modules.push({
-        //     label,
-        //     value
-        // })
-     
-
+        all_modules_obj[label] = {
+            value, //模块键
+            relative_path: x,  //相对路径
+            relative_folder: compute_relative_folder(x), //相对文件夹 路径 
+        }
         console.log('x---',x);
 
         all_components[value]= field_components(x).default
@@ -92,12 +107,13 @@ export const compute_config_base_on_require_context=(field_components,type='md',
 
     label_arr.sort((a,b)=>parseFloat(a)-parseFloat(b))
 
-    let all_modules_sorted={}
+   
     label_arr.map(x=>{
-        all_modules_sorted 
+       
               all_modules.push({
             label:x,
-            value:all_modules_obj[x]
+            value:all_modules_obj[x]['value'],
+            modules_obj:{...all_modules_obj[x]}
         })
     })
 
