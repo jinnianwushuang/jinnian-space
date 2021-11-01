@@ -3,12 +3,20 @@
 export default {
   data() {
     return {
+      relative_path:'',//相对路径  //例如  '/books/java/maven/'
         tab:'',
+        tabs:[],
       MainComponent:'',
       img_prefix:'./img/linux/heima-Linux云计算/讲义/'
     };
   },
-
+  // watch: {
+  //   tab(newValue, oldValue) {
+  //     this. MainComponent=all_components[this.tab]
+  //       this. compute_img_prefix()
+     
+  //   }
+  // },
   methods: {
     extendMarkdown(md) {
       console.log(md.renderer.rules);
@@ -56,6 +64,22 @@ export default {
        
         return self.renderToken(tokens, idx, options);
       };
+    },
+    compute_img_prefix(){
+      if(this. MainComponent ){
+        let tab_obj=  this.tabs.find(x=>x['value']==this.tab)
+        if(tab_obj&&tab_obj['modules_obj']){
+          let  relative_path = this. relative_path
+
+ this.img_prefix = '.'+ relative_path  + (tab_obj['modules_obj']['relative_folder'] ||'')
+        }else{
+         this.img_prefix = '.'+  relative_path
+  
+        }
+
+
+      }
     }
-  }
+  },
+
 };

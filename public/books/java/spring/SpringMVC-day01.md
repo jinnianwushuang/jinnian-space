@@ -8,7 +8,7 @@
 
 - 数据层：负责数据操作
 
-![image-20200426174726083](./img/java/springmvc/SpringMVC-day01/image-20200426174726083.png)
+![image-20200426174726083](./SpringMVC-day01/image-20200426174726083.png)
 
 MVC（Model View Controller），一种用于设计创建Web应用程序表现层的模式
 
@@ -24,9 +24,9 @@ Controller（控制器）：处理用户交互的调度器，用于根据用户�
 * Servlet
 * SpringMVC
 
-![image-20200426180210590](./img/java/springmvc/SpringMVC-day01/image-20200426180210590.png)  
+![image-20200426180210590](./SpringMVC-day01/image-20200426180210590.png)  
 
-![image-20200426180348299](./img/java/springmvc/SpringMVC-day01/image-20200426180348299.png)
+![image-20200426180348299](./SpringMVC-day01/image-20200426180348299.png)
 
 
 # 2 入门案例
@@ -154,11 +154,11 @@ public String save(){
 
 ## 2.3 SpringMVC 技术架构图
 
-![image-20200426182959446](./img/java/springmvc/SpringMVC-day01/image-20200426182959446.png)
+![image-20200426182959446](./SpringMVC-day01/image-20200426182959446.png)
 
 
 
-![image-20200426183024690](./img/java/springmvc/SpringMVC-day01/image-20200426183024690.png)
+![image-20200426183024690](./SpringMVC-day01/image-20200426183024690.png)
 
 
 
@@ -170,7 +170,7 @@ public String save(){
 * View Resolver：视图解析器， 将处理结果生成View视图
 * View：视图，最终产出结果， 常用视图如jsp、 html  
 
-![image-20200426183313406](./img/java/springmvc/SpringMVC-day01/image-20200426183313406.png)
+![image-20200426183313406](./SpringMVC-day01/image-20200426183313406.png)
 
 # 3 基本配置
 
@@ -440,7 +440,7 @@ public String requestParam5(User user){
 }
 ```
 
-![image-20200426190932459](./img/java/springmvc/SpringMVC-day01/image-20200426190932459.png)
+![image-20200426190932459](./SpringMVC-day01/image-20200426190932459.png)
 
 **当POJO中出现List，保存对象数据，参数名称与对象层次结构名称保持一致，使用数组格式描述集合中对象的位置**  
 
@@ -539,7 +539,7 @@ List是接口，无法创建对象，报无法找到构造方法异常；修复�
 
 SpringMVC对接收的数据进行自动类型转换，该工作通过Converter接口实现  
 
-![image-20200426193801059](./img/java/springmvc/SpringMVC-day01/image-20200426193801059.png)
+![image-20200426193801059](./SpringMVC-day01/image-20200426193801059.png)
 
 * **标量转换器**
    StringToBooleanConverter String→Boolean
@@ -576,7 +576,7 @@ SpringMVC对接收的数据进行自动类型转换，该工作通过Converter�
 
 * **SpringMVC对接收的数据进行自动类型转换，该工作通过Converter接口实现**  
 
-  ![image-20200426194106166](./img/java/springmvc/SpringMVC-day01/image-20200426194106166.png)
+  ![image-20200426194106166](./SpringMVC-day01/image-20200426194106166.png)
 
 ## 4.5 日期类型格式转换  
 

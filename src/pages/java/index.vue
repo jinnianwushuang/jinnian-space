@@ -24,6 +24,8 @@ import m70 from "src/pages/java/module/system-design/index.vue";
  import m16 from "src/pages/java/module/m4.vue";
  import m88 from "src/pages/java/module/m88.vue";
 
+ import m99 from "src/pages/java/module/basic/index.vue";
+
 import {menu_tab_mixin} from "src/mixins/index.js"
 export default {
   mixins:[menu_tab_mixin],
@@ -43,6 +45,7 @@ export default {
     m16,
     m70,
     m88,
+    m99,
   },
   data() {
     return {
@@ -50,6 +53,7 @@ export default {
        tab_level: 1,
       tabs: [
         { label: "JAVA基础", value: "m1" },
+        { label: "JAVA基础2", value: "m99" },
         { label: "javaweb", value: "m3" },
                 { label: "springmvc", value: "m7" },
         { label: "collection", value: "m14" },

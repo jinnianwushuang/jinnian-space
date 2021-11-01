@@ -15,7 +15,7 @@
 
 * 如图:
 
-  ![1590919723185](./img/java/mybatis/mybatis-第1天讲义.img/1590919723185.png)
+  ![1590919723185](./mybatis-第1天讲义.img/1590919723185.png)
 
 ​ 
 
@@ -27,19 +27,19 @@
 
 * 如图:
 
-  ![1590919786415](./img/java/mybatis/mybatis-第1天讲义.img/1590919786415.png)
+  ![1590919786415](./mybatis-第1天讲义.img/1590919786415.png)
 
 * 具体映射关系如下图:
 
-![1590919824416](./img/java/mybatis/mybatis-第1天讲义.img/1590919824416.png)
+![1590919824416](./mybatis-第1天讲义.img/1590919824416.png)
 
 #### 1.3 原始jdbc操作（查询数据）
 
-![1590915350408](./img/java/mybatis/mybatis-第1天讲义.img/1590915350408.png)
+![1590915350408](./mybatis-第1天讲义.img/1590915350408.png)
 
 #### 1.4原始jdbc操作（插入数据）
 
-![1590915389449](./img/java/mybatis/mybatis-第1天讲义.img/1590915389449.png)
+![1590915389449](./mybatis-第1天讲义.img/1590915389449.png)
 
 #### 1.5 原始jdbc操作的分析
 
@@ -94,7 +94,7 @@ MyBatis官网地址：<http://www.mybatis.org/mybatis-3/>
 
 2)  创建student数据表
 
-![1590916243454](./img/java/mybatis/mybatis-第1天讲义.img/1590916243454.png)
+![1590916243454](./mybatis-第1天讲义.img/1590916243454.png)
 
 3) 编写Student实体
 
@@ -305,7 +305,7 @@ public class StudentController {
 
 * 核心方法
 
-  ![1590917572321](./img/java/mybatis/mybatis-第1天讲义.img/1590917572321.png)
+  ![1590917572321](./mybatis-第1天讲义.img/1590917572321.png)
 
 #### 2.2 构建器SqlSessionFactoryBuilder
 
@@ -313,7 +313,7 @@ public class StudentController {
 
 * 核心方法
 
-  ![1590916852504](./img/java/mybatis/mybatis-第1天讲义.img/1590916852504.png)
+  ![1590916852504](./mybatis-第1天讲义.img/1590916852504.png)
 
 * 通过加载mybatis的核心文件的输入流的形式构建一个SqlSessionFactory对象
 
@@ -332,7 +332,7 @@ SqlSessionFactory factory = builder.build(inputStream);
 
 * 核心api
 
-  ![1590917006637](./img/java/mybatis/mybatis-第1天讲义.img/1590917006637.png)
+  ![1590917006637](./mybatis-第1天讲义.img/1590917006637.png)
 
 
 
@@ -342,7 +342,7 @@ SqlSessionFactory factory = builder.build(inputStream);
 
 * 核心api
 
-  ![1590917052849](./img/java/mybatis/mybatis-第1天讲义.img/1590917052849.png)
+  ![1590917052849](./mybatis-第1天讲义.img/1590917052849.png)
 
 SqlSession 实例在 MyBatis 中是非常强大的一个类。在这里你会看到所有执行语句、提交或回滚事务和获取映射器实例的方法。
 
@@ -352,7 +352,7 @@ SqlSession 实例在 MyBatis 中是非常强大的一个类。在这里你会看
 
 * 映射配置文件包含了数据和对象之间的映射关系以及要执行的 SQL 语句
 
-  ![1590917306615](./img/java/mybatis/mybatis-第1天讲义.img/1590917306615.png)
+  ![1590917306615](./mybatis-第1天讲义.img/1590917306615.png)
 
 
 
@@ -372,7 +372,7 @@ SqlSession 实例在 MyBatis 中是非常强大的一个类。在这里你会看
 
 * 示例
 
-  ![1590917699865](./img/java/mybatis/mybatis-第1天讲义.img/1590917699865.png)
+  ![1590917699865](./mybatis-第1天讲义.img/1590917699865.png)
 
 ####3.3 新增功能 
 
@@ -390,7 +390,7 @@ SqlSession 实例在 MyBatis 中是非常强大的一个类。在这里你会看
 
 * 示例
 
-![1590918390112](./img/java/mybatis/mybatis-第1天讲义.img/1590918390112.png)
+![1590918390112](./mybatis-第1天讲义.img/1590918390112.png)
 
 
 
@@ -410,7 +410,7 @@ SqlSession 实例在 MyBatis 中是非常强大的一个类。在这里你会看
 
 * 示例
 
-![1590918538863](./img/java/mybatis/mybatis-第1天讲义.img/1590918538863.png)
+![1590918538863](./mybatis-第1天讲义.img/1590918538863.png)
 
 #### 3.5 删除功能
 
@@ -428,7 +428,7 @@ SqlSession 实例在 MyBatis 中是非常强大的一个类。在这里你会看
 
 * 示例
 
-  ![1590918458329](./img/java/mybatis/mybatis-第1天讲义.img/1590918458329.png)
+  ![1590918458329](./mybatis-第1天讲义.img/1590918458329.png)
 
 * 总结： 大家可以发现crud操作，除了标签名称以及sql语句不一样之外，其他属性参数基本一致。
 
@@ -436,7 +436,7 @@ SqlSession 实例在 MyBatis 中是非常强大的一个类。在这里你会看
 
 
 
-![1590918743943](./img/java/mybatis/mybatis-第1天讲义.img/1590918743943.png)
+![1590918743943](./mybatis-第1天讲义.img/1590918743943.png)
 
 ### 四.Mybatis核心配置文件介绍
 
@@ -516,7 +516,7 @@ SqlSession 实例在 MyBatis 中是非常强大的一个类。在这里你会看
 
 * 如下图：
 
-  ![1590919106324](./img/java/mybatis/mybatis-第1天讲义.img/1590919106324.png)
+  ![1590919106324](./mybatis-第1天讲义.img/1590919106324.png)
 
 * 具体如下配置
 
@@ -554,7 +554,7 @@ SqlSession 实例在 MyBatis 中是非常强大的一个类。在这里你会看
 
 * 调用流程
 
-  ![1590919558066](./img/java/mybatis/mybatis-第1天讲义.img/1590919558066.png)
+  ![1590919558066](./mybatis-第1天讲义.img/1590919558066.png)
 
 #### 5.2 LOG4J的配置和使用
 
@@ -562,7 +562,7 @@ SqlSession 实例在 MyBatis 中是非常强大的一个类。在这里你会看
 
 * 使用步骤：
 
-  ![1590919638466](./img/java/mybatis/mybatis-第1天讲义.img/1590919638466.png)
+  ![1590919638466](./mybatis-第1天讲义.img/1590919638466.png)
 
 
 

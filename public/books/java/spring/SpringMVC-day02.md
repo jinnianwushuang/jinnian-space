@@ -103,7 +103,7 @@ public List ajaxReturnJsonList(){
 * 当通过域名A下的操作访问域名B下的资源时，称为跨域访问
 * 跨域访问时，会出现无法访问的现象   
 
-![image-20200427162623591](./img/java/springmvc/SpringMVC-day02/image-20200427162623591.png)
+![image-20200427162623591](./SpringMVC-day02/image-20200427162623591.png)
 
 ## 2.2 跨域环境搭建
 
@@ -144,7 +144,7 @@ public User cross(HttpServletRequest request){
 
 * 请求处理过程解析  
 
-![image-20200427164038103](./img/java/springmvc/SpringMVC-day02/image-20200427164038103.png)
+![image-20200427164038103](./SpringMVC-day02/image-20200427164038103.png)
 
  拦截器（ Interceptor）是一种动态拦截方法调用的机制
  作用：
@@ -160,7 +160,7 @@ public User cross(HttpServletRequest request){
    归属不同： Filter属于Servlet技术， Interceptor属于SpringMVC技术
    拦截内容不同： Filter对所有访问进行增强， Interceptor仅针对SpringMVC的访问进行增强  
   
-  ![image-20200427164512745](./img/java/springmvc/SpringMVC-day02/image-20200427164512745.png)
+  ![image-20200427164512745](./SpringMVC-day02/image-20200427164512745.png)
 
 ## 3.2 自定义拦截器开发过程
 
@@ -222,7 +222,7 @@ public User cross(HttpServletRequest request){
 
 ## 3.3 拦截器执行流程
 
-![image-20200427164840131](./img/java/springmvc/SpringMVC-day02/image-20200427164840131.png)
+![image-20200427164840131](./SpringMVC-day02/image-20200427164840131.png)
 
 
 
@@ -307,7 +307,7 @@ public void afterCompletion(HttpServletRequest request,
 
 ## 3.6 多拦截器配置
 
-![image-20200427171422781](./img/java/springmvc/SpringMVC-day02/image-20200427171422781.png)
+![image-20200427171422781](./SpringMVC-day02/image-20200427171422781.png)
 
 **责任链模式**
  责任链模式是一种行为模式
@@ -460,7 +460,7 @@ public String doOtherException(Exception ex){
 
 * 上传文件过程分析  
 
-  ![image-20200427174442939](./img/java/springmvc/SpringMVC-day02/image-20200427174442939.png)
+  ![image-20200427174442939](./SpringMVC-day02/image-20200427174442939.png)
 
 *   MultipartResolver接口  
 
@@ -673,5 +673,5 @@ public class UserController {
 
 **postman** 是  一款可以发送Restful风格请求的工具，方便开发调试。首次运行需要联网注册  
 
-![image-20200427180851880](./img/java/springmvc/SpringMVC-day02/image-20200427180851880.png)
+![image-20200427180851880](./SpringMVC-day02/image-20200427180851880.png)
 

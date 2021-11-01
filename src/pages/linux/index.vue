@@ -29,6 +29,7 @@ import m15 from "src/pages/linux/module/m15.vue";
 import m19 from "src/pages/linux/module/m16.vue";
 import m16 from "src/pages/linux/heima/index.vue";
 import m18 from "src/pages/linux/module/java-linux/index.vue";
+import m99 from "src/pages/linux/other/index.vue";
 
 import {menu_tab_mixin} from "src/mixins/index.js"
 export default {
@@ -50,6 +51,7 @@ export default {
     m16,
     m18,
     m19,
+    m99 
   },
 
   data() {
@@ -76,6 +78,7 @@ export default {
      
         { label: "Nginx", value: "m14" },
         { label: "Nginx 配置", value: "m15" },
+        { label: "其他", value: "m99" },
       ]
     };
   }

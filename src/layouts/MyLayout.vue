@@ -96,7 +96,7 @@
       v-model="drawerRight"
       bordered
       dense
-      :width="200"
+      :width="250"
       :breakpoint="500"
        content-class="bg-grey-3 hide-scrollbar "
     >
@@ -118,7 +118,7 @@
               </q-item-section> -->
             <q-item-section>
               <div :class="item.tl == 1 ? '' : 'q-pl-md'">
-               <span v-if="item.tl == 2">--></span>  {{ ` ${item.label}` }}
+               <span v-if="item.tl == 2">-</span>  {{ ` ${item.label}` }}
               </div>
             </q-item-section>
           </q-item>

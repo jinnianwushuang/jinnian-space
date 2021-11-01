@@ -24,7 +24,7 @@ CAP 理论这节我们也说过了：
 
 ### BASE 理论三要素
 
-![BASE理论三要素](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91c2VyLWdvbGQtY2RuLnhpdHUuaW8vMjAxOC81LzI0LzE2MzkxNDgwNmQ5ZTE1YzY?x-oss-process=image/format,png)
+![BASE理论三要素](BASE理论.assets/aHR0cHM6Ly91c2VyLWdvbGQtY2RuLnhpdHUuaW8vMjAxOC81LzI0LzE2MzkxNDgwNmQ5ZTE1YzY)
 
 #### 1. 基本可用
 

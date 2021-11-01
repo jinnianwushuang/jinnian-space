@@ -1,61 +1,53 @@
 <!--
- * @Date           : 2021-04-12 16:09:51
- * @FilePath       : /jinnian-space/src/pages/java/module/javaweb/index.vue
- * @Description    : 
--->
-<!--
  * @Date           : 2020-08-31 16:40:04
- * @FilePath       : /jinnian-space/src/pages/java/index.vue
+ * @FilePath       : /jinnian-space/src/pages/sql/module/mysql/index.vue
  * @Description    : 
 -->
 <template>
   <div>
- 
-    <component :is="`${tab}`"></component>
+    <q-markdown
+      v-if="MainComponent"
+      :extend="extendMarkdown"
+      :src="MainComponent"
+    />
+    <component v-else :is="`${tab}`"></component>
   </div>
 </template>
-
 <script>
-
-import m1 from "./module/m1.vue";
-import m2 from "./module/m2.vue";
-import m3 from "./module/m3.vue";
-import m4 from "./module/m4.vue";
-import m5 from "./module/m5.vue";
-import m6 from "./module/m6.vue";
-
-import {menu_tab_mixin} from "src/mixins/index.js"
+import m1 from "./module/m5.vue";
+//
+let relative_path = "/books/java/javaweb/";
+import { compute_config_base_on_require_context } from "src/boot/require-utils.js";
+let { all_components, all_modules } = compute_config_base_on_require_context(
+  require.context("public/books/java/javaweb/"  , false, /\.md$/),
+  "md",
+  true
+);
+import { menu_tab_mixin, markdown_mixin } from "src/mixins/index.js";
 export default {
-  mixins:[menu_tab_mixin],
+  mixins: [menu_tab_mixin, markdown_mixin],
   components: {
     m1,
-    m2,
-    m3,
-    m4,
-    m5,
-    m6,
-
-
-
   },
   data() {
     return {
-      tab: "m6",
-      tab_level: 2,
+      relative_path,
+      img_prefix: "." + relative_path,
+      tab: all_modules[0].value,
+      MainComponent: all_components[all_modules[0].value],
+      tab_level: 2, // 右侧 菜单 一级 为 1  二级为 2
       tabs: [
-        { label: "Tomcat&Http协议", value: "m6" },
-        { label: "Servlet", value: "m1" },
-        { label: "Request&Response", value: "m2" },
-        { label: "Cookie&SessionJsp", value: "m3" },
-        { label: "EL&Filter&Listener", value: "m4" },
-        { label: "JSP", value: "m5" },
-
-      ],
- 
+        { label: "jsp", value: "m1" },
+        ...all_modules
+      ]
     };
+  },
+  watch: {
+    tab(newValue, oldValue) {
+      this.MainComponent = all_components[this.tab];
+      this.compute_img_prefix();
+    }
   }
 };
 </script>
-
 <style lang="scss" scoped></style>
-

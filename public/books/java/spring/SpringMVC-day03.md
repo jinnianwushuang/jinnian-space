@@ -11,7 +11,7 @@
 
 * 表单校验保障了数据有效性、安全性  
 
-![image-20200505144306747](./img/java/springmvc/SpringMVC-day03/image-20200505144306747.png)
+![image-20200505144306747](./SpringMVC-day03/image-20200505144306747.png)
 
 数据可以随意输入，导致错误的结果。后端表单校验的重要性。
 
@@ -185,7 +185,7 @@ private Integer age;//员工年龄
 
 * 3种判定空校验器的区别  
 
-![image-20200506160725709](./img/java/springmvc/SpringMVC-day03/image-20200506160725709.png)
+![image-20200506160725709](./SpringMVC-day03/image-20200506160725709.png)
 
 ## 1.4 嵌套校验
 
@@ -267,7 +267,7 @@ SSM（Spring+SpringMVC+MyBatis）
 
 **表结构**
 
-![image-20200506093609697](./img/java/springmvc/SpringMVC-day03/image-20200506093609697.png)
+![image-20200506093609697](./SpringMVC-day03/image-20200506093609697.png)
 
 ​    最重要的5个步骤
 
@@ -299,7 +299,7 @@ SSM（Spring+SpringMVC+MyBatis）
 
 
 
-![image-20200506094053535](./img/java/springmvc/SpringMVC-day03/image-20200506094053535.png)
+![image-20200506094053535](./SpringMVC-day03/image-20200506094053535.png)
 
 
 
@@ -562,13 +562,13 @@ public class UserServiceTest {
 | u对象数据     | json对象   | 格式C |
 | u集合数据     | json数组   | 格式D |
 
-![image-20200506103851845](./img/java/springmvc/SpringMVC-day03/image-20200506103851845.png)
+![image-20200506103851845](./SpringMVC-day03/image-20200506103851845.png)
 
 
 
 * 返回数据格式设计
 
-![image-20200506104339019](./img/java/springmvc/SpringMVC-day03/image-20200506104339019.png)
+![image-20200506104339019](./SpringMVC-day03/image-20200506104339019.png)
 
 * 代码
 

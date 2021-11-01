@@ -6,7 +6,7 @@
 
 我们可以把消息队列看作是一个存放消息的容器，当我们需要使用消息的时候，直接从容器中取出消息供自己使用即可。
 
-![Message queue](https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/message-queue-small.png)
+![Message queue](message-queue.assets/message-queue-small.png)
 
 消息队列是分布式系统中重要的组件之一。使用消息队列主要是为了通过异步处理提高系统性能和削峰、降低系统耦合性。
 
@@ -26,7 +26,7 @@
 
 ### 2.1 通过异步处理提高系统性能（减少响应所需时间）
 
-![通过异步处理提高系统性能](https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-11/Asynchronous-message-queue.png)
+![通过异步处理提高系统性能](message-queue.assets/Asynchronous-message-queue.png)
 
 将用户的请求数据存储到消息队列之后就立即返回结果。随后，系统再对消息进行消费。
 
@@ -38,13 +38,13 @@
 
 举例：在电子商务一些秒杀、促销活动中，合理使用消息队列可以有效抵御促销活动刚开始大量订单涌入对系统的冲击。如下图所示：
 
-![削峰](https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-11/削峰-消息队列.png)
+![削峰](message-queue.assets/削峰-消息队列.png)
 
 ### 2.3 降低系统耦合性
 
 使用消息队列还可以降低系统耦合性。我们知道如果模块之间不存在直接调用，那么新增模块或者修改模块就对其他模块影响较小，这样系统的可扩展性无疑更好一些。还是直接上图吧：
 
-![解耦](https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-11/消息队列-解耦.png)
+![解耦](message-queue.assets/消息队列-解耦.png)
 
 生产者（客户端）发送消息到消息队列中去，接受者（服务端）处理消息，需要消费的系统直接去消息队列取消息进行消费即可而不需要和其他系统有耦合，这显然也提高了系统的扩展性。
 
@@ -76,13 +76,13 @@ JMS（JAVA Message Service,java 消息服务）是 java 的消息服务，JMS �
 
 **① 点到点（P2P）模型**
 
-![点到点（P2P）模型](https://user-gold-cdn.xitu.io/2018/4/21/162e7185572ca37d?w=575&h=135&f=gif&s=8530)
+
 
 使用**队列（Queue）**作为消息通信载体；满足**生产者与消费者模式**，一条消息只能被一个消费者使用，未被消费的消息在队列中保留直到被消费或超时。比如：我们生产者发送 100 条消息的话，两个消费者来消费一般情况下两个消费者会按照消息发送的顺序各自消费一半（也就是你一个我一个的消费。）
 
 **② 发布/订阅（Pub/Sub）模型**
 
-![发布/订阅（Pub/Sub）模型](https://user-gold-cdn.xitu.io/2018/4/21/162e7187c268eaa5?w=402&h=164&f=gif&s=15492)
+
 
 发布订阅模型（Pub/Sub） 使用**主题（Topic）**作为消息通信载体，类似于**广播模式**；发布者发布一条消息，该消息通过主题传递给所有的订阅者，**在一条消息广播之后才订阅的用户则是收不到该条消息的**。
 

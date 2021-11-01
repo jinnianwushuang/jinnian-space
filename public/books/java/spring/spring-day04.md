@@ -30,17 +30,17 @@
 
   解决方案： （表级读锁）
 
-![1591321851725](./img/java/springmvc/Spring-day04/1591321851725.png)
+![1591321851725](./Spring-day04/1591321851725.png)
 
 - 不可重复读：读取过程中单个数据发生了变化
   - 解决方案： Repeatable read （行级写锁）
 
-![1591321927034](./img/java/springmvc/Spring-day04/1591321927034.png)
+![1591321927034](./Spring-day04/1591321927034.png)
 
 - 幻读：读取过程中数据条目发生了变化
   - 解决方案： Serializable（表级写锁）
 
-![1591321959641](./img/java/springmvc/Spring-day04/1591321959641.png)
+![1591321959641](./Spring-day04/1591321959641.png)
 
 
 
@@ -137,7 +137,7 @@
 
 此接口定义了事务在执行过程中某个时间点上的状态信息及对应的状态操作
 
-![1591322466820](./img/java/springmvc/Spring-day04/1591322466820.png)
+![1591322466820](./Spring-day04/1591322466820.png)
 
 ### **2.5)事务控制方式**
 
@@ -376,7 +376,7 @@ public Object tx(ProceedingJoinPoint pjp) throws Throwable {
 
 **tx:method属性**
 
-![1591367291135](./img/java/springmvc/Spring-day04/1591367291135.png)
+![1591367291135](./Spring-day04/1591367291135.png)
 
 ### **2.9)事务传播行为**
 
@@ -384,13 +384,13 @@ public Object tx(ProceedingJoinPoint pjp) throws Throwable {
 
 - 事务协调员
 
-![1591367347482](./img/java/springmvc/Spring-day04/1591367347482.png)
+![1591367347482](./Spring-day04/1591367347482.png)
 
 - 事务传播行为描述的是事务协调员对事务管理员所携带事务的处理态度
 
 ### **2.10)事务传播行为**
 
-![1591367375088](./img/java/springmvc/Spring-day04/1591367375088.png)
+![1591367375088](./Spring-day04/1591367375088.png)
 
 ### **2.11)事务传播应用**
 
@@ -498,7 +498,7 @@ public Object tx(ProceedingJoinPoint pjp) throws Throwable {
 
 ### 3.1)Spring模块对象
 
-![1591368087398](./img/java/springmvc/Spring-day04/1591368087398.png)
+![1591368087398](./Spring-day04/1591368087398.png)
 
 - TransactionTemplate
 
@@ -543,7 +543,7 @@ public void save(Account account) {
 
 RedisTemplate对象结构
 
-![1591368270508](./img/java/springmvc/Spring-day04/1591368270508.png)
+![1591368270508](./Spring-day04/1591368270508.png)
 
 ```java
 public void changeMoney(Integer id, Double money) {
@@ -563,9 +563,9 @@ public Double findMondyById(Integer id) {
 
 策略模式（Strategy Pattern）使用不同策略的对象实现不同的行为方式，策略对象的变化导致行为的变化。
 
-![1591368340720](./img/java/springmvc/Spring-day04/1591368340720.png)
+![1591368340720](./Spring-day04/1591368340720.png)
 
 策略模式（Strategy Pattern）使用不同策略的对象实现不同的行为方式，策略对象的变化导致行为的变化。
 
-![1591368370924](./img/java/springmvc/Spring-day04/1591368370924.png)
+![1591368370924](./Spring-day04/1591368370924.png)
 

@@ -67,7 +67,7 @@ timer.schedule(task, delay);
 
 `ScheduledExecutorService` 是一个接口，有多个实现类，比较常用的是 `ScheduledThreadPoolExecutor` 。
 
-![](https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/javaguide/20210607154324712.png)
+![](Java定时任务大揭秘.assets/20210607154324712.png)
 
 `ScheduledThreadPoolExecutor` 本身就是一个线程池，支持任务并发执行。并且，其内部使用 `DelayQueue` 作为任务队列。
 
@@ -102,7 +102,7 @@ executor.shutdown();
 
 ### Spring Task
 
-![](https://img-blog.csdnimg.cn/20210528145056880.png)
+
 
 我们直接通过 Spring 提供的 `@Scheduled` 注解即可定义定时任务，非常方便！
 
@@ -140,7 +140,7 @@ Kafka、Dubbo、ZooKeeper、Netty 、Caffeine 、Akka 中都有对时间轮的�
 
 下图是一个有 12 个时间格的时间轮，转完一圈需要 12 s。当我们需要新建一个 3s 后执行的定时任务，只需要将定时任务放在下标为 3 的时间格中即可。当我们需要新建一个 9s 后执行的定时任务，只需要将定时任务放在下标为 9 的时间格中即可。
 
-![](https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/javaguide/20210607171334861.png)
+![](Java定时任务大揭秘.assets/20210607171334861.png)
 
 那当我们需要创建一个 13s 后执行的定时任务怎么办呢？这个时候可以引入一叫做 **圈数/轮数** 的概念，也就是说这个任务还是放在下标为 3 的时间格中， 不过它的圈数为 2 。
 
@@ -148,7 +148,7 @@ Kafka、Dubbo、ZooKeeper、Netty 、Caffeine 、Akka 中都有对时间轮的�
 
 针对下图的时间轮，我来举一个例子便于大家理解。
 
-![](https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/javaguide/20210607193042151.png)
+![](Java定时任务大揭秘.assets/20210607193042151.png)
 
 上图的时间轮，第 1 层的时间精度为 1 ，第 2 层的时间精度为 20 ，第 3 层的时间精度为 400。假如我们需要添加一个 350s 后执行的任务 A 的话（当前时间是 0s），这个任务会被放在第 2 层（因为第二层的时间跨度为 20\*20=400>350）的第 350/20=17 个时间格子。
 
@@ -158,7 +158,7 @@ Kafka、Dubbo、ZooKeeper、Netty 、Caffeine 、Akka 中都有对时间轮的�
 
 这里在层与层之间的移动也叫做时间轮的升降级。参考手表来理解就好！
 
-![](https://img-blog.csdnimg.cn/20210607195206797.png)
+ 
 
 **时间轮比较适合任务数量比较多的定时任务场景，它的任务写入和执行的时间复杂度都是 0（1）。**
 
@@ -176,7 +176,7 @@ Kafka、Dubbo、ZooKeeper、Netty 、Caffeine 、Akka 中都有对时间轮的�
 
 ### Quartz
 
-![](https://img-blog.csdnimg.cn/2021052814502425.png)
+ 
 
 一个很火的开源任务调度框架，完全由`Java`写成。`Quartz` 可以说是 Java 定时任务领域的老大哥或者说参考标准，其他的任务调度框架基本都是基于 `Quartz` 开发的，比如当当网的`elastic-job`就是基于`quartz`二次开发之后的分布式调度解决方案。
 
@@ -193,17 +193,17 @@ Kafka、Dubbo、ZooKeeper、Netty 、Caffeine 、Akka 中都有对时间轮的�
 
 ### Elastic-Job
 
-![](https://img-blog.csdnimg.cn/20210528144508114.png)
+ 
 
 `Elastic-Job` 是当当网开源的一个基于`Quartz`和`ZooKeeper`的分布式调度解决方案，由两个相互独立的子项目 `Elastic-Job-Lite` 和 `Elastic-Job-Cloud` 组成，一般我们只要使用 `Elastic-Job-Lite` 就好。
 
 `ElasticJob` 支持任务在分布式场景下的分片和高可用、任务可视化管理等功能。
 
-![](https://img-blog.csdnimg.cn/20210608080437356.png)
+![](Java定时任务大揭秘.assets/20210608080437356.png)
 
 ElasticJob-Lite 的架构设计如下图所示：
 
-![](https://oscimg.oschina.net/oscnet/up-a8f63f828666d43009d5d3497bcbd2cfb61.png)
+![](Java定时任务大揭秘.assets/up-a8f63f828666d43009d5d3497bcbd2cfb61.png)
 
 从上图可以看出，`Elastic-Job` 没有调度中心这一概念，而是使用 `ZooKeeper` 作为注册中心，注册中心负责协调分配任务到不同的节点上。
 
@@ -234,19 +234,17 @@ public class TestJob implements SimpleJob {
 
 ### XXL-JOB
 
-![](https://img-blog.csdnimg.cn/20210528144611728.png)
-
 `XXL-JOB` 于 2015 年开源，是一款优秀的轻量级分布式任务调度框架，支持任务可视化管理、弹性扩容缩容、任务失败重试和告警、任务分片等功能，
 
-![](https://img-blog.csdnimg.cn/20210608080550433.png)
+![](Java定时任务大揭秘.assets/20210608080550433.png)
 
 根据 `XXL-JOB` 官网介绍，其解决了很多 `Quartz` 的不足。
 
-![](https://img-blog.csdnimg.cn/20210607202503193.png)
+![](Java定时任务大揭秘.assets/20210607202503193.png)
 
 `XXL-JOB` 的架构设计如下图所示：
 
-![](https://oscimg.oschina.net/oscnet/up-b8ecc6acf651f112c4dfae98243d72adea3.png)
+![](Java定时任务大揭秘.assets/up-b8ecc6acf651f112c4dfae98243d72adea3.png)
 
 从上图可以看出，`XXL-JOB` 由 **调度中心** 和 **执行器** 两大部分组成。调度中心主要负责任务管理、执行器管理以及日志管理。执行器主要是接收调度信号并处理。另外，调度中心进行任务调度时，是通过自研 RPC 来实现的。
 
@@ -279,7 +277,7 @@ public ReturnT<String> myAnnotationJobHandler(String param) throws Exception {
 }
 ```
 
-![](https://img-blog.csdnimg.cn/20210607200728212.png)
+![](Java定时任务大揭秘.assets/20210607200728212.png)
 
 **相关地址：**
 
@@ -293,8 +291,6 @@ public ReturnT<String> myAnnotationJobHandler(String param) throws Exception {
 
 ### PowerJob
 
-![](https://img-blog.csdnimg.cn/20210528145009701.png)
-
 非常值得关注的一个分布式任务调度框架，分布式任务调度领域的新星。目前，已经有很多公司接入比如 OPPO、京东、中通、思科。
 
 这个框架的诞生也挺有意思的，PowerJob 的作者当时在阿里巴巴实习过，阿里巴巴那会使用的是内部自研的 SchedulerX（阿里云付费产品）。实习期满之后，PowerJob 的作者离开了阿里巴巴。想着说自研一个 SchedulerX，防止哪天 SchedulerX 满足不了需求，于是 PowerJob 就诞生了。
@@ -303,7 +299,7 @@ public ReturnT<String> myAnnotationJobHandler(String param) throws Exception {
 
 由于 SchedulerX 属于人民币产品，我这里就不过多介绍。PowerJob 官方也对比过其和 QuartZ、XXL-JOB 以及 SchedulerX。
 
-![](https://oscimg.oschina.net/oscnet/up-795f5e9b0d875063717b1ee6a08f2ff1c01.png)
+![](Java定时任务大揭秘.assets/up-795f5e9b0d875063717b1ee6a08f2ff1c01.png)
 
 ## 总结
 

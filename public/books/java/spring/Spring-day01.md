@@ -19,25 +19,25 @@
 
   - 半成品
 
-![1590631254933](./img/java/springmvc/Spring-day01/1590631254933.png)
+![1590631254933](./Spring-day01/1590631254933.png)
 
 ### 1.2)框架的作用
 
-![1590631300743](./img/java/springmvc/Spring-day01/1590631300743.png)
+![1590631300743](./Spring-day01/1590631300743.png)
 
 ### 1.3)Spring是什么
 
 Spring是分层的JavaSE/EE应用full-stack轻量级开源框架
 
-![1590631495077](./img/java/springmvc/Spring-day01/1590631495077.png)
+![1590631495077](./Spring-day01/1590631495077.png)
 
 ### 1.4)Spring的体系结构
 
-![1590631552693](./img/java/springmvc/Spring-day01/1590631552693.png)
+![1590631552693](./Spring-day01/1590631552693.png)
 
 ### 1.5)Spring的发展历史
 
-![1590631606747](./img/java/springmvc/Spring-day01/1590631606747.png)
+![1590631606747](./Spring-day01/1590631606747.png)
 
 ### 1.6)Spring优势
 
@@ -55,7 +55,7 @@ Spring是分层的JavaSE/EE应用full-stack轻量级开源框架
 
 ### 2.1)优质程序代码的制作原则
 
-![1590636507198](./img/java/springmvc/Spring-day01/1590636507198.png)
+![1590636507198](./Spring-day01/1590636507198.png)
 
 ### 2.2)耦合与内聚
 
@@ -63,22 +63,22 @@ Spring是分层的JavaSE/EE应用full-stack轻量级开源框架
 
 - 内聚（Cohesion）：代码书写过程中单个模块内部各组成部分间的联系，用于衡量软件中各个功能模块内部的功能联系
 
-![1590636557953](./img/java/springmvc/Spring-day01/1590636557953.png)
+![1590636557953](./Spring-day01/1590636557953.png)
 
 - 程序书写的目标：高内聚，低耦合
   - 就是同一个模块内的各个元素之间要高度紧密，但是各个模块之间的相互依存度却不要那么紧密
 
 ### 2.3)工厂模式发展史
 
-![1590636616069](./img/java/springmvc/Spring-day01/1590636616069.png)
+![1590636616069](./Spring-day01/1590636616069.png)
 
-![1590636644096](./img/java/springmvc/Spring-day01/1590636644096.png)
+![1590636644096](./Spring-day01/1590636644096.png)
 
-![1590636661026](./img/java/springmvc/Spring-day01/1590636661026.png)
+![1590636661026](./Spring-day01/1590636661026.png)
 
 ### 2.4)Spring发展历程
 
-![1590636704098](./img/java/springmvc/Spring-day01/1590636704098.png)
+![1590636704098](./Spring-day01/1590636704098.png)
 
 ### 2.5)IoC
 
@@ -86,7 +86,7 @@ Spring是分层的JavaSE/EE应用full-stack轻量级开源框架
 
 - Spring控制的资源全部放置在Spring容器中，该容器称为IoC容器
 
-  ![1590636750876](./img/java/springmvc/Spring-day01/1590636750876.png)
+  ![1590636750876](./Spring-day01/1590636750876.png)
 
 
 
@@ -114,7 +114,7 @@ Spring是分层的JavaSE/EE应用full-stack轻量级开源框架
 
 5.表现层（App）通过spring获取资源（Service实例）
 
-![1590637353510](./img/java/springmvc/Spring-day01/1590637353510.png)
+![1590637353510](./Spring-day01/1590637353510.png)
 
 #### 3.2.1)IoC入门案例制作步骤-1
 
@@ -308,7 +308,7 @@ public class UserApp {
 
 - DI（Dependency Injection）依赖注入，应用程序运行依赖的资源由Spring为其提供，资源进入应用程序的方式称为注入
 
-![1590659778689](./img/java/springmvc/Spring-day01/1590659778689.png)
+![1590659778689](./Spring-day01/1590659778689.png)
 
 IoC与DI的关系
 
@@ -320,7 +320,7 @@ IoC与DI的关系
 
 - 
 
-  ![1590659854696](./img/java/springmvc/Spring-day01/1590659854696.png)set注入（主流）
+  ![1590659854696](./Spring-day01/1590659854696.png)set注入（主流）
 
 ### 4.6)set注入（主流）
 
@@ -645,7 +645,7 @@ IoC与DI的关系
 
 可以加载文件系统中任意位置的配置文件，而ClassPathXmlApplicationContext只能加载类路径下的配置文件
 
-![1591021082290](./img/java/springmvc/Spring-day01/1591021082290.png)
+![1591021082290](./Spring-day01/1591021082290.png)
 
 **BeanFactory**
 

@@ -1,6 +1,6 @@
 ## 何为网关？为什么要网关？
 
-![微服务-网关](https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/javaguide/%E5%BE%AE%E6%9C%8D%E5%8A%A1-%E7%BD%91%E5%85%B3.png)
+![微服务-网关](api网关入门.assets/微服务-网关.png)
 
 微服务背景下，一个系统被拆分为多个服务，但是像安全认证，流量控制，日志，监控等功能是每个服务都需要的，没有网关的话，我们就需要在每个服务中单独实现，这使得我们做了很多重复的事情并且没有一个全局的视图来统一管理这些功能。
 
@@ -16,7 +16,7 @@ Zuul 是 Netflix 开发的一款提供动态路由、监控、弹性、安全的
 
 Zuul 主要通过过滤器（类似于 AOP）来过滤请求，从而实现网关必备的各种功能。
 
-![Zuul架构](https://img-blog.csdnimg.cn/img_convert/865991e34f69f8cb345b4aff918e946e.png)
+![Zuul架构](api网关入门.assets/865991e34f69f8cb345b4aff918e946e.png)
 
 我们可以自定义过滤器来处理请求，并且，Zuul 生态本身就有很多现成的过滤器供我们使用。就比如限流可以直接用国外朋友写的 [spring-cloud-zuul-ratelimit](https://github.com/marcosbarbero/spring-cloud-zuul-ratelimit) (这里只是举例说明，一般是配合 hystrix 来做限流)：
 
@@ -76,7 +76,7 @@ APISIX 是一款基于 Nginx 和 etcd 的高性能、云原生、可扩展的网
 
 与传统 API 网关相比，APISIX 具有动态路由和插件热加载，特别适合微服务系统下的 API 管理。并且，APISIX 与 SkyWalking（分布式链路追踪系统）、Zipkin（分布式链路追踪系统）、Prometheus（监控系统） 等 DevOps 生态工具对接都十分方便。
 
-![apisix架构图](https://img-blog.csdnimg.cn/img_convert/727732fad2e943bdd2c502b83ddb1b89.png)
+![apisix架构图](api网关入门.assets/727732fad2e943bdd2c502b83ddb1b89.png)
 
 作为 NGINX 和 Kong 的替代项目，APISIX 目前已经是 Apache 顶级开源项目，并且是最快毕业的国产开源项目。国内目前已经有很多知名企业（比如金山、有赞、爱奇艺、腾讯、贝壳）使用 APISIX 处理核心的业务流量。
 
@@ -95,7 +95,7 @@ APISIX 是一款基于 Nginx 和 etcd 的高性能、云原生、可扩展的网
 
 Shenyu 是一款基于 WebFlux 的可扩展、高性能、响应式网关，Apache 顶级开源项目。
 
-![Shenyu架构](https://img-blog.csdnimg.cn/1104eb413cba468cba4dce119165e84e.png)
+![Shenyu架构](api网关入门.assets/1104eb413cba468cba4dce119165e84e.png)
 
 Shenyu 通过插件扩展功能，插件是 ShenYu 的灵魂，并且插件也是可扩展和热插拔的。不同的插件实现不同的功能。Shenyu 自带了诸如限流、熔断、转发 、重写、重定向、和路由监控等插件。
 

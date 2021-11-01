@@ -10,7 +10,7 @@
 
 这种限流算法无法保证限流速率，因而无法保证突然激增的流量。比如我们限制一个接口一分钟只能访问10次的话，前半分钟一个请求没有接收，后半分钟接收了10个请求。
 
-![固定窗口计数器算法](https://static001.infoq.cn/resource/image/8d/15/8ded7a2b90e1482093f92fff555b3615.png)
+![固定窗口计数器算法](limit-request.assets/8ded7a2b90e1482093f92fff555b3615.png)
 
 #### 滑动窗口计数器算法
 
@@ -18,7 +18,7 @@
 
 很显然：当滑动窗口的格子划分的越多，滑动窗口的滚动就越平滑，限流的统计就会越精确。
 
-![滑动窗口计数器算法](https://static001.infoq.cn/resource/image/ae/15/ae4d3cd14efb8dc7046d691c90264715.png)
+![滑动窗口计数器算法](limit-request.assets/ae4d3cd14efb8dc7046d691c90264715.png)
 
 #### 漏桶算法
 
@@ -26,7 +26,7 @@
 
 如果想要实现这个算法的话也很简单，准备一个队列用来保存请求，然后我们定期从队列中拿请求来执行就好了。
 
-![漏桶算法](https://static001.infoq.cn/resource/image/75/03/75938d1010138ce66e38c6ed0392f103.png)
+![漏桶算法](limit-request.assets/75938d1010138ce66e38c6ed0392f103.png)
 
 #### 令牌桶算法
 
@@ -34,7 +34,7 @@
 
 我们根据限流大小，按照一定的速率往桶里添加令牌即可！
 
-![令牌桶算法](https://static001.infoq.cn/resource/image/ec/93/eca0e5eaa35dac938c673fecf2ec9a93.png)
+![令牌桶算法](limit-request.assets/eca0e5eaa35dac938c673fecf2ec9a93.png)
 
 **漏桶算法 vs 令牌桶算法** ： 
 

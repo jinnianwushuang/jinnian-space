@@ -1,48 +1,36 @@
-<!--
- * @Date           : 2021-04-12 16:09:51
- * @FilePath       : /jinnian-space/src/pages/java/module/maven/index.vue
- * @Description    : 
--->
-<!--
- * @Date           : 2020-08-31 16:40:04
- * @FilePath       : /jinnian-space/src/pages/java/index.vue
- * @Description    : 
--->
 <template>
   <div>
-  
-
-    <component :is="`${tab}`"></component>
+ <q-markdown  :extend="extendMarkdown"  :src="MainComponent" />
   </div>
 </template>
-
 <script>
-
-import m1 from "./module/m1.vue";
-import m2 from "./module/m2.vue";
-
-import {menu_tab_mixin} from "src/mixins/index.js"
+/** 
+ * 特点是 东西全部打进来 了 针对 markdown   , 同步
+*/
+let  relative_path='/books/java/maven/'
+ import {compute_config_base_on_require_context} from "src/boot/require-utils.js"
+let { all_components, all_modules } =compute_config_base_on_require_context(require.context('public/books/java/maven/', false, /\.md$/),'md',true)
+import {menu_tab_mixin,markdown_mixin } from "src/mixins/index.js"
 export default {
-  mixins:[menu_tab_mixin],
-  components: {
-    m1,
-    m2,
-
-  },
+  mixins:[menu_tab_mixin,markdown_mixin ],
   data() {
     return {
-      tab: "m1",
-          tab_level: 2,
-      tabs: [
-        { label: "maven 基础", value: "m1" },
-        { label: "POM文件帮助文档", value: "m2" },
-
-      ],
- 
+       relative_path,
+       img_prefix:'.'+relative_path,
+       tab: all_modules[0].value,
+       tab_level: 2, // 右侧 菜单 一级 为 1  二级为 2
+       MainComponent:all_components[all_modules[0].value],
+      tabs:all_modules
     };
-  }
+  },
+    watch: {
+    tab(newValue, oldValue) {
+      this. MainComponent=all_components[this.tab]
+        this. compute_img_prefix()
+     
+    }
+  },
+
 };
 </script>
-
 <style lang="scss" scoped></style>
-

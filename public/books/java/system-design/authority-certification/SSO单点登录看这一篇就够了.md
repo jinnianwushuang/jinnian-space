@@ -40,7 +40,7 @@ SSO英文全称Single Sign On，单点登录。SSO是在多个应用系统中，
 
 ### 1、核心应用与依赖
 
-![单点登录（SSO）设计](https://img.ken.io/blog/sso/sso-system.png-kblb.png)
+![单点登录（SSO）设计](SSO单点登录看这一篇就够了.assets/sso-system.png-kblb.png)
 
 | 应用/模块/对象   | 说明                                |
 | ---------------- | ----------------------------------- |
@@ -70,7 +70,7 @@ SSO英文全称Single Sign On，单点登录。SSO是在多个应用系统中，
 
 - 登录时序图
 
-![SSO系统设计-登录时序图](https://img.ken.io/blog/sso/sso-login-sequence.png-kbrb.png)
+![SSO系统设计-登录时序图](SSO单点登录看这一篇就够了.assets/sso-login-sequence.png-kbrb.png)
 
 按照上图，用户登录后AuthToken保存在Cookie中。 domain=test.com
 浏览器会将domain设置成 .test.com，
@@ -79,7 +79,7 @@ SSO英文全称Single Sign On，单点登录。SSO是在多个应用系统中，
 
 - 登录信息获取/登录状态校验
 
-![SSO系统设计-登录信息获取/登录状态校验](https://img.ken.io/blog/sso/sso-logincheck-sequence.png-kbrb.png)
+![SSO系统设计-登录信息获取/登录状态校验](SSO单点登录看这一篇就够了.assets/sso-logincheck-sequence.png-kbrb.png)
 
 ### 4、用户登出
 
@@ -90,7 +90,7 @@ SSO英文全称Single Sign On，单点登录。SSO是在多个应用系统中，
 
 - 登出时序图
 
-![SSO系统设计-用户登出](https://img.ken.io/blog/sso/sso-logout-sequence.png-kbrb.png)
+![SSO系统设计-用户登出](SSO单点登录看这一篇就够了.assets/sso-logout-sequence.png-kbrb.png)
 
 ### 5、跨域登录、登出
 
@@ -104,15 +104,15 @@ SSO英文全称Single Sign On，单点登录。SSO是在多个应用系统中，
 - 登出完成之后通过回调的方式，调用非主域名站点的登出页面，完成设置Cookie中的AuthToken过期的操作。
 - 跨域登录（主域名已登录）
 
-![SSO系统设计-跨域登录（主域名已登录）](https://img.ken.io/blog/sso/sso-crossdomain-login-loggedin-sequence.png-kbrb.png)
+![SSO系统设计-跨域登录（主域名已登录）](SSO单点登录看这一篇就够了.assets/sso-crossdomain-login-loggedin-sequence.png-kbrb.png)
 
 - 跨域登录（主域名未登录）
 
-![SSO系统设计-跨域登录（主域名未登录）](https://img.ken.io/blog/sso/sso-crossdomain-login-unlogin-sequence.png-kbrb.png)
+![SSO系统设计-跨域登录（主域名未登录）](SSO单点登录看这一篇就够了.assets/sso-crossdomain-login-unlogin-sequence.png-kbrb.png)
 
 - 跨域登出
 
-![SSO系统设计-跨域登出](https://img.ken.io/blog/sso/sso-crossdomain-logout-sequence.png-kbrb.png)
+![SSO系统设计-跨域登出](SSO单点登录看这一篇就够了.assets/sso-crossdomain-logout-sequence.png-kbrb.png)
 
 ## 三、备注
 

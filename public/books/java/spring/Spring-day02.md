@@ -6,7 +6,7 @@
 
 注解启动时使用注解的形式替代xml配置，将繁杂的spring配置文件从工程中彻底消除掉，简化书写
 
-![1591023265469](./img/java/springmvc/Spring-day02/1591023265469.png)
+![1591023265469](./Spring-day02/1591023265469.png)
 
 ### 1.2)注解驱动的弊端
 
@@ -14,7 +14,7 @@
 
 - XML中配置第三方开发的资源是很方便的，但使用注解驱动无法在第三方开发的资源中进行编辑，因此会增大开发工作量
 
-![1591023337010](./img/java/springmvc/Spring-day02/1591023337010.png)
+![1591023337010](./Spring-day02/1591023337010.png)
 
 
 
@@ -407,7 +407,7 @@
 
 ### 4.1)综合案例改版（注解整合MyBatis）
 
-![1591024717408](./img/java/springmvc/Spring-day02/1591024717408.png)
+![1591024717408](./Spring-day02/1591024717408.png)
 
 ### 4.2)注解整合MyBatis分析
 
@@ -471,13 +471,13 @@ public class UserServiceTest {
 
 ### 5.1)IoC核心接口
 
-![1591024936518](./img/java/springmvc/Spring-day02/1591024936518.png)
+![1591024936518](./Spring-day02/1591024936518.png)
 
 ### **5.2)组件扫描器**
 
 - 开发过程中，需要根据需求加载必要的bean，排除指定bean
 
-![1591024975438](./img/java/springmvc/Spring-day02/1591024975438.png)
+![1591024975438](./Spring-day02/1591024975438.png)
 
 ### **5.3)设定组件扫描加载过滤器**
 
@@ -596,7 +596,7 @@ public class UserServiceTest {
 
 ### 5.7)bean初始化过程解析
 
-![1591025338778](./img/java/springmvc/Spring-day02/1591025338778.png)
+![1591025338778](./Spring-day02/1591025338778.png)
 
 ### 5.8)bean初始化过程解析
 
@@ -622,7 +622,7 @@ public class UserServiceTest {
 
 ### 5.9)bean初始化过程解析
 
-![1591025440019](./img/java/springmvc/Spring-day02/1591025440019.png)
+![1591025440019](./Spring-day02/1591025440019.png)
 
 ### 5.10)繁琐的bean初始化过程处理
 

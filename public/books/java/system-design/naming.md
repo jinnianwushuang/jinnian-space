@@ -20,11 +20,11 @@
 
 大名鼎鼎的《重构》的作者老马（Martin Fowler）曾经在[TwoHardThings](https://martinfowler.com/bliki/TwoHardThings.html)这篇文章中提到过CS 领域有两大最难的事情：一是 **缓存失效** ，一是 **程序命名** 。
 
-![](https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/java-guide-blog/marting-naming.png)
+![](naming.assets/marting-naming.png)
 
 这个句话实际上也是老马引用别人的，类似的表达还有很多。比如分布式系统领域有两大最难的事情：一是 **保证消息顺序** ，一是 **严格一次传递** 。
 
-![](https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/java-guide-blog/20210629104844645.png)
+![](naming.assets/20210629104844645.png)
 
 今天咱们就单独拎出 “**命名**” 来聊聊！
 
@@ -139,7 +139,7 @@ void shouldGet200StatusCodeWhenRequestIsValid() {
 
 建议项目文件夹名称使用串式命名法（kebab-case），比如 dubbo 项目的各个模块的命名是下面这样的。
 
-![](https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/java-guide-blog/dubbo-naming.png)
+![](naming.assets/dubbo-naming.png)
 
 ## 常见命名规范
 
@@ -224,11 +224,11 @@ Codelf 提供了在线网站版本，网址：[https://unbug.github.io/codelf/](
 
 我选择了 Java 编程语言，然后搜索了“序列化”这个关键词，然后它就返回了很多关于序列化的命名。
 
-![](pictures/Codelf.png)
+![](naming.assets/Codelf.png)
 
 并且，Codelf 还提供了 VS code 插件，看这个评价，看来大家还是很喜欢这款命名工具的。
 
-![](pictures/vscode-codelf.png)
+![](naming.assets/vscode-codelf.png)
 
 ## 相关阅读推荐
 

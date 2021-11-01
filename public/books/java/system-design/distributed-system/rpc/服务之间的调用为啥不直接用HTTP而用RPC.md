@@ -6,7 +6,7 @@ RPC（Remote Procedure Call）—远程过程调用，它是一种通过网络�
 
 ### **RPC原理是什么？**
 
-![RPC原理图](https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-12-6/37345851.jpg)
+![RPC原理图](服务之间的调用为啥不直接用HTTP而用RPC.assets/37345851.jpg)
 
 1. 服务消费端（client）以本地调用的方式调用远程服务；
 2. 客户端 Stub（client stub） 接收到调用后负责将方法、参数等组装成能够进行网络传输的消息体（序列化）：`RpcRequest`；
@@ -18,7 +18,7 @@ RPC（Remote Procedure Call）—远程过程调用，它是一种通过网络�
 
 下面再贴一个网上的时序图，辅助理解：
 
-![RPC原理时序图](https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-12-6/32527396.jpg)
+![RPC原理时序图](服务之间的调用为啥不直接用HTTP而用RPC.assets/32527396.jpg)
 
 ### RPC 解决了什么问题？
 
