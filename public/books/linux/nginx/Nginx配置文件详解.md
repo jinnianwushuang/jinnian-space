@@ -1,13 +1,10 @@
-<!--
- * @Date           : 2021-03-31 10:27:34
- * @FilePath       : /jinnian-space/src/pages/linux/module/m15.vue
- * @Description    : 
--->
-<template>
-  <div>
-    <div class="text-h3">Nginx配置文件详解</div>
-    <pre>
-  
+https://github.com/jinnianwushuang/server-configs-nginx
+
+
+
+Nginx配置文件详解
+
+```
 —————————————————————————————
 1
 
@@ -129,14 +126,4 @@ http
     include vhost/*.conf;
     #vhost/下子配置文件生效
 }
-
-</pre
-    >
-  </div>
-</template>
-
-<script>
-export default {};
-</script>
-
-<style lang="scss" scoped></style>
+```

@@ -24,12 +24,12 @@ import m8 from "src/pages/linux/module/m8.vue";
 import m9 from "src/pages/linux/module/m9.vue";
 import m10 from "src/pages/linux/module/m10.vue";
 import m13 from "src/pages/linux/module/m13.vue";
-import m14 from "src/pages/linux/module/m14.vue";
-import m15 from "src/pages/linux/module/m15.vue";
 import m19 from "src/pages/linux/module/m16.vue";
 import m16 from "src/pages/linux/heima/index.vue";
 import m18 from "src/pages/linux/module/java-linux/index.vue";
 import m99 from "src/pages/linux/other/index.vue";
+import m100 from "src/pages/linux/nginx/index.vue";
+// import m200 from "src/pages/linux/nginx-conf/index.vue";
 
 import {menu_tab_mixin} from "src/mixins/index.js"
 export default {
@@ -46,12 +46,13 @@ export default {
     m9,
     m10,
     m13,
-    m14,
-    m15,
+
     m16,
     m18,
     m19,
-    m99 
+    m99,
+     m100,
+    //  m200
   },
 
   data() {
@@ -76,8 +77,9 @@ export default {
         { label: "前端运维", value: "m8" },
         { label: "日常运维", value: "m9" },
      
-        { label: "Nginx", value: "m14" },
-        { label: "Nginx 配置", value: "m15" },
+        { label: "Nginx", value: "m100" },
+        // { label: "Nginx-conf", value: "m200" },
+
         { label: "其他", value: "m99" },
       ]
     };

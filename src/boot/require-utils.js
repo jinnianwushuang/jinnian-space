@@ -59,7 +59,18 @@ const compute_show_label=(x)=>{
 
     return  arr[len-1] 
 }
-export const compute_config_base_on_require_context=(field_components,type='md',convert_name=true)=>{
+
+/**
+ * 
+ * @param {*} field_components  webpack require 进来的  指定 文件
+ * @param {*} type            文件类型
+ * @param {*} convert_name    转换 模块 value 键  默认转换
+ * @param {*} warp_html       转换包裹上HTML    默认 不转化
+ * @param {*} beautify_label   美化  显示的  label  默认 不美化 
+ * @returns 
+ */
+export const compute_config_base_on_require_context=(field_components,type='md',convert_name=true,warp_html=false,beautify_label=true)=>{
+    //warp_html  转换包裹上HTML 
     console.log('当前 require.context---',field_components);
     console.log('当前 field_components.keys()---',field_components.keys());
     let filenames=  field_components.keys()
@@ -93,12 +104,26 @@ export const compute_config_base_on_require_context=(field_components,type='md',
             relative_folder: compute_relative_folder(x), //相对文件夹 路径 
         }
         console.log('x---',x);
-        all_components[value]= field_components(x).default
+        if(warp_html){
+            // 包裹html  一般 用户 各类型的配置文件 
+            all_components[value]=     `
+            <div>
+            <code>
+              ${ field_components(x).default }
+            </code>
+            </div>
+            `  
+
+        }else{
+            // 原始形态 一般用与 md 文件
+            all_components[value]= field_components(x).default
+        }
+       
     })
     label_arr.sort((a,b)=>parseFloat(a)-parseFloat(b))
     label_arr.map(x=>{
               all_modules.push({
-            label: compute_show_label(x),
+            label:   beautify_label? compute_show_label(x) :x,
             value:all_modules_obj[x]['value'],
             modules_obj:{...all_modules_obj[x]}
         })
@@ -110,3 +135,11 @@ export const compute_config_base_on_require_context=(field_components,type='md',
         all_modules
     }
 }
+
+
+
+// export const  convert_to_html =(field_components,type,convert_name=true)=>{
+
+//     return  compute_config_base_on_require_context(field_components,type,convert_name,true)
+
+// }
