@@ -47,7 +47,7 @@ export default {
         { label: "Redis基础", value: "m1" },
         { label: "Redis", value: "m2" },
       
-
+  ...all_modules
       ],
  
     };
