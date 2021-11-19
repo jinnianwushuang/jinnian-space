@@ -11,6 +11,7 @@ export default {
    
     t1:'',// 当前的 第一级别tab 的值
     t2:'',//  当前的 第二级别tab 的值
+    right_menu_info:{},// 当前的 右侧 选中菜单的 信息 
   },
   //获得
   getters: {
@@ -20,7 +21,9 @@ export default {
     get_current_selected_right_menu(state){
       return {
         t1:state.t1,
-        t2:state.t2
+        t2:state.t2,
+        right_menu_info: state.right_menu_info
+
       }
     }
   },
@@ -77,6 +80,7 @@ export default {
       if(params.tl==2){
         state.t1= params. parent.value
        state.t2= params.value
+       state.right_menu_info= params 
       }
     }
   }

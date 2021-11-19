@@ -25,6 +25,8 @@
 //  llet { all_components, all_modules }  =compute_config_base_on_require_context(require.context('./md/', false, /\.md$/))
 //  import {compute_config_base_on_require_context} from "src/boot/require-utils.js"
 //  let { all_components, all_modules } =compute_config_base_on_require_context(require.context('./module/', false, /\.vue$/),'vue')
+
+const  md5 = require("md5")
 const  pinyin = require("pinyin");
 const convert_to_pinyin=(str)=>{
     let arr=  pinyin( str,{
@@ -88,14 +90,16 @@ export const compute_config_base_on_require_context=(field_components,type='md',
         // ：^[\u4e00-\u9fa5_a-zA-Z0-9]+$
         // 中文、英文、数字包括下划线：^[\u4E00-\u9FA5A-Za-z0-9_]+$
         let label= x.slice(2,x.length-type.length-1)
-        let value = ''
-        if(convert_name){
-            //
-            value =  convert_to_pinyin(x).replace(partten,'')
-            value= value.slice(0,value.length-type.length)
-        }else{
-            value= label
-        }
+        let value = "module_"+ md5(x)
+        // if(convert_name){
+        //     //
+        //     value =  convert_to_pinyin(x).replace(partten,'')
+        //     value= value.slice(0,value.length-type.length)
+        // }else{
+        //     value= label
+        // }
+        
+
         // field_components[x].default.name
         label_arr.push(label)
         all_modules_obj[label] = {

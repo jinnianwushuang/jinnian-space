@@ -52,8 +52,8 @@ export default {
       tab: "m1",
        tab_level: 1,
       tabs: [
-        { label: "JAVA基础", value: "m1" },
-        { label: "JAVA基础2", value: "m99" },
+        { label: "JAVA基础-黑马", value: "m1" },
+        { label: "JAVA基础", value: "m99" },
         { label: "javaweb", value: "m3" },
                 { label: "springmvc", value: "m7" },
         { label: "collection", value: "m14" },

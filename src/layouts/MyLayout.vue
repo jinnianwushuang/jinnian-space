@@ -96,7 +96,7 @@
       v-model="drawerRight"
       bordered
       dense
-      :width="250"
+      :width="180"
       :breakpoint="500"
        content-class="bg-grey-3 hide-scrollbar "
     >
@@ -189,6 +189,7 @@ let width=''
   },
   created() {
     // console.log('this.$route',this.$route);
+ 
     if (!this.$route.name) {
       this.$router.push(menu[0]);
     }
@@ -245,17 +246,29 @@ let width=''
     right_menu_item_click(item) {
       console.log("右侧菜单点击 ", item);
       this.set_current_selected_right_menu(item);
+      this.$q.cookies.get('last_nemu',{
+        right_menu:item,
+        current_menu: this.current_menu
+      })
+           
+        window.scrollTo(0,0)
+      
       this.$nextTick(this.compute_flat_right_menu());
+
+
     },
     compute_right_menu_item_class(item) {
       let check = false;
-      let { t1, t2 } = this.current_selected_right_menu;
-      if (t2 && item.parent) {
-        check = item.value == t2 && item.parent.value == t1;
-      }
-      if (!t2) {
-        check = item.value == t1;
-      }
+      let { t1, t2,right_menu_info } = this.current_selected_right_menu;
+      console.log(' this.current_selected_right_menu', this.current_selected_right_menu);
+      // if (t2 && item.parent) {
+      //   check = item.value == t2 && item.parent.value == t1;
+      // }
+      // if (!t2) {
+      //   check = item.value == t1;
+      // }
+      check= right_menu_info.label == item.label && right_menu_info.value ==item.value
+
       return check ? "bg-primary text-white" : "bg=white text-black";
     },
     minimize() {
