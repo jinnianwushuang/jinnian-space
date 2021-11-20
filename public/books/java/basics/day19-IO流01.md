@@ -24,11 +24,11 @@
           //File(String pathname): 通过将给定的路径名字符串转换为抽象路径名来创建新的 File实例
           File f1 = new File("E:\\itcast\\java.txt");
           System.out.println(f1);
-
+  
           //File(String parent, String child): 从父路径名字符串和子路径名字符串创建新的 File实例
           File f2 = new File("E:\\itcast","java.txt");
           System.out.println(f2);
-
+  
           //File(File parent, String child): 从父抽象路径名和子路径名字符串创建新的 File实例
           File f3 = new File("E:\\itcast");
           File f4 = new File(f3,"java.txt");
@@ -54,7 +54,7 @@
       public static void main(String[] args) {
           // 是一个完整的路径,从盘符开始
           File file1 = new File("D:\\itheima\\a.txt");
-
+  
           // 是一个简化的路径,从当前项目根目录开始
           File file2 = new File("a.txt");
           File file3 = new File("模块名\\a.txt");
@@ -81,18 +81,18 @@
           File f1 = new File("E:\\itcast\\java.txt");
           System.out.println(f1.createNewFile());
           System.out.println("--------");
-
+  
           //需求2：我要在E:\\itcast目录下创建一个目录JavaSE
           File f2 = new File("E:\\itcast\\JavaSE");
           System.out.println(f2.mkdir());
           System.out.println("--------");
-
+  
           //需求3：我要在E:\\itcast目录下创建一个多级目录JavaWEB\\HTML
           File f3 = new File("E:\\itcast\\JavaWEB\\HTML");
   //        System.out.println(f3.mkdir());
           System.out.println(f3.mkdirs());
           System.out.println("--------");
-
+  
           //需求4：我要在E:\\itcast目录下创建一个文件javase.txt
           File f4 = new File("E:\\itcast\\javase.txt");
   //        System.out.println(f4.mkdir());
@@ -118,25 +118,25 @@
           //需求1：在当前模块目录下创建java.txt文件
           File f1 = new File("myFile\\java.txt");
   //        System.out.println(f1.createNewFile());
-
+  
           //需求2：删除当前模块目录下的java.txt文件
           System.out.println(f1.delete());
           System.out.println("--------");
-
+  
           //需求3：在当前模块目录下创建itcast目录
           File f2 = new File("myFile\\itcast");
   //        System.out.println(f2.mkdir());
-
+  
           //需求4：删除当前模块目录下的itcast目录
           System.out.println(f2.delete());
           System.out.println("--------");
-
+  
           //需求5：在当前模块下创建一个目录itcast,然后在该目录下创建一个文件java.txt
           File f3 = new File("myFile\\itcast");
   //        System.out.println(f3.mkdir());
           File f4 = new File("myFile\\itcast\\java.txt");
   //        System.out.println(f4.createNewFile());
-
+  
           //需求6：删除当前模块下的目录itcast
           System.out.println(f4.delete());
           System.out.println(f3.delete());
@@ -170,14 +170,14 @@
       public static void main(String[] args) {
           //创建一个File对象
           File f = new File("myFile\\java.txt");
-
+  
   //        public boolean isDirectory()：测试此抽象路径名表示的File是否为目录
   //        public boolean isFile()：测试此抽象路径名表示的File是否为文件
   //        public boolean exists()：测试此抽象路径名表示的File是否存在
           System.out.println(f.isDirectory());
           System.out.println(f.isFile());
           System.out.println(f.exists());
-
+  
   //        public String getAbsolutePath()：返回此抽象路径名的绝对路径名字符串
   //        public String getPath()：将此抽象路径名转换为路径名字符串
   //        public String getName()：返回由此抽象路径名表示的文件或目录的名称
@@ -185,7 +185,7 @@
           System.out.println(f.getPath());
           System.out.println(f.getName());
           System.out.println("--------");
-
+  
   //        public File[] listFiles()：返回此抽象路径名表示的目录中的文件和目录的File对象数组
           File f2 = new File("E:\\itcast");
           File[] fileArray = f2.listFiles();
@@ -222,7 +222,7 @@
          /* File file = new File("filemodule\\aaa\\a.txt");
           file.createNewFile();*/
           //注意点:文件所在的文件夹必须要存在.
-
+  
         	//1.创建File对象,指向aaa文件夹
           File file = new File("filemodule\\aaa");
         	//2.判断aaa文件夹是否存在,如果不存在则创建
@@ -264,7 +264,7 @@
           //如果现在要删除一个有内容的文件夹?
           //先删掉这个文件夹里面所有的内容.
           //最后再删除这个文件夹
-
+  
           File src = new File("C:\\Users\\apple\\Desktop\\src");
           deleteDir(src);
       }
@@ -289,7 +289,7 @@
           //6.参数传递过来的文件夹File对象已经处理完成,最后直接删除这个空文件夹
           src.delete();
       }
-
+  
   }
   ```
 
@@ -302,12 +302,12 @@
   打印格式如下：
 
     			txt:3个
-
+  	
     			doc:4个
-
+  	
     			jpg:6个
-
-   			 …
+  	
+    			 …
 
 + 实现步骤
 
@@ -327,7 +327,7 @@
           //统计一个文件夹中,每种文件出现的次数.
           //统计 --- 定义一个变量用来统计. ---- 弊端:同时只能统计一种文件
           //利用map集合进行数据统计,键 --- 文件后缀名  值 ----  次数
-
+  
           File file = new File("filemodule");
           HashMap<String, Integer> hm = new HashMap<>();
           getCount(hm, file);
@@ -423,12 +423,12 @@
         	*/
         	//FileOutputStream(String name)：创建文件输出流以指定的名称写入文件
           FileOutputStream fos = new FileOutputStream("myByteStream\\fos.txt");
-
+  
           //void write(int b)：将指定的字节写入此文件输出流
           fos.write(97);
   //        fos.write(57);
   //        fos.write(55);
-
+  
           //最后都要释放资源
           //void close()：关闭此文件输出流并释放与此流相关联的任何系统资源。
           fos.close();
@@ -455,24 +455,24 @@
           FileOutputStream fos = new FileOutputStream("myByteStream\\fos.txt");
           //FileOutputStream(File file)：创建文件输出流以写入由指定的 File对象表示的文件
   //        FileOutputStream fos = new FileOutputStream(new File("myByteStream\\fos.txt"));
-
+  
           //void write(int b)：将指定的字节写入此文件输出流
   //        fos.write(97);
   //        fos.write(98);
   //        fos.write(99);
   //        fos.write(100);
   //        fos.write(101);
-
+  
   //        void write(byte[] b)：将 b.length字节从指定的字节数组写入此文件输出流
   //        byte[] bys = {97, 98, 99, 100, 101};
           //byte[] getBytes()：返回字符串对应的字节数组
           byte[] bys = "abcde".getBytes();
   //        fos.write(bys);
-
+  
           //void write(byte[] b, int off, int len)：将 len字节从指定的字节数组开始，从偏移量off开始写入此文件输出流
   //        fos.write(bys,0,bys.length);
           fos.write(bys,1,3);
-
+  
           //释放资源
           fos.close();
       }
@@ -483,7 +483,7 @@
 
 - 字节流写数据如何实现换行
 
-  - windows:\r\n
+  - windows:\rn
   - linux:\n
   - mac:\r
 
@@ -500,13 +500,13 @@
           //创建字节输出流对象
   //        FileOutputStream fos = new FileOutputStream("myByteStream\\fos.txt");
           FileOutputStream fos = new FileOutputStream("myByteStream\\fos.txt",true);
-
+  
           //写数据
           for (int i = 0; i < 10; i++) {
               fos.write("hello".getBytes());
-              fos.write("\r\n".getBytes());
+              fos.write("\rn".getBytes());
           }
-
+  
           //释放资源
           fos.close();
       }
@@ -578,7 +578,7 @@
           //创建字节输入流对象
           //FileInputStream(String name)
           FileInputStream fis = new FileInputStream("myByteStream\\fos.txt");
-
+  
           int by;
           /*
               fis.read()：读数据
@@ -588,7 +588,7 @@
           while ((by=fis.read())!=-1) {
               System.out.print((char)by);
           }
-
+  
           //释放资源
           fis.close();
       }
@@ -622,13 +622,13 @@
           FileInputStream fis = new FileInputStream("E:\\itcast\\窗里窗外.txt");
           //根据目的地创建字节输出流对象
           FileOutputStream fos = new FileOutputStream("myByteStream\\窗里窗外.txt");
-
+  
           //读写数据，复制文本文件(一次读取一个字节，一次写入一个字节)
           int by;
           while ((by=fis.read())!=-1) {
               fos.write(by);
           }
-
+  
           //释放资源
           fos.close();
           fis.close();
@@ -650,14 +650,14 @@
       public static void main(String[] args) throws IOException {
           //创建字节输入流对象
           FileInputStream fis = new FileInputStream("myByteStream\\fos.txt");
-
+  
           byte[] bys = new byte[1024]; //1024及其整数倍
           int len;
         	//循环读取
           while ((len=fis.read(bys))!=-1) {
               System.out.print(new String(bys,0,len));
           }
-
+  
           //释放资源
           fis.close();
       }
@@ -686,14 +686,14 @@
           FileInputStream fis = new FileInputStream("E:\\itcast\\mn.jpg");
           //根据目的地创建字节输出流对象
           FileOutputStream fos = new FileOutputStream("myByteStream\\mn.jpg");
-
+  
           //读写数据，复制图片(一次读取一个字节数组，一次写入一个字节数组)
           byte[] bys = new byte[1024];
           int len;
           while ((len=fis.read(bys))!=-1) {
               fos.write(bys,0,len);
           }
-
+  
           //释放资源
           fos.close();
           fis.close();
@@ -726,28 +726,28 @@
    
           BufferedOutputStream bos = new BufferedOutputStream(new 				                                       FileOutputStream("myByteStream\\bos.txt"));
           //写数据
-          bos.write("hello\r\n".getBytes());
-          bos.write("world\r\n".getBytes());
+          bos.write("hello\rn".getBytes());
+          bos.write("world\rn".getBytes());
           //释放资源
           bos.close();
       
-
+  
           //字节缓冲输入流：BufferedInputStream(InputStream in)
           BufferedInputStream bis = new BufferedInputStream(new                                                          FileInputStream("myByteStream\\bos.txt"));
-
+  
           //一次读取一个字节数据
   //        int by;
   //        while ((by=bis.read())!=-1) {
   //            System.out.print((char)by);
   //        }
-
+  
           //一次读取一个字节数组数据
           byte[] bys = new byte[1024];
           int len;
           while ((len=bis.read(bys))!=-1) {
               System.out.print(new String(bys,0,len));
           }
-
+  
           //释放资源
           bis.close();
       }
@@ -772,45 +772,44 @@
   ```java
   public class CopyAviDemo {
       public static void main(String[] args) throws IOException {
-
+  
           //复制视频
   //        method1();
         	 method2();
-
+  
       }
-
+  
       //字节缓冲流一次读写一个字节数组
       public static void method2() throws IOException {
           BufferedInputStream bis = new BufferedInputStream(new FileInputStream("E:\\itcast\\字节流复制图片.avi"));
           BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("myByteStream\\字节流复制图片.avi"));
-
+  
           byte[] bys = new byte[1024];
           int len;
           while ((len=bis.read(bys))!=-1) {
               bos.write(bys,0,len);
           }
-
+  
           bos.close();
           bis.close();
       }
-
+  
       //字节缓冲流一次读写一个字节
       public static void method1() throws IOException {
           BufferedInputStream bis = new BufferedInputStream(new FileInputStream("E:\\itcast\\字节流复制图片.avi"));
           BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("myByteStream\\字节流复制图片.avi"));
-
+  
           int by;
           while ((by=bis.read())!=-1) {
               bos.write(by);
           }
-
+  
           bos.close();
           bis.close();
       }
-
+  
   }
   ```
-
 
 
 

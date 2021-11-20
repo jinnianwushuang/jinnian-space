@@ -66,12 +66,12 @@
       public static void main(String[] args) throws UnsupportedEncodingException {
           //定义一个字符串
           String s = "中国";
-
+  
           //byte[] bys = s.getBytes(); //[-28, -72, -83, -27, -101, -67]
           //byte[] bys = s.getBytes("UTF-8"); //[-28, -72, -83, -27, -101, -67]
           byte[] bys = s.getBytes("GBK"); //[-42, -48, -71, -6]
           System.out.println(Arrays.toString(bys));
-
+  
           //String ss = new String(bys);
           //String ss = new String(bys,"UTF-8");
           String ss = new String(bys,"GBK");
@@ -122,27 +122,27 @@
   public class OutputStreamWriterDemo {
       public static void main(String[] args) throws IOException {
           FileWriter fw = new FileWriter("myCharStream\\a.txt");
-
+  
           //void write(int c)：写一个字符
   //        fw.write(97);
   //        fw.write(98);
   //        fw.write(99);
-
+  
           //void writ(char[] cbuf)：写入一个字符数组
           char[] chs = {'a', 'b', 'c', 'd', 'e'};
   //        fw.write(chs);
-
+  
           //void write(char[] cbuf, int off, int len)：写入字符数组的一部分
   //        fw.write(chs, 0, chs.length);
   //        fw.write(chs, 1, 3);
-
+  
           //void write(String str)：写一个字符串
   //        fw.write("abcde");
-
+  
           //void write(String str, int off, int len)：写一个字符串的一部分
   //        fw.write("abcde", 0, "abcde".length());
           fw.write("abcde", 1, 3);
-
+  
           //释放资源
           fw.close();
       }
@@ -179,20 +179,20 @@
       public static void main(String[] args) throws IOException {
      
           FileReader fr = new FileReader("myCharStream\\b.txt");
-
+  
           //int read()：一次读一个字符数据
   //        int ch;
   //        while ((ch=fr.read())!=-1) {
   //            System.out.print((char)ch);
   //        }
-
+  
           //int read(char[] cbuf)：一次读一个字符数组数据
           char[] chs = new char[1024];
           int len;
           while ((len = fr.read(chs)) != -1) {
               System.out.print(new String(chs, 0, len));
           }
-
+  
           //释放资源
           fr.close();
       }
@@ -217,7 +217,7 @@
       public static void main(String[] args) throws IOException {
           //需求: 将键盘录入的用户名和密码保存到本地实现永久化存储
           //要求：用户名独占一行，密码独占一行
-
+  
           //分析：
           //1，实现键盘录入，把用户名和密码录入进来
           Scanner sc = new Scanner(System.in);
@@ -225,13 +225,13 @@
           String username = sc.next();
           System.out.println("请录入密码");
           String password = sc.next();
-
+  
           //2.分别把用户名和密码写到本地文件。
           FileWriter fw = new FileWriter("charstream\\a.txt");
           //将用户名和密码写到文件中
           fw.write(username);
-          //表示写出一个回车换行符 windows \r\n  MacOS \r  Linux \n
-          fw.write("\r\n");
+          //表示写出一个回车换行符 windows \rn  MacOS \r  Linux \n
+          fw.write("\rn");
           fw.write(password);
           //刷新流
           fw.flush();
@@ -263,26 +263,26 @@
       public static void main(String[] args) throws IOException {
           //BufferedWriter(Writer out)
           BufferedWriter bw = new BufferedWriter(new                                                            FileWriter("myCharStream\\bw.txt"));
-          bw.write("hello\r\n");
-          bw.write("world\r\n");
+          bw.write("hello\rn");
+          bw.write("world\rn");
           bw.close();
-
+  
           //BufferedReader(Reader in)
           BufferedReader br = new BufferedReader(new                                                           FileReader("myCharStream\\bw.txt"));
-
+  
           //一次读取一个字符数据
   //        int ch;
   //        while ((ch=br.read())!=-1) {
   //            System.out.print((char)ch);
   //        }
-
+  
           //一次读取一个字符数组数据
           char[] chs = new char[1024];
           int len;
           while ((len=br.read(chs))!=-1) {
               System.out.print(new String(chs,0,len));
           }
-
+  
           br.close();
       }
   }
@@ -309,29 +309,29 @@
   ```java
   public class BufferedStreamDemo02 {
       public static void main(String[] args) throws IOException {
-
+  
           //创建字符缓冲输出流
           BufferedWriter bw = new BufferedWriter(new                                                          FileWriter("myCharStream\\bw.txt"));
-
+  
           //写数据
           for (int i = 0; i < 10; i++) {
               bw.write("hello" + i);
-              //bw.write("\r\n");
+              //bw.write("\rn");
               bw.newLine();
               bw.flush();
           }
-
+  
           //释放资源
           bw.close();
-
+  
           //创建字符缓冲输入流
           BufferedReader br = new BufferedReader(new                                                          FileReader("myCharStream\\bw.txt"));
-
+  
           String line;
           while ((line=br.readLine())!=null) {
               System.out.println(line);
           }
-
+  
           br.close();
       }
   }
@@ -362,11 +362,11 @@
           BufferedReader br = new BufferedReader(new FileReader("charstream\\sort.txt"));
           //输出流一定不能写在这里，因为会清空文件中的内容
           //BufferedWriter bw = new BufferedWriter(new FileWriter("charstream\\sort.txt"));
-
+  
           String line = br.readLine();
           System.out.println("读取到的数据为" + line);
           br.close();
-
+  
           //2.按照空格进行切割
           String[] split = line.split(" ");//9 1 2 5 3 10 4 6 7 8
           //3.把字符串类型的数组变成int类型
@@ -382,7 +382,7 @@
           //4.排序
           Arrays.sort(arr);
           System.out.println(Arrays.toString(arr));
-
+  
           //5.把排序之后结果写回到本地 1 2 3 4...
           BufferedWriter bw = new BufferedWriter(new FileWriter("charstream\\sort.txt"));
           //写出
@@ -392,7 +392,7 @@
           }
           //释放资源
           bw.close();
-
+  
       }
   }
   ```
@@ -440,7 +440,7 @@
           OutputStreamWriter osw = new OutputStreamWriter(new                                              FileOutputStream("myCharStream\\osw.txt"),"GBK");
           osw.write("中国");
           osw.close();
-
+  
           //InputStreamReader isr = new InputStreamReader(new 	                                         FileInputStream("myCharStream\\osw.txt"));
           InputStreamReader isr = new InputStreamReader(new                                                 FileInputStream("myCharStream\\osw.txt"),"GBK");
           //一次读取一个字符数据
@@ -573,13 +573,13 @@
       public static void main(String[] args) throws IOException, ClassNotFoundException {
           //ObjectInputStream(InputStream in)：创建从指定的InputStream读取的ObjectInputStream
           ObjectInputStream ois = new ObjectInputStream(new FileInputStream("myOtherStream\\oos.txt"));
-
+  
           //Object readObject()：从ObjectInputStream读取一个对象
           Object obj = ois.readObject();
-
+  
           Student s = (Student) obj;
           System.out.println(s.getName() + "," + s.getAge());
-
+  
           ois.close();
       }
   }
@@ -611,31 +611,31 @@
       private String name;
   //    private int age;
       private transient int age;
-
+  
       public Student() {
       }
-
+  
       public Student(String name, int age) {
           this.name = name;
           this.age = age;
       }
-
+  
       public String getName() {
           return name;
       }
-
+  
       public void setName(String name) {
           this.name = name;
       }
-
+  
       public int getAge() {
           return age;
       }
-
+  
       public void setAge(int age) {
           this.age = age;
       }
-
+  
   //    @Override
   //    public String toString() {
   //        return "Student{" +
@@ -654,7 +654,7 @@
   //        write();
           read();
       }
-
+  
       //反序列化
       private static void read() throws IOException, ClassNotFoundException {
           ObjectInputStream ois = new ObjectInputStream(new FileInputStream("myOtherStream\\oos.txt"));
@@ -663,7 +663,7 @@
           System.out.println(s.getName() + "," + s.getAge());
           ois.close();
       }
-
+  
       //序列化
       private static void write() throws IOException {
           ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("myOtherStream\\oos.txt"));
@@ -697,30 +697,30 @@
   public class Student implements Serializable{
       
       private static final long serialVersionUID = 2L;
-
+  
       private String name;
       private int age;
-
+  
       public Student() {
       }
-
+  
       public Student(String name, int age) {
           this.name = name;
           this.age = age;
       }
-
+  
       public String getName() {
           return name;
       }
-
+  
       public void setName(String name) {
           this.name = name;
       }
-
+  
       public int getAge() {
           return age;
       }
-
+  
       public void setAge(int age) {
           this.age = age;
       }
@@ -755,7 +755,7 @@
           //4.将集合对象序列化到文件中
           oos.writeObject(arrayList);
           oos.close();*/
-
+  
           // 反序列化
         	//5.创建反序列化流对象
           ObjectInputStream ois = new ObjectInputStream(new FileInputStream("myCode\\oos.txt"));
@@ -788,12 +788,12 @@
           //创建集合对象
   //        Properties<String,String> prop = new Properties<String,String>(); //错误
           Properties prop = new Properties();
-
+  
           //存储元素
           prop.put("itheima001", "佟丽娅");
           prop.put("itheima002", "赵丽颖");
           prop.put("itheima003", "刘诗诗");
-
+  
           //遍历集合
           Set<Object> keySet = prop.keySet();
           for (Object key : keySet) {
@@ -821,18 +821,18 @@
       public static void main(String[] args) {
           //创建集合对象
           Properties prop = new Properties();
-
+  
           //Object setProperty(String key, String value)：设置集合的键和值，都是String类型
           prop.setProperty("itheima001", "佟丽娅");
           prop.setProperty("itheima002", "赵丽颖");
           prop.setProperty("itheima003", "刘诗诗");
-
+  
           //String getProperty(String key)：使用此属性列表中指定的键搜索属性
   //        System.out.println(prop.getProperty("itheima001"));
   //        System.out.println(prop.getProperty("itheima0011"));
-
+  
   //        System.out.println(prop);
-
+  
           //Set<String> stringPropertyNames()：从该属性列表中返回一个不可修改的键集，其中键及其对应的值是字符串
           Set<String> names = prop.stringPropertyNames();
           for (String key : names) {
@@ -860,30 +860,30 @@
       public static void main(String[] args) throws IOException {
           //把集合中的数据保存到文件
   //        myStore();
-
+  
           //把文件中的数据加载到集合
           myLoad();
-
+  
       }
-
+  
       private static void myLoad() throws IOException {
           Properties prop = new Properties();
-
+  
           //void load(Reader reader)：
           FileReader fr = new FileReader("myOtherStream\\fw.txt");
           prop.load(fr);
           fr.close();
-
+  
           System.out.println(prop);
       }
-
+  
       private static void myStore() throws IOException {
           Properties prop = new Properties();
-
+  
           prop.setProperty("itheima001","佟丽娅");
           prop.setProperty("itheima002","赵丽颖");
           prop.setProperty("itheima003","刘诗诗");
-
+  
           //void store(Writer writer, String comments)：
           FileWriter fw = new FileWriter("myOtherStream\\fw.txt");
           prop.store(fw,null);
@@ -911,34 +911,34 @@
   ```java
   public class Student implements Serializable {
       private static final long serialVersionUID = 1L;
-
+  
       private String name;
       private int age;
-
+  
       public Student() {
       }
-
+  
       public Student(String name, int age) {
           this.name = name;
           this.age = age;
       }
-
+  
       public String getName() {
           return name;
       }
-
+  
       public void setName(String name) {
           this.name = name;
       }
-
+  
       public int getAge() {
           return age;
       }
-
+  
       public void setAge(int age) {
           this.age = age;
       }
-
+  
       @Override
       public String toString() {
           return "Student{" +
@@ -953,7 +953,7 @@
 
   ```java
   public class Test {
-
+  
       public static void main(String[] args) throws IOException {
         	//1.创建Properties集合,将本地文件中的数据加载到集合中
           Properties prop = new Properties();
@@ -971,7 +971,6 @@
       }
   }
   ```
-
 
 
 
