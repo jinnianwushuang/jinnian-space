@@ -42,9 +42,9 @@
         <q-btn flat @click="drawerLeft = !drawerLeft" round dense icon="menu" />
         <!-- <q-toolbar-title>{{ title }}</q-toolbar-title> -->
         <div class="text-h6">{{ title }}</div>
-        <q-space  />
-        <div class="text-uppercase text-h6">{{mid_text}}</div>
-          <q-space   />
+        <q-space />
+        <div class="text-uppercase text-h6">{{ mid_text }}</div>
+        <q-space />
         <div class="desktop-only">{{ last_update_time }}</div>
         <q-btn
           flat
@@ -88,7 +88,10 @@
             </q-item-section>
           </q-item>
         </q-list>
+        <!--左侧收展按钮-->
+      
       </q-scroll-area>
+      
     </q-drawer>
     <!-- 右侧菜单组件 -->
     <q-drawer
@@ -98,7 +101,7 @@
       dense
       :width="180"
       :breakpoint="500"
-       content-class="bg-grey-3 hide-scrollbar "
+      content-class="bg-grey-3 hide-scrollbar "
     >
       <q-scroll-area class="fit hide-scrollbar">
         <q-list
@@ -118,23 +121,70 @@
               </q-item-section> -->
             <q-item-section>
               <div :class="item.tl == 1 ? '' : 'q-pl-md'">
-               <span v-if="item.tl == 2">-</span>  {{ ` ${item.label}` }}
+                <span v-if="item.tl == 2">-</span> {{ ` ${item.label}` }}
               </div>
             </q-item-section>
           </q-item>
         </q-list>
       </q-scroll-area>
     </q-drawer>
-     <!-- :class="$q.platform.is.desktop ? 'q-px-md' : 'q-px-md'" -->
-    <q-page-container   :style="q_page_container_style" class="q-pb-sm" >
-      <router-view   :class="$q.platform.is.desktop ? 'q-pa-md' : 'q-pa-sm'"     />
-      <q-page-scroller
+    <!-- :class="$q.platform.is.desktop ? 'q-px-md' : 'q-px-md'" -->
+    <q-page-container :style="q_page_container_style" class="q-pb-sm">
+      <router-view :class="$q.platform.is.desktop ? 'q-pa-md' : 'q-pa-sm'" />
+
+   <!-- 右侧菜单 -->
+                  <q-page-sticky
         position="bottom-right"
-        :scroll-offset="150"
-        :offset="[18, 18]"
+        :offset="[5, 70]"
+        @click="drawerRight=!drawerRight"
       >
-        <q-btn dense    icon="keyboard_arrow_up" color="primary" />
-      </q-page-scroller>
+        <q-btn dense color="primary"  size="sm" icon="expand_more"  class="rotate-270" />
+      </q-page-sticky>
+      <!-- 左侧菜单 -->
+            <q-page-sticky
+        position="bottom-right"
+        :offset="[35, 70]"
+        @click="drawerLeft=!drawerLeft"
+      >
+        <q-btn dense color="primary"  size="sm" icon="expand_more"  class="rotate-90"/>
+      </q-page-sticky>
+
+      <!-- 向上位移 -->
+      <q-page-sticky
+        position="bottom-right"
+        :offset="[35, 40]"
+        @click="handle_scroll_towards('up', 1)"
+        @mousedown="handle_scroll_towards('up', 2)"
+        @mouseup="handle_scroll_towards('up', 3)"
+      >
+        <q-btn dense color="primary"  size="sm" icon="arrow_upward" />
+      </q-page-sticky>
+      <!-- 向下位移 -->
+      <q-page-sticky
+        position="bottom-right"
+        :offset="[5, 40]"
+        @click="handle_scroll_towards('down', 1)"
+        @mousedown="handle_scroll_towards('down', 2)"
+        @mouseup="handle_scroll_towards('down', 3)"
+        >
+        <q-btn dense color="primary"  size="sm" icon="arrow_downward" />
+      </q-page-sticky>
+ <!-- 直达底部 -->
+      <q-page-sticky
+        position="bottom-right"
+        :offset="[35, 10]"
+        @click="handle_scroll_towards('down', 100)"
+      >
+        <q-btn dense color="primary"  size="sm" icon="expand_more" />
+      </q-page-sticky>
+      <!-- 直达顶部 -->
+      <q-page-sticky
+        position="bottom-right"
+        :offset="[5, 10]"
+        @click="handle_scroll_towards('down', 1000)"
+      >
+        <q-btn dense color="primary"  size="sm" icon="expand_less" />
+      </q-page-sticky>
     </q-page-container>
   </q-layout>
 </template>
@@ -155,9 +205,9 @@ export default {
       // title: "we are who we choose to be",
       // title:"锦年成长空间",
       // title:"I dreamed a dream",
-      mid_text:"we are who we choose to be",
-      mid_text:"Learn、analyze and follow the process",
-      mid_text:"流程错了",
+      mid_text: "we are who we choose to be",
+      mid_text: "Learn、analyze and follow the process",
+      mid_text: "流程错了",
       last_update_time,
       drawerLeft: false,
       menu,
@@ -166,7 +216,8 @@ export default {
       tabs: [1, 2, 3, 4, 5, 6, 7, 8],
       drawerRight: true,
       current_mode: process.env.MODE,
-      flat_right_menu: []
+      flat_right_menu: [],
+      timer_move_step: null // 屏幕按钮触发的滚动事件的 计时器
     };
   },
   computed: {
@@ -174,22 +225,21 @@ export default {
       right_menu: "get_right_menu",
       current_selected_right_menu: "get_current_selected_right_menu"
     }),
-    q_page_container_style(){
-let width=''
-  if(this.$q.platform.is.desktop){
- width= "calc( 100vw - 16px)"
-  }else{
-   width= " 100vw "  
-  }
-      let obj ={
-        width  
+    q_page_container_style() {
+      let width = "";
+      if (this.$q.platform.is.desktop) {
+        width = "calc( 100vw - 16px)";
+      } else {
+        width = " 100vw ";
       }
-      return obj
+      let obj = {
+        width
+      };
+      return obj;
     }
   },
   created() {
     // console.log('this.$route',this.$route);
- 
     if (!this.$route.name) {
       this.$router.push(menu[0]);
     }
@@ -243,32 +293,65 @@ let width=''
         });
       }
     },
+    // 上下滚动 按钮
+    handle_scroll_towards(towards, type) {
+      // type   1 点击  2. 鼠标按下 3. 鼠标抬起+ ,100 滚动到底部 ， 1000是滚动到顶部
+      console.log(
+        "  // type   1 点击  2. 鼠标按下 3. 鼠标抬起+----------",
+        type
+      );
+      let move_step = () => {
+        let sy = window.scrollY;
+        if (towards == "up") {
+          //向上
+          window.scrollTo(0, sy - 150);
+        } else {
+          //向下
+          window.scrollTo(0, sy + 150);
+        }
+      };
+      // if (type == 1) {
+      //   move_step();
+      // } else
+      if (type == 2) {
+        move_step();
+        this.timer_move_step = setInterval(() => {
+          move_step();
+        }, 200);
+      } else if (type == 3) {
+        clearInterval(this.timer_move_step);
+      } else if (type == 100) {
+        window.scrollTo(0, 1000000);
+      } else if (type == 1000) {
+        window.scrollTo(0, 0);
+      }
+    },
     right_menu_item_click(item) {
       console.log("右侧菜单点击 ", item);
       this.set_current_selected_right_menu(item);
-      this.$q.cookies.get('last_nemu',{
-        right_menu:item,
+      this.$q.cookies.get("last_nemu", {
+        right_menu: item,
         current_menu: this.current_menu
-      })
-           
-        window.scrollTo(0,0)
-      
+      });
+      window.scrollTo(0, 0);
       this.$nextTick(this.compute_flat_right_menu());
-
-
     },
     compute_right_menu_item_class(item) {
       let check = false;
-      let { t1, t2,right_menu_info } = this.current_selected_right_menu;
-      console.log(' this.current_selected_right_menu', this.current_selected_right_menu);
+      let { t1, t2, right_menu_info } = this.current_selected_right_menu;
+      console.log(
+        " this.current_selected_right_menu",
+        this.current_selected_right_menu
+      );
       // if (t2 && item.parent) {
       //   check = item.value == t2 && item.parent.value == t1;
       // }
       // if (!t2) {
       //   check = item.value == t1;
       // }
-      check= right_menu_info.label == item.label && right_menu_info.value ==item.value
-
+      check =
+        right_menu_info.label == item.label &&
+        right_menu_info.value == item.value;
       return check ? "bg-primary text-white" : "bg=white text-black";
     },
     minimize() {
