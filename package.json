@@ -21,7 +21,7 @@
     "@quasar/cli": "^1.2.2",
     "@quasar/extras": "^1.0.0",
     "@vue/composition-api": "^0.6.4",
-    "axios": "^0.18.1",
+    "axios": "^0.21.2",
     "core-js": "^3.6.5",
     "excel-loader": "^1.0.1",
     "github-markdown-css": "^4.0.0",
