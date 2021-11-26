@@ -1,0 +1,802 @@
+{
+    "template": "default",
+    "theme": "fresh-blue",
+    "root": {
+        "data": {
+            "text": "HTML基础",
+            "note": "",
+            "imageSize": {}
+        },
+        "children": [
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "网站由网页够成",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            },
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "网页内容包括：文字、图片、连接等元素",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            },
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "网页是使用 html 超文本标记语言写的",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            },
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "文件后缀名是  .html",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            }
+                        ],
+                        "data": {
+                            "text": "网页与网站",
+                            "note": "",
+                            "imageSize": {}
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "常见浏览器：谷歌、火狐、IE、Safari",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            },
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "浏览器与对应使用的内核",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            }
+                        ],
+                        "data": {
+                            "text": "浏览器与浏览器内核",
+                            "note": "",
+                            "imageSize": {}
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "W3C 万维网联盟",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "data": {
+                                                    "text": "结构用于对网页元素进行整理和分类，现阶段主要学的是HTML",
+                                                    "note": "",
+                                                    "imageSize": {}
+                                                }
+                                            }
+                                        ],
+                                        "data": {
+                                            "text": "结构",
+                                            "note": "",
+                                            "imageSize": {}
+                                        }
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "data": {
+                                                    "text": "表现用于设置网页元素的版式、颜色、大小等外观样式，主要指的是CSS",
+                                                    "note": "",
+                                                    "imageSize": {}
+                                                }
+                                            }
+                                        ],
+                                        "data": {
+                                            "text": "表现",
+                                            "note": "",
+                                            "imageSize": {}
+                                        }
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "data": {
+                                                    "text": "行为是指网页模 型的定义及交互的编写，现阶段主要学的是 Javascript",
+                                                    "note": "",
+                                                    "imageSize": {}
+                                                }
+                                            }
+                                        ],
+                                        "data": {
+                                            "text": "行为",
+                                            "note": "",
+                                            "imageSize": {}
+                                        }
+                                    }
+                                ],
+                                "data": {
+                                    "text": "标准的够成内容",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            }
+                        ],
+                        "data": {
+                            "text": "web标准",
+                            "note": "",
+                            "imageSize": {}
+                        }
+                    }
+                ],
+                "data": {
+                    "text": "1：基础概念",
+                    "note": "",
+                    "imageSize": {}
+                }
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "标签都使用<>包裹",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            },
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "大部分成对出现，是双标签，单个出现是但标签",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            },
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "标签由父子(包含)关系和兄弟(并列)关系",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            }
+                        ],
+                        "data": {
+                            "text": "语法规范",
+                            "note": "",
+                            "imageSize": {}
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            },
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            }
+                        ],
+                        "data": {
+                            "text": "基本结构(骨架标签)",
+                            "note": "",
+                            "imageSize": {}
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "代码编辑器有很多，原则就是自己用的顺手就可以了",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            },
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "推举使用 VS Code",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "data": {
+                                            "text": "新建文件（Ctrl+N）",
+                                            "note": "",
+                                            "imageSize": {}
+                                        }
+                                    },
+                                    {
+                                        "children": [],
+                                        "data": {
+                                            "text": "保存（Ctr+S），注意移动要保存为htm文件",
+                                            "note": "",
+                                            "imageSize": {}
+                                        }
+                                    },
+                                    {
+                                        "children": [],
+                                        "data": {
+                                            "text": "Ctrl+加号键，Ctrl+减号键可以放大缩小视图",
+                                            "note": "",
+                                            "imageSize": {}
+                                        }
+                                    },
+                                    {
+                                        "children": [],
+                                        "data": {
+                                            "text": "生成页面骨架结构，输入！按下Tab键",
+                                            "note": "",
+                                            "imageSize": {}
+                                        }
+                                    },
+                                    {
+                                        "children": [],
+                                        "data": {
+                                            "text": "利用插件在浏览器中预览页面∶ 单击鼠标右键，在弹出出口中点击\" Open In Default Browser",
+                                            "note": "",
+                                            "imageSize": {}
+                                        }
+                                    },
+                                    {
+                                        "children": [],
+                                        "data": {
+                                            "text": "https://zhuanlan.zhihu.com/p/124233987",
+                                            "note": "",
+                                            "imageSize": {}
+                                        }
+                                    }
+                                ],
+                                "data": {
+                                    "text": "VS Code常用快捷键",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            }
+                        ],
+                        "data": {
+                            "text": "开发工具",
+                            "note": "",
+                            "imageSize": {}
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "data": {
+                                            "text": "文档类型声明标签，告诉浏览器这个页面采取html5版本来显示页面",
+                                            "note": "",
+                                            "imageSize": {}
+                                        }
+                                    }
+                                ],
+                                "data": {
+                                    "text": "<！ DOCTYPE>标签",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "data": {
+                                            "text": "告诉浏览器或者搜索引这是一个英文网站本页面采取英文来显示",
+                                            "note": "",
+                                            "imageSize": {}
+                                        }
+                                    }
+                                ],
+                                "data": {
+                                    "text": "lang语 言",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "data": {
+                                            "text": "采取UF-8来保存文字。如果不写就会乱码",
+                                            "note": "",
+                                            "imageSize": {}
+                                        }
+                                    }
+                                ],
+                                "data": {
+                                    "text": "charset 字符集",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            }
+                        ],
+                        "data": {
+                            "text": "骨架代码",
+                            "note": "",
+                            "imageSize": {}
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "根据标签的语义，在合适的地方给一个最为合理的标签，可以让页面结构更清晰。",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            }
+                        ],
+                        "data": {
+                            "text": "标签语义",
+                            "note": "",
+                            "imageSize": {}
+                        }
+                    }
+                ],
+                "data": {
+                    "text": "2：HTML基本结构",
+                    "note": "",
+                    "imageSize": {}
+                }
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "h1->h6 逐级递减",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            }
+                        ],
+                        "data": {
+                            "text": "h系列-标题标签",
+                            "note": "",
+                            "imageSize": {}
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "浏览器会自动适用换行",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            }
+                        ],
+                        "data": {
+                            "text": "p标签，段落标签",
+                            "note": "",
+                            "imageSize": {}
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "强制换行",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            },
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "单标签",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            }
+                        ],
+                        "data": {
+                            "text": "换行标签<br />",
+                            "note": "",
+                            "imageSize": {}
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "data": {
+                                            "text": "strong</ strong-或者<b></b>",
+                                            "note": "",
+                                            "imageSize": {}
+                                        }
+                                    }
+                                ],
+                                "data": {
+                                    "text": "加粗",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "data": {
+                                            "text": "<em></em>或者<i><i/>",
+                                            "note": "",
+                                            "imageSize": {}
+                                        }
+                                    }
+                                ],
+                                "data": {
+                                    "text": "倾斜",
+                                    "notespan：行合并     ",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            }
+                        ],
+                        "data": {
+                            "text": "属性",
+                            "note": "",
+                            "imageSize": {}
+                        }
+                    }
+                ],
+                "data": {
+                    "text": "4:表格",
+                    "note": "",
+                    "imageSize": {}
+                }
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "<ul><li></li></ul>",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            }
+                        ],
+                        "data": {
+                            "text": "无序列表",
+                            "note": "",
+                            "imageSize": {}
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "<ol><li></li></ol>",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            }
+                        ],
+                        "data": {
+                            "text": "有序列表",
+                            "note": "",
+                            "imageSize": {}
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "<dl><dt></dt><dd></dd></dl>",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            }
+                        ],
+                        "data": {
+                            "text": "自定义列表",
+                            "note": "",
+                            "imageSize": {}
+                        }
+                    }
+                ],
+                "data": {
+                    "text": "5:列表",
+                    "note": "",
+                    "imageSize": {}
+                }
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "1.text：文本框",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            },
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "2.password：密码框",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            },
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "3.radio：单选按钮",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            },
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "4.checkbox：复选框",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            },
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "5.button：普通按钮",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            },
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "6.reset：重置按钮  需要配合form表单才有作用",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            },
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "7.submit：提交按钮",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            },
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "8.image   属性  src",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            },
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "9.file 文件按钮   上传图片",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            }
+                        ],
+                        "data": {
+                            "text": "input属性",
+                            "note": "",
+                            "imageSize": {}
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "1.发送后台......",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            },
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "2.name的标识 对于单选按钮  只能选择一个",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            }
+                        ],
+                        "data": {
+                            "text": "name属性",
+                            "note": "",
+                            "imageSize": {}
+                        }
+                    },
+                    {
+                        "children": [],
+                        "data": {
+                            "text": "value：文本框默认显示的文字",
+                            "note": "",
+                            "imageSize": {}
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "可以写一个属性   也可以 属性名=属性值",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            }
+                        ],
+                        "data": {
+                            "text": "checked：默认选中 ",
+                            "note": "",
+                            "imageSize": {}
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "1.<label>请输入 <input type=\"text\"> <input type=\"text\"></label>",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            },
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "2.<label for=\"a\">请输入</label>\n\t<input type=\"text\" id=\"a\">",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            }
+                        ],
+                        "data": {
+                            "text": "label用法",
+                            "note": "",
+                            "imageSize": {}
+                        }
+                    },
+                    {
+                        "children": [],
+                        "data": {
+                            "text": "文本域：textarea：用户留言",
+                            "note": "",
+                            "imageSize": {}
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "<select>\n\t\t<option>请选择</option>\n\t\t<option >苹果</option>\n\t\t<option selected>香蕉</option>\n\t\t<option>橘子</option>\n</select>",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            }
+                        ],
+                        "data": {
+                            "text": "下拉列表",
+                            "note": "",
+                            "imageSize": {}
+                        }
+                    },
+                    {
+                        "children": [],
+                        "data": {
+                            "text": "下拉列表的默认选中： selected",
+                            "note": "",
+                            "imageSize": {}
+                        }
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "主要的作用：是收集用户信息   发送后台",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            },
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "action：  提交后台的地址",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            },
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "method=\"get/post\"   提交（传输）后台的方式",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            },
+                            {
+                                "children": [],
+                                "data": {
+                                    "text": "name =“a” 告诉服务器  由哪个表单提交过来的",
+                                    "note": "",
+                                    "imageSize": {}
+                                }
+                            }
+                        ],
+                        "data": {
+                            "text": "form表单",
+                            "note": "",
+                            "imageSize": {}
+                        }
+                    }
+                ],
+                "data": {
+                    "text": "6:表单",
+                    "note": "",
+                    "imageSize": {}
+                }
+            }
+        ]
+    }
+}

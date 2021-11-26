@@ -62,3 +62,8 @@ pre{
     box-shadow: inset 0 0 0px rgba(240, 240, 240, .5);
     background-color: rgba(240, 240, 240, .5);
   }
+
+
+  .q-markdown--heading--anchor-link:hover:after {
+    opacity: 0 !important;
+}

@@ -99,7 +99,7 @@
       v-model="drawerRight"
       bordered
       dense
-      :width="180"
+      :width="250"
       :breakpoint="500"
       content-class="bg-grey-3 hide-scrollbar "
     >
@@ -339,10 +339,10 @@ export default {
     compute_right_menu_item_class(item) {
       let check = false;
       let { t1, t2, right_menu_info } = this.current_selected_right_menu;
-      console.log(
-        " this.current_selected_right_menu",
-        this.current_selected_right_menu
-      );
+      // console.log(
+      //   " this.current_selected_right_menu",
+      //   this.current_selected_right_menu
+      // );
       // if (t2 && item.parent) {
       //   check = item.value == t2 && item.parent.value == t1;
       // }

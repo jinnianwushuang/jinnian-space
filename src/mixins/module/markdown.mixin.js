@@ -25,6 +25,7 @@ export default {
       md.renderer.rules.html_block = (tokens, idx, options, env, self) => {
         const token = tokens[idx];
         console.log("1");
+        console.log('md.renderer.rules.html_block  ',token);
         if (token.content.includes("<img")) {
           console.log("token-- ", token);
           let str = '';
@@ -64,6 +65,41 @@ export default {
        
         return self.renderToken(tokens, idx, options);
       };
+
+      //  link_open: ƒ (tokens, idx, options, env, self)
+      md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
+  //  console.log('tokens--- md.renderer.rules.link_open ',token);
+        const token = tokens[idx];
+        console.log('tokens--- md.renderer.rules.link_open ',token);
+        console.log("4");
+        let  raw_href = decodeURIComponent(token.attrGet('href')).trim() 
+        console.log("raw_href-",  raw_href );
+        // 源码下载:aaa.zip
+        let is_yuanma_download= raw_href.startsWith("源码下载:")
+        console.log(' is_yuanma_download=-----', is_yuanma_download);
+
+
+        if(is_yuanma_download){
+          //是源码下载
+          let real_href= this.img_prefix + raw_href.split("源码下载:")[1]
+          token.attrSet("href",  real_href);
+          return self.renderToken(tokens, idx, options);
+        }
+        // 对应标题
+       
+        let is_title= raw_href.startsWith("#")
+        if(is_title){
+          // token
+          token.content= raw_href.replaceAll('#','')
+          token.tag ="p"
+          return defaultRender(tokens, idx, options, env, self);
+        }
+
+        return self.renderToken(tokens, idx, options);
+
+
+      }
+
     },
     compute_img_prefix(){
       if(this. MainComponent ){

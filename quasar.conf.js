@@ -148,6 +148,10 @@ module.exports = function (ctx) {
           config.resolve.alias
             .set('public', path.resolve(__dirname, './public'))
         
+      },
+      //https://github.com/webpack-contrib/terser-webpack-plugin/#minify
+      uglifyOptions:{
+
       }
     },
 
