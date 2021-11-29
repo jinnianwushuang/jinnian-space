@@ -11,8 +11,7 @@
 </template>
 <script>
 import m1 from "src/pages/java/module/basics/index.vue";
-// import m2 from "src/pages/java/module/m2.vue";
-import m4 from "src/pages/java/module/jdbc/index.vue";
+ 
 import m3 from "src/pages/java/module/javaweb/index.vue";
 import m5 from "src/pages/java/module/mybatis/index.vue";
 import m6 from "src/pages/java/module/maven/index.vue";
@@ -33,7 +32,7 @@ export default {
     m1,
     // m2,
     m3,
-    m4,
+   
     m5,
     m6,
     m7,
@@ -59,7 +58,7 @@ export default {
         { label: "collection", value: "m14" },
         { label: "jvm", value: "m15" },
         { label: "multi-thread", value: "m16" },
-        { label: "JDBC", value: "m4" },
+      
         { label: "mybatis", value: "m5" },
         { label: "maven", value: "m6" },
         { label: "系统设计", value: "m70" },
