@@ -1,7 +1,7 @@
 <template>
   <div class="q-my-md q-mx-sm">
    
-    <q-markdown   :src="MainComponent2" />
+     <q-markdown no-heading-anchor-links     :src="MainComponent2" />
   </div>
 </template>
 <script>

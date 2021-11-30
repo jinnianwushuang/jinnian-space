@@ -1,6 +1,6 @@
 <template>
   <div class="q-my-md q-mx-sm">
-    <q-markdown   :src="'## h'" />
+     <q-markdown no-heading-anchor-links     :src="'## h'" />
   </div>
 </template>
 <script>

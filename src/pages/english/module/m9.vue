@@ -5,7 +5,7 @@
 -->
 <template>
   <div  class="q-my-md q-mx-sm">
-    <q-markdown :extend="extendMarkdown" :src="MainComponent" />
+     <q-markdown no-heading-anchor-links   :extend="extendMarkdown" :src="MainComponent" />
     <hr>
       <div v-html="maindocx"></div>
   </div>

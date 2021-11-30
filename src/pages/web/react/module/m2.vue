@@ -7,8 +7,8 @@
  
 <template>
   <div class="">
-    <q-markdown :extend="extendMarkdown" :src="MainComponent1" />
-    <q-markdown :src="MainComponent2" />
+     <q-markdown no-heading-anchor-links   :extend="extendMarkdown" :src="MainComponent1" />
+     <q-markdown no-heading-anchor-links   :src="MainComponent2" />
   </div>
 </template>
 

@@ -7,22 +7,22 @@
  
 <template>
   <div class="">
- <q-markdown :src="MainComponent1" />
-<q-markdown :src="MainComponent2" />
-<q-markdown :src="MainComponent3" />
-<q-markdown :src="MainComponent4" />
-<q-markdown :src="MainComponent5" />
-<q-markdown :src="MainComponent6" />
-<q-markdown :src="MainComponent7" />
-<q-markdown :src="MainComponent8" />
-<q-markdown :src="MainComponent9" />
-<q-markdown :src="MainComponent10" />
-<q-markdown :src="MainComponent11" />
-<q-markdown :src="MainComponent12" />
-<q-markdown :src="MainComponent13" />
-<q-markdown :src="MainComponent14" />
-<q-markdown :src="MainComponent15" />
-<q-markdown :src="MainComponent16" />
+  <q-markdown no-heading-anchor-links   :src="MainComponent1" />
+ <q-markdown no-heading-anchor-links   :src="MainComponent2" />
+ <q-markdown no-heading-anchor-links   :src="MainComponent3" />
+ <q-markdown no-heading-anchor-links   :src="MainComponent4" />
+ <q-markdown no-heading-anchor-links   :src="MainComponent5" />
+ <q-markdown no-heading-anchor-links   :src="MainComponent6" />
+ <q-markdown no-heading-anchor-links   :src="MainComponent7" />
+ <q-markdown no-heading-anchor-links   :src="MainComponent8" />
+ <q-markdown no-heading-anchor-links   :src="MainComponent9" />
+ <q-markdown no-heading-anchor-links   :src="MainComponent10" />
+ <q-markdown no-heading-anchor-links   :src="MainComponent11" />
+ <q-markdown no-heading-anchor-links   :src="MainComponent12" />
+ <q-markdown no-heading-anchor-links   :src="MainComponent13" />
+ <q-markdown no-heading-anchor-links   :src="MainComponent14" />
+ <q-markdown no-heading-anchor-links   :src="MainComponent15" />
+ <q-markdown no-heading-anchor-links   :src="MainComponent16" />
 
   </div>
 </template>

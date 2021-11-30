@@ -5,7 +5,7 @@
 -->
 <template>
   <div class="">
-  <q-markdown :src="markdown"    />
+   <q-markdown no-heading-anchor-links   :src="markdown"    />
   </div>
 </template>
 

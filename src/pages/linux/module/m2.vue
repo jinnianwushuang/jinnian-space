@@ -6,7 +6,7 @@
 <template>
     <div>
           <div class="">
-    <q-markdown :src="MainComponent" />
+     <q-markdown no-heading-anchor-links   :src="MainComponent" />
   </div>
     </div>
 </template>

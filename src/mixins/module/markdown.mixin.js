@@ -67,7 +67,8 @@ export default {
       };
 
       //  link_open: ƒ (tokens, idx, options, env, self)
-      md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
+      // 此方法废除
+      md.renderer.rules.link_open_2 = (tokens, idx, options, env, self) => {
   //  console.log('tokens--- md.renderer.rules.link_open ',token);
         const token = tokens[idx];
         console.log('tokens--- md.renderer.rules.link_open ',token);
@@ -92,6 +93,26 @@ export default {
           // token
           token.content= raw_href.replaceAll('#','')
           token.tag ="p"
+          // token.attrSet("href",  '');
+          token.attrs=[]
+          // ['class', 'q-markdown--token  ']
+
+          // attrs: Array(1)
+          // 0: (2) ['class', 'q-markdown--token  ']
+          // block: true
+          // children: null
+          // content: "<!--\n * @Date           : 2021-04-27 00:23:17\n * @FilePath       : /jinnian-space/src/pages/java/module/basics/md/day07-面向对象.md\n * @Description    : \n-->\n"
+          // hidden: false
+          // info: ""
+          // level: 0
+          // map: (2) [0, 5]
+          // markup: ""
+          // meta: null
+          // nesting: 0
+          // tag: ""
+          // type: "html_block"
+          token.type= "html_block"
+
           return defaultRender(tokens, idx, options, env, self);
         }
 
@@ -99,6 +120,10 @@ export default {
 
 
       }
+
+
+
+
 
     },
     compute_img_prefix(){

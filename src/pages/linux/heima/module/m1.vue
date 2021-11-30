@@ -5,7 +5,7 @@
 -->
 <template>
   <div class="">
-    <q-markdown :extend="extendMarkdown" :src="MainComponent" />
+     <q-markdown no-heading-anchor-links   :extend="extendMarkdown" :src="MainComponent" />
   </div>
 </template>
 <script>

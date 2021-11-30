@@ -7,13 +7,13 @@
  
 <template>
   <div class="">
-  <q-markdown :src="MainComponent1" />
-<q-markdown :src="MainComponent2" />
-<q-markdown :src="MainComponent3" />
-<q-markdown :src="MainComponent4" />
-<q-markdown :src="MainComponent5" />
-<q-markdown :src="MainComponent6" />
-<q-markdown :src="MainComponent7" />
+   <q-markdown no-heading-anchor-links   :src="MainComponent1" />
+ <q-markdown no-heading-anchor-links   :src="MainComponent2" />
+ <q-markdown no-heading-anchor-links   :src="MainComponent3" />
+ <q-markdown no-heading-anchor-links   :src="MainComponent4" />
+ <q-markdown no-heading-anchor-links   :src="MainComponent5" />
+ <q-markdown no-heading-anchor-links   :src="MainComponent6" />
+ <q-markdown no-heading-anchor-links   :src="MainComponent7" />
  
   </div>
 </template>

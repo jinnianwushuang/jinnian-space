@@ -22,6 +22,8 @@ import m70 from "src/pages/java/module/system-design/index.vue";
  import m15 from "src/pages/java/module/m4.vue";
  import m16 from "src/pages/java/module/m4.vue";
  import m88 from "src/pages/java/module/m88.vue";
+ import m10 from "src/pages/java/module/m10.vue";
+ import m12 from "src/pages/java/module/m12.vue";
 
  import m99 from "src/pages/java/module/basic/index.vue";
 
@@ -38,7 +40,8 @@ export default {
     m7,
     // m8,
     // m9,
-    // m10,
+    m10,
+    m12,
         m14,
     m15,
     m16,
@@ -51,6 +54,7 @@ export default {
       tab: "m1",
        tab_level: 1,
       tabs: [
+          { label: "JAVA-参照", value: "m10" },
         { label: "JAVA基础-黑马", value: "m1" },
         { label: "JAVA基础", value: "m99" },
         { label: "javaweb", value: "m3" },
@@ -61,6 +65,7 @@ export default {
       
         { label: "mybatis", value: "m5" },
         { label: "maven", value: "m6" },
+        { label: "dubbo-zp", value: "m12" },
         { label: "系统设计", value: "m70" },
         { label: "其他", value: "m88" },
 

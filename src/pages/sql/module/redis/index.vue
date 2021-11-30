@@ -12,7 +12,7 @@
   <div>
  
   
-     <q-markdown  v-if="MainComponent"  :extend="extendMarkdown" :src="MainComponent" />
+      <q-markdown no-heading-anchor-links    v-if="MainComponent"  :extend="extendMarkdown" :src="MainComponent" />
        <component v-else :is="`${tab}`"></component>
   </div>
 </template>
