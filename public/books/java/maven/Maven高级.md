@@ -429,7 +429,14 @@ ${jdbc.url}
 - 开启配置文件加载pom属性
 
   ```xml
-  <!--配置资源文件对应的信息--><resources>    <resource>        <!--设定配置文件对应的位置目录，支持使用属性动态设定路径-->        <directory>${project.basedir}/src/main/resources</directory>        <!--开启对配置文件的资源加载过滤-->        <filtering>true</filtering>    </resource></resources>
+  <!--配置资源文件对应的信息-->
+  <resources> 
+      <resource>  
+          <!--设定配置文件对应的位置目录，支持使用属性动态设定路径-->        <directory>${project.basedir}/src/main/resources</directory>  
+          <!--开启对配置文件的资源加载过滤-->  
+          <filtering>true</filtering>  
+      </resource>
+  </resources>
   ```
 
 ## 7)多环境开发配置
@@ -441,7 +448,27 @@ ${jdbc.url}
 ### **7.2)多环境配置**
 
 ```xml
-<!--创建多环境--><profiles>    <!--定义具体的环境：生产环境-->    <profile>        <!--定义环境对应的唯一名称-->        <id>pro_env</id>        <!--定义环境中专用的属性值-->        <properties>            <jdbc.url>jdbc:mysql://127.1.1.1:3306/ssm_db</jdbc.url>        </properties>        <!--设置默认启动-->        <activation>            <activeByDefault>true</activeByDefault>        </activation>    </profile>    <!--定义具体的环境：开发环境-->    <profile>        <id>dev_env</id>        ……    </profile></profiles>
+<!--创建多环境-->
+<profiles>  
+    <!--定义具体的环境：生产环境--> 
+    <profile>      
+        <!--定义环境对应的唯一名称-->   
+        <id>pro_env</id>   
+        <!--定义环境中专用的属性值-->  
+        <properties>        
+            <jdbc.url>jdbc:mysql://127.1.1.1:3306/ssm_db</jdbc.url>   
+        </properties>     
+        <!--设置默认启动-->    
+        <activation>       
+            <activeByDefault>true</activeByDefault>  
+        </activation>  
+    </profile>  
+    <!--定义具体的环境：开发环境-->  
+    <profile>    
+        <id>dev_env</id>  
+        ……   
+    </profile>
+</profiles>
 ```
 
 ### **7.3)加载指定环境**
@@ -495,7 +522,19 @@ mvn 指令 –D skipTests
 ### **8.4)使用配置跳过测试**
 
 ```xml
-<plugin>    <artifactId>maven-surefire-plugin</artifactId>    <version>2.22.1</version>    <configuration>        <skipTests>true</skipTests><!--设置跳过测试-->        <includes> <!--包含指定的测试用例-->            <include>**/User*Test.java</include>        </includes>        <excludes><!--排除指定的测试用例-->            <exclude>**/User*TestCase.java</exclude>        </excludes>    </configuration></plugin>
+<plugin>
+    <artifactId>maven-surefire-plugin</artifactId> 
+    <version>2.22.1</version>  
+    <configuration> 
+        <skipTests>true</skipTests><!--设置跳过测试--> 
+        <includes> <!--包含指定的测试用例-->  
+            <include>**/User*Test.java</include>  
+        </includes>     
+        <excludes><!--排除指定的测试用例-->    
+            <exclude>**/User*TestCase.java</exclude>   
+        </excludes> 
+    </configuration>
+</plugin>
 ```
 
 ## 9)私服
@@ -572,13 +611,30 @@ http://localhost:8081
 配置本地仓库访问私服的权限（setting.xml）
 
 ```xml
-<servers>    <server>        <id>heima-release</id>        <username>admin</username>        <password>admin</password>    </server>    <server>        <id>heima-snapshots</id>        <username>admin</username>        <password>admin</password>    </server></servers>
+<servers>  
+    <server>  
+        <id>heima-release</id>    
+        <username>admin</username>   
+        <password>admin</password>   
+    </server>   
+    <server>    
+        <id>heima-snapshots</id> 
+        <username>admin</username>  
+        <password>admin</password>  
+    </server>
+</servers>
 ```
 
 配置本地仓库资源来源（setting.xml）
 
 ```xml
-<mirrors>    <mirror>        <id>nexus-heima</id>        <mirrorOf>*</mirrorOf>        <url>http://localhost:8081/repository/maven-public/</url>    </mirror></mirrors>
+<mirrors>  
+    <mirror> 
+        <id>nexus-heima</id> 
+        <mirrorOf>*</mirrorOf> 
+        <url>http://localhost:8081/repository/maven-public/</url> 
+    </mirror>
+</mirrors>
 ```
 
 ### **9.9)访问私服配置（ 项目工程访问私服）**
@@ -586,8 +642,30 @@ http://localhost:8081
 配置当前项目访问私服上传资源的保存位置（pom.xml）
 
 ```xml
-<distributionManagement>    <repository>        <id>heima-release</id>        <url>http://localhost:8081/repository/heima-release/</url>    </repository>    <snapshotRepository>        <id>heima-snapshots</id>        <url>http://localhost:8081/repository/heima-snapshots/</url>    </snapshotRepository></distributionManagement>
+<distributionManagement>  
+    <repository>      
+        <id>heima-release</id>   
+        <url>http://localhost:8081/repository/heima-release/</url> 
+    </repository>  
+    <snapshotRepository>  
+        <id>heima-snapshots</id>   
+        <url>http://localhost:8081/repository/heima-snapshots/</url>    </snapshotRepository>
+</distributionManagement>
 ```
+
+```xml
+<distributionManagement>  
+    <repository>      
+        <id>heima-release</id>       
+        <url>http://localhost:8081/repository/heima-release/</url>   
+    </repository> 
+    <snapshotRepository>   
+        <id>heima-snapshots</id>  
+        <url>http://localhost:8081/repository/heima-snapshots/</url>    </snapshotRepository>
+</distributionManagement>
+```
+
+
 
 发布资源到私服命令
 

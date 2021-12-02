@@ -488,7 +488,9 @@ IoC与DI的关系
 - 注意：使用p命令空间需要先开启spring对p命令空间的的支持，在beans标签中添加对应空间支持
 
   ```xml
-  <beans xmlns="http://www.springframework.org/schema/beans"    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"    xmlns:p="http://www.springframework.org/schema/p"       xsi:schemaLocation="http://www.springframework.org/schema/beans     https://www.springframework.org/schema/beans/spring-beans.xsd">
+  <beans 
+  	 xmlns="http://www.springframework.org/schema/beans"    							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"    							xmlns:p="http://www.springframework.org/schema/p"          							xsi:schemaLocation="http://www.springframework.org/schema/beans     https://www.springframework.org/schema/beans/spring-beans.xsd"
+         />
   ```
 
   后续课程中还将开启其他的命名空间，方式同上
