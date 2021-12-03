@@ -61,14 +61,14 @@ export default {
         { label: "JAVA基础", value: "m99" },
         { label: "javaweb", value: "m3" },
                 { label: "spring系列", value: "m7" },
-                { label: "创智健康", value: "m21" },
+                { label: "传智健康", value: "m21" },
         { label: "collection", value: "m14" },
         { label: "jvm", value: "m15" },
         { label: "multi-thread", value: "m16" },
       
         { label: "mybatis", value: "m5" },
         { label: "maven", value: "m6" },
-        { label: "dubbo-zp", value: "m12" },
+        { label: "其他框架", value: "m12" },
         { label: "系统设计", value: "m70" },
         { label: "其他", value: "m88" },
 
