@@ -24,6 +24,7 @@ import m70 from "src/pages/java/module/system-design/index.vue";
  import m88 from "src/pages/java/module/m88.vue";
  import m10 from "src/pages/java/module/m10.vue";
  import m12 from "src/pages/java/module/m12.vue";
+ import m21 from "src/pages/java/module/m99.vue";
 
  import m99 from "src/pages/java/module/basic/index.vue";
 
@@ -45,6 +46,7 @@ export default {
         m14,
     m15,
     m16,
+    m21,
     m70,
     m88,
     m99,
@@ -59,6 +61,7 @@ export default {
         { label: "JAVA基础", value: "m99" },
         { label: "javaweb", value: "m3" },
                 { label: "springmvc", value: "m7" },
+                { label: "创智健康", value: "21" },
         { label: "collection", value: "m14" },
         { label: "jvm", value: "m15" },
         { label: "multi-thread", value: "m16" },
