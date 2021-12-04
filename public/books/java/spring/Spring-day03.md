@@ -4,11 +4,11 @@
 
 ### 1.1)OOP开发思路
 
-![1591281580135](./Spring-day03/1591281580135.png)
+![1591281580135](Spring-day03.assets/1591281580135.png)
 
 ### 1.2)AOP开发思想
 
-![1591281706237](./Spring-day03/1591281706237.png)
+![1591281706237](Spring-day03.assets/1591281706237.png)
 
 ### 1.3)AOP概念
 
@@ -38,7 +38,7 @@
 
 - 业务功能扩展更便捷
 
-![1591281844901](./Spring-day03/1591281844901.png)
+![1591281844901](Spring-day03.assets/1591281844901.png)
 
 
 
@@ -46,11 +46,11 @@
 
 ### 2.1)AOP相关概念
 
-![1591281889446](./Spring-day03/1591281889446.png)
+![1591281889446](Spring-day03.assets/1591281889446.png)
 
-![1591281914574](./Spring-day03/1591281914574.png)
+![1591281914574](Spring-day03.assets/1591281914574.png)
 
-![1591281945260](./Spring-day03/1591281945260.png)
+![1591281945260](Spring-day03.assets/1591281945260.png)
 
 - Joinpoint(连接点)：就是方法
 
@@ -122,11 +122,11 @@
 
 步骤二 在业务层抽取通用代码
 
-![1591282302976](./Spring-day03/1591282302976.png)
+![1591282302976](Spring-day03.assets/1591282302976.png)
 
 步骤三 把通知加入spring容器管理
 
-![1591282320624](./Spring-day03/1591282320624.png)
+![1591282320624](Spring-day03.assets/1591282320624.png)
 
 
 
@@ -323,46 +323,13 @@
 #### 3.4.4)切入点表达式——范例
 
 ```java
-execution(* *(..))
-execution(* *..*(..))
-execution(* *..*.*(..))
-execution(public * *..*.*(..))
-execution(public int *..*.*(..))
-execution(public void *..*.*(..))
-execution(public void com..*.*(..)) 
-execution(public void com..service.*.*(..))
-execution(public void com.itheima.service.*.*(..))
-execution(public void com.itheima.service.User*.*(..))
-execution(public void com.itheima.service.*Service.*(..))
-execution(public void com.itheima.service.UserService.*(..))
-execution(public User com.itheima.service.UserService.find*(..))
-execution(public User com.itheima.service.UserService.*Id(..))
-execution(public User com.itheima.service.UserService.findById(..))
-execution(public User com.itheima.service.UserService.findById(int))
-execution(public User com.itheima.service.UserService.findById(int,int))
-execution(public User com.itheima.service.UserService.findById(int,*))
-execution(public User com.itheima.service.UserService.findById(*,int))
-execution(public User com.itheima.service.UserService.findById())
-execution(List com.itheima.service.*Service+.findAll(..))
+execution(* *(..))execution(* *..*(..))execution(* *..*.*(..))execution(public * *..*.*(..))execution(public int *..*.*(..))execution(public void *..*.*(..))execution(public void com..*.*(..)) execution(public void com..service.*.*(..))execution(public void com.itheima.service.*.*(..))execution(public void com.itheima.service.User*.*(..))execution(public void com.itheima.service.*Service.*(..))execution(public void com.itheima.service.UserService.*(..))execution(public User com.itheima.service.UserService.find*(..))execution(public User com.itheima.service.UserService.*Id(..))execution(public User com.itheima.service.UserService.findById(..))execution(public User com.itheima.service.UserService.findById(int))execution(public User com.itheima.service.UserService.findById(int,int))execution(public User com.itheima.service.UserService.findById(int,*))execution(public User com.itheima.service.UserService.findById(*,int))execution(public User com.itheima.service.UserService.findById())execution(List com.itheima.service.*Service+.findAll(..))
 ```
 
 ### **3.5)切入点的三种配置方式**
 
 ```xml
-<aop:config>
-    <!--配置公共切入点-->
-    <aop:pointcut id="pt1" expression="execution(* *(..))"/>
-    <aop:aspect ref="myAdvice">
-        <!--配置局部切入点-->
-        <aop:pointcut id="pt2" expression="execution(* *(..))"/>
-        <!--引用公共切入点-->
-        <aop:before method="logAdvice" pointcut-ref="pt1"/>
-        <!--引用局部切入点-->
-        <aop:before method="logAdvice" pointcut-ref="pt2"/>
-        <!--直接配置切入点-->
-        <aop:before method="logAdvice" pointcut="execution(* *(..))"/>
-    </aop:aspect>
-</aop:config>
+<aop:config>    <!--配置公共切入点-->    <aop:pointcut id="pt1" expression="execution(* *(..))"/>    <aop:aspect ref="myAdvice">        <!--配置局部切入点-->        <aop:pointcut id="pt2" expression="execution(* *(..))"/>        <!--引用公共切入点-->        <aop:before method="logAdvice" pointcut-ref="pt1"/>        <!--引用局部切入点-->        <aop:before method="logAdvice" pointcut-ref="pt2"/>        <!--直接配置切入点-->        <aop:before method="logAdvice" pointcut="execution(* *(..))"/>    </aop:aspect></aop:config>
 ```
 
 ### **3.6)切入点配置经验**
@@ -395,19 +362,19 @@ AOP的通知类型共5种
 
 - 后置通知：原始方法执行后执行，无论原始方法中是否出现异常，都将执行通知
 
-    应用：现场清理
+  应用：现场清理
 
 - 返回后通知：原始方法正常执行完毕并返回结果后执行，如果原始方法中抛出异常，无法执行
 
-    应用：返回值相关数据处理
+  应用：返回值相关数据处理
 
 - 抛出异常后通知：原始方法抛出异常后执行，如果原始方法没有抛出异常，无法执行
 
-    应用：对原始方法中出现的异常信息进行处理
+  应用：对原始方法中出现的异常信息进行处理
 
 - 环绕通知：在原始方法执行前后均有对应执行执行，还可以阻止原始方法的执行
 
-    应用：十分强大，可以做任何事情
+  应用：十分强大，可以做任何事情
 
 #### 3.7.1)aop:before
 
@@ -422,12 +389,10 @@ AOP的通知类型共5种
 - 格式：
 
   ```xml
-  <aop:aspect ref="adviceId">
-      <aop:before method="methodName" pointcut="……"/>
-  </aop:aspect>
+  <aop:aspect ref="adviceId">    <aop:before method="methodName" pointcut="……"/></aop:aspect>
   ```
 
--  说明：一个aop:aspect标签中可以配置多个aop:before标签
+- 说明：一个aop:aspect标签中可以配置多个aop:before标签
 
 - 基本属性：
 
@@ -450,12 +415,10 @@ AOP的通知类型共5种
 - 格式：
 
   ```xml
-  <aop:aspect ref="adviceId">
-      <aop:after method="methodName" pointcut="……"/>
-  </aop:aspect>
+  <aop:aspect ref="adviceId">    <aop:after method="methodName" pointcut="……"/></aop:aspect>
   ```
 
--  说明：一个aop:aspect标签中可以配置多个aop:after标签
+- 说明：一个aop:aspect标签中可以配置多个aop:after标签
 
 - 基本属性：
 
@@ -478,12 +441,10 @@ AOP的通知类型共5种
 - 格式：
 
   ```xml
-  <aop:aspect ref="adviceId">
-      <aop:after-returning method="methodName" pointcut="……"/>
-  </aop:aspect>
+  <aop:aspect ref="adviceId">    <aop:after-returning method="methodName" pointcut="……"/></aop:aspect>
   ```
 
--  说明：一个aop:aspect标签中可以配置多个aop:after-returning标签
+- 说明：一个aop:aspect标签中可以配置多个aop:after-returning标签
 
 - 基本属性：
 
@@ -506,12 +467,10 @@ AOP的通知类型共5种
 - 格式：
 
   ```xml
-  <aop:aspect ref="adviceId">
-      <aop:after-throwing method="methodName" pointcut="……"/>
-  </aop:aspect>
+  <aop:aspect ref="adviceId">    <aop:after-throwing method="methodName" pointcut="……"/></aop:aspect>
   ```
 
--  说明：一个aop:aspect标签中可以配置多个aop:after-throwing标签
+- 说明：一个aop:aspect标签中可以配置多个aop:after-throwing标签
 
 - 基本属性：
 
@@ -534,12 +493,10 @@ AOP的通知类型共5种
 - 格式：
 
   ```xml
-  <aop:aspect ref="adviceId">
-      <aop:around method="methodName" pointcut="……"/>
-  </aop:aspect>
+  <aop:aspect ref="adviceId">    <aop:around method="methodName" pointcut="……"/></aop:aspect>
   ```
 
--  说明：一个aop:aspect标签中可以配置多个aop:around标签
+- 说明：一个aop:aspect标签中可以配置多个aop:around标签
 
 - 基本属性：
 
@@ -554,10 +511,7 @@ AOP的通知类型共5种
 - 环绕通知是在原始方法的前后添加功能，在环绕通知中，存在对原始方法的显式调用
 
   ```java
-  public Object around(ProceedingJoinPoint pjp) throws Throwable {
-      Object ret = pjp.proceed();
-      return ret;
-  }
+  public Object around(ProceedingJoinPoint pjp) throws Throwable {    Object ret = pjp.proceed();    return ret;}
   ```
 
 - 环绕通知方法相关说明：
@@ -587,9 +541,7 @@ AOP的通知类型共5种
 - 设定通知方法第一个参数为JoinPoint，通过该对象调用getArgs()方法，获取原始方法运行的参数数组
 
   ```java
-  public void before(JoinPoint jp) throws Throwable {
-      Object[] args = jp.getArgs();
-  }
+  public void before(JoinPoint jp) throws Throwable {    Object[] args = jp.getArgs();}
   ```
 
 - 所有的通知均可以获取参数
@@ -600,7 +552,7 @@ AOP的通知类型共5种
 
 - 原始方法
 
-![1591284387913](./Spring-day03/1591284387913.png)
+![1591284387913](Spring-day03.assets/1591284387913.png)
 
 第三种情况
 
@@ -608,7 +560,7 @@ AOP的通知类型共5种
 
 - 原始方法
 
-![1591284429541](./Spring-day03/1591284429541.png)
+![1591284429541](Spring-day03.assets/1591284429541.png)
 
 #### **3.9.2)通知获取返回值数据**
 
@@ -619,27 +571,19 @@ AOP的通知类型共5种
 - 原始方法
 
   ```java
-  public int save() {
-  	System.out.println("user service running...");
-      return 100;
-  }
+  public int save() {	System.out.println("user service running...");    return 100;}
   ```
 
--  AOP配置
+- AOP配置
 
   ```xml
-  <aop:aspect ref="myAdvice">
-      <aop:pointcut id="pt3" expression="execution(* *(..))  "/>
-      <aop:after-returning method="afterReturning" pointcut-ref="pt3" returning="ret"/>
-  </aop:aspect>
+  <aop:aspect ref="myAdvice">    <aop:pointcut id="pt3" expression="execution(* *(..))  "/>    <aop:after-returning method="afterReturning" pointcut-ref="pt3" returning="ret"/></aop:aspect>
   ```
 
 - 通知类
 
   ```java
-  public void afterReturning(Object ret) {
-      System.out.println(ret);
-  }
+  public void afterReturning(Object ret) {    System.out.println(ret);}
   ```
 
 - 适用于返回后通知（after-returning）
@@ -651,28 +595,19 @@ AOP的通知类型共5种
 - 原始方法
 
   ```java
-  public int save() {
-      System.out.println("user service running...");
-      return 100;
-  }
+  public int save() {    System.out.println("user service running...");    return 100;}
   ```
 
 - AOP配置l
 
   ```xml
-  <aop:aspect ref="myAdvice">
-      <aop:pointcut id="pt2" expression="execution(* *(..))  "/>
-      <aop:around method="around" pointcut-ref="pt2" />
-  </aop:aspect>
+  <aop:aspect ref="myAdvice">    <aop:pointcut id="pt2" expression="execution(* *(..))  "/>    <aop:around method="around" pointcut-ref="pt2" /></aop:aspect>
   ```
 
 - 通知类
 
   ```java
-  public Object around(ProceedingJoinPoint pjp) throws Throwable {
-      Object ret = pjp.proceed();
-      return ret;
-  }
+  public Object around(ProceedingJoinPoint pjp) throws Throwable {    Object ret = pjp.proceed();    return ret;}
   ```
 
 - 适用于环绕通知（around）
@@ -686,28 +621,19 @@ AOP的通知类型共5种
 - 原始方法
 
   ```java
-  public void save() {
-      System.out.println("user service running...");
-      int i = 1/0;
-  }
+  public void save() {    System.out.println("user service running...");    int i = 1/0;}
   ```
 
--  AOP配置
+- AOP配置
 
   ```xml
-  <aop:aspect ref="myAdvice">
-      <aop:pointcut id="pt4" expression="execution(* *(..))  "/>
-      <aop:around method="around" pointcut-ref="pt4" />
-  </aop:aspect>
+  <aop:aspect ref="myAdvice">    <aop:pointcut id="pt4" expression="execution(* *(..))  "/>    <aop:around method="around" pointcut-ref="pt4" /></aop:aspect>
   ```
 
 - 通知类
 
   ```java
-  public Object around(ProceedingJoinPoint pjp) throws Throwable {
-      Object ret = pjp.proceed();	//对此处调用进行try……catch……捕获异常，或抛出异常
-      return ret;
-  }
+  public Object around(ProceedingJoinPoint pjp) throws Throwable {    Object ret = pjp.proceed();	//对此处调用进行try……catch……捕获异常，或抛出异常    return ret;}
   ```
 
 - 适用于环绕通知（around）
@@ -719,27 +645,19 @@ AOP的通知类型共5种
 - 原始方法
 
   ```java
-  public void save() {
-      System.out.println("user service running...");
-      int i = 1/0;
-  }
+  public void save() {    System.out.println("user service running...");    int i = 1/0;}
   ```
 
--  AOP配置
+- AOP配置
 
   ```xml
-  <aop:aspect ref="myAdvice">
-  	<aop:pointcut id="pt4" expression="execution(* *(..))  "/>
-      <aop:after-throwing method="afterThrowing" pointcut-ref="pt4" throwing="t"/>
-  </aop:aspect>
+  <aop:aspect ref="myAdvice">	<aop:pointcut id="pt4" expression="execution(* *(..))  "/>    <aop:after-throwing method="afterThrowing" pointcut-ref="pt4" throwing="t"/></aop:aspect>
   ```
 
 - 通知类
 
   ```java
-  public void afterThrowing(Throwable t){
-      System.out.println(t.getMessage());
-  }
+  public void afterThrowing(Throwable t){    System.out.println(t.getMessage());}
   ```
 
 - 适用于返回后通知（after-throwing）
@@ -748,7 +666,7 @@ AOP的通知类型共5种
 
 ### 4.1)AOP配置
 
-![1591285050618](./Spring-day03/1591285050618.png)
+![1591285050618](Spring-day03.assets/1591285050618.png)
 
 ### 4.2)注解开发AOP制作步骤
 
@@ -774,7 +692,7 @@ AOP的通知类型共5种
 
 4.可以在通知类型注解后添加参数，实现XML配置中的属性，例如after-returning后的returning属性
 
-![1591285152119](./Spring-day03/1591285152119.png)
+![1591285152119](Spring-day03.assets/1591285152119.png)
 
 ### 4.4)AOP注解详解
 
@@ -791,9 +709,7 @@ AOP的通知类型共5种
 - 格式：
 
   ```java
-  @Aspect
-  public class AopAdvice {
-  }
+  @Aspectpublic class AopAdvice {}
   ```
 
 - 说明：一个beans标签中可以配置多个aop:config标签
@@ -811,9 +727,7 @@ AOP的通知类型共5种
 - 格式：
 
   ```java
-  @Pointcut("execution(* *(..))")
-  public void pt() {
-  }
+  @Pointcut("execution(* *(..))")public void pt() {}
   ```
 
 - 说明：被修饰的方法忽略其业务功能，格式设定为无参无返回值的方法，方法体内空实现（非抽象）
@@ -831,9 +745,7 @@ AOP的通知类型共5种
 - 格式：
 
   ```java
-  @Before("pt()")
-  public void before(){
-  }
+  @Before("pt()")public void before(){}
   ```
 
 - 特殊参数：
@@ -853,9 +765,7 @@ AOP的通知类型共5种
 - 格式：
 
   ```java
-  @After("pt()")
-  public void after(){
-  }
+  @After("pt()")public void after(){}
   ```
 
 - 特殊参数：
@@ -875,9 +785,7 @@ AOP的通知类型共5种
 - 格式：
 
   ```java
-  @AfterReturning(value="pt()",returning = "ret")
-  public void afterReturning(Object ret) {
-  }
+  @AfterReturning(value="pt()",returning = "ret")public void afterReturning(Object ret) {}
   ```
 
 - 特殊参数：
@@ -897,9 +805,7 @@ AOP的通知类型共5种
 - 格式：
 
   ```java
-  @AfterThrowing(value="pt()",throwing = "t")
-  public void afterThrowing(Throwable t){
-  }
+  @AfterThrowing(value="pt()",throwing = "t")public void afterThrowing(Throwable t){}
   ```
 
 - 特殊参数：
@@ -919,11 +825,7 @@ AOP的通知类型共5种
 - 格式：
 
   ```java
-  @Around("pt()")
-  public Object around(ProceedingJoinPoint pjp) throws Throwable {
-      Object ret = pjp.proceed();
-      return ret;
-  }
+  @Around("pt()")public Object around(ProceedingJoinPoint pjp) throws Throwable {    Object ret = pjp.proceed();    return ret;}
   ```
 
 - 特殊参数：
@@ -971,11 +873,7 @@ AOP的通知类型共5种
 - 格式：
 
   ```java
-  @Configuration
-  @ComponentScan("com.itheima")
-  @EnableAspectJAutoProxy
-  public class SpringConfig {
-  }
+  @Configuration@ComponentScan("com.itheima")@EnableAspectJAutoProxypublic class SpringConfig {}
   ```
 
 ## 5)综合案例
@@ -985,13 +883,7 @@ AOP的通知类型共5种
 对项目进行业务层接口执行监控，测量业务层接口的执行效率
 
 ```java
-public interface AccountService {
-    void save(Account account);
-    void delete(Integer id);
-    void update(Account account);
-    List<Account> findAll();
-    Account findById(Integer id);
-}
+public interface AccountService {    void save(Account account);    void delete(Integer id);    void update(Account account);    List<Account> findAll();    Account findById(Integer id);}
 ```
 
 ### **5.2)案例分析**
@@ -1018,27 +910,7 @@ public interface AccountService {
 ### **5.4)案例制作核心代码**
 
 ```java
-public class RunTimeMonitorAdvice {
-    //拦截所有的业务层接口中查询操作的执行
-    @Pointcut("execution(* com.itheima.service.*Service.find*(..))")
-    public void pt(){}
-    @Around("pt()")
-    public Object runtimeMonitor(ProceedingJoinPoint pjp) throws Throwable {
-        //获取执行签名信息
-        Signature signature = pjp.getSignature();
-        //通过签名获取执行类型（接口名）
-        String targetClass = signature.getDeclaringTypeName();
-        //通过签名获取执行操作名称（方法名）
-        String targetMethod = signature.getName();
-        //获取操作前系统时间beginTime
-        long beginTime = System.currentTimeMillis();
-        Object ret = pjp.proceed(pjp.getArgs());
-        //获取操作后系统时间endTime
-        long endTime = System.currentTimeMillis();
-        System.out.println(targetClass+" 中 "+targetMethod+" 运行时长 "+(endTime-beginTime)+"ms");
-        return ret;
-    }
-}
+public class RunTimeMonitorAdvice {    //拦截所有的业务层接口中查询操作的执行    @Pointcut("execution(* com.itheima.service.*Service.find*(..))")    public void pt(){}    @Around("pt()")    public Object runtimeMonitor(ProceedingJoinPoint pjp) throws Throwable {        //获取执行签名信息        Signature signature = pjp.getSignature();        //通过签名获取执行类型（接口名）        String targetClass = signature.getDeclaringTypeName();        //通过签名获取执行操作名称（方法名）        String targetMethod = signature.getName();        //获取操作前系统时间beginTime        long beginTime = System.currentTimeMillis();        Object ret = pjp.proceed(pjp.getArgs());        //获取操作后系统时间endTime        long endTime = System.currentTimeMillis();        System.out.println(targetClass+" 中 "+targetMethod+" 运行时长 "+(endTime-beginTime)+"ms");        return ret;    }}
 ```
 
 ### **5.5)案例后续思考与设计**
@@ -1081,21 +953,10 @@ public class RunTimeMonitorAdvice {
 
 装饰者模式（Decorator Pattern）：在不惊动原始设计的基础上，为其添加功能
 
-![1591287238806](./Spring-day03/1591287238806.png)
+![1591287238806](Spring-day03.assets/1591287238806.png)
 
 ```java
-public class UserServiceDecorator implements UserService{
-    private UserService userService;
-    public UserServiceDecorator(UserService userService) {
-        this.userService = userService;
-    }
-    public void save() {
-        //原始调用
-        userService.save();
-        //增强功能（后置）
-        System.out.println("刮大白");
-    }
-}
+public class UserServiceDecorator implements UserService{    private UserService userService;    public UserServiceDecorator(UserService userService) {        this.userService = userService;    }    public void save() {        //原始调用        userService.save();        //增强功能（后置）        System.out.println("刮大白");    }}
 ```
 
 ### 6.2)动态代理——JDK Proxy
@@ -1103,27 +964,7 @@ public class UserServiceDecorator implements UserService{
 JDKProxy动态代理是针对对象做代理，要求原始对象具有接口实现，并对接口方法进行增强
 
 ```java
-public class UserServiceJDKProxy {
-    public UserService createUserServiceJDKProxy(final UserService userService){
-        //获取被代理对象的类加载器
-        ClassLoader classLoader = userService.getClass().getClassLoader();
-        //获取被代理对象实现的接口
-        Class[] classes = userService.getClass().getInterfaces();
-        //对原始方法执行进行拦截并增强
-        InvocationHandler ih = new InvocationHandler() {
-            public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                //前置增强内容
-                Object ret = method.invoke(userService, args);
-                //后置增强内容
-                System.out.println("刮大白2");
-                return ret;
-            }
-        };
-        //使用原始被代理对象创建新的代理对象
-        UserService proxy = (UserService) Proxy.newProxyInstance(classLoader,classes,ih);
-        return proxy;
-    }
-}
+public class UserServiceJDKProxy {    public UserService createUserServiceJDKProxy(final UserService userService){        //获取被代理对象的类加载器        ClassLoader classLoader = userService.getClass().getClassLoader();        //获取被代理对象实现的接口        Class[] classes = userService.getClass().getInterfaces();        //对原始方法执行进行拦截并增强        InvocationHandler ih = new InvocationHandler() {            public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {                //前置增强内容                Object ret = method.invoke(userService, args);                //后置增强内容                System.out.println("刮大白2");                return ret;            }        };        //使用原始被代理对象创建新的代理对象        UserService proxy = (UserService) Proxy.newProxyInstance(classLoader,classes,ih);        return proxy;    }}
 ```
 
 ### 6.3)动态代理——CGLIB
@@ -1134,30 +975,10 @@ public class UserServiceJDKProxy {
 
 - CGLIB动态代理无需要原始被代理对象，动态创建出新的代理对象
 
-![1591287441096](./Spring-day03/1591287441096.png)
+![1591287441096](Spring-day03.assets/1591287441096.png)
 
 ```java
-public class UserServiceImplCglibProxy {
-    public static UserServiceImpl createUserServiceCglibProxy(Class clazz){
-        //创建Enhancer对象（可以理解为内存中动态创建了一个类的字节码）
-        Enhancer enhancer = new Enhancer();
-        //设置Enhancer对象的父类是指定类型UserServerImpl
-        enhancer.setSuperclass(clazz);
-        Callback cb = new MethodInterceptor() {
-            public Object intercept(Object o, Method m, Object[] a, MethodProxy mp) throws Throwable {
-                Object ret = mp.invokeSuper(o, a);
-                if(m.getName().equals("save")) {
-                    System.out.println("刮大白");
-                }
-                return ret;
-            }
-        };
-        //设置回调方法
-        enhancer.setCallback(cb);
-        //使用Enhancer对象创建对应的对象
-        return (UserServiceImpl)enhancer.create();
-    }
-}
+public class UserServiceImplCglibProxy {    public static UserServiceImpl createUserServiceCglibProxy(Class clazz){        //创建Enhancer对象（可以理解为内存中动态创建了一个类的字节码）        Enhancer enhancer = new Enhancer();        //设置Enhancer对象的父类是指定类型UserServerImpl        enhancer.setSuperclass(clazz);        Callback cb = new MethodInterceptor() {            public Object intercept(Object o, Method m, Object[] a, MethodProxy mp) throws Throwable {                Object ret = mp.invokeSuper(o, a);                if(m.getName().equals("save")) {                    System.out.println("刮大白");                }                return ret;            }        };        //设置回调方法        enhancer.setCallback(cb);        //使用Enhancer对象创建对应的对象        return (UserServiceImpl)enhancer.create();    }}
 ```
 
 ### **6.4)代理模式的选择**
@@ -1167,24 +988,23 @@ Spirng可以通过配置的形式控制使用的代理形式，默认使用jdkpr
 - XML配置
 
   ```xml
-  <!--XMP配置AOP-->
-  <aop:config proxy-target-class="false"></aop:config>
+  <!--XMP配置AOP--><aop:config proxy-target-class="false"></aop:config>
   ```
 
 - XML注解支持
 
   ```xml
-  <!--注解配置AOP-->
-  <aop:aspectj-autoproxy proxy-target-class="false"/>
+  <!--注解配置AOP--><aop:aspectj-autoproxy proxy-target-class="false"/>
   ```
 
 - 注解驱动
 
   ```java
-  //注解驱动
-  @EnableAspectJAutoProxy(proxyTargetClass = true)
+  //注解驱动@EnableAspectJAutoProxy(proxyTargetClass = true)
   ```
 
 ### **6.5)织入时机**
 
-![1591287839941](./Spring-day03/1591287839941.png)
+
+
+![1591287839941](Spring-day03.assets/1591287839941.png)

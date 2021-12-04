@@ -858,7 +858,7 @@ public class MySpringApplicationRunListener implements SpringApplicationRunListe
 
 ![1571373793325](Springboot.assets/1571373793325.png)
 
-
+![SpringBoot启动流程](Springboot.assets/SpringBoot启动流程.png)
 
 ## **14-SpringBoot监控-actuator基本使用**
 

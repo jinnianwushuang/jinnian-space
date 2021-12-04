@@ -17,13 +17,14 @@ import m5 from "src/pages/java/module/mybatis/index.vue";
 import m6 from "src/pages/java/module/maven/index.vue";
 import m7 from "src/pages/java/module/springmvc/index.vue";
 import m70 from "src/pages/java/module/system-design/index.vue";
-
+ import m12 from "src/pages/java/module/other-framework/index.vue";
+ 
  import m14 from "src/pages/java/module/m4.vue";
  import m15 from "src/pages/java/module/m4.vue";
  import m16 from "src/pages/java/module/m4.vue";
  import m88 from "src/pages/java/module/m88.vue";
  import m10 from "src/pages/java/module/m10.vue";
- import m12 from "src/pages/java/module/m12.vue";
+
  import m21 from "src/pages/java/module/m99.vue";
 
  import m99 from "src/pages/java/module/basic/index.vue";

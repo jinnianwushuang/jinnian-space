@@ -30,17 +30,17 @@
 
   解决方案： （表级读锁）
 
-![1591321851725](./Spring-day04/1591321851725.png)
+![1591321851725](Spring-day04.assets/1591321851725.png)
 
 - 不可重复读：读取过程中单个数据发生了变化
   - 解决方案： Repeatable read （行级写锁）
 
-![1591321927034](./Spring-day04/1591321927034.png)
+![1591321927034](Spring-day04.assets/1591321927034.png)
 
 - 幻读：读取过程中数据条目发生了变化
   - 解决方案： Serializable（表级写锁）
 
-![1591321959641](./Spring-day04/1591321959641.png)
+![1591321959641](Spring-day04.assets/1591321959641.png)
 
 
 
@@ -137,7 +137,7 @@
 
 此接口定义了事务在执行过程中某个时间点上的状态信息及对应的状态操作
 
-![1591322466820](./Spring-day04/1591322466820.png)
+![1591322466820](Spring-day04.assets/1591322466820.png)
 
 ### **2.5)事务控制方式**
 
@@ -160,52 +160,25 @@
 - 业务层接口提供转账操作
 
 ```java
-/**
-* 转账操作
-* @param outName     出账用户名
-* @param inName      入账用户名
-* @param money       转账金额
-*/
-public void transfer(String outName,String inName,Double money);
+/*** 转账操作* @param outName     出账用户名* @param inName      入账用户名* @param money       转账金额*/public void transfer(String outName,String inName,Double money);
 ```
 
 - 业务层实现提供转账操作
 
 ```java
-public void transfer(String outName,String inName,Double money){
-    accountDao.inMoney(outName,money);                                                       accountDao.outMoney(inName,money);
-}
+public void transfer(String outName,String inName,Double money){    accountDao.inMoney(outName,money);                                                       accountDao.outMoney(inName,money);}
 ```
 
 - 数据层提供对应的入账与出账操作
 
 ```xml
-<update id="inMoney">
-	update account set money = money + #{money} where name = #{name}
-</update>
-<update id="outMoney">
-	update account set money = money - #{money} where name = #{name}
-</update>
+<update id="inMoney">	update account set money = money + #{money} where name = #{name}</update><update id="outMoney">	update account set money = money - #{money} where name = #{name}</update>
 ```
 
 #### **2.6.3)编程式事务**
 
 ```java
-public void transfer(String outName,String inName,Double money){
-    //创建事务管理器
-    DataSourceTransactionManager dstm = new DataSourceTransactionManager();
-    //为事务管理器设置与数据层相同的数据源
-    dstm.setDataSource(dataSource);
-    //创建事务定义对象
-    TransactionDefinition td = new DefaultTransactionDefinition();
-    //创建事务状态对象，用于控制事务执行
-    TransactionStatus ts = dstm.getTransaction(td);
-    accountDao.inMoney(outName,money);
-    int i = 1/0;    //模拟业务层事务过程中出现错误
-    accountDao.outMoney(inName,money);
-    //提交事务
-    dstm.commit(ts);
-}
+public void transfer(String outName,String inName,Double money){    //创建事务管理器    DataSourceTransactionManager dstm = new DataSourceTransactionManager();    //为事务管理器设置与数据层相同的数据源    dstm.setDataSource(dataSource);    //创建事务定义对象    TransactionDefinition td = new DefaultTransactionDefinition();    //创建事务状态对象，用于控制事务执行    TransactionStatus ts = dstm.getTransaction(td);    accountDao.inMoney(outName,money);    int i = 1/0;    //模拟业务层事务过程中出现错误    accountDao.outMoney(inName,money);    //提交事务    dstm.commit(ts);}
 ```
 
 ### 2.7)使用AOP控制事务
@@ -213,36 +186,19 @@ public void transfer(String outName,String inName,Double money){
 将业务层的事务处理功能抽取出来制作成AOP通知，利用环绕通知运行期动态织入
 
 ```java
-public Object tx(ProceedingJoinPoint pjp) throws Throwable {
-    
-    DataSourceTransactionManager dstm = new DataSourceTransactionManager();
-    dstm.setDataSource(dataSource);
-    TransactionDefinition td = new DefaultTransactionDefinition();
-    TransactionStatus ts = dstm.getTransaction(td);
-    Object ret = pjp.proceed(pjp.getArgs());
-    dstm.commit(ts);
-    
-    return ret;
-}
+public Object tx(ProceedingJoinPoint pjp) throws Throwable {        DataSourceTransactionManager dstm = new DataSourceTransactionManager();    dstm.setDataSource(dataSource);    TransactionDefinition td = new DefaultTransactionDefinition();    TransactionStatus ts = dstm.getTransaction(td);    Object ret = pjp.proceed(pjp.getArgs());    dstm.commit(ts);        return ret;}
 ```
 
 配置AOP通知类，并注入dataSource
 
 ```xml
-<bean id="txAdvice" class="com.itheima.aop.TxAdvice">
-    <property name="dataSource" ref="dataSource"/>
-</bean>
+<bean id="txAdvice" class="com.itheima.aop.TxAdvice">    <property name="dataSource" ref="dataSource"/></bean>
 ```
 
 使用环绕通知将通知类织入到原始业务对象执行过程中
 
 ```xml
-<aop:config>
-    <aop:pointcut id="pt" expression="execution(* *..transfer(..))"/>
-    <aop:aspect ref="txAdvice">
-        <aop:around method="tx" pointcut-ref="pt"/>
-    </aop:aspect>
-</aop:config>
+<aop:config>    <aop:pointcut id="pt" expression="execution(* *..transfer(..))"/>    <aop:aspect ref="txAdvice">        <aop:around method="tx" pointcut-ref="pt"/>    </aop:aspect></aop:config>
 ```
 
 ### **2.8声明式事务（XML）**
@@ -250,43 +206,23 @@ public Object tx(ProceedingJoinPoint pjp) throws Throwable {
 **AOP**配置事务是否具有特例性？
 
 ```java
-public Object tx(ProceedingJoinPoint pjp) throws Throwable {
-    DataSourceTransactionManager dstm = new DataSourceTransactionManager();
-    dstm.setDataSource(dataSource);
-    TransactionDefinition td = new DefaultTransactionDefinition();
-    TransactionStatus ts = dstm.getTransaction(td);
-    Object ret = pjp.proceed(pjp.getArgs());
-    dstm.commit(ts);
-
-    return ret;
-}
+public Object tx(ProceedingJoinPoint pjp) throws Throwable {    DataSourceTransactionManager dstm = new DataSourceTransactionManager();    dstm.setDataSource(dataSource);    TransactionDefinition td = new DefaultTransactionDefinition();    TransactionStatus ts = dstm.getTransaction(td);    Object ret = pjp.proceed(pjp.getArgs());    dstm.commit(ts);    return ret;}
 ```
 
 ```xml
-<bean id="txAdvice" class="com.itheima.aop.TxAdvice">
-	<property name="dataSource" ref="dataSource"/>
-</bean>
+<bean id="txAdvice" class="com.itheima.aop.TxAdvice">	<property name="dataSource" ref="dataSource"/></bean>
 ```
 
 使用tx命名空间配置事务专属通知类
 
 ```xml
-<tx:advice id="txAdvice" transaction-manager="txManager">
-    <tx:attributes>
-        <tx:method name="*" read-only="false" />
-        <tx:method name="get*" read-only="true" />
-        <tx:method name="find*" read-only="true" />
-    </tx:attributes>
-</tx:advice>
+<tx:advice id="txAdvice" transaction-manager="txManager">    <tx:attributes>        <tx:method name="*" read-only="false" />        <tx:method name="get*" read-only="true" />        <tx:method name="find*" read-only="true" />    </tx:attributes></tx:advice>
 ```
 
 使用aop:advisor在AOP配置中引用事务专属通知类
 
 ```xml
-<aop:config>
-    <aop:pointcut id="pt" expression="execution(* *..*(..))"/>
-    <aop:advisor advice-ref="txAdvice" pointcut-ref="pt"/>
-</aop:config>
+<aop:config>    <aop:pointcut id="pt" expression="execution(* *..*(..))"/>    <aop:advisor advice-ref="txAdvice" pointcut-ref="pt"/></aop:config>
 ```
 
 #### 2.8.1)**aop:advice与aop:advisor区别**
@@ -316,10 +252,7 @@ public Object tx(ProceedingJoinPoint pjp) throws Throwable {
 - 格式：
 
   ```xml
-  <beans>
-      <tx:advice id="txAdvice" transaction-manager="txManager">
-      </tx:advice>
-  </beans>
+  <beans>    <tx:advice id="txAdvice" transaction-manager="txManager">    </tx:advice></beans>
   ```
 
 - 基本属性：
@@ -341,10 +274,7 @@ public Object tx(ProceedingJoinPoint pjp) throws Throwable {
 - 格式：
 
   ```xml
-  <tx:advice id="txAdvice" transaction-manager="txManager">
-      <tx:attributes>
-      </tx:attributes>
-  </tx:advice>
+  <tx:advice id="txAdvice" transaction-manager="txManager">    <tx:attributes>    </tx:attributes></tx:advice>
   ```
 
 - 基本属性：
@@ -364,10 +294,7 @@ public Object tx(ProceedingJoinPoint pjp) throws Throwable {
 - 格式：
 
   ```xml
-  <tx:attributes>
-      <tx:method name="*" read-only="false" />
-      <tx:method name="get*" read-only="true" />
-  </tx:attributes>
+  <tx:attributes>    <tx:method name="*" read-only="false" />    <tx:method name="get*" read-only="true" /></tx:attributes>
   ```
 
 - 说明：
@@ -376,7 +303,7 @@ public Object tx(ProceedingJoinPoint pjp) throws Throwable {
 
 **tx:method属性**
 
-![1591367291135](./Spring-day04/1591367291135.png)
+![1591367291135](Spring-day04.assets/1591367291135.png)
 
 ### **2.9)事务传播行为**
 
@@ -384,13 +311,13 @@ public Object tx(ProceedingJoinPoint pjp) throws Throwable {
 
 - 事务协调员
 
-![1591367347482](./Spring-day04/1591367347482.png)
+![1591367347482](Spring-day04.assets/1591367347482.png)
 
 - 事务传播行为描述的是事务协调员对事务管理员所携带事务的处理态度
 
 ### **2.10)事务传播行为**
 
-![1591367375088](./Spring-day04/1591367375088.png)
+![1591367375088](Spring-day04.assets/1591367375088.png)
 
 ### **2.11)事务传播应用**
 
@@ -437,14 +364,7 @@ public Object tx(ProceedingJoinPoint pjp) throws Throwable {
 - 范例：
 
   ```java
-  @Transactional(
-      readOnly = false,
-      timeout = -1,
-      isolation = Isolation.DEFAULT,
-      rollbackFor = {ArithmeticException.class, IOException.class},
-      noRollbackFor = {},
-      propagation = Propagation.REQUIRES_NEW
-  )
+  @Transactional(    readOnly = false,    timeout = -1,    isolation = Isolation.DEFAULT,    rollbackFor = {ArithmeticException.class, IOException.class},    noRollbackFor = {},    propagation = Propagation.REQUIRES_NEW)
   ```
 
 #### 2.12.2)tx:annotation-driven
@@ -476,29 +396,18 @@ public Object tx(ProceedingJoinPoint pjp) throws Throwable {
 - 范例：
 
   ```java
-  @Configuration
-  @ComponentScan("com.itheima")
-  @PropertySource("classpath:jdbc.properties")
-  @Import({JDBCConfig.class,MyBatisConfig.class,TransactionManagerConfig.class})
-  @EnableTransactionManagement
-  public class SpringConfig {
-  }
+  @Configuration@ComponentScan("com.itheima")@PropertySource("classpath:jdbc.properties")@Import({JDBCConfig.class,MyBatisConfig.class,TransactionManagerConfig.class})@EnableTransactionManagementpublic class SpringConfig {}
   ```
 
   ```java
-  public class TransactionManagerConfig {
-      @Bean
-      public PlatformTransactionManager getTransactionManager(@Autowired DataSource dataSource){
-          return new DataSourceTransactionManager(dataSource);
-      }
-  }
+  public class TransactionManagerConfig {    @Bean    public PlatformTransactionManager getTransactionManager(@Autowired DataSource dataSource){        return new DataSourceTransactionManager(dataSource);    }}
   ```
 
 ## 3)模板对象
 
 ### 3.1)Spring模块对象
 
-![1591368087398](./Spring-day04/1591368087398.png)
+![1591368087398](Spring-day04.assets/1591368087398.png)
 
 - TransactionTemplate
 
@@ -519,10 +428,7 @@ public Object tx(ProceedingJoinPoint pjp) throws Throwable {
 提供标准的sql语句操作API
 
 ```java
-public void save(Account account) {
-    String sql = "insert into account(name,money)values(?,?)";
-    jdbcTemplate.update(sql,account.getName(),account.getMoney());
-}
+public void save(Account account) {    String sql = "insert into account(name,money)values(?,?)";    jdbcTemplate.update(sql,account.getName(),account.getMoney());}
 ```
 
 ### 3.3)NamedParameterJdbcTemplate(了解）
@@ -530,20 +436,14 @@ public void save(Account account) {
 提供标准的具名sql语句操作API
 
 ```java
-public void save(Account account) {
-    String sql = "insert into account(name,money)values(:name,:money)";
-    Map pm = new HashMap();
-    pm.put("name",account.getName());
-    pm.put("money",account.getMoney());
-    jdbcTemplate.update(sql,pm);
-}
+public void save(Account account) {    String sql = "insert into account(name,money)values(:name,:money)";    Map pm = new HashMap();    pm.put("name",account.getName());    pm.put("money",account.getMoney());    jdbcTemplate.update(sql,pm);}
 ```
 
 ### **3.4)RedisTemplate**
 
 RedisTemplate对象结构
 
-![1591368270508](./Spring-day04/1591368270508.png)
+![1591368270508](Spring-day04.assets/1591368270508.png)
 
 ```java
 public void changeMoney(Integer id, Double money) {
@@ -563,9 +463,9 @@ public Double findMondyById(Integer id) {
 
 策略模式（Strategy Pattern）使用不同策略的对象实现不同的行为方式，策略对象的变化导致行为的变化。
 
-![1591368340720](./Spring-day04/1591368340720.png)
+![1591368340720](Spring-day04.assets/1591368340720.png)
 
 策略模式（Strategy Pattern）使用不同策略的对象实现不同的行为方式，策略对象的变化导致行为的变化。
 
-![1591368370924](./Spring-day04/1591368370924.png)
+![1591368370924](Spring-day04.assets/1591368370924.png)
 

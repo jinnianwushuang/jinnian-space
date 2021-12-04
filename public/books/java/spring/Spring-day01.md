@@ -1,8 +1,3 @@
-<!--
- * @Date           : 2021-04-28 01:12:51
- * @FilePath       : /jinnian-space/src/pages/java/module/springmvc/md/Spring-day01.md
- * @Description    : 
--->
 #  IOC
 
 ## 1)Spring简介
@@ -19,25 +14,25 @@
 
   - 半成品
 
-![1590631254933](./Spring-day01/1590631254933.png)
+![1590631254933](Spring-day01.assets/1590631254933.png)
 
 ### 1.2)框架的作用
 
-![1590631300743](./Spring-day01/1590631300743.png)
+![1590631300743](Spring-day01.assets/1590631300743.png)
 
 ### 1.3)Spring是什么
 
 Spring是分层的JavaSE/EE应用full-stack轻量级开源框架
 
-![1590631495077](./Spring-day01/1590631495077.png)
+![1590631495077](Spring-day01.assets/1590631495077.png)
 
 ### 1.4)Spring的体系结构
 
-![1590631552693](./Spring-day01/1590631552693.png)
+![1590631552693](Spring-day01.assets/1590631552693.png)
 
 ### 1.5)Spring的发展历史
 
-![1590631606747](./Spring-day01/1590631606747.png)
+![1590631606747](Spring-day01.assets/1590631606747.png)
 
 ### 1.6)Spring优势
 
@@ -55,7 +50,7 @@ Spring是分层的JavaSE/EE应用full-stack轻量级开源框架
 
 ### 2.1)优质程序代码的制作原则
 
-![1590636507198](./Spring-day01/1590636507198.png)
+![1590636507198](Spring-day01.assets/1590636507198.png)
 
 ### 2.2)耦合与内聚
 
@@ -63,22 +58,22 @@ Spring是分层的JavaSE/EE应用full-stack轻量级开源框架
 
 - 内聚（Cohesion）：代码书写过程中单个模块内部各组成部分间的联系，用于衡量软件中各个功能模块内部的功能联系
 
-![1590636557953](./Spring-day01/1590636557953.png)
+![1590636557953](Spring-day01.assets/1590636557953.png)
 
 - 程序书写的目标：高内聚，低耦合
   - 就是同一个模块内的各个元素之间要高度紧密，但是各个模块之间的相互依存度却不要那么紧密
 
 ### 2.3)工厂模式发展史
 
-![1590636616069](./Spring-day01/1590636616069.png)
+![1590636616069](Spring-day01.assets/1590636616069.png)
 
-![1590636644096](./Spring-day01/1590636644096.png)
+![1590636644096](Spring-day01.assets/1590636644096.png)
 
-![1590636661026](./Spring-day01/1590636661026.png)
+![1590636661026](Spring-day01.assets/1590636661026.png)
 
 ### 2.4)Spring发展历程
 
-![1590636704098](./Spring-day01/1590636704098.png)
+![1590636704098](Spring-day01.assets/1590636704098.png)
 
 ### 2.5)IoC
 
@@ -86,7 +81,7 @@ Spring是分层的JavaSE/EE应用full-stack轻量级开源框架
 
 - Spring控制的资源全部放置在Spring容器中，该容器称为IoC容器
 
-  ![1590636750876](./Spring-day01/1590636750876.png)
+  ![1590636750876](Spring-day01.assets/1590636750876.png)
 
 
 
@@ -114,7 +109,7 @@ Spring是分层的JavaSE/EE应用full-stack轻量级开源框架
 
 5.表现层（App）通过spring获取资源（Service实例）
 
-![1590637353510](./Spring-day01/1590637353510.png)
+![1590637353510](Spring-day01.assets/1590637353510.png)
 
 #### 3.2.1)IoC入门案例制作步骤-1
 
@@ -275,7 +270,7 @@ public class UserApp {
 - 取值：工厂bean中用于获取对象的静态方法名
 
 - 注意事项：
-  
+
   - class属性必须配置成静态工厂的类名
 
 (2)factory-bean，factory-method
@@ -308,7 +303,7 @@ public class UserApp {
 
 - DI（Dependency Injection）依赖注入，应用程序运行依赖的资源由Spring为其提供，资源进入应用程序的方式称为注入
 
-![1590659778689](./Spring-day01/1590659778689.png)
+![1590659778689](Spring-day01.assets/1590659778689.png)
 
 IoC与DI的关系
 
@@ -320,7 +315,7 @@ IoC与DI的关系
 
 - 
 
-  ![1590659854696](./Spring-day01/1590659854696.png)set注入（主流）
+  ![1590659854696](Spring-day01.assets/1590659854696.png)set注入（主流）
 
 ### 4.6)set注入（主流）
 
@@ -335,9 +330,7 @@ IoC与DI的关系
 - 格式：
 
   ```java
-  <bean>
-  	<property />
-  </bean>
+  <bean>	<property /></bean>
   ```
 
 - 基本属性：
@@ -367,9 +360,7 @@ IoC与DI的关系
 - 格式：
 
   ```xml
-  <bean>
-  	<constructor-arg />
-  </bean>
+  <bean>	<constructor-arg /></bean>
   ```
 
 - 基本属性：
@@ -409,64 +400,37 @@ IoC与DI的关系
 - 格式：
 
   ```xml
-  <property>
-  	<list></list>
-  </property>
+  <property>	<list></list></property>
   ```
 
 (1)集合类型数据注入——list
 
 ```xml
-<property name="al">
-    <list>
-        <value>itheima</value>
-        <value>66666</value>
-    </list>
-</property>
+<property name="al">    <list>        <value>itheima</value>        <value>66666</value>    </list></property>
 ```
 
 (2)集合类型数据注入——props
 
 ```xml
-<property name="properties">
-    <props>
-        <prop key="name">itheima666</prop>
-        <prop key="value">666666</prop>
-    </props>
-</property>
+<property name="properties">    <props>        <prop key="name">itheima666</prop>        <prop key="value">666666</prop>    </props></property>
 ```
 
 (3)集合类型数据注入——array （了解）
 
 ```xml
-<property name="arr">
-    <array>
-        <value>123456</value>
-        <value>66666</value>
-    </array>
-</property>
+<property name="arr">    <array>        <value>123456</value>        <value>66666</value>    </array></property>
 ```
 
 (4)集合类型数据注入——set（了解）
 
 ```xml
- <property name="hs">
-     <set>
-         <value>itheima</value>
-         <value>66666</value>
-     </set>
-</property>
+ <property name="hs">     <set>         <value>itheima</value>         <value>66666</value>     </set></property>
 ```
 
 (5)集合类型数据注入——map（了解）
 
 ```xml
-<property name="hm">
-    <map>
-        <entry key="name" value="itheima66666"/>
-        <entry key="value" value="6666666666"/>
-    </map>
-</property>
+<property name="hm">    <map>        <entry key="name" value="itheima66666"/>        <entry key="value" value="6666666666"/>    </map></property>
 ```
 
 ### 4.9)使用p命名空间简化配置（了解）
@@ -488,9 +452,7 @@ IoC与DI的关系
 - 注意：使用p命令空间需要先开启spring对p命令空间的的支持，在beans标签中添加对应空间支持
 
   ```xml
-  <beans 
-  	 xmlns="http://www.springframework.org/schema/beans"    							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"    							xmlns:p="http://www.springframework.org/schema/p"          							xsi:schemaLocation="http://www.springframework.org/schema/beans     https://www.springframework.org/schema/beans/spring-beans.xsd"
-         />
+  <beans 	 xmlns="http://www.springframework.org/schema/beans"    							xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"    							xmlns:p="http://www.springframework.org/schema/p"          							xsi:schemaLocation="http://www.springframework.org/schema/beans     https://www.springframework.org/schema/beans/spring-beans.xsd"       />
   ```
 
   后续课程中还将开启其他的命名空间，方式同上
@@ -498,12 +460,7 @@ IoC与DI的关系
 - 案例：
 
   ```xml
-   <bean
-         id="userService"
-         class="com.itheima.service.impl.UserServiceImpl"
-         p:userDao-ref="userDao"
-         p:bookDao-ref="bookDao"
-         />
+   <bean       id="userService"       class="com.itheima.service.impl.UserServiceImpl"       p:userDao-ref="userDao"       p:bookDao-ref="bookDao"       />
   ```
 
   
@@ -547,12 +504,7 @@ IoC与DI的关系
 - 案例：
 
   ```xml
-   <bean id="userService" class="com.itheima.service.impl.UserServiceImpl">
-       <property name="userDao" value="#{userDao}"/>
-       <property name="bookDao" value="#{bookDao}"/>
-       <property name="num" value="#{666666666}"/>
-       <property name="version" value="#{'itcast'}"/>
-  </bean>
+   <bean id="userService" class="com.itheima.service.impl.UserServiceImpl">     <property name="userDao" value="#{userDao}"/>     <property name="bookDao" value="#{bookDao}"/>     <property name="num" value="#{666666666}"/>     <property name="version" value="#{'itcast'}"/></bean>
   ```
 
 ### 4.11)properties文件
@@ -598,9 +550,7 @@ IoC与DI的关系
 - 格式：
 
   ```xml
-  <beans>
-      <import />
-  </beans>
+  <beans>    <import /></beans>
   ```
 
 - 基本属性：
@@ -647,14 +597,12 @@ IoC与DI的关系
 
 可以加载文件系统中任意位置的配置文件，而ClassPathXmlApplicationContext只能加载类路径下的配置文件
 
-![1591021082290](./Spring-day01/1591021082290.png)
+![1591021082290](Spring-day01.assets/1591021082290.png)
 
 **BeanFactory**
 
 ```java
-Resource res = new ClassPathResource("applicationContext.xml");
-BeanFactory bf = new XmlBeanFactory(res);
-UserService userService = (UserService)bf.getBean("userService");
+Resource res = new ClassPathResource("applicationContext.xml");BeanFactory bf = new XmlBeanFactory(res);UserService userService = (UserService)bf.getBean("userService");
 ```
 
 ### 4.14)第三方资源配置
@@ -662,13 +610,7 @@ UserService userService = (UserService)bf.getBean("userService");
 - 阿里数据源方案Druid
 
   ```xml
-  <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
-      <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-      <property name="url" value="jdbc:mysql://localhost:3306/spring_ioc"></property>
-      <property name="username" value="root"></property>
-      <property name="password" value="root"></property>
-  </bean>
-  
+  <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">    <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>    <property name="url" value="jdbc:mysql://localhost:3306/spring_ioc"></property>    <property name="username" value="root"></property>    <property name="password" value="root"></property></bean>
   ```
 
 ## 5)综合案例
@@ -782,48 +724,7 @@ spring环境
 5.使用spring环境加载业务层bean，执行操作
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-        https://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context
-        https://www.springframework.org/schema/context/spring-context.xsd">
-
-    <!--加载perperties配置文件的信息-->
-    <context:property-placeholder location="classpath:*.properties"/>
-
-    <!--加载druid资源-->
-    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
-        <property name="driverClassName" value="${jdbc.driver}"/>
-        <property name="url" value="${jdbc.url}"/>
-        <property name="username" value="${jdbc.username}"/>
-        <property name="password" value="${jdbc.password}"/>
-    </bean>
-
-    <!--配置service作为spring的bean,注入dao-->
-    <bean id="accountService" class="com.itheima.service.impl.AccountServiceImpl">
-        <property name="accountDao" ref="accountDao"/>
-    </bean>
-
-    <!--spring整合mybatis后控制的创建连接用的对象-->
-    <bean class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="dataSource" ref="dataSource"/>
-        <property name="typeAliasesPackage" value="com.itheima.domain"/>
-    </bean>
-
-    <!--加载mybatis映射配置的扫描，将其作为spring的bean进行管理-->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.itheima.dao"/>
-    </bean>
-
-
-
-</beans>
-
-
-
+<?xml version="1.0" encoding="UTF-8"?><beans xmlns="http://www.springframework.org/schema/beans"       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"       xmlns:context="http://www.springframework.org/schema/context"       xsi:schemaLocation="http://www.springframework.org/schema/beans        https://www.springframework.org/schema/beans/spring-beans.xsd        http://www.springframework.org/schema/context        https://www.springframework.org/schema/context/spring-context.xsd">    <!--加载perperties配置文件的信息-->    <context:property-placeholder location="classpath:*.properties"/>    <!--加载druid资源-->    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">        <property name="driverClassName" value="${jdbc.driver}"/>        <property name="url" value="${jdbc.url}"/>        <property name="username" value="${jdbc.username}"/>        <property name="password" value="${jdbc.password}"/>    </bean>    <!--配置service作为spring的bean,注入dao-->    <bean id="accountService" class="com.itheima.service.impl.AccountServiceImpl">        <property name="accountDao" ref="accountDao"/>    </bean>    <!--spring整合mybatis后控制的创建连接用的对象-->    <bean class="org.mybatis.spring.SqlSessionFactoryBean">        <property name="dataSource" ref="dataSource"/>        <property name="typeAliasesPackage" value="com.itheima.domain"/>    </bean>    <!--加载mybatis映射配置的扫描，将其作为spring的bean进行管理-->    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">        <property name="basePackage" value="com.itheima.dao"/>    </bean></beans>
 ```
 
 

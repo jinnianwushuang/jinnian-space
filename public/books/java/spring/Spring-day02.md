@@ -6,7 +6,7 @@
 
 注解启动时使用注解的形式替代xml配置，将繁杂的spring配置文件从工程中彻底消除掉，简化书写
 
-![1591023265469](./Spring-day02/1591023265469.png)
+![1591023265469](Spring-day02.assets/1591023265469.png)
 
 ### 1.2)注解驱动的弊端
 
@@ -14,7 +14,7 @@
 
 - XML中配置第三方开发的资源是很方便的，但使用注解驱动无法在第三方开发的资源中进行编辑，因此会增大开发工作量
 
-![1591023337010](./Spring-day02/1591023337010.png)
+![1591023337010](Spring-day02.assets/1591023337010.png)
 
 
 
@@ -68,6 +68,7 @@
   - @Controller、@Service 、@Repository是@Component的衍生注解，功能同@Component
 
 - 相关属性
+
   - value（默认）：定义bean的访问id
 
 ### 2.3)bean的作用域
@@ -134,6 +135,7 @@
   - @Bean所在的类必须被spring扫描加载，否则该注解无法生效
 
 - 相关属性
+
   - value（默认）：定义bean的访问id
 
 ### 2.6)bean的非引用类型属性注入
@@ -164,6 +166,7 @@
   - @value注解如果添加在属性上方，可以省略set方法（set方法的目的是为属性赋值）
 
 - 相关属性
+
   - value（默认）：定义对应的属性值或参数值
 
 ### 2.7)bean的引用类型属性注入
@@ -189,6 +192,7 @@
   - @Autowired默认按类型装配，指定@Qualifier后可以指定自动装配的bean的id
 
 - 相关属性
+
   - required：定义该属性是否允许为null
 
 ### 2.8)bean的引用类型属性注入
@@ -239,11 +243,7 @@
 - 范例：
 
   ```java
-  @PropertySource(value = "classpath:filename.properties")
-  public class ClassName {
-      @Value("${propertiesAttributeName}")
-      private String attributeName;
-  }
+  @PropertySource(value = "classpath:filename.properties")public class ClassName {    @Value("${propertiesAttributeName}")    private String attributeName;}
   ```
 
 - 说明：
@@ -269,10 +269,7 @@
 - 范例：
 
   ```java
-  @Configuration
-  @ComponentScan("scanPackageName")
-  public class SpringConfigClassName{
-  }
+  @Configuration@ComponentScan("scanPackageName")public class SpringConfigClassName{}
   ```
 
 - 说明：
@@ -302,10 +299,7 @@
 - 范例：
 
   ```java
-  @Configuration
-  @Import(OtherClassName.class)
-  public class ClassName {
-  }
+  @Configuration@Import(OtherClassName.class)public class ClassName {}
   ```
 
 - 说明：
@@ -333,9 +327,7 @@
 - 范例：
 
   ```java
-  @DependsOn("beanId")
-  public class ClassName {
-  }
+  @DependsOn("beanId")public class ClassName {}
   ```
 
 - 说明：
@@ -347,6 +339,7 @@
   - 配置在类上，使@DependsOn指定的bean优先于@Component等配置的bean进行加载
 
 - 相关属性
+
   - value（默认）：设置当前bean所依赖的bean的id
 
 (2)@Order
@@ -362,9 +355,7 @@
 - 范例：
 
   ```java
-  @Order(1)
-  public class SpringConfigClassName {
-  }
+  @Order(1)public class SpringConfigClassName {}
   ```
 
 (3)@Lazy
@@ -380,9 +371,7 @@
 - 范例：
 
   ```java
-  @Lazy
-  public class ClassName {
-  }
+  @Lazypublic class ClassName {}
   ```
 
 ### **3.2)依赖加载应用场景**
@@ -407,7 +396,7 @@
 
 ### 4.1)综合案例改版（注解整合MyBatis）
 
-![1591024717408](./Spring-day02/1591024717408.png)
+![1591024717408](Spring-day02.assets/1591024717408.png)
 
 ### 4.2)注解整合MyBatis分析
 
@@ -446,38 +435,26 @@
 导入Spring整合Junit坐标
 
 ```xml
-<dependency>
-    <groupId>junit</groupId>
-    <artifactId>junit</artifactId>
-    <version>4.12</version>
-</dependency>
-<dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-test</artifactId>
-    <version>5.1.9.RELEASE</version>
-</dependency>
+<dependency>    <groupId>junit</groupId>    <artifactId>junit</artifactId>    <version>4.12</version></dependency><dependency>    <groupId>org.springframework</groupId>    <artifactId>spring-test</artifactId>    <version>5.1.9.RELEASE</version></dependency>
 ```
 
 Spring整合Junit测试用例注解格式
 
 ```java
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = SpringConfig.class)
-public class UserServiceTest {
-}
+@RunWith(SpringJUnit4ClassRunner.class)@ContextConfiguration(classes = SpringConfig.class)public class UserServiceTest {}
 ```
 
 ## 5)IoC底层核心原理
 
 ### 5.1)IoC核心接口
 
-![1591024936518](./Spring-day02/1591024936518.png)
+![1591024936518](Spring-day02.assets/1591024936518.png)
 
 ### **5.2)组件扫描器**
 
 - 开发过程中，需要根据需求加载必要的bean，排除指定bean
 
-![1591024975438](./Spring-day02/1591024975438.png)
+![1591024975438](Spring-day02.assets/1591024975438.png)
 
 ### **5.3)设定组件扫描加载过滤器**
 
@@ -492,13 +469,7 @@ public class UserServiceTest {
 - 范例：
 
   ```java
-  @ComponentScan(
-      value="com.itheima",	           //设置基础扫描路径
-      excludeFilters =                          //设置过滤规则，当前为排除过滤
-  	@ComponentScan.Filter(            //设置过滤器
-  	    type= FilterType.ANNOTATION,  //设置过滤方式为按照注解进行过滤
-  	    classes=Repository.class)     //设置具体的过滤项，过滤所有@Repository修饰的bean
-      )
+  @ComponentScan(    value="com.itheima",	           //设置基础扫描路径    excludeFilters =                          //设置过滤规则，当前为排除过滤	@ComponentScan.Filter(            //设置过滤器	    type= FilterType.ANNOTATION,  //设置过滤方式为按照注解进行过滤	    classes=Repository.class)     //设置具体的过滤项，过滤所有@Repository修饰的bean    )
   ```
 
 ​	includeFilters：设置包含性过滤器
@@ -518,16 +489,7 @@ public class UserServiceTest {
 - 范例：
 
   ```java
-  public class MyTypeFilter implements TypeFilter {
-      public boolean match(MetadataReader mr, MetadataReaderFactory mrf) throws IOException {
-          ClassMetadata cm = metadataReader.getClassMetadata();
-          tring className = cm.getClassName();
-          if(className.equals("com.itheima.dao.impl.BookDaoImpl")){
-              return false;
-          }
-          return false;
-      }
-  }
+  public class MyTypeFilter implements TypeFilter {    public boolean match(MetadataReader mr, MetadataReaderFactory mrf) throws IOException {        ClassMetadata cm = metadataReader.getClassMetadata();        tring className = cm.getClassName();        if(className.equals("com.itheima.dao.impl.BookDaoImpl")){            return false;        }        return false;    }}
   ```
 
 ### **5.5)自定义导入器**
@@ -553,19 +515,11 @@ public class UserServiceTest {
 - 范例：
 
   ```java
-  public class MyImportSelector implements ImportSelector {
-      public String[] selectImports(AnnotationMetadata icm) {
-          return new String[]{"com.itheima.dao.impl.AccountDaoImpl"};
-      }
-  }
+  public class MyImportSelector implements ImportSelector {    public String[] selectImports(AnnotationMetadata icm) {        return new String[]{"com.itheima.dao.impl.AccountDaoImpl"};    }}
   ```
 
   ```java
-  @Configuration
-  @ComponentScan("com.itheima")
-  @Import(MyImportSelector.class)
-  public class SpringConfig {
-  }
+  @Configuration@ComponentScan("com.itheima")@Import(MyImportSelector.class)public class SpringConfig {}
   ```
 
 ### **5.6)自定义注册器**
@@ -579,24 +533,12 @@ public class UserServiceTest {
 - 范例：
 
   ```java
-  public class MyImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar {
-      public void registerBeanDefinitions(AnnotationMetadata icm, BeanDefinitionRegistry r) {
-          ClassPathBeanDefinitionScanner scanner = new ClassPathBeanDefinitionScanner(r, false);
-          TypeFilter tf = new TypeFilter() {
-              public boolean match(MetadataReader mr, MetadataReaderFactory mrf) throws IOException {
-                  return true;
-              }
-          };
-          scanner.addIncludeFilter(tf);
-          //scanner.addExcludeFilter(tf);
-          scanner.scan("com.itheima");
-      }
-  }
+  public class MyImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar {    public void registerBeanDefinitions(AnnotationMetadata icm, BeanDefinitionRegistry r) {        ClassPathBeanDefinitionScanner scanner = new ClassPathBeanDefinitionScanner(r, false);        TypeFilter tf = new TypeFilter() {            public boolean match(MetadataReader mr, MetadataReaderFactory mrf) throws IOException {                return true;            }        };        scanner.addIncludeFilter(tf);        //scanner.addExcludeFilter(tf);        scanner.scan("com.itheima");    }}
   ```
 
 ### 5.7)bean初始化过程解析
 
-![1591025338778](./Spring-day02/1591025338778.png)
+![1591025338778](Spring-day02.assets/1591025338778.png)
 
 ### 5.8)bean初始化过程解析
 
@@ -622,7 +564,7 @@ public class UserServiceTest {
 
 ### 5.9)bean初始化过程解析
 
-![1591025440019](./Spring-day02/1591025440019.png)
+![1591025440019](Spring-day02.assets/1591025440019.png)
 
 ### 5.10)繁琐的bean初始化过程处理
 

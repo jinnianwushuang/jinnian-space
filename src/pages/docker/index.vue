@@ -1,56 +1,53 @@
+<!--
+ * @Date           : 2020-08-31 16:40:04
+ * @FilePath       : /jinnian-space/src/pages/sql/module/mysql/index.vue
+ * @Description    : 
+-->
 <template>
   <div>
-    <q-tabs v-model="tab" align="left" inline-label dense class="text-teal">
-      <q-tab
-        v-for="(item, index) in tabs"
-        :key="`tabs_${index}`"
-        :name="`${index + 1}`"
-        :label="`${index + 1}.${item.text}`"
-      />
-    </q-tabs>
-
-    <component :is="`m${tab}`"></component>
+    <q-markdown
+      v-if="MainComponent"
+      :extend="extendMarkdown"
+      :src="MainComponent"
+    />
+    <component v-else :is="`${tab}`"></component>
   </div>
 </template>
-
 <script>
-
-import m1 from "src/pages/docker/module/m1.vue";
-import m2 from "src/pages/docker/module/m2.vue";
-import m3 from "src/pages/docker/module/m3.vue";
-import m4 from "src/pages/docker/module/m4.vue";
-import m5 from "src/pages/docker/module/m5.vue";
-import m6 from "src/pages/docker/module/m6.vue";
-import m7 from "src/pages/docker/module/m7.vue";
-import m8 from "src/pages/docker/module/m8.vue";
+import m1 from "./module/m1.vue";
+//
+let relative_path = "/books/docker/md/";
+import { compute_config_base_on_require_context } from "src/boot/require-utils.js";
+let { all_components, all_modules } = compute_config_base_on_require_context(
+  require.context("public/books/docker/md/" , false, /\.md$/),
+  "md",
+  true
+);
+import { menu_tab_mixin, markdown_mixin } from "src/mixins/index.js";
 export default {
+  mixins: [menu_tab_mixin, markdown_mixin],
   components: {
     m1,
-    m2,
-    m3,
-    m4,
-    m5,
-    m6,
-    m7,
-    m8
   },
   data() {
     return {
-      tab: 1,
-      tabs: [1, 2, 3, 4, 5, 6, 7, 8],
+      relative_path,
+      img_prefix: "." + relative_path,
+      tab: all_modules[0].value,
+      MainComponent: all_components[all_modules[0].value],
+      tab_level: 1, // 右侧 菜单 一级 为 1  二级为 2
       tabs: [
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" },
-        { text: "未开发" }
+        { label: "docker-pdf", value: "m1" },
+        ...all_modules
       ]
     };
+  },
+  watch: {
+    tab(newValue, oldValue) {
+      this.MainComponent = all_components[this.tab];
+      this.compute_img_prefix();
+    }
   }
 };
 </script>
-
 <style lang="scss" scoped></style>

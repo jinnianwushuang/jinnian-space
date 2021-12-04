@@ -102,8 +102,8 @@ let routes = [
         path: "docker",
         name: "docker",
         meta:{
-          show:false,
-          order: 50
+          show:true,
+          order: 21
         },
         component: () => import( "src/pages/docker/index.vue")
       },
