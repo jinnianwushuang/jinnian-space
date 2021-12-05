@@ -179,7 +179,7 @@ dubbo的高级特性
 
 ●Dubbo是阿里巴巴公司开源的一个高性能、轻量级的Java RPC框架。
 ●致力于提供高性能和透明化的RPC远程服务调用方案,以及SOA服务治理方案。
-●官网: htp://ubbo.apache.orgo
+●官网: http://ubbo.apache.org
 
 
 
@@ -277,13 +277,115 @@ Dubbo作为一个RPC框架，其最核心的功能就是要实现跨网络的远
 （1）创建maven工程（打包方式为war）dubbodemo_provider，在pom.xml文件中导入如下坐标
 
 ```xml
-<properties>  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  <maven.compiler.source>1.8</maven.compiler.source>  <maven.compiler.target>1.8</maven.compiler.target>  <spring.version>5.0.5.RELEASE</spring.version></properties><dependencies>  <dependency>    <groupId>org.springframework</groupId>    <artifactId>spring-context</artifactId>    <version>${spring.version}</version>  </dependency>  <dependency>    <groupId>org.springframework</groupId>    <artifactId>spring-beans</artifactId>    <version>${spring.version}</version>  </dependency>  <dependency>    <groupId>org.springframework</groupId>    <artifactId>spring-webmvc</artifactId>    <version>${spring.version}</version>  </dependency>  <dependency>    <groupId>org.springframework</groupId>    <artifactId>spring-jdbc</artifactId>    <version>${spring.version}</version>  </dependency>  <dependency>    <groupId>org.springframework</groupId>    <artifactId>spring-aspects</artifactId>    <version>${spring.version}</version>  </dependency>  <dependency>    <groupId>org.springframework</groupId>    <artifactId>spring-jms</artifactId>    <version>${spring.version}</version>  </dependency>  <dependency>    <groupId>org.springframework</groupId>    <artifactId>spring-context-support</artifactId>    <version>${spring.version}</version>  </dependency>  <!-- dubbo相关 -->  <dependency>    <groupId>com.alibaba</groupId>    <artifactId>dubbo</artifactId>    <version>2.6.0</version>  </dependency>  <dependency>    <groupId>org.apache.zookeeper</groupId>    <artifactId>zookeeper</artifactId>    <version>3.4.6</version>  </dependency>  <dependency>    <groupId>com.github.sgroschupf</groupId>    <artifactId>zkclient</artifactId>    <version>0.1</version>  </dependency>  <dependency>    <groupId>javassist</groupId>    <artifactId>javassist</artifactId>    <version>3.12.1.GA</version>  </dependency>  <dependency>    <groupId>com.alibaba</groupId>    <artifactId>fastjson</artifactId>    <version>1.2.47</version>  </dependency></dependencies><build>  <plugins>    <plugin>      <groupId>org.apache.maven.plugins</groupId>      <artifactId>maven-compiler-plugin</artifactId>      <version>2.3.2</version>      <configuration>        <source>1.8</source>        <target>1.8</target>      </configuration>    </plugin>    <plugin>      <groupId>org.apache.tomcat.maven</groupId>      <artifactId>tomcat7-maven-plugin</artifactId>      <configuration>        <!-- 指定端口 -->        <port>8081</port>        <!-- 请求路径 -->        <path>/</path>      </configuration>    </plugin>  </plugins></build>
+<properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <spring.version>5.0.5.RELEASE</spring.version>
+</properties>
+<dependencies>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-beans</artifactId>
+        <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-jdbc</artifactId>
+        <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-aspects</artifactId>
+        <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-jms</artifactId>
+        <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context-support</artifactId>
+        <version>${spring.version}</version>
+    </dependency> <!-- dubbo相关 -->
+    <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>dubbo</artifactId>
+        <version>2.6.0</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.zookeeper</groupId>
+        <artifactId>zookeeper</artifactId>
+        <version>3.4.6</version>
+    </dependency>
+    <dependency>
+        <groupId>com.github.sgroschupf</groupId>
+        <artifactId>zkclient</artifactId>
+        <version>0.1</version>
+    </dependency>
+    <dependency>
+        <groupId>javassist</groupId>
+        <artifactId>javassist</artifactId>
+        <version>3.12.1.GA</version>
+    </dependency>
+    <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>1.2.47</version>
+    </dependency>
+</dependencies>
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>2.3.2</version>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.tomcat.maven</groupId>
+            <artifactId>tomcat7-maven-plugin</artifactId>
+            <configuration>
+                <!-- 指定端口 -->
+                <port>8081</port> <!-- 请求路径 -->
+                <path>/</path>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
 ```
 
 （2）配置web.xml文件
 
 ```xml
-<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd" ><web-app>  <display-name>Archetype Created Web Application</display-name>  <context-param>    <param-name>contextConfigLocation</param-name>    <param-value>classpath:applicationContext*.xml</param-value>  </context-param>  <listener>    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>  </listener></web-app>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:applicationContext*.xml</param-value>
+  </context-param>
+  <listener>
+    <listener-class
+      >org.springframework.web.context.ContextLoaderListener</listener-class
+    >
+  </listener>
+</web-app>
+
 ```
 
 （3）创建服务接口
@@ -317,7 +419,25 @@ tomcat7:run
 （2）配置web.xml文件
 
 ```xml
-<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd" ><web-app>  <display-name>Archetype Created Web Application</display-name>  <servlet>    <servlet-name>springmvc</servlet-name>    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>    <!-- 指定加载的配置文件 ，通过参数contextConfigLocation加载 -->    <init-param>      <param-name>contextConfigLocation</param-name>      <param-value>classpath:applicationContext-web.xml</param-value>    </init-param>    <load-on-startup>1</load-on-startup>  </servlet>  <servlet-mapping>    <servlet-name>springmvc</servlet-name>    <url-pattern>*.do</url-pattern>  </servlet-mapping></web-app>
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+    <display-name>Archetype Created Web Application</display-name>
+    <servlet>
+        <servlet-name>springmvc</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!-- 指定加载的配置文件 ，通过参数contextConfigLocation加载 -->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:applicationContext-web.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+</web-app>
 ```
 
 （3）将服务提供者工程中的HelloService接口复制到当前工程
@@ -335,7 +455,17 @@ package com.itheima.controller;import com.alibaba.dubbo.config.annotation.Refere
 在dubbodemo_provider工程中src/main/resources下创建applicationContext-service.xml 
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?><beans xmlns="http://www.springframework.org/schema/beans"		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"	    xmlns:p="http://www.springframework.org/schema/p"		xmlns:context="http://www.springframework.org/schema/context"		xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"	    xmlns:mvc="http://www.springframework.org/schema/mvc"		xsi:schemaLocation="http://www.springframework.org/schema/beans		http://www.springframework.org/schema/beans/spring-beans.xsd         http://www.springframework.org/schema/mvc         http://www.springframework.org/schema/mvc/spring-mvc.xsd         http://code.alibabatech.com/schema/dubbo         http://code.alibabatech.com/schema/dubbo/dubbo.xsd         http://www.springframework.org/schema/context         http://www.springframework.org/schema/context/spring-context.xsd">	<!-- 当前应用名称，用于注册中心计算应用间依赖关系，注意：消费者和提供者应用名不要一样 -->	<dubbo:application name="dubbodemo_provider" />	<!-- 连接服务注册中心zookeeper ip为zookeeper所在服务器的ip地址-->	<dubbo:registry address="zookeeper://192.168.134.129:2181"/>	<!-- 注册  协议和port   端口默认是20880 -->	<dubbo:protocol name="dubbo" port="20881"></dubbo:protocol>    	<!-- 扫描指定包，加上@Service注解的类会被发布为服务  -->	<dubbo:annotation package="com.itheima.service.impl" /></beans>
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans		http://www.springframework.org/schema/beans/spring-beans.xsd         http://www.springframework.org/schema/mvc         http://www.springframework.org/schema/mvc/spring-mvc.xsd         http://code.alibabatech.com/schema/dubbo         http://code.alibabatech.com/schema/dubbo/dubbo.xsd         http://www.springframework.org/schema/context         http://www.springframework.org/schema/context/spring-context.xsd">
+    <!-- 当前应用名称，用于注册中心计算应用间依赖关系，注意：消费者和提供者应用名不要一样 -->
+    <dubbo:application name="dubbodemo_provider" /> <!-- 连接服务注册中心zookeeper ip为zookeeper所在服务器的ip地址-->
+    <dubbo:registry address="zookeeper://192.168.134.129:2181" /> <!-- 注册  协议和port   端口默认是20880 -->
+    <dubbo:protocol name="dubbo" port="20881"></dubbo:protocol> <!-- 扫描指定包，加上@Service注解的类会被发布为服务  -->
+    <dubbo:annotation package="com.itheima.service.impl" />
+</beans>
 ```
 
 
@@ -345,7 +475,16 @@ package com.itheima.controller;import com.alibaba.dubbo.config.annotation.Refere
 在dubbodemo_consumer工程中src/main/resources下创建applicationContext-web.xml
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?><beans xmlns="http://www.springframework.org/schema/beans"	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"	xmlns:p="http://www.springframework.org/schema/p"	xmlns:context="http://www.springframework.org/schema/context"	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"	xmlns:mvc="http://www.springframework.org/schema/mvc"	xsi:schemaLocation="http://www.springframework.org/schema/beans			http://www.springframework.org/schema/beans/spring-beans.xsd			http://www.springframework.org/schema/mvc			http://www.springframework.org/schema/mvc/spring-mvc.xsd			http://code.alibabatech.com/schema/dubbo			http://code.alibabatech.com/schema/dubbo/dubbo.xsd			http://www.springframework.org/schema/context			http://www.springframework.org/schema/context/spring-context.xsd">	<!-- 当前应用名称，用于注册中心计算应用间依赖关系，注意：消费者和提供者应用名不要一样 -->	<dubbo:application name="dubbodemo-consumer" />	<!-- 连接服务注册中心zookeeper ip为zookeeper所在服务器的ip地址-->	<dubbo:registry address="zookeeper://192.168.134.129:2181"/>	<!-- 包扫描的方式 引用服务 扫描@Reference -->	<dubbo:annotation package="com.itheima.controller" /></beans>
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans			http://www.springframework.org/schema/beans/spring-beans.xsd			http://www.springframework.org/schema/mvc			http://www.springframework.org/schema/mvc/spring-mvc.xsd			http://code.alibabatech.com/schema/dubbo			http://code.alibabatech.com/schema/dubbo/dubbo.xsd			http://www.springframework.org/schema/context			http://www.springframework.org/schema/context/spring-context.xsd">
+    <!-- 当前应用名称，用于注册中心计算应用间依赖关系，注意：消费者和提供者应用名不要一样 -->
+    <dubbo:application name="dubbodemo-consumer" /> <!-- 连接服务注册中心zookeeper ip为zookeeper所在服务器的ip地址-->
+    <dubbo:registry address="zookeeper://192.168.134.129:2181" /> <!-- 包扫描的方式 引用服务 扫描@Reference -->
+    <dubbo:annotation package="com.itheima.controller" />
+</beans>
 ```
 
 
@@ -367,11 +506,7 @@ dubbo- admin
 	●dubbo- admin是一个前后端分离的项目。前端使用vue，后端使用springboot
 	●安装dubbo-admin其实就是部署该项目
 
-具体安装参见：dubbo-admin.md
 
-### 5.2-dubbo-admin使用
-
-具体安装参见：dubbo-admin.md
 
 ### 5.3序列化
 

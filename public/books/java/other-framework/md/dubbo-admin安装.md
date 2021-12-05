@@ -82,7 +82,7 @@ dubbo-Admin-develop\dubbo-admin-distribution\target>
 java -jar .\dubbo-admin-0.1.jar
 ```
 
-![1578300551892](F:\Dubbo\dubbo\资料\images\1578300551892.png)
+![1578300551892](dubbo-admin安装.assets/1578300551892.png)
 
 **7、前台后端**
 
@@ -108,7 +108,7 @@ http://localhost:8081/
 
 
 
-![1573541604032](F:/Dubbo/dubbo/ppt/%E8%AE%B2%E4%B9%89/assets/1573541604032.png)
+![1573541604032](dubbo-admin安装.assets/1573541604032.png)
 
 注意:Dubbo Admin【服务Mock】【服务统计】将在后续版本发布....
 
@@ -116,7 +116,7 @@ http://localhost:8081/
 
 **1、点击服务查询**
 
-![1573211549000](F:/Dubbo/dubbo/ppt/%E8%AE%B2%E4%B9%89/assets/1573211549000.png)
+![1573211549000](dubbo-admin安装.assets/1573211549000.png)
 
 
 
@@ -140,7 +140,7 @@ C:搜索结果
 
 **1）点击详情**
 
-![1573213952863](F:/Dubbo/dubbo/ppt/%E8%AE%B2%E4%B9%89/assets/1573213952863.png)
+![1573213952863](dubbo-admin安装.assets/1573213952863.png)
 
 
 
