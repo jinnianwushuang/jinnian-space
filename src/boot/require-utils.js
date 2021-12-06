@@ -147,3 +147,28 @@ export const compute_config_base_on_require_context=(field_components,type='md',
 //     return  compute_config_base_on_require_context(field_components,type,convert_name,true)
 
 // }
+
+
+
+
+
+// =======================================输出结果参照=======================================================
+
+
+//  all_components={
+//     module_8e58cf6bc79f1125a4d2ead6baad2f09 :'# 一些散乱笔记\r\n\r\nnode 项目 遇到的坑\r\n\r\n- linux 部署 node 项目 后台运行 需要两次回车 ，第一次 退出 node 项目界.....'
+//  } 
+
+
+//  all_modules =[
+//    {
+//     label: "0.概述笔记",
+//     value: "module_8e58cf6bc79f1125a4d2ead6baad2f09",
+//     modules_obj:{
+//         relative_folder: "",
+//         relative_path: "./0.概述笔记.md",
+//         value: "module_8e58cf6bc79f1125a4d2ead6baad2f09" ,
+//     }
+//    }
+
+//  ]

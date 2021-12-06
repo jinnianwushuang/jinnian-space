@@ -68,7 +68,7 @@ export default {
 
       //  link_open: ƒ (tokens, idx, options, env, self)
       // 此方法废除
-      md.renderer.rules.link_open_2 = (tokens, idx, options, env, self) => {
+      md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
   //  console.log('tokens--- md.renderer.rules.link_open ',token);
         const token = tokens[idx];
         console.log('tokens--- md.renderer.rules.link_open ',token);
@@ -92,6 +92,7 @@ export default {
         if(is_title){
           // token
           token.content= raw_href.replaceAll('#','')
+          token.content= ''
           token.tag ="p"
           // token.attrSet("href",  '');
           token.attrs=[]
