@@ -610,7 +610,15 @@ Resource res = new ClassPathResource("applicationContext.xml");BeanFactory bf = 
 - 阿里数据源方案Druid
 
   ```xml
-  <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">    <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>    <property name="url" value="jdbc:mysql://localhost:3306/spring_ioc"></property>    <property name="username" value="root"></property>    <property name="password" value="root"></property></bean>
+  <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+    <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+    <property
+      name="url"
+      value="jdbc:mysql://localhost:3306/spring_ioc"
+    ></property>
+    <property name="username" value="root"></property>
+    <property name="password" value="root"></property
+  ></bean>
   ```
 
 ## 5)综合案例
@@ -707,6 +715,44 @@ spring环境
 
 1.导入Spring整合MyBatis坐标
 
+```xml
+
+    <dependencies>
+        <dependency>
+        <groupId>org.mybatis</groupId>
+        <artifactId>mybatis</artifactId>
+        <version>3.5.3</version>
+    </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.47</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.1.9.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>5.1.9.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.16</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>1.3.0</version>
+        </dependency>
+    </dependencies>
+```
+
+
+
 2.将mybatis配置成spring管理的bean（SqlSessionFactoryBean）
 
 ​	-将原始配置文件中的所有项，转入到当前配置中
@@ -724,7 +770,45 @@ spring环境
 5.使用spring环境加载业务层bean，执行操作
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?><beans xmlns="http://www.springframework.org/schema/beans"       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"       xmlns:context="http://www.springframework.org/schema/context"       xsi:schemaLocation="http://www.springframework.org/schema/beans        https://www.springframework.org/schema/beans/spring-beans.xsd        http://www.springframework.org/schema/context        https://www.springframework.org/schema/context/spring-context.xsd">    <!--加载perperties配置文件的信息-->    <context:property-placeholder location="classpath:*.properties"/>    <!--加载druid资源-->    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">        <property name="driverClassName" value="${jdbc.driver}"/>        <property name="url" value="${jdbc.url}"/>        <property name="username" value="${jdbc.username}"/>        <property name="password" value="${jdbc.password}"/>    </bean>    <!--配置service作为spring的bean,注入dao-->    <bean id="accountService" class="com.itheima.service.impl.AccountServiceImpl">        <property name="accountDao" ref="accountDao"/>    </bean>    <!--spring整合mybatis后控制的创建连接用的对象-->    <bean class="org.mybatis.spring.SqlSessionFactoryBean">        <property name="dataSource" ref="dataSource"/>        <property name="typeAliasesPackage" value="com.itheima.domain"/>    </bean>    <!--加载mybatis映射配置的扫描，将其作为spring的bean进行管理-->    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">        <property name="basePackage" value="com.itheima.dao"/>    </bean></beans>
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--加载perperties配置文件的信息-->
+    <context:property-placeholder location="classpath:*.properties"/>
+
+    <!--加载druid资源-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <!--配置service作为spring的bean,注入dao-->
+    <bean id="accountService" class="com.itheima.service.impl.AccountServiceImpl">
+        <property name="accountDao" ref="accountDao"/>
+    </bean>
+
+    <!--spring整合mybatis后控制的创建连接用的对象-->
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="typeAliasesPackage" value="com.itheima.domain"/>
+    </bean>
+
+    <!--加载mybatis映射配置的扫描，将其作为spring的bean进行管理-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.itheima.dao"/>
+    </bean>
+
+
+
+</beans>
 ```
 
 

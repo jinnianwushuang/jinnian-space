@@ -420,6 +420,65 @@
 
 5.使用AnnotationConfigApplicationContext对象加载配置项
 
+```java
+public class JDBCConfig {
+    @Value("${jdbc.driver}")
+    private String driver;
+    @Value("${jdbc.url}")
+    private String url;
+    @Value("${jdbc.username}")
+    private String userName;
+    @Value("${jdbc.password}")
+    private String password;
+
+    @Bean("dataSource")
+    public DataSource getDataSource(){
+        DruidDataSource ds = new DruidDataSource();
+        ds.setDriverClassName(driver);
+        ds.setUrl(url);
+        ds.setUsername(userName);
+        ds.setPassword(password);
+        return ds;
+    }
+}
+
+```
+
+```java
+public class MyBatisConfig {
+
+    @Bean
+    public SqlSessionFactoryBean getSqlSessionFactoryBean(@Autowired DataSource dataSource){
+        SqlSessionFactoryBean ssfb = new SqlSessionFactoryBean();
+        ssfb.setTypeAliasesPackage("com.itheima.domain");
+        ssfb.setDataSource(dataSource);
+        return ssfb;
+    }
+
+    @Bean
+    public MapperScannerConfigurer getMapperScannerConfigurer(){
+        MapperScannerConfigurer msc = new MapperScannerConfigurer();
+        msc.setBasePackage("com.itheima.dao");
+        return msc;
+    }
+
+}
+
+```
+
+```java
+
+@Configuration
+@ComponentScan("com.itheima")
+@PropertySource("classpath:jdbc.properties")
+@Import({JDBCConfig.class,MyBatisConfig.class})
+public class SpringConfig {
+}
+
+```
+
+
+
 ### 4.4)综合案例改版（注解整合Junit）
 
 1.Spring接管Junit的运行权，使用Spring专用的Junit类加载器
@@ -435,14 +494,56 @@
 导入Spring整合Junit坐标
 
 ```xml
-<dependency>    <groupId>junit</groupId>    <artifactId>junit</artifactId>    <version>4.12</version></dependency><dependency>    <groupId>org.springframework</groupId>    <artifactId>spring-test</artifactId>    <version>5.1.9.RELEASE</version></dependency>
+<dependency> 
+    <groupId>junit</groupId> 
+    <artifactId>junit</artifactId>  
+    <version>4.12</version>
+</dependency>
+<dependency>  
+    <groupId>org.springframework</groupId>   
+    <artifactId>spring-test</artifactId> 
+    <version>5.1.9.RELEASE</version>
+</dependency>
 ```
 
 Spring整合Junit测试用例注解格式
 
 ```java
-@RunWith(SpringJUnit4ClassRunner.class)@ContextConfiguration(classes = SpringConfig.class)public class UserServiceTest {}
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = SpringConfig.class)
+public class UserServiceTest {
+    
+}
 ```
+
+```java
+//设定spring专用的类加载器
+@RunWith(SpringJUnit4ClassRunner.class)
+//设定加载的spring上下文对应的配置
+@ContextConfiguration(classes = SpringConfig.class)
+public class UserServiceTest {
+
+    @Autowired
+    private AccountService accountService;
+
+    @Test
+    public void testFindById(){
+        Account ac = accountService.findById(2);
+//        System.out.println(ac);
+        Assert.assertEquals("Jock1",ac.getName());
+    }
+
+    @Test
+    public void testFindAll(){
+        List<Account> list = accountService.findAll();
+        Assert.assertEquals(3,list.size());
+    }
+
+}
+
+```
+
+
 
 ## 5)IoC底层核心原理
 
