@@ -323,13 +323,47 @@
 #### 3.4.4)切入点表达式——范例
 
 ```java
-execution(* *(..))execution(* *..*(..))execution(* *..*.*(..))execution(public * *..*.*(..))execution(public int *..*.*(..))execution(public void *..*.*(..))execution(public void com..*.*(..)) execution(public void com..service.*.*(..))execution(public void com.itheima.service.*.*(..))execution(public void com.itheima.service.User*.*(..))execution(public void com.itheima.service.*Service.*(..))execution(public void com.itheima.service.UserService.*(..))execution(public User com.itheima.service.UserService.find*(..))execution(public User com.itheima.service.UserService.*Id(..))execution(public User com.itheima.service.UserService.findById(..))execution(public User com.itheima.service.UserService.findById(int))execution(public User com.itheima.service.UserService.findById(int,int))execution(public User com.itheima.service.UserService.findById(int,*))execution(public User com.itheima.service.UserService.findById(*,int))execution(public User com.itheima.service.UserService.findById())execution(List com.itheima.service.*Service+.findAll(..))
+    execution(* *(..))
+    execution(* *..*(..))
+    execution(* *..*.*(..))
+    execution(public * *..*.*(..))
+    execution(public int *..*.*(..))
+    execution(public void *..*.*(..))
+    execution(public void com..*.*(..)) 
+    execution(public void com..service.*.*(..))
+    execution(public void com.itheima.service.*.*(..))
+    execution(public void com.itheima.service.User*.*(..))
+    execution(public void com.itheima.service.*Service.*(..))
+    execution(public void com.itheima.service.UserService.*(..))
+    execution(public User com.itheima.service.UserService.find*(..))
+    execution(public User com.itheima.service.UserService.*Id(..))
+    execution(public User com.itheima.service.UserService.findById(..))
+    execution(public User com.itheima.service.UserService.findById(int))
+    execution(public User com.itheima.service.UserService.findById(int,int))
+    execution(public User com.itheima.service.UserService.findById(int,*))
+    execution(public User com.itheima.service.UserService.findById(*,int))
+    execution(public User com.itheima.service.UserService.findById())
+    execution(List com.itheima.service.*Service+.findAll(..))
 ```
 
 ### **3.5)切入点的三种配置方式**
 
 ```xml
-<aop:config>    <!--配置公共切入点-->    <aop:pointcut id="pt1" expression="execution(* *(..))"/>    <aop:aspect ref="myAdvice">        <!--配置局部切入点-->        <aop:pointcut id="pt2" expression="execution(* *(..))"/>        <!--引用公共切入点-->        <aop:before method="logAdvice" pointcut-ref="pt1"/>        <!--引用局部切入点-->        <aop:before method="logAdvice" pointcut-ref="pt2"/>        <!--直接配置切入点-->        <aop:before method="logAdvice" pointcut="execution(* *(..))"/>    </aop:aspect></aop:config>
+<aop:config>
+  <!--配置公共切入点-->
+  <aop:pointcut id="pt1" expression="execution(* *(..))" />
+  <aop:aspect ref="myAdvice">
+    <!--配置局部切入点-->
+    <aop:pointcut id="pt2" expression="execution(* *(..))" />
+    <!--引用公共切入点-->
+    <aop:before method="logAdvice" pointcut-ref="pt1" />
+    <!--引用局部切入点-->
+    <aop:before method="logAdvice" pointcut-ref="pt2" />
+    <!--直接配置切入点-->
+    <aop:before method="logAdvice" pointcut="execution(* *(..))" />
+  </aop:aspect>
+</aop:config>
+
 ```
 
 ### **3.6)切入点配置经验**
@@ -825,7 +859,11 @@ AOP的通知类型共5种
 - 格式：
 
   ```java
-  @Around("pt()")public Object around(ProceedingJoinPoint pjp) throws Throwable {    Object ret = pjp.proceed();    return ret;}
+  @Around("pt()")
+  public Object around(ProceedingJoinPoint pjp) throws Throwable { 
+      Object ret = pjp.proceed(); 
+      return ret;
+  }
   ```
 
 - 特殊参数：
@@ -873,7 +911,11 @@ AOP的通知类型共5种
 - 格式：
 
   ```java
-  @Configuration@ComponentScan("com.itheima")@EnableAspectJAutoProxypublic class SpringConfig {}
+  @Configuration@ComponentScan("com.itheima")
+  @EnableAspectJAutoProxy
+  public class SpringConfig {
+      
+  }
   ```
 
 ## 5)综合案例
@@ -883,7 +925,13 @@ AOP的通知类型共5种
 对项目进行业务层接口执行监控，测量业务层接口的执行效率
 
 ```java
-public interface AccountService {    void save(Account account);    void delete(Integer id);    void update(Account account);    List<Account> findAll();    Account findById(Integer id);}
+public interface AccountService {   
+    void save(Account account);   
+    void delete(Integer id);  
+    void update(Account account); 
+    List<Account> findAll();  
+    Account findById(Integer id);
+}
 ```
 
 ### **5.2)案例分析**
@@ -910,7 +958,30 @@ public interface AccountService {    void save(Account account);    void delete(
 ### **5.4)案例制作核心代码**
 
 ```java
-public class RunTimeMonitorAdvice {    //拦截所有的业务层接口中查询操作的执行    @Pointcut("execution(* com.itheima.service.*Service.find*(..))")    public void pt(){}    @Around("pt()")    public Object runtimeMonitor(ProceedingJoinPoint pjp) throws Throwable {        //获取执行签名信息        Signature signature = pjp.getSignature();        //通过签名获取执行类型（接口名）        String targetClass = signature.getDeclaringTypeName();        //通过签名获取执行操作名称（方法名）        String targetMethod = signature.getName();        //获取操作前系统时间beginTime        long beginTime = System.currentTimeMillis();        Object ret = pjp.proceed(pjp.getArgs());        //获取操作后系统时间endTime        long endTime = System.currentTimeMillis();        System.out.println(targetClass+" 中 "+targetMethod+" 运行时长 "+(endTime-beginTime)+"ms");        return ret;    }}
+@Component
+@Aspect
+public class RunTimeMonitorAdvice {   
+    //拦截所有的业务层接口中查询操作的执行   
+    @Pointcut("execution(* com.itheima.service.*Service.find*(..))")  
+    public void pt(){}  
+    
+    @Around("pt()")  
+    public Object runtimeMonitor(ProceedingJoinPoint pjp) throws Throwable {   
+        //获取执行签名信息       
+        Signature signature = pjp.getSignature();       
+        //通过签名获取执行类型（接口名）        
+        String targetClass = signature.getDeclaringTypeName();        
+        //通过签名获取执行操作名称（方法名）      
+        String targetMethod = signature.getName();        
+        //获取操作前系统时间beginTime       
+        long beginTime = System.currentTimeMillis();     
+        Object ret = pjp.proceed(pjp.getArgs());        
+        //获取操作后系统时间endTime       
+        long endTime = System.currentTimeMillis();       
+        System.out.println(targetClass+" 中 "+targetMethod+" 运行时长 "+(endTime-beginTime)+"ms");      
+        return ret;    
+    }
+}
 ```
 
 ### **5.5)案例后续思考与设计**
@@ -956,7 +1027,18 @@ public class RunTimeMonitorAdvice {    //拦截所有的业务层接口中查询
 ![1591287238806](Spring-day03.assets/1591287238806.png)
 
 ```java
-public class UserServiceDecorator implements UserService{    private UserService userService;    public UserServiceDecorator(UserService userService) {        this.userService = userService;    }    public void save() {        //原始调用        userService.save();        //增强功能（后置）        System.out.println("刮大白");    }}
+public class UserServiceDecorator implements UserService{  
+    private UserService userService;  
+    public UserServiceDecorator(UserService userService) {    
+        this.userService = userService; 
+    }   
+    public void save() {    
+        //原始调用      
+        userService.save();    
+        //增强功能（后置）    
+        System.out.println("刮大白"); 
+    }
+}
 ```
 
 ### 6.2)动态代理——JDK Proxy
@@ -964,7 +1046,27 @@ public class UserServiceDecorator implements UserService{    private UserService
 JDKProxy动态代理是针对对象做代理，要求原始对象具有接口实现，并对接口方法进行增强
 
 ```java
-public class UserServiceJDKProxy {    public UserService createUserServiceJDKProxy(final UserService userService){        //获取被代理对象的类加载器        ClassLoader classLoader = userService.getClass().getClassLoader();        //获取被代理对象实现的接口        Class[] classes = userService.getClass().getInterfaces();        //对原始方法执行进行拦截并增强        InvocationHandler ih = new InvocationHandler() {            public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {                //前置增强内容                Object ret = method.invoke(userService, args);                //后置增强内容                System.out.println("刮大白2");                return ret;            }        };        //使用原始被代理对象创建新的代理对象        UserService proxy = (UserService) Proxy.newProxyInstance(classLoader,classes,ih);        return proxy;    }}
+public class UserServiceJDKProxy {  
+    public UserService createUserServiceJDKProxy(final UserService userService){  
+        //获取被代理对象的类加载器       
+        ClassLoader classLoader = userService.getClass().getClassLoader();        
+        //获取被代理对象实现的接口       
+        Class[] classes = userService.getClass().getInterfaces();       
+        //对原始方法执行进行拦截并增强       
+        InvocationHandler ih = new InvocationHandler() {        
+            public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {      
+                //前置增强内容              
+                Object ret = method.invoke(userService, args);  
+                //后置增强内容            
+                System.out.println("刮大白2");      
+                return ret;       
+            }     
+        };       
+        //使用原始被代理对象创建新的代理对象    
+        UserService proxy = (UserService) Proxy.newProxyInstance(classLoader,classes,ih);    
+        return proxy;  
+    }
+}
 ```
 
 ### 6.3)动态代理——CGLIB
@@ -975,10 +1077,46 @@ public class UserServiceJDKProxy {    public UserService createUserServiceJDKPro
 
 - CGLIB动态代理无需要原始被代理对象，动态创建出新的代理对象
 
+```java
+package base.cglib;
+
+import com.itheima.service.UserService;
+import org.springframework.cglib.proxy.Enhancer;
+import org.springframework.cglib.proxy.MethodInterceptor;
+import org.springframework.cglib.proxy.MethodProxy;
+
+import java.lang.reflect.Method;
+
+public class UserServiceCglibProxy {
+
+    public static UserService createUserServiceCglibProxy(Class clazz){
+        //创建Enhancer对象（可以理解为内存中动态创建了一个类的字节码）
+        Enhancer enhancer = new Enhancer();
+        //设置Enhancer对象的父类是指定类型UserServerImpl
+        enhancer.setSuperclass(clazz);
+        //设置回调方法
+        enhancer.setCallback(new MethodInterceptor() {
+            public Object intercept(Object o, Method method, Object[] args, MethodProxy methodProxy) throws Throwable {
+                //通过调用父类的方法实现对原始方法的调用
+                Object ret = methodProxy.invokeSuper(o, args);
+                //后置增强内容，与JDKProxy区别：JDKProxy仅对接口方法做增强，cglib对所有方法做增强，包括Object类中的方法
+                if(method.getName().equals("save")) {
+                    System.out.println("刮大白3");
+                    System.out.println("贴墙纸3");
+                }
+                return ret;
+            }
+        });
+        //使用Enhancer对象创建对应的对象
+        return (UserService) enhancer.create();
+    }
+}
+```
+
 ![1591287441096](Spring-day03.assets/1591287441096.png)
 
 ```java
-public class UserServiceImplCglibProxy {    public static UserServiceImpl createUserServiceCglibProxy(Class clazz){        //创建Enhancer对象（可以理解为内存中动态创建了一个类的字节码）        Enhancer enhancer = new Enhancer();        //设置Enhancer对象的父类是指定类型UserServerImpl        enhancer.setSuperclass(clazz);        Callback cb = new MethodInterceptor() {            public Object intercept(Object o, Method m, Object[] a, MethodProxy mp) throws Throwable {                Object ret = mp.invokeSuper(o, a);                if(m.getName().equals("save")) {                    System.out.println("刮大白");                }                return ret;            }        };        //设置回调方法        enhancer.setCallback(cb);        //使用Enhancer对象创建对应的对象        return (UserServiceImpl)enhancer.create();    }}
+
 ```
 
 ### **6.4)代理模式的选择**

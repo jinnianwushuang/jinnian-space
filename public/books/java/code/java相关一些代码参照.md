@@ -9,7 +9,7 @@
 |      |                                                              |      |
 | ---- | ------------------------------------------------------------ | ---- |
 |      | [源码下载: SpringMVC--黑马教学代码.zip](源码下载:SpringMVC--黑马教学代码.zip) |      |
-|      | [源码下载: curator-zk.zip](源码下载:curator-zk.zip)          |      |
+|      | [源码下载: Zookeeper-配置参照.zip](源码下载:Zookeeper-配置参照.zip) |      |
 |      | [源码下载: dubbo-配置参照.zip](源码下载:dubbo-配置参照.zip)  |      |
 |      | [源码下载: Maven高级--代码.zip](源码下载:Maven高级--代码.zip) |      |
 |      | [源码下载: javaweb-综合案例.zip](源码下载:javaweb-综合案例.zip) |      |

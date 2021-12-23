@@ -22,11 +22,11 @@
 
 ## 1.2 接受异步请求参数
 
- 名称： @RequestBody
- 类型： 形参注解
- 位置：处理器类中的方法形参前方
- 作用：将异步提交数据组织成标准请求参数格式，并赋值给形参
- 范例：
+ 名称： @RequestBody
+ 类型： 形参注解
+ 位置：处理器类中的方法形参前方
+ 作用：将异步提交数据组织成标准请求参数格式，并赋值给形参
+ 范例：
 
 ```java
 @RequestMapping("/ajaxController")
@@ -116,11 +116,11 @@ public List ajaxReturnJsonList(){
 
 ## 2.3 跨域访问支持  
 
- 名称： @CrossOrigin
- 类型： 方法注解 、 类注解
- 位置：处理器类中的方法上方 或 类上方
- 作用：设置当前处理器方法/处理器类中所有方法支持跨域访问
- 范例：  
+ 名称： @CrossOrigin
+ 类型： 方法注解 、 类注解
+ 位置：处理器类中的方法上方 或 类上方
+ 作用：设置当前处理器方法/处理器类中所有方法支持跨域访问
+ 范例：  
 
 ```java
 @RequestMapping("/cross")
@@ -146,19 +146,19 @@ public User cross(HttpServletRequest request){
 
 ![image-20200427164038103](./SpringMVC-day02/image-20200427164038103.png)
 
- 拦截器（ Interceptor）是一种动态拦截方法调用的机制
- 作用：
+ 拦截器（ Interceptor）是一种动态拦截方法调用的机制
+ 作用：
    	1. 在指定的方法调用前后执行预先设定后的的代码
  	2. 阻止原始方法的执行
 
- 核心原理： AOP思想
- 拦截器链：多个拦截器按照一定的顺序，对原始被调用功能进行增强  
+ 核心原理： AOP思想
+ 拦截器链：多个拦截器按照一定的顺序，对原始被调用功能进行增强  
 
 
 
 * **拦截器VS过滤器**
-   归属不同： Filter属于Servlet技术， Interceptor属于SpringMVC技术
-   拦截内容不同： Filter对所有访问进行增强， Interceptor仅针对SpringMVC的访问进行增强  
+   归属不同： Filter属于Servlet技术， Interceptor属于SpringMVC技术
+   拦截内容不同： Filter对所有访问进行增强， Interceptor仅针对SpringMVC的访问进行增强  
   
   ![image-20200427164512745](./SpringMVC-day02/image-20200427164512745.png)
 
@@ -261,7 +261,7 @@ public void postHandle(HttpServletRequest request,
 }
 ```
 
- 参数
+ 参数
  modelAndView:如果处理器执行完成具有返回结果，可以读取到对应数据与页面信息，并进行调整  
 
 ### 3.4.3 完成处理方法
@@ -277,7 +277,7 @@ public void afterCompletion(HttpServletRequest request,
 }
 ```
 
- 参数
+ 参数
  ex:如果处理器执行过程中出现异常对象，可以针对异常情况进行单独处理  
 
 ## 3.5 拦截器配置项  
@@ -310,15 +310,15 @@ public void afterCompletion(HttpServletRequest request,
 ![image-20200427171422781](./SpringMVC-day02/image-20200427171422781.png)
 
 **责任链模式**
- 责任链模式是一种行为模式
- 特征：
+ 责任链模式是一种行为模式
+ 特征：
 沿着一条预先设定的任务链顺序执行，每个节点具有独立的工作任务
- 优势：
+ 优势：
 独立性：只关注当前节点的任务，对其他任务直接放行到下一节点
 隔离性：具备链式传递特征，无需知晓整体链路结构，只需等待请求到达后进行处理即可
 灵活性：可以任意修改链路结构动态新增或删减整体链路责任
 解耦：将动态任务与原始任务解耦
- 弊端：
+ 弊端：
 链路过长时，处理效率低下
 可能存在节点上的循环引用现象，造成死循环，导致系统崩溃  
 
@@ -373,11 +373,11 @@ public class ExceptionResolver implements HandlerExceptionResolver {
 ## 4.2 注解开发异常处理器
 
 * 使用注解实现异常分类管理
-   名称： @ControllerAdvice
-   类型： 类注解
-   位置：异常处理器类上方
-   作用：设置当前类为异常处理器类
-   范例：
+   名称： @ControllerAdvice
+   类型： 类注解
+   位置：异常处理器类上方
+   作用：设置当前类为异常处理器类
+   范例：
 
 ```java
 @Component
@@ -387,12 +387,12 @@ public class ExceptionAdvice {
 ```
 
 * 使用注解实现异常分类管理
-   名称： @ExceptionHandler
-   类型： 方法注解
-   位置：异常处理器类中针对指定异常进行处理的方法上方
-   作用：设置指定异常的处理方式
-   范例：
-   说明：处理器方法可以设定多个
+   名称： @ExceptionHandler
+   类型： 方法注解
+   位置：异常处理器类中针对指定异常进行处理的方法上方
+   作用：设置指定异常的处理方式
+   范例：
+   说明：处理器方法可以设定多个
  ```java
 @ExceptionHandler(Exception.class)
 @ResponseBody
@@ -566,10 +566,10 @@ public String fileupload(MultipartFile file,MultipartFile file1,MultipartFile fi
 
 ### 5.4.2 Rest行为约定方式  
 
- GET（查询） http://localhost/user/1 GET
- POST（保存） http://localhost/user POST
- PUT（更新） http://localhost/user PUT
- DELETE（删除） http://localhost/user DELETE
+ GET（查询） http://localhost/user/1 GET
+ POST（保存） http://localhost/user POST
+ PUT（更新） http://localhost/user PUT
+ DELETE（删除） http://localhost/user DELETE
 **注意：**上述行为是约定方式，约定不是规范，可以打破，所以称Rest风格，而不是Rest规范  
 
 ### 5.4.3 Restful开发入门  
@@ -646,8 +646,8 @@ public class UserController {
 </filter-mapping>
 ```
 
- 开启SpringMVC对Restful风格的访问支持过滤器，即可通过页面表单提交PUT与DELETE请求
- 页面表单使用隐藏域提交请求类型，参数名称固定为_method，必须配合提交类型method=post使用
+ 开启SpringMVC对Restful风格的访问支持过滤器，即可通过页面表单提交PUT与DELETE请求
+ 页面表单使用隐藏域提交请求类型，参数名称固定为_method，必须配合提交类型method=post使用
 
 ```xml
 <form action="/user/1" method="post">

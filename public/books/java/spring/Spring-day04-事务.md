@@ -178,7 +178,24 @@ public void transfer(String outName,String inName,Double money){    accountDao.i
 #### **2.6.3)编程式事务**
 
 ```java
-public void transfer(String outName,String inName,Double money){    //创建事务管理器    DataSourceTransactionManager dstm = new DataSourceTransactionManager();    //为事务管理器设置与数据层相同的数据源    dstm.setDataSource(dataSource);    //创建事务定义对象    TransactionDefinition td = new DefaultTransactionDefinition();    //创建事务状态对象，用于控制事务执行    TransactionStatus ts = dstm.getTransaction(td);    accountDao.inMoney(outName,money);    int i = 1/0;    //模拟业务层事务过程中出现错误    accountDao.outMoney(inName,money);    //提交事务    dstm.commit(ts);}
+public void transfer(String outName,String inName,Double money){   
+
+    //创建事务管理器 
+
+    DataSourceTransactionManager dstm = new DataSourceTransactionManager();
+    //为事务管理器设置与数据层相同的数据源
+    dstm.setDataSource(dataSource);
+    //创建事务定义对象
+    TransactionDefinition td = new DefaultTransactionDefinition();
+    //创建事务状态对象，用于控制事务执行
+    TransactionStatus ts = dstm.getTransaction(td);
+    accountDao.inMoney(outName,money);
+    int i = 1/0;
+    //模拟业务层事务过程中出现错误
+    accountDao.outMoney(inName,money);
+    //提交事务
+    dstm.commit(ts);
+}
 ```
 
 ### 2.7)使用AOP控制事务
@@ -186,19 +203,36 @@ public void transfer(String outName,String inName,Double money){    //创建事�
 将业务层的事务处理功能抽取出来制作成AOP通知，利用环绕通知运行期动态织入
 
 ```java
-public Object tx(ProceedingJoinPoint pjp) throws Throwable {        DataSourceTransactionManager dstm = new DataSourceTransactionManager();    dstm.setDataSource(dataSource);    TransactionDefinition td = new DefaultTransactionDefinition();    TransactionStatus ts = dstm.getTransaction(td);    Object ret = pjp.proceed(pjp.getArgs());    dstm.commit(ts);        return ret;}
+public Object tx(ProceedingJoinPoint pjp) throws Throwable {
+    
+    DataSourceTransactionManager dstm = new DataSourceTransactionManager();
+    dstm.setDataSource(dataSource);
+    TransactionDefinition td = new DefaultTransactionDefinition();
+    TransactionStatus ts = dstm.getTransaction(td);
+    Object ret = pjp.proceed(pjp.getArgs());
+    dstm.commit(ts);
+    
+    return ret;
+}
 ```
 
 配置AOP通知类，并注入dataSource
 
 ```xml
-<bean id="txAdvice" class="com.itheima.aop.TxAdvice">    <property name="dataSource" ref="dataSource"/></bean>
+<bean id="txAdvice" class="com.itheima.aop.TxAdvice">  
+    <property name="dataSource" ref="dataSource"/>
+</bean>
 ```
 
 使用环绕通知将通知类织入到原始业务对象执行过程中
 
 ```xml
-<aop:config>    <aop:pointcut id="pt" expression="execution(* *..transfer(..))"/>    <aop:aspect ref="txAdvice">        <aop:around method="tx" pointcut-ref="pt"/>    </aop:aspect></aop:config>
+<aop:config>  
+    <aop:pointcut id="pt" expression="execution(* *..transfer(..))"/>  
+    <aop:aspect ref="txAdvice">    
+        <aop:around method="tx" pointcut-ref="pt"/>  
+    </aop:aspect>
+</aop:config>
 ```
 
 ### **2.8声明式事务（XML）**
@@ -206,23 +240,42 @@ public Object tx(ProceedingJoinPoint pjp) throws Throwable {        DataSourceTr
 **AOP**配置事务是否具有特例性？
 
 ```java
-public Object tx(ProceedingJoinPoint pjp) throws Throwable {    DataSourceTransactionManager dstm = new DataSourceTransactionManager();    dstm.setDataSource(dataSource);    TransactionDefinition td = new DefaultTransactionDefinition();    TransactionStatus ts = dstm.getTransaction(td);    Object ret = pjp.proceed(pjp.getArgs());    dstm.commit(ts);    return ret;}
+public Object tx(ProceedingJoinPoint pjp) throws Throwable {
+    DataSourceTransactionManager dstm = new DataSourceTransactionManager();
+    dstm.setDataSource(dataSource);
+    TransactionDefinition td = new DefaultTransactionDefinition();
+    TransactionStatus ts = dstm.getTransaction(td);
+    Object ret = pjp.proceed(pjp.getArgs());
+    dstm.commit(ts);
+    return ret;
+}
 ```
 
 ```xml
-<bean id="txAdvice" class="com.itheima.aop.TxAdvice">	<property name="dataSource" ref="dataSource"/></bean>
+<bean id="txAdvice" class="com.itheima.aop.TxAdvice">
+    <property name="dataSource" ref="dataSource"/>
+</bean>
 ```
 
 使用tx命名空间配置事务专属通知类
 
 ```xml
-<tx:advice id="txAdvice" transaction-manager="txManager">    <tx:attributes>        <tx:method name="*" read-only="false" />        <tx:method name="get*" read-only="true" />        <tx:method name="find*" read-only="true" />    </tx:attributes></tx:advice>
+<tx:advice id="txAdvice" transaction-manager="txManager">  
+    <tx:attributes>     
+        <tx:method name="*" read-only="false" />    
+        <tx:method name="get*" read-only="true" />     
+        <tx:method name="find*" read-only="true" /> 
+    </tx:attributes>
+</tx:advice>
 ```
 
 使用aop:advisor在AOP配置中引用事务专属通知类
 
 ```xml
-<aop:config>    <aop:pointcut id="pt" expression="execution(* *..*(..))"/>    <aop:advisor advice-ref="txAdvice" pointcut-ref="pt"/></aop:config>
+<aop:config>  
+    <aop:pointcut id="pt" expression="execution(* *..*(..))"/>  
+    <aop:advisor advice-ref="txAdvice" pointcut-ref="pt"/>
+</aop:config>
 ```
 
 #### 2.8.1)**aop:advice与aop:advisor区别**
@@ -317,7 +370,15 @@ public Object tx(ProceedingJoinPoint pjp) throws Throwable {    DataSourceTransa
 
 ### **2.10)事务传播行为**
 
-![1591367375088](Spring-day04.assets/1591367375088.png)
+| 事务传播行为类型          | 说明                                                         |
+| ------------------------- | ------------------------------------------------------------ |
+| PROPAGATION_REQUIRED      | 如果当前没有事务，就新建一个事务，如果已经存在一个事务中，加入到这个事务中。这是最常见的选择。 |
+| PROPAGATION_SUPPORTS      | 支持当前事务，如果当前没有事务，就以非事务方式执行。         |
+| PROPAGATION_MANDATORY     | 使用当前的事务，如果当前没有事务，就抛出异常。               |
+| PROPAGATION_REQUIRES_NEW  | 新建事务，如果当前存在事务，把当前事务挂起。                 |
+| PROPAGATION_NOT_SUPPORTED | 以非事务方式执行操作，如果当前存在事务，就把当前事务挂起。   |
+| PROPAGATION_NEVER         | 以非事务方式执行，如果当前存在事务，则抛出异常。             |
+| PROPAGATION_NESTED        | 如果当前存在事务，则在嵌套事务内执行。如果当前没有事务，则执行与PROPAGATION_REQUIRED类似的操作。 |
 
 ### **2.11)事务传播应用**
 
@@ -364,7 +425,14 @@ public Object tx(ProceedingJoinPoint pjp) throws Throwable {    DataSourceTransa
 - 范例：
 
   ```java
-  @Transactional(    readOnly = false,    timeout = -1,    isolation = Isolation.DEFAULT,    rollbackFor = {ArithmeticException.class, IOException.class},    noRollbackFor = {},    propagation = Propagation.REQUIRES_NEW)
+  @Transactional(  
+      readOnly = false,   
+      timeout = -1,  
+      isolation = Isolation.DEFAULT,
+      rollbackFor = {ArithmeticException.class, IOException.class},
+      noRollbackFor = {},  
+      propagation = Propagation.REQUIRES_NEW
+  )
   ```
 
 #### 2.12.2)tx:annotation-driven
@@ -396,11 +464,20 @@ public Object tx(ProceedingJoinPoint pjp) throws Throwable {    DataSourceTransa
 - 范例：
 
   ```java
-  @Configuration@ComponentScan("com.itheima")@PropertySource("classpath:jdbc.properties")@Import({JDBCConfig.class,MyBatisConfig.class,TransactionManagerConfig.class})@EnableTransactionManagementpublic class SpringConfig {}
+  @Configuration@ComponentScan("com.itheima")
+  @PropertySource("classpath:jdbc.properties")
+  @Import({JDBCConfig.class,MyBatisConfig.class,TransactionManagerConfig.class})
+  @EnableTransactionManagement
+  public class SpringConfig {
+      
+  }
   ```
-
+  
   ```java
-  public class TransactionManagerConfig {    @Bean    public PlatformTransactionManager getTransactionManager(@Autowired DataSource dataSource){        return new DataSourceTransactionManager(dataSource);    }}
+  public class TransactionManagerConfig { 
+      @Bean   
+      public PlatformTransactionManager getTransactionManager(@Autowired DataSource dataSource){        return new DataSourceTransactionManager(dataSource);  
+                                                                                               }}
   ```
 
 ## 3)模板对象
@@ -428,7 +505,9 @@ public Object tx(ProceedingJoinPoint pjp) throws Throwable {    DataSourceTransa
 提供标准的sql语句操作API
 
 ```java
-public void save(Account account) {    String sql = "insert into account(name,money)values(?,?)";    jdbcTemplate.update(sql,account.getName(),account.getMoney());}
+public void save(Account account) {   
+    String sql = "insert into account(name,money)values(?,?)";    jdbcTemplate.update(sql,account.getName(),account.getMoney());
+}
 ```
 
 ### 3.3)NamedParameterJdbcTemplate(了解）
@@ -436,7 +515,13 @@ public void save(Account account) {    String sql = "insert into account(name,mo
 提供标准的具名sql语句操作API
 
 ```java
-public void save(Account account) {    String sql = "insert into account(name,money)values(:name,:money)";    Map pm = new HashMap();    pm.put("name",account.getName());    pm.put("money",account.getMoney());    jdbcTemplate.update(sql,pm);}
+public void save(Account account) {   
+    String sql = "insert into account(name,money)values(:name,:money)"; 
+    Map pm = new HashMap();   
+    pm.put("name",account.getName());   
+    pm.put("money",account.getMoney()); 
+    jdbcTemplate.update(sql,pm);
+}
 ```
 
 ### **3.4)RedisTemplate**

@@ -1,8 +1,3 @@
-<!--
- * @Date           : 2021-04-28 01:12:51
- * @FilePath       : /jinnian-space/src/pages/java/module/springmvc/md/SpringMVC-day03.md
- * @Description    : 
--->
 # 1 校验框架
 
 ## 1.1 校验框架入门
