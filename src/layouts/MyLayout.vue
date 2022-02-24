@@ -1,7 +1,7 @@
 <!--
  * @Date           : Mon Aug 31 2020 16:40:04
  * @FilePath       : /jinnian-space/src/layouts/MyLayout.vue
- * @Description    : 
+ * @Description    :
 -->
 <template>
   <!-- <q-layout     :view="$q.platform.is.mobile?'lHh Lpr lFf':'hHh Lpr lFf' ">  bg-white text-black -->
@@ -89,9 +89,9 @@
           </q-item>
         </q-list>
         <!--左侧收展按钮-->
-      
+
       </q-scroll-area>
-      
+
     </q-drawer>
     <!-- 右侧菜单组件 -->
     <q-drawer
@@ -200,14 +200,8 @@ export default {
   name: "MyLayout",
   data() {
     return {
-      title: "我生待明日，万事成蹉跎。",
       title: "锦绣年华",
-      // title: "we are who we choose to be",
-      // title:"锦年成长空间",
-      // title:"I dreamed a dream",
-      mid_text: "we are who we choose to be",
-      mid_text: "Learn、analyze and follow the process",
-      mid_text: "流程错了",
+      mid_text: "熵增定律",
       last_update_time,
       drawerLeft: false,
       menu,

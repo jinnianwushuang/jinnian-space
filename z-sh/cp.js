@@ -1,7 +1,7 @@
 /*
  * @Date           : 2021-07-04 19:33:41
  * @FilePath       : /jinnian-space/z-sh/cp.js
- * @Description    : 
+ * @Description    :
  */
 const { setTimeout } = require('core-js');
 var shell = require('shelljs');
@@ -22,7 +22,7 @@ console.log('-------删除操作和拷贝操作 将于两秒后执行---------')
 // shell.rm('-rf', './index.html');
 // // shell.cp('-R', './docs-2/index.html', './index.html');
 // console.log('-------删除操作  执行完毕   ---------');
-// },2000) 
+// },2000)
 
 function remove_old_stuff(){
   console.log('-------删除操作  开始执行   ---------');
@@ -44,7 +44,7 @@ function copy_new_stuff(){
 
 
 setTimeout(remove_old_stuff,2000)
-setTimeout(copy_new_stuff,5000)
+setTimeout(copy_new_stuff,6000)
 
 
 // rm -r ./public/fonts/* ; cp -r ./docs-2/fonts/*  ./public/fonts/
