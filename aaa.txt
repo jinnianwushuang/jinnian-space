@@ -1,7 +1,0 @@
-"ElasticSearch2.pdf",
-"RabbitMQ-SpringBoot整合.pdf",
-"RabbitMQ第一天.pdf",
-"RabbitMQ第二天.pdf",
-"SpringCloud 第一天 .pdf",
-"SpringCloud 第三天.pdf",
-"SpringCloud 第二天.pdf",
