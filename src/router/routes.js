@@ -1,7 +1,7 @@
 /*
  * @Date           : 2020-11-05 21:36:01
  * @FilePath       : /jinnian-space/src/router/routes.js
- * @Description    : 
+ * @Description    :
  */
 let routes = [
   // {
@@ -9,7 +9,7 @@ let routes = [
   //   name:"login",
   //   component:() =>import("src/pages/login/index.vue"),
   // },
- 
+
   // {
   //   path:"/main",
   //   name:"main",
@@ -27,7 +27,7 @@ let routes = [
 
 
 
-  
+
   {
     path: "/",
     component: () => import("src/layouts/MyLayout.vue"),
@@ -39,8 +39,8 @@ let routes = [
 
       //   component: () => import( "src/pages/note/index.vue")
       // },
-      
-  
+
+
       {
         path: "seo",
         name: "seo",
@@ -51,7 +51,7 @@ let routes = [
 
         component: () => import( "src/pages/seo/index.vue")
       },
-      
+
       {
         path: "node",
         name: "node",
@@ -61,7 +61,7 @@ let routes = [
         },
 
         component: () => import( "src/pages/node/index.vue")
-      }, 
+      },
       {
         path: "web",
         name: "web",
@@ -215,7 +215,7 @@ let routes = [
         },
         component: () => import( "src/pages/tensorflow/index.vue")
       },
-      
+
       {
         path: "config-refer",
         name: "config-refer",
@@ -225,7 +225,7 @@ let routes = [
         },
         component: () => import( "src/pages/config-refer/index.vue")
 
-        
+
       },
       {
         path: "bookshelf",
@@ -236,7 +236,7 @@ let routes = [
         },
         component: () => import( "src/pages/bookshelf/index.vue")
 
-        
+
       },
 
       {
@@ -248,9 +248,20 @@ let routes = [
         },
         component: () => import( "src/pages/essay/index.vue")
 
-        
+
       },
- 
+      {
+        path: "flutter",
+        name: "flutter",
+        meta:{
+          show:true,
+          order: 2
+        },
+        component: () => import( "src/pages/flutter/index.vue")
+
+
+      },
+
       {
         path:"qiqi",
         name:"qiqi",
@@ -261,7 +272,7 @@ let routes = [
         component: () =>import("src/pages/qi/index.vue")
       },
 
- 
+
       {
         path:"cs-notes",
         name:"cs-notes",
@@ -281,7 +292,7 @@ let routes = [
         },
         component: () =>import("src/pages/tools/index.vue")
       },
- 
+
       {
         path:"network",
         name:"network",
@@ -291,8 +302,8 @@ let routes = [
         },
         component: () =>import("src/pages/network/index.vue")
       },
- 
-      
+
+
       {
         path:"algorithms",
         name:"algorithms",
@@ -302,10 +313,10 @@ let routes = [
         },
         component: () =>import("src/pages/algorithms/index.vue")
       },
- 
-      
-      
-   
+
+
+
+
     ]
   }
 ];
