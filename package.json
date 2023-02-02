@@ -18,7 +18,7 @@
     "cp": "node ./z-sh/cp.js"
   },
   "dependencies": {
-    "@quasar/cli": "^1.2.2",
+    "@quasar/cli": "^2.0.0",
     "@quasar/extras": "^1.0.0",
     "@vue/composition-api": "^0.6.4",
     "axios": "^0.18.1",
